@@ -1,0 +1,445 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+
+const currentProjects = allProjects
+  .filter(p => p.data.status === 'current')
+  .sort((a, b) => a.data.order - b.data.order);
+
+const featuredProject = allProjects.find(p => p.data.status === 'featured');
+
+const archiveProjects = allProjects
+  .filter(p => p.data.status === 'archive')
+  .sort((a, b) => a.data.order - b.data.order);
+
+const badgeColors: Record<string, string> = {
+  green: '#6B8F6B',
+  orange: '#D4843A',
+};
+---
+
+<BaseLayout title="Nick Dahlhoff">
+  <div class="page">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Nick Dahlhoff</h1>
+        <p class="hero-sub">Poker pro, English teacher in Beijing, built & sold a website for ~$1M, now doing AI.</p>
+      </div>
+      <div class="hero-right">
+        <a href="#consulting" class="consulting-link">Open for consulting &rarr;</a>
+        <span class="hero-location">Grand Rapids, MI</span>
+      </div>
+    </section>
+
+    <!-- Featured Projects (dark cards) -->
+    <section class="featured-grid">
+      {currentProjects.map(project => (
+        <a href={`/projects/${project.id}`} class="featured-card">
+          <div class="featured-header">
+            <h2 class="featured-title">{project.data.title}</h2>
+            {project.data.badge && (
+              <span class="featured-badge" style={`color: ${badgeColors[project.data.badgeColor || 'green']}`}>
+                {project.data.badge}
+              </span>
+            )}
+          </div>
+          <p class="featured-tagline">{project.data.tagline}</p>
+        </a>
+      ))}
+    </section>
+
+    <!-- ALR (featured highlight) -->
+    {featuredProject && (
+      <a href={`/projects/${featuredProject.id}`} class="alr-section">
+        <div class="alr-left">
+          <span class="alr-revenue">{featuredProject.data.revenue}</span>
+          <div class="alr-meta">
+            <span class="alr-title">{featuredProject.data.title}</span>
+            <span class="alr-year">Built 2016 &middot; Sold 2021</span>
+          </div>
+        </div>
+        <div class="alr-right">
+          <p class="alr-description">Started as a blog while teaching in Beijing. Grew into a top language learning affiliate site. Five years of SEO and stubbornness.</p>
+        </div>
+      </a>
+    )}
+
+    <!-- Past Work -->
+    <section class="past-work">
+      <div class="past-header">
+        <span class="past-label">The winding road</span>
+        <svg width="24" height="10" viewBox="0 0 24 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 5H22M22 5L18 1M22 5L18 9" stroke="#3A3228" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="scroll-row">
+        {archiveProjects.map(project => {
+          const yr = project.data.year;
+          const shortYear = yr.includes('–')
+            ? yr.replace(/20(\d{2})/g, '$1').replace(/–present/, '–')
+            : yr;
+          return (
+            <a href={`/projects/${project.id}`} class="past-card">
+              <div class="past-card-header">
+                <span class="past-card-title">{project.data.title}</span>
+                <span class="past-card-year">{shortYear}</span>
+              </div>
+              <p class="past-card-tagline">{project.data.tagline}</p>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 80px 100px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  /* Hero */
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: 68px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 68px;
+    color: var(--color-text);
+    margin-bottom: 8px;
+  }
+
+  .hero-sub {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-style: italic;
+    line-height: 22px;
+    color: var(--color-accent-orange);
+  }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .consulting-link {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--color-accent-green);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .consulting-link:hover {
+    color: var(--color-accent-green);
+  }
+
+  .hero-location {
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-text-muted);
+  }
+
+  /* Featured Projects (dark cards) */
+  .featured-grid {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .featured-card {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px 32px;
+    background: var(--color-card-dark);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--color-card-dark-text);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .featured-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    text-decoration: none;
+  }
+
+  .featured-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .featured-title {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 28px;
+    color: var(--color-card-dark-text);
+    margin: 0;
+  }
+
+  .featured-badge {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 16px;
+  }
+
+  .featured-tagline {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: var(--color-card-dark-muted);
+  }
+
+  /* ALR Section */
+  .alr-section {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .alr-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    text-decoration: none;
+  }
+
+  .alr-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 24px 32px;
+    gap: 20px;
+    background: var(--color-accent-olive);
+  }
+
+  .alr-revenue {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    color: var(--color-card-dark-faded);
+  }
+
+  .alr-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .alr-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color: var(--color-card-dark-text);
+  }
+
+  .alr-year {
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-card-dark-subtle);
+  }
+
+  .alr-right {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 24px 32px;
+    background: var(--color-olive-bg);
+  }
+
+  .alr-description {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 21px;
+    color: var(--color-text-overlay);
+  }
+
+  /* Past Work */
+  .past-work {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .past-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .past-label {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-style: italic;
+    line-height: 20px;
+    color: var(--color-text-muted);
+  }
+
+  .past-header svg {
+    opacity: 0.5;
+  }
+
+  .scroll-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .scroll-row::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .scroll-row::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scroll-row::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 2px;
+  }
+
+  .past-card {
+    flex: 1 1 0%;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease;
+  }
+
+  .past-card:hover {
+    border-color: var(--color-border-hover);
+    text-decoration: none;
+  }
+
+  .past-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .past-card-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--color-text);
+  }
+
+  .past-card-year {
+    font-family: var(--font-body);
+    font-size: 11px;
+    line-height: 14px;
+    color: var(--color-text-light);
+    flex-shrink: 0;
+  }
+
+  .past-card-tagline {
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--color-text-muted);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .page {
+      padding: 60px 40px 40px;
+      gap: 36px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 48px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page {
+      padding: 40px 20px 32px;
+      gap: 32px;
+    }
+
+    .hero {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      line-height: 40px;
+    }
+
+    .hero-right {
+      align-items: flex-start;
+    }
+
+    .featured-grid {
+      flex-direction: column;
+    }
+
+    .alr-section {
+      flex-direction: column;
+    }
+
+    .scroll-row {
+      flex-wrap: nowrap;
+    }
+
+    .past-card {
+      flex: 0 0 200px;
+    }
+  }
+</style>

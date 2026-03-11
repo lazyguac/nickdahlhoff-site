@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(project => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+const statusLabels: Record<string, string> = {
+  current: 'Active',
+  featured: 'Sold',
+  archive: 'Archive',
+};
+---
+
+<BaseLayout title={`${project.data.title} — Nick Dahlhoff`} description={project.data.tagline}>
+  <article class="project-page">
+    <div class="container">
+      <a href="/" class="back-link">&larr; Back</a>
+
+      <header class="project-header">
+        <div class="project-meta">
+          <span class="project-year">{project.data.year}</span>
+          <span class="project-status">{statusLabels[project.data.status]}</span>
+        </div>
+        <h1>{project.data.title}</h1>
+        <p class="project-tagline">{project.data.tagline}</p>
+        {project.data.tech && project.data.tech.length > 0 && (
+          <div class="project-tech">
+            {project.data.tech.map((t: string) => <span class="tech-tag">{t}</span>)}
+          </div>
+        )}
+        {project.data.url && (
+          <a href={project.data.url} class="project-url" target="_blank" rel="noopener">
+            Visit site &rarr;
+          </a>
+        )}
+      </header>
+
+      <div class="project-content">
+        <Content />
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .project-page {
+    padding: var(--space-xl) 0 var(--space-3xl);
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  .back-link:hover {
+    color: var(--color-text);
+  }
+
+  .project-header {
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .project-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .project-year {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+  }
+
+  .project-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  .project-header h1 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .project-tagline {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+  }
+
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    background: var(--color-tag-bg);
+    border-radius: 4px;
+    color: var(--color-text-muted);
+  }
+
+  .project-url {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent-orange);
+  }
+
+  /* Markdown content styling */
+  .project-content :global(h2) {
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    font-weight: 700;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .project-content :global(h3) {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .project-content :global(p) {
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+    line-height: 1.75;
+    max-width: 65ch;
+  }
+
+  .project-content :global(ul),
+  .project-content :global(ol) {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+    max-width: 65ch;
+  }
+
+  .project-content :global(li) {
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+  }
+
+  .project-content :global(strong) {
+    font-weight: 600;
+  }
+
+  .project-content :global(img) {
+    width: 100%;
+    max-width: 720px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: var(--color-border);
+    margin: var(--space-lg) 0;
+    display: block;
+    border: 1px solid var(--color-border);
+  }
+
+  @media (max-width: 640px) {
+    .project-header h1 {
+      font-size: 1.75rem;
+    }
+
+    .project-content :global(img) {
+      height: 200px;
+    }
+  }
+</style>

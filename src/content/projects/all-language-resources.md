@@ -4,7 +4,9 @@ tagline: Language learning content business — reviews, courses, email funnels,
 status: featured
 order: 3
 url: https://alllanguageresources.com
-tech: [WordPress, SEO, ConvertKit, Affiliate Marketing]
+tech: [WordPress, Ahrefs, SEMrush, ConvertKit, ClickUp, Google Analytics, YouTube]
+skills: [SEO & Content Strategy, Affiliate Marketing, Team Management, Content Operations, Copywriting, Email Marketing, Revenue Optimization, Sales & Partnerships]
+heroImage: /images/placeholder-alr-hero.svg
 year: "2016–2021"
 revenue: "~$960K"
 ---

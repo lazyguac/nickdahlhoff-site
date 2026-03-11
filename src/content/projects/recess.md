@@ -1,9 +1,11 @@
 ---
 title: Recess in the Neighborhood
-tagline: A 70,000 sq ft family center combining daycare, enrichment programs, and community spaces — deeply researched and planned, paused when I realized I wasn't the right solo founder to execute it.
+tagline: Family center combining daycare, enrichment programs, and community spaces. Planned extensively, paused at the fundraising stage.
 status: archive
 order: 4
-tech: [Business Planning, Financial Modeling, Tokenomics, AI Research]
+tech: [Cursor, Claude]
+skills: [Business Planning, Financial Modeling, Market Research, Competitive Analysis, Go-to-Market Strategy]
+heroImage: /images/placeholder-recess-hero.svg
 year: "2025–2026"
 ---
 

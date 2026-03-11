@@ -1,10 +1,12 @@
 ---
 title: Manga Method
-tagline: Language learning through comics — tap words for translations and audio, with user-generated content for any language pair.
+tagline: Language learning through webtoon comics with tap-to-translate. First software product — content and development costs led me to shelve it.
 status: archive
 order: 8
-tech: [Web App, UGC Platform, Language Learning]
-year: "~2019"
+tech: [Web App, CMS]
+skills: [Product Management, Content Sourcing, Vendor Management]
+heroImage: /images/placeholder-manga-hero.svg
+year: "2019"
 ---
 
 My first real attempt at building a software product. I'd seen tap-to-translate work well for reading comics in a foreign language, but only for a single language. I thought there was an opportunity to do it across multiple languages — though in retrospect, the product was way too complex for the resources I had.
@@ -14,8 +16,6 @@ My first real attempt at building a software product. I'd seen tap-to-translate 
 Webtoon-style comics formatted for phone. You read through panels in your target language. Tap on text to hear voice acting. Double-tap for a full sentence translation. Tap individual words for word-by-word translations and audio. The same comic could be available in multiple languages.
 
 The ambitious part was user-generated content. Users could add their own translations and voice recordings, which enabled any language pair — Korean to Spanish, not just everything through English. We got thousands of lines translated into different languages. People did voice recordings too, just fewer.
-
-![Manga Method reading interface with translation overlay](/images/placeholder-manga-interface.jpg)
 
 ## The build
 

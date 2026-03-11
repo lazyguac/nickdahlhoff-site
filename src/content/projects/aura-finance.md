@@ -1,9 +1,11 @@
 ---
 title: Aura Finance
-tagline: Two years managing day-to-day content for a DeFi protocol — social media, images, video, mostly on Twitter/X.
+tagline: Part-time content marketing for a DeFi protocol during the move from Beijing to Michigan.
 status: archive
 order: 5
-tech: [DeFi, Content Strategy, AI Image/Video, Twitter/X]
+tech: [Twitter/X, Canva, AI Image Generation, AI Video Generation]
+skills: [Content Marketing, Social Media Management, Visual Content Creation, DeFi & Crypto Knowledge, AI Media Production]
+heroImage: /images/placeholder-aura-hero.svg
 year: "2024–2025"
 ---
 
@@ -24,8 +26,6 @@ It was a tough time for any DeFi protocol on social media. Interest in the niche
 ## Where I actually grew: AI media
 
 The unexpected upside. I'm not a graphic designer but was doing my best in Canva. When AI image generation got good, I started using it heavily. Same with video generation. This was the period that made me genuinely competent with AI-generated visual content.
-
-![AI-generated content examples from Aura Finance work](/images/placeholder-aura-content.jpg)
 
 ## The governance situation
 

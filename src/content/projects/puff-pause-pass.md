@@ -1,10 +1,12 @@
 ---
 title: Puff Pause Pass
-tagline: A cannabis moderation app — built in days with AI tools. More portfolio piece than product.
+tagline: Cannabis moderation app with voice journaling and AI-extracted tracking. Built quickly, mostly a portfolio piece.
 status: archive
 order: 6
 url: https://puffpausepass.com
-tech: [Next.js, Convex, Claude API, Netlify]
+tech: [Next.js, React, Convex, Claude API, Netlify, Cursor]
+skills: [Full-Stack Development, AI Integration, Rapid Prototyping]
+heroImage: /images/placeholder-ppp-hero.svg
 year: "2026"
 ---
 
@@ -15,8 +17,6 @@ I have a long history with marijuana and tend to be all-or-nothing with it. Ther
 Voice-first journaling focused on cannabis consumption, mood, spending, and patterns. You talk through what's on your mind and the AI extracts structured data from the free-form entry. No manual logging, no forms. The app visualizes that data over time: consumption trends, mood correlations, streak tracking.
 
 All the features work — journaling, AI processing, voice input, dashboards, and community features. Built with Cursor and Claude Code, deployed on Netlify with a Convex backend. It didn't take long to build — a side project, not full-time work.
-
-![Puff Pause Pass dashboard and journaling interface](/images/placeholder-ppp-dashboard.jpg)
 
 ## The honest assessment
 

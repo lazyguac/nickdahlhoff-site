@@ -14,10 +14,14 @@ const archiveProjects = allProjects
   .filter(p => p.data.status === 'archive')
   .sort((a, b) => a.data.order - b.data.order);
 
-const badgeColors: Record<string, string> = {
-  green: '#6B8F6B',
-  orange: '#D4843A',
-};
+function shortenYear(yr: string): string {
+  return yr
+    .replace(/(\d{2})(\d{2})–(\d{2})(\d{2})/g, (_, c1, y1, c2, y2) =>
+      c1 === c2 ? `${c1}${y1}–${y2}` : `${c1}${y1}–${c2}${y2}`)
+    .replace(/(\d{4}),\s*(\d{2})(\d{2})/g, (_, first, c2, y2) =>
+      `${first}, ${y2}`)
+    .replace(/–present/, '–');
+}
 ---
 
 <BaseLayout title="Nick Dahlhoff">
@@ -26,7 +30,7 @@ const badgeColors: Record<string, string> = {
     <section class="hero">
       <div class="hero-left">
         <h1>Nick Dahlhoff</h1>
-        <p class="hero-sub">Poker pro, English teacher in Beijing, built & sold a website for ~$1M, now doing AI.</p>
+        <p class="hero-sub">Background in content marketing and digital businesses. Now building AI products and helping small businesses improve their systems.</p>
       </div>
       <div class="hero-right">
         <a href="#consulting" class="consulting-link">Open for consulting &rarr;</a>
@@ -34,63 +38,46 @@ const badgeColors: Record<string, string> = {
       </div>
     </section>
 
-    <!-- Featured Projects (dark cards) -->
-    <section class="featured-grid">
+    <!-- Current Projects -->
+    <section class="current-grid">
       {currentProjects.map(project => (
-        <a href={`/projects/${project.id}`} class="featured-card">
-          <div class="featured-header">
-            <h2 class="featured-title">{project.data.title}</h2>
+        <a href={`/projects/${project.id}`} class="current-card">
+          <div class="current-header">
+            <h2 class="current-title">{project.data.title}</h2>
             {project.data.badge && (
-              <span class="featured-badge" style={`color: ${badgeColors[project.data.badgeColor || 'green']}`}>
-                {project.data.badge}
-              </span>
+              <span class="current-badge">{project.data.badge}</span>
             )}
           </div>
-          <p class="featured-tagline">{project.data.tagline}</p>
+          <p class="current-tagline">{project.data.tagline}</p>
         </a>
       ))}
     </section>
 
-    <!-- ALR (featured highlight) -->
+    <!-- ALR Featured -->
     {featuredProject && (
       <a href={`/projects/${featuredProject.id}`} class="alr-section">
         <div class="alr-left">
-          <span class="alr-revenue">{featuredProject.data.revenue}</span>
-          <div class="alr-meta">
-            <span class="alr-title">{featuredProject.data.title}</span>
-            <span class="alr-year">Built 2016 &middot; Sold 2021</span>
-          </div>
+          <span class="alr-title">All Language Resources</span>
+          <span class="alr-dates">Built '16 &middot; Sold '21</span>
         </div>
         <div class="alr-right">
-          <p class="alr-description">Started as a blog while teaching in Beijing. Grew into a top language learning affiliate site. Five years of SEO and stubbornness.</p>
+          <p class="alr-description">Started reviewing Chinese learning apps while teaching in Beijing. Grew it into a 20+ language affiliate site — content strategy, team of six writers, email funnels, affiliate partnerships, YouTube, and custom ad systems. Sold in 2021 for $960,000.</p>
         </div>
       </a>
     )}
 
-    <!-- Past Work -->
-    <section class="past-work">
-      <div class="past-header">
-        <span class="past-label">The winding road</span>
-        <svg width="24" height="10" viewBox="0 0 24 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 5H22M22 5L18 1M22 5L18 9" stroke="#3A3228" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="scroll-row">
-        {archiveProjects.map(project => {
-          const yr = project.data.year;
-          const shortYear = yr.includes('–')
-            ? yr.replace(/20(\d{2})/g, '$1').replace(/–present/, '–')
-            : yr;
-          return (
-            <a href={`/projects/${project.id}`} class="past-card">
-              <div class="past-card-header">
-                <span class="past-card-title">{project.data.title}</span>
-                <span class="past-card-year">{shortYear}</span>
-              </div>
-              <p class="past-card-tagline">{project.data.tagline}</p>
-            </a>
-          );
-        })}
+    <!-- The Winding Road -->
+    <section class="archive-section">
+      <span class="archive-label">The winding road</span>
+      <div class="archive-list">
+        {archiveProjects.map(project => (
+          <a href={`/projects/${project.id}`} class="archive-row">
+            <div class="archive-bar"></div>
+            <span class="archive-name">{project.data.title}</span>
+            <span class="archive-desc">{project.data.tagline}</span>
+            <span class="archive-year">{shortenYear(project.data.year)}</span>
+          </a>
+        ))}
       </div>
     </section>
   </div>
@@ -100,50 +87,55 @@ const badgeColors: Record<string, string> = {
   .page {
     max-width: 1240px;
     margin: 0 auto;
-    padding: 80px 100px 60px;
+    padding: 60px 100px;
     display: flex;
     flex-direction: column;
-    gap: 48px;
   }
 
   /* Hero */
   .hero {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .hero h1 {
     font-family: var(--font-display);
-    font-size: 68px;
+    font-size: 72px;
     font-weight: 900;
-    letter-spacing: -0.04em;
-    line-height: 68px;
+    letter-spacing: -0.02em;
+    line-height: 1;
     color: var(--color-text);
-    margin-bottom: 8px;
   }
 
   .hero-sub {
-    font-family: var(--font-display);
-    font-size: 15px;
+    font-family: var(--font-serif);
+    font-size: 18px;
     font-style: italic;
-    line-height: 22px;
-    color: var(--color-accent-orange);
+    line-height: 1.4;
+    color: var(--color-accent-gold);
   }
 
   .hero-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 6px;
+    gap: 4px;
     flex-shrink: 0;
+    padding-top: 8px;
   }
 
   .consulting-link {
     font-family: var(--font-body);
     font-size: 14px;
     font-weight: 500;
-    line-height: 20px;
+    line-height: 18px;
     color: var(--color-accent-green);
     text-decoration: underline;
     text-decoration-thickness: 1px;
@@ -151,7 +143,7 @@ const badgeColors: Record<string, string> = {
   }
 
   .consulting-link:hover {
-    color: var(--color-accent-green);
+    color: var(--color-accent-green-dark);
   }
 
   .hero-location {
@@ -161,74 +153,76 @@ const badgeColors: Record<string, string> = {
     color: var(--color-text-muted);
   }
 
-  /* Featured Projects (dark cards) */
-  .featured-grid {
+  /* Current Projects */
+  .current-grid {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     width: 100%;
+    margin-top: 40px;
   }
 
-  .featured-card {
+  .current-card {
     flex: 1 1 0%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 24px;
+    gap: 12px;
     padding: 28px 32px;
-    background: var(--color-card-dark);
-    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    border-left: 5px solid var(--color-accent-green);
+    border-radius: 8px;
     text-decoration: none;
-    color: var(--color-card-dark-text);
+    color: inherit;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
 
-  .featured-card:hover {
+  .current-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     text-decoration: none;
   }
 
-  .featured-header {
+  .current-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .featured-title {
+  .current-title {
     font-family: var(--font-display);
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 28px;
-    color: var(--color-card-dark-text);
+    line-height: 34px;
+    color: var(--color-text);
     margin: 0;
   }
 
-  .featured-badge {
+  .current-badge {
     font-family: var(--font-body);
     font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    line-height: 16px;
+    line-height: 14px;
+    color: var(--color-accent-green-dark);
   }
 
-  .featured-tagline {
+  .current-tagline {
     font-family: var(--font-body);
     font-size: 14px;
     font-weight: 400;
-    line-height: 21px;
-    color: var(--color-card-dark-muted);
+    line-height: 1.5;
+    color: var(--color-text-body);
   }
 
   /* ALR Section */
   .alr-section {
     display: flex;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
+    margin-top: 40px;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
 
@@ -240,38 +234,24 @@ const badgeColors: Record<string, string> = {
 
   .alr-left {
     display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    padding: 24px 32px;
-    gap: 20px;
-    background: var(--color-accent-olive);
-  }
-
-  .alr-revenue {
-    font-family: var(--font-display);
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 32px;
-    letter-spacing: -0.02em;
-    color: var(--color-card-dark-faded);
-  }
-
-  .alr-meta {
-    display: flex;
     flex-direction: column;
-    gap: 2px;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 280px;
+    padding: 32px 36px;
+    gap: 8px;
+    background: var(--color-accent-olive);
   }
 
   .alr-title {
     font-family: var(--font-display);
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 700;
-    line-height: 24px;
-    letter-spacing: -0.02em;
+    line-height: 1.15;
     color: var(--color-card-dark-text);
   }
 
-  .alr-year {
+  .alr-dates {
     font-family: var(--font-body);
     font-size: 12px;
     line-height: 16px;
@@ -282,133 +262,112 @@ const badgeColors: Record<string, string> = {
     display: flex;
     align-items: center;
     flex-grow: 1;
-    padding: 24px 32px;
+    padding: 28px 40px;
     background: var(--color-olive-bg);
   }
 
   .alr-description {
-    font-family: var(--font-display);
-    font-size: 14px;
-    font-weight: 400;
+    font-family: var(--font-serif);
+    font-size: 17px;
     font-style: italic;
-    line-height: 21px;
+    line-height: 1.65;
     color: var(--color-text-overlay);
   }
 
-  /* Past Work */
-  .past-work {
+  /* Archive Section */
+  .archive-section {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    margin-top: 48px;
     width: 100%;
   }
 
-  .past-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .past-label {
-    font-family: var(--font-display);
+  .archive-label {
+    font-family: var(--font-serif);
     font-size: 15px;
     font-style: italic;
-    line-height: 20px;
+    line-height: 18px;
     color: var(--color-text-muted);
+    margin-bottom: 16px;
   }
 
-  .past-header svg {
-    opacity: 0.5;
-  }
-
-  .scroll-row {
-    display: flex;
-    gap: 12px;
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 4px;
-  }
-
-  .scroll-row::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  .scroll-row::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .scroll-row::-webkit-scrollbar-thumb {
-    background: var(--color-border);
-    border-radius: 2px;
-  }
-
-  .past-card {
-    flex: 1 1 0%;
-    min-width: 160px;
+  .archive-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 20px;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
+  }
+
+  .archive-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border);
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.15s ease;
+    transition: background 0.15s ease;
   }
 
-  .past-card:hover {
-    border-color: var(--color-border-hover);
+  .archive-row:last-child {
+    border-bottom: none;
+  }
+
+  .archive-row:hover {
+    background: rgba(0,0,0,0.02);
     text-decoration: none;
   }
 
-  .past-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 8px;
-  }
-
-  .past-card-title {
-    font-family: var(--font-display);
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 22px;
-    color: var(--color-text);
-  }
-
-  .past-card-year {
-    font-family: var(--font-body);
-    font-size: 11px;
-    line-height: 14px;
-    color: var(--color-text-light);
+  .archive-bar {
+    width: 3px;
+    height: 32px;
+    background: var(--color-text);
+    border-radius: 2px;
     flex-shrink: 0;
   }
 
-  .past-card-tagline {
+  .archive-name {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--color-text);
+    width: 240px;
+    flex-shrink: 0;
+  }
+
+  .archive-desc {
     font-family: var(--font-body);
     font-size: 13px;
-    line-height: 18px;
+    line-height: 16px;
+    color: var(--color-text-body);
+    flex: 1 1 0%;
+  }
+
+  .archive-year {
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 16px;
     color: var(--color-text-muted);
+    flex-shrink: 0;
   }
 
   /* Responsive */
   @media (max-width: 1024px) {
     .page {
-      padding: 60px 40px 40px;
-      gap: 36px;
+      padding: 60px 40px;
     }
 
     .hero h1 {
-      font-size: 48px;
-      line-height: 48px;
+      font-size: 52px;
+    }
+
+    .archive-name {
+      width: 180px;
     }
   }
 
   @media (max-width: 768px) {
     .page {
-      padding: 40px 20px 32px;
-      gap: 32px;
+      padding: 40px 20px;
     }
 
     .hero {
@@ -419,27 +378,56 @@ const badgeColors: Record<string, string> = {
 
     .hero h1 {
       font-size: 40px;
-      line-height: 40px;
     }
 
     .hero-right {
       align-items: flex-start;
+      padding-top: 0;
     }
 
-    .featured-grid {
+    .current-grid {
       flex-direction: column;
+      margin-top: 32px;
     }
 
     .alr-section {
       flex-direction: column;
+      margin-top: 32px;
     }
 
-    .scroll-row {
-      flex-wrap: nowrap;
+    .alr-left {
+      width: 100%;
+      padding: 24px 28px;
     }
 
-    .past-card {
-      flex: 0 0 200px;
+    .alr-right {
+      padding: 24px 28px;
+    }
+
+    .archive-section {
+      margin-top: 36px;
+    }
+
+    .archive-row {
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      padding: 16px 12px;
+    }
+
+    .archive-name {
+      width: auto;
+      flex: 1;
+    }
+
+    .archive-year {
+      order: -1;
+      width: auto;
+    }
+
+    .archive-desc {
+      width: 100%;
+      flex-basis: 100%;
+      padding-left: 19px;
     }
   }
 </style>

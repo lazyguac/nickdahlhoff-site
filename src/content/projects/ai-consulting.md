@@ -1,9 +1,11 @@
 ---
 title: AI Consulting
-tagline: Helping small businesses in West Michigan improve their operations with AI — from automation to custom tools to better systems.
+tagline: Helping small businesses in West Michigan automate and build custom tools with AI.
 status: current
 order: 2
-tech: [Claude, AI Agents, Automation, Python]
+tech: [Python, Claude, Claude Code, Puppeteer, Astro]
+skills: [AI Consulting, Business Automation, Pipeline Development, AI-Assisted Development, Sales & Outreach]
+heroImage: /images/placeholder-consulting-hero.svg
 year: "2026–present"
 badge: "Booking"
 badgeColor: orange
@@ -27,8 +29,6 @@ Depends on the business. Find the highest-leverage inefficiency and fix it. Comm
 
 Whatever the pain point is, it's probably solvable. The first step is understanding the business, and then figuring out a solution that actually fits how they work.
 
-![AI workflow consulting session](/images/placeholder-consulting-session.jpg)
-
 ## The distribution system
 
 I built an AI pipeline to find and reach potential clients. It scrapes local businesses that fit the profile, researches each one, and then a six-agent pipeline generates a personalized outreach package — a custom postcard with AI-generated imagery and a customized landing page on nickdahlhoff.com explaining how I could help them specifically.
@@ -38,3 +38,11 @@ The funnel is: postcard → personalized website → booking. The plan is to sen
 ## Where it stands
 
 Pre-launch. No clients yet, no postcards sent yet. The pipeline is mostly built, the website needs to go live. Haven't done any consulting work yet — paid or unpaid. The work itself I'm confident in. The client acquisition is the unknown.
+
+---
+
+<h2 id="updates">Updates</h2>
+
+### March 2026
+
+Built the full prospecting pipeline: broad scrape to find local businesses, deep scrape to research each one, then a six-agent pipeline that generates personalized postcards and landing pages. Personal website (nickdahlhoff.com) is live. Next step: send the first batch of postcards and see what converts.

@@ -1,10 +1,12 @@
 ---
 title: Fantasy Joes
-tagline: Generate your own fantasy football rankings through head-to-head player picks. Prove you know more than the experts — then bet on it in stablecoin tournaments.
+tagline: Fantasy football ranking game where your picks generate your own player rankings. Real money tournaments planned for the 2026 NFL season.
 status: current
 order: 1
 url: https://fantasyjoes.gg
-tech: [Next.js, React, Convex, Sleeper API, ESPN API]
+tech: [Next.js, React, TypeScript, Convex, Tailwind CSS, Framer Motion, Radix UI, Sleeper API, ESPN API, Python]
+skills: [Full-Stack Development, Real-Time Systems, Game Design, Algorithm Design, API Integration, Product Management, AI-Assisted Development, Data Pipeline Design, UI/UX Design]
+heroImage: /images/placeholder-fj-hero.svg
 year: "2024–present"
 badge: "Active"
 badgeColor: green
@@ -20,8 +22,6 @@ Making manual rankings is tedious and appeals to almost nobody. But if you show 
 
 I noticed from personal experience that I often didn't actually know my preference between two players until forced to choose. People follow expert rankings too rigidly rather than picking who they actually want. The duel format forces real decisions — and opens up the ranking process to way more people.
 
-![Fantasy Joes duel interface](/images/placeholder-fj-duel.jpg)
-
 ## The first build (late 2024)
 
 Built it with a freelance developer — the same person who'd worked on Alpaca College. Supabase backend, Bubble frontend. I was the product manager: explaining data sources, API connections, sketching flows, defining logic.
@@ -36,8 +36,6 @@ Picked it back up in early March 2026. Only part-time work so far, but it's comi
 
 The difference with AI development tools is significant. In about 1-2 weeks of part-time work, I have a version that's dramatically better than what took months and real money the first time. The UI looks better (designed in [Paper](https://paper.design)), I've got custom player art (comics and caricatures), and things that would have taken the freelancer weeks I can build in hours. Kept some core logic from the old version but basically building from scratch with Claude Code.
 
-![Fantasy Joes player cards with custom AI-generated art](/images/placeholder-fj-cards.jpg)
-
 ## What's next
 
 **Monetization is stablecoin tournaments.** That's been the plan from the start. Tournament style: play over a week, bet on your ranking accuracy. Different feel from DraftKings/FanDuel — not hardcore dopamine-hit drafting. More of a weekly play, weekly bet. Entry fees, prize pools, rake.
@@ -49,3 +47,11 @@ Targeting the 2026 NFL season. The core ranking system works. Still need tournam
 ## Why this one fits
 
 After Recess, where everything after the planning phase required heavy social execution, Fantasy Joes is all digital, all systems. I'm comfortable with every piece of the remaining work. That's a different feeling.
+
+---
+
+<h2 id="updates">Updates</h2>
+
+### March 2026
+
+Picked the project back up and rebuilt from scratch using Claude Code. In about 1–2 weeks of part-time work, the new version already surpasses what took months and real money with a freelancer. Designed the UI in [Paper](https://paper.design), added custom AI-generated player art (comics and caricatures), and built a 19-table relational schema on Convex with real-time syncing. The core Elo ranking system, duel mechanics, and multi-week scoring pipeline are all functional. Next up: tournaments and draft mode for the 2026 NFL season.

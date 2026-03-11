@@ -1,9 +1,11 @@
 ---
 title: Alpaca & Llama College
-tagline: Two attempts at organizing DeFi information. Neither found traction.
+tagline: DeFi content aggregator. Built it twice, two years apart, neither found traction.
 status: archive
 order: 7
-tech: [Bubble, OpenAI API, Discord Bots, Twitter API]
+tech: [Bubble, OpenAI API, Discord Bots, Twitter API, RSS]
+skills: [Product Management, No-Code Development, Bot Development, Content Curation]
+heroImage: /images/placeholder-alpaca-hero.svg
 year: "2022, 2024"
 ---
 

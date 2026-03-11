@@ -10,6 +10,12 @@ const projects = defineCollection({
     order: z.number(), // Lower = higher on page
     url: z.string().optional(),
     tech: z.array(z.string()).optional(),
+    skills: z.array(z.string()).optional(),
+    heroImage: z.string().optional(), // Path to hero image
+    latestUpdate: z.object({
+      date: z.string(),
+      summary: z.string(),
+    }).optional(),
     year: z.string(), // "2024-present" or "2018-2021"
     badge: z.string().optional(), // e.g. "Active", "Booking"
     badgeColor: z.enum(['green', 'orange']).optional(),

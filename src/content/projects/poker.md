@@ -1,9 +1,11 @@
 ---
 title: Online Poker
-tagline: About ten years of professional online poker — funded college, traveled Latin America, then moved on.
+tagline: Played professionally through college and across Latin America. Funded travel, taught me resilience, then I moved on.
 status: archive
 order: 10
-tech: [PLO, Bankroll Management, Probability]
+tech: [Online Poker Platforms, Equity Calculators]
+skills: [Risk Management, Analytical Thinking, Emotional Discipline, Bankroll Management]
+heroImage: /images/placeholder-poker-hero.svg
 year: "2006–2016"
 ---
 

@@ -1,9 +1,11 @@
 ---
 title: Teaching in Beijing
-tagline: Three and a half years of ESL teaching — from survival job to building phonics curriculum and leading a first-grade team.
+tagline: Three years in Beijing — ESL, first-grade homeroom, and a phonics program. I still sell teaching resources on Teachers Pay Teachers.
 status: archive
 order: 9
-tech: [Education, Curriculum Design, Phonics, TPT]
+tech: [Teachers Pay Teachers, Fiverr]
+skills: [Curriculum Design, Team Leadership, Classroom Management, Educational Material Creation, Cross-Cultural Communication]
+heroImage: /images/placeholder-teaching-hero.svg
 year: "2016–2019"
 ---
 
@@ -16,8 +18,6 @@ I generally enjoy teaching. I'd done some volunteer ESL work with refugees at Mi
 First through fifth graders, about 16 different classes, roughly 40 students per class. I saw each class once or twice a week. You never actually get to know any of your students at that volume.
 
 It wasn't very me. Extremely basic English — songs, flashcards, simple vocabulary — just trying to get kids engaged and saying stuff. But as a first job in Beijing, it was way better than a lot of other options.
-
-![Teaching English in a Beijing classroom](/images/placeholder-teaching-classroom.jpg)
 
 ## Huijia International School
 

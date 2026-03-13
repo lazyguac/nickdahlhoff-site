@@ -6,7 +6,7 @@ order: 5
 tech: [Twitter/X, Canva, AI Image Generation, AI Video Generation]
 skills: [Content Marketing, Social Media Management, Visual Content Creation, DeFi & Crypto Knowledge, AI Media Production]
 heroImage: /images/placeholder-aura-hero.svg
-year: "2024–2025"
+year: "2024–2026"
 ---
 
 Started in early 2024 as part-time content for Aura Finance, a DeFi protocol built on Balancer. The work was managing day-to-day content — social media posts, images, video, mostly on Twitter/X.
@@ -37,6 +37,3 @@ The process took much longer than I expected — 6-8 weeks instead of 2-3. I com
 
 I regret the way I handled it — not the intent, but the execution. Continued my Aura work normally afterward.
 
-## The exit
-
-Late November 2025, Balancer had a massive hack — about $100 million. Around that time, we agreed that the same regular posting cadence didn't make sense to continue, so we called it quits. Good terms.

@@ -6,6 +6,7 @@ order: 4
 tech: [Cursor, Claude]
 skills: [Business Planning, Financial Modeling, Market Research, Competitive Analysis, Go-to-Market Strategy]
 heroImage: /images/placeholder-recess-hero.svg
+url: https://recessintheneighborhood.com
 year: "2025–2026"
 ---
 

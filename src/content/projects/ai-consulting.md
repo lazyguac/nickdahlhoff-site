@@ -6,6 +6,7 @@ order: 2
 tech: [Python, Claude, Claude Code, Puppeteer, Astro]
 skills: [AI Consulting, Business Automation, Pipeline Development, AI-Assisted Development, Sales & Outreach]
 heroImage: /images/placeholder-consulting-hero.svg
+url: /consulting
 year: "2026–present"
 badge: "Booking"
 badgeColor: orange

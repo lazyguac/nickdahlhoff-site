@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Magnolia Design Co. | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="AI consulting for Sweet Magnolia Design Co., a Conklin-based interior design firm serving Grand Rapids with a perfect five-star record across six years of residential and commercial projects.">
+  <meta property="og:title" content="Sweet Magnolia Design Co. | Nick Dahlhoff, AI Consulting">
+  <meta property="og:description" content="AI consulting for Sweet Magnolia Design Co., a Conklin-based interior design firm serving Grand Rapids with a perfect five-star record across six years of residential and commercial projects.">
+  <meta property="og:image" content="hero.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FDF6EC;
+      --color-surface: #FFFFFF;
+      --color-surface-alt: #F5EDE0;
+      --color-text: #2D2D2D;
+      --color-text-secondary: #8C8177;
+      --color-text-light: #A09890;
+      --color-accent: #D4853A;
+      --color-accent-hover: #B8652A;
+      --color-accent-light: #F5E6D4;
+      --color-border: #E5DDD3;
+      --color-success: #2D6A4F;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 80vh;
+      background: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .hero-inner {
+      max-width: 1280px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-text {
+      grid-column: 1;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--color-text);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subhead {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .hero-image {
+      grid-column: 2;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(45, 45, 45, 0.08);
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .hero-cta {
+      grid-column: 1;
+    }
+
+    .hero-cta .btn-primary {
+      margin-top: 2rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      background-color: var(--color-accent);
+      border: none;
+      border-radius: 8px;
+      padding: 16px 32px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* Body Section — Part 1 */
+    .body-part1 {
+      background: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part1 .content-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part1 .first-paragraph {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      border-left: 3px solid rgba(212, 133, 58, 0.3);
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .body-part1 p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Amber rule between parts */
+    .section-rule {
+      max-width: 720px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid rgba(212, 133, 58, 0.2);
+    }
+
+    /* Body Section — Part 2 */
+    .body-part2 {
+      background: var(--color-surface-alt);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part2 .content-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part2 p {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Why Me Section */
+    .why-me {
+      background: var(--color-surface);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .why-me-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .why-me-photo {
+      display: flex;
+      justify-content: center;
+      padding-top: 0.5rem;
+    }
+
+    .why-me-photo img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-border);
+    }
+
+    .why-me-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text);
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .why-me-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .why-me-list li {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      text-align: left;
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+
+    .why-me-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .point-number {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1.6;
+      flex-shrink: 0;
+      width: 1.5rem;
+    }
+
+    .point-text strong {
+      font-weight: 600;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    /* Pricing Card */
+    .pricing-card-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: clamp(48px, 6vw, 80px);
+    }
+
+    .pricing-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(45, 45, 45, 0.06);
+      padding: 2.5rem;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .pricing-card h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-card .price {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.25rem;
+      text-align: left;
+    }
+
+    .pricing-card ul li {
+      padding: 0.4rem 0;
+      font-size: 1rem;
+      color: var(--color-text);
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .pricing-card ul li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    .pricing-card .subtext {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-card .btn-primary {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Contact Options */
+    .contact-options {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .contact-form-card,
+    .book-call-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .contact-form-card h3,
+    .book-call-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: 12px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-bg);
+      color: var(--color-text);
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(212, 133, 58, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-submit {
+      margin-top: 0.5rem;
+    }
+
+    .form-submit .btn-primary {
+      width: 100%;
+      text-align: center;
+    }
+
+    #formSuccess {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    #formSuccess h4 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--color-success);
+      margin-bottom: 0.5rem;
+    }
+
+    #formSuccess p {
+      color: var(--color-text-secondary);
+    }
+
+    .book-call-card p {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .book-call-card .btn-primary {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+      padding: 2.5rem 24px;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+
+    .footer a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer a:hover {
+      color: var(--color-accent-hover);
+    }
+
+    .footer p {
+      margin-bottom: 0.35rem;
+    }
+
+    .footer p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text {
+        grid-column: 1;
+        order: 1;
+      }
+
+      .hero-image {
+        grid-column: 1;
+        order: 2;
+        max-height: 50vh;
+      }
+
+      .hero-cta {
+        grid-column: 1;
+        order: 3;
+        text-align: center;
+      }
+
+      .why-me-inner {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .why-me-photo {
+        justify-content: center;
+      }
+
+      .why-me-content h2 {
+        text-align: left;
+      }
+
+      .contact-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body {
+        font-size: 12pt;
+      }
+      .btn-primary,
+      .book-call-card,
+      .contact-form-card {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1 class="hero-headline">Six years of clients and every single one gave you five stars. They mention you by name and say you understood what they wanted before they could explain it themselves.</h1>
+        <p class="hero-subhead">The design work speaks for itself. The operational side of a firm like yours can get a lot simpler than it probably is right now.</p>
+      </div>
+      <div class="hero-image">
+        <!-- Hero image: warm interior design studio scene with a designer listening intently to a couple at a worktable covered with material samples and fabric books, a pinboard of finished rooms in varied styles on the wall behind her. -->
+        <img src="hero.png" alt="Illustration of an interior design studio consultation scene">
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Let's Talk About Sweet Magnolia Design Co.</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body Part 1 — Their Business -->
+  <section class="body-part1">
+    <div class="content-wrap">
+      <p class="first-paragraph">You work out of Conklin and pull clients from across the Grand Rapids area anyway. You take on everything from a one-room consultation to a full build-out, and the way you structure your services (guidance for the DIY-minded, full design for clients who want to hand it off) means you're meeting people wherever they are. Your commercial work with Hoekstra shows a firm that's growing past the typical residential-only ceiling.</p>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- Body Part 2 — The Offer -->
+  <section class="body-part2">
+    <div class="content-wrap">
+      <p>You've probably had the thought more than once: all the vendor emails about delivery dates, the project details you're carrying around in your head, client messages coming in through four different apps. A two-person firm juggling residential and commercial projects at the same time has a lot of coordination that could just happen on its own. I spend a day at your location learning how things actually run, then build whatever saves the most time. The stuff that eats your week starts handling itself, you stop being the bottleneck on every update and every decision, and the business keeps the personal touch your clients talk about without requiring you to personally touch everything. Worth a conversation.</p>
+    </div>
+  </section>
+
+  <!-- Why Me Section -->
+  <section class="why-me">
+    <div class="why-me-inner">
+      <div class="why-me-photo">
+        <img src="nick-headshot.png" alt="Nick Dahlhoff">
+      </div>
+      <div class="why-me-content">
+        <h2>Why me</h2>
+        <ol class="why-me-list">
+          <li>
+            <span class="point-number">1.</span>
+            <span class="point-text"><strong>AI expert.</strong> I work with AI tools every day — workflow automation, content strategy, data analysis, software development. I know what actually works and what's hype.</span>
+          </li>
+          <li>
+            <span class="point-number">2.</span>
+            <span class="point-text"><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</span>
+          </li>
+          <li>
+            <span class="point-number">3.</span>
+            <span class="point-text"><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</span>
+          </li>
+          <li>
+            <span class="point-number">4.</span>
+            <span class="point-text"><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</span>
+          </li>
+          <li>
+            <span class="point-number">5.</span>
+            <span class="point-text"><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="contact">
+    <!-- Pricing Card -->
+    <div class="pricing-card-wrap">
+      <div class="pricing-card">
+        <h3>On-Site Consulting</h3>
+        <div class="price">$750 / day</div>
+        <ul>
+          <li>On-site at your location (West Michigan)</li>
+          <li>Research + planning + implementation</li>
+          <li>Documentation + training</li>
+          <li>Follow-up support included</li>
+        </ul>
+        <p class="subtext">Ongoing and larger projects available on request</p>
+        <a href="https://buy.stripe.com/test_8x214o5MnftB2bUbt7dfG00" target="_blank" rel="noopener" class="btn-primary">Pay Now — $750</a>
+      </div>
+    </div>
+
+    <!-- Contact Options -->
+    <div class="contact-options">
+      <!-- Contact Form -->
+      <div class="contact-form-card">
+        <h3>Send me a message</h3>
+        <form id="contactForm">
+          <input type="hidden" name="source" value="prospect_site">
+          <input type="hidden" name="slug" value="sweet-magnolia-design-co">
+          <!-- Honeypot -->
+          <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span style="color:var(--color-accent);">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone <span style="font-weight:400;color:var(--color-text-light);">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span style="color:var(--color-accent);">*</span></label>
+            <textarea id="message" name="message" required placeholder="What can I help with?"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn-primary">Send Message</button>
+          </div>
+        </form>
+        <div id="formSuccess">
+          <h4>Message sent!</h4>
+          <p>I'll get back to you soon.</p>
+        </div>
+      </div>
+
+      <!-- Book a Call -->
+      <div class="book-call-card">
+        <h3>Book a 30-minute call</h3>
+        <p>No pitch, just a conversation.</p>
+        <button class="btn-primary" data-cal-namespace="" data-cal-link="nickdahlhoff/30min" data-cal-config='{"layout":"month_view"}'>Book a Call</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Nick Dahlhoff | West Michigan</p>
+    <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <!-- Contact Form Submission -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          var data = {
+            name: form.elements.name.value || undefined,
+            email: form.elements.email.value,
+            phone: form.elements.phone.value || undefined,
+            message: form.elements.message.value,
+            source: 'prospect_site',
+            slug: form.elements.slug.value,
+            website: form.elements.website.value || undefined,
+          };
+
+          fetch('https://calculating-platypus-531.convex.site/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+            .then(function(res) {
+              if (!res.ok) throw new Error('Submission failed');
+              form.style.display = 'none';
+              success.style.display = 'block';
+            })
+            .catch(function() {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+              }
+              alert('Something went wrong — please try again or email ndahlhoff10@gmail.com directly.');
+            });
+        });
+      }
+    });
+  </script>
+
+  <!-- Cal.com Embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
+  </script>
+
+</body>
+</html>

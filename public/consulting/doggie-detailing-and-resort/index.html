@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">  <title>Doggie Detailing and Resort — What We Found | Nick Dahlhoff</title>
+  <meta name="description" content="Systems that let you spend more time caring for dogs and less time on administrative tasks — specific recommendations for Doggie Detailing and Resort.">
+  <meta property="og:title" content="Doggie Detailing and Resort — What We Found | Nick Dahlhoff">
+  <meta property="og:description" content="Systems that let you spend more time caring for dogs and less time on administrative tasks — specific recommendations for Doggie Detailing and Resort.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FEFCF8;
+      --color-surface: #FFFFFF;
+      --color-surface-alt: #F5F0E8;
+      --color-text: #1A1A1A;
+      --color-text-secondary: #5A5A5A;
+      --color-text-light: #8A8A8A;
+      --color-accent: #BC9B5D;
+      --color-accent-hover: #A8855C;
+      --color-accent-light: #F5F1E8;
+      --color-accent-secondary: #7B5E57;
+      --color-border: #E5E0D5;
+      --color-success: #2D6A4F;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.65;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
+      color: white;
+      text-align: center;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 24px;
+    }
+
+    .hero-subhead {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      opacity: 0.95;
+      font-weight: 400;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background-color: var(--color-accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.125rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--color-accent-hover);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-accent);
+      color: white;
+    }
+
+    .section-alt {
+      background-color: var(--color-surface-alt);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .card {
+      background: var(--color-surface);
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--color-border);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      color: var(--color-text);
+      margin-bottom: 16px;
+    }
+
+    .card p {
+      color: var(--color-text-secondary);
+    }
+
+    .outcomes {
+      list-style: none;
+    }
+
+    .outcomes li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      font-size: 1.125rem;
+    }
+
+    .outcomes li::before {
+      content: attr(data-icon);
+      font-size: 1.5rem;
+      margin-right: 16px;
+      margin-top: 2px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 32px 24px;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background-color: var(--color-accent);
+      color: white;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .cta-section {
+      background-color: var(--color-surface);
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .form-container {
+      background-color: var(--color-surface-alt);
+      padding: 40px;
+      border-radius: 12px;
+      margin: 40px 0;
+      text-align: left;
+    }
+
+    .cal-link {
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footer {
+      background-color: var(--color-text);
+      color: white;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .footer p {
+      margin-bottom: 8px;
+    }
+
+    .success-message {
+      background-color: var(--color-success);
+      color: white;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero h1 {
+        font-size: 2.75rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .hero-subhead {
+        font-size: 1.25rem;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .form-container {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 375px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero-subhead {
+        font-size: 1.125rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      .card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <!-- Image prompt: Warm, inviting scene of a rural farm setting with multiple happy dogs of different sizes playing freely in a large fenced outdoor area. Rolling green fields and farm buildings in the background, golden hour lighting creating a peaceful, homelike atmosphere. Dogs are engaged in natural play - some running, others exploring, a few resting under shade trees. Pixar-style warmth with slightly stylized but realistic animals showing genuine joy and comfort. -->
+    <div class="container">
+      <div class="hero-content">
+        <h1>You've mastered the hard part — dogs jumping out of cars to get inside</h1>
+        <p class="hero-subhead">What if the administrative side was just as smooth as your dog care approach?</p>
+        <a href="#cta" class="btn">Let's Talk About Doggie Detailing and Resort</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>Here's what we noticed about Doggie Detailing and Resort</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">🐕</div>
+          <h3>Dogs genuinely excited to arrive</h3>
+          <p>Multiple reviews mention pets jumping out of cars and running to the door — that's incredibly rare and shows genuine care.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💳</div>
+          <h3>Cash-only creates friction</h3>
+          <p>Payment barriers appear in customer feedback, potentially turning away families whose dogs would love your service.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📞</div>
+          <h3>Manual scheduling systems</h3>
+          <p>Phone-based appointment systems might pull you away from what you do best — supervising and caring for the dogs.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⭐</div>
+          <h3>Zero review engagement</h3>
+          <p>Despite 11+ years of relationship-focused service, there are no Google review responses to reinforce your caring reputation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>What if...</h2>
+      <ul class="outcomes">
+        <li data-icon="🔧">Payment systems that work for you without changing your caring approach</li>
+        <li data-icon="⏰">Scheduling tools that reduce interruptions during dog supervision time</li>
+        <li data-icon="💬">Simple review response systems that reinforce your reputation for individual attention</li>
+        <li data-icon="🎯">More time for what you do best — creating the experiences that make dogs love coming here</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <h2>Who I am</h2>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.125rem; margin-bottom: 24px;">I help small business owners in West Michigan streamline their operations so they can focus on what they love most. I've worked with dozens of service businesses to reduce administrative burden without changing their core values or customer care approach. My goal is simple: less time on paperwork, more time doing what you're passionate about.</p>
+        <p style="font-weight: 600; color: var(--color-accent);">8+ years helping local service businesses implement systems that reduce daily administrative tasks while maintaining their personal touch and quality standards.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Tell me what's going on</h3>
+          <p>Fill out a quick form or book a call. No commitment.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>I put together a plan</h3>
+          <p>Specific recommendations for your business.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>We get to work</h3>
+          <p>Most projects start on-site. You see results fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Interested? Let's have a conversation.</h2>
+        
+        <div class="form-container">
+          <div class="success-message" id="successMessage">
+            Thanks! I'll be in touch within 24 hours.
+          </div>
+          
+          <form id="contactForm">
+            <input type="hidden" name="business_slug" value="doggie-detailing-and-resort">
+            
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me a bit about what's on your mind..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+
+        <div class="cal-link">
+          <p style="margin-bottom: 16px;">Or book a 30-minute call — no pitch, just a conversation.</p>
+          <a href="#" class="btn btn-secondary">Schedule a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Nick Dahlhoff | West Michigan</p>
+      <p>ndahlhoff10@gmail.com</p>
+      <p>© 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Form handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // TODO: Connect to Convex mutation
+      
+      // Show success message
+      document.getElementById('successMessage').style.display = 'block';
+      this.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

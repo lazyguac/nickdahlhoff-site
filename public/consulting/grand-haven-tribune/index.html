@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Grand Haven Tribune | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="Custom systems and automation for the Grand Haven Tribune, connecting editorial, advertising, and subscriber operations into one view.">
+  <meta property="og:title" content="Grand Haven Tribune | Nick Dahlhoff, AI Consulting">
+  <meta property="og:description" content="Custom systems and automation for the Grand Haven Tribune, connecting editorial, advertising, and subscriber operations into one view.">
+  <meta property="og:image" content="hero.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FDF6EC;
+      --color-surface: #FFFFFF;
+      --color-surface-alt: #F5EDE0;
+      --color-text: #2D2D2D;
+      --color-text-secondary: #8C8177;
+      --color-text-light: #A09890;
+      --color-accent: #D4853A;
+      --color-accent-hover: #B8652A;
+      --color-accent-light: #F5E6D4;
+      --color-border: #E5DDD3;
+      --color-success: #2D6A4F;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.7;
+      font-size: 1.125rem;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 80vh;
+      background: var(--color-bg);
+      display: grid;
+      grid-template-columns: 55% 45%;
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: clamp(60px, 8vw, 120px) 24px;
+      gap: 3rem;
+    }
+
+    .hero-text h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-text .subhead {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .hero-image {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(45, 45, 45, 0.08);
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .hero-cta {
+      grid-column: 1;
+    }
+
+    .hero-cta .cta-btn {
+      display: inline-block;
+      background: var(--color-accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero-cta .cta-btn:hover {
+      background: var(--color-accent-hover);
+    }
+
+    .hero-cta .cta-btn:focus {
+      outline: 3px solid var(--color-accent-light);
+      outline-offset: 2px;
+    }
+
+    /* ===== BODY SECTION ===== */
+    .body-part1 {
+      background: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part1-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part1-inner p:first-child {
+      font-size: 1.25rem;
+      border-left: 3px solid rgba(212, 133, 58, 0.3);
+      padding-left: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .body-part1-inner p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .body-divider {
+      max-width: 720px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid rgba(212, 133, 58, 0.2);
+    }
+
+    .body-part2 {
+      background: var(--color-surface-alt);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part2-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part2-inner p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== WHY ME ===== */
+    .why-me {
+      background: var(--color-surface);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .why-me-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .why-me-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 0.5rem;
+    }
+
+    .why-me-photo img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-border);
+    }
+
+    .why-me-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text);
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .why-me-list {
+      list-style: none;
+      counter-reset: why-counter;
+    }
+
+    .why-me-list li {
+      counter-increment: why-counter;
+      margin-bottom: 1.25rem;
+      padding-left: 2.5rem;
+      position: relative;
+      font-size: 1.125rem;
+      text-align: left;
+    }
+
+    .why-me-list li::before {
+      content: counter(why-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1.4;
+    }
+
+    .why-me-list li strong {
+      font-weight: 600;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .pricing-card {
+      max-width: 500px;
+      margin: 0 auto 4rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(45, 45, 45, 0.04);
+    }
+
+    .pricing-card h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-card .price {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      text-align: left;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-card ul li {
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 1rem;
+      color: var(--color-text);
+    }
+
+    .pricing-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-accent);
+    }
+
+    .pricing-card .subtext {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-card .pay-btn {
+      display: inline-block;
+      background: var(--color-accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .pricing-card .pay-btn:hover {
+      background: var(--color-accent-hover);
+    }
+
+    .pricing-card .pay-btn:focus {
+      outline: 3px solid var(--color-accent-light);
+      outline-offset: 2px;
+    }
+
+    .contact-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+    }
+
+    .contact-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card p {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--color-text);
+      background: var(--color-bg);
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(212, 133, 58, 0.15);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .submit-btn {
+      display: inline-block;
+      background: var(--color-accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background: var(--color-accent-hover);
+    }
+
+    .submit-btn:focus {
+      outline: 3px solid var(--color-accent-light);
+      outline-offset: 2px;
+    }
+
+    #formSuccess {
+      display: none;
+      background: rgba(45, 106, 79, 0.08);
+      border: 1px solid var(--color-success);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      color: var(--color-success);
+      font-weight: 600;
+    }
+
+    .cal-btn {
+      display: inline-block;
+      background: var(--color-accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      width: 100%;
+    }
+
+    .cal-btn:hover {
+      background: var(--color-accent-hover);
+    }
+
+    .cal-btn:focus {
+      outline: 3px solid var(--color-accent-light);
+      outline-offset: 2px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+      padding: 2.5rem 24px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.35rem;
+    }
+
+    .footer a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        text-align: center;
+      }
+
+      .hero-text {
+        order: 1;
+      }
+
+      .hero-image {
+        order: 2;
+        max-height: 50vh;
+      }
+
+      .hero-cta {
+        order: 3;
+        grid-column: 1;
+      }
+
+      .why-me-inner {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .why-me-photo {
+        align-items: center;
+      }
+
+      .why-me-content h2 {
+        text-align: left;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>From city council to high school wrestling, Grand Haven reads it here first. The systems behind the stories can work just as hard.</h1>
+      <p class="subhead">The tools that connect editorial, advertising, and subscriber data have gotten practical enough for a paper your size.</p>
+    </div>
+    <div class="hero-image">
+      <!-- Hero image generated from prompt: newspaper delivery box on Grand Haven sidewalk in warm pencil-and-ink style -->
+      <img src="hero.png" alt="Warm illustration of a Grand Haven streetscape with a newspaper delivery box in morning light">
+    </div>
+    <div class="hero-cta">
+      <a href="#contact" class="cta-btn">Let's Talk About Grand Haven Tribune</a>
+    </div>
+  </section>
+
+  <!-- ===== BODY PART 1 ===== -->
+  <section class="body-part1">
+    <div class="body-part1-inner">
+      <p>Twenty-two sections of local coverage, from law enforcement to pet tributes. A BLOX CMS running the editorial side, Freestar handling digital ads, Legacy.com processing obituaries, Evvnt managing event listings. Readers still show up for the things MLive will never cover: the Spring Lake basketball recap, the community calendar, the local business feature nobody else writes. That kind of coverage requires a team that punches well above its headcount.</p>
+    </div>
+  </section>
+
+  <hr class="body-divider">
+
+  <!-- ===== BODY PART 2 ===== -->
+  <section class="body-part2">
+    <div class="body-part2-inner">
+      <p>A paper running on TownNews with a separate ad pipeline, a circulation database, and accounting software has four systems that don't share information. Whether it's ad renewal follow-ups that slip through the cracks, subscriber engagement data that never makes it to editorial planning, or monthly reporting that takes someone half a day to compile from three different exports, the connecting tissue between those systems is where the time goes. I come on-site, learn how the pieces actually fit together at your operation, and build what closes the gaps. Could be a dashboard that finally gives you a single view of the business. Could be automated ad renewal reminders that actually go out. Could be something bigger. You end up with less time spent on operational plumbing and more capacity for the journalism Grand Haven relies on.</p>
+    </div>
+  </section>
+
+  <!-- ===== WHY ME ===== -->
+  <section class="why-me">
+    <div class="why-me-inner">
+      <div class="why-me-photo">
+        <img src="nick-headshot.png" alt="Nick Dahlhoff">
+      </div>
+      <div class="why-me-content">
+        <h2>Why me</h2>
+        <ol class="why-me-list">
+          <li><strong>AI expert.</strong> I work with AI tools every day — workflow automation, content strategy, data analysis, software development. I know what actually works and what's hype.</li>
+          <li><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</li>
+          <li><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</li>
+          <li><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</li>
+          <li><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta-section" id="contact">
+    <div class="pricing-card">
+      <h2>On-Site Consulting</h2>
+      <div class="price">$750 / day</div>
+      <ul>
+        <li>On-site at your location (West Michigan)</li>
+        <li>Research + planning + implementation</li>
+        <li>Documentation + training</li>
+        <li>Follow-up support included</li>
+      </ul>
+      <p class="subtext">Ongoing and larger projects available on request</p>
+      <a href="https://buy.stripe.com/3cIdR96546GW2xXf0z4ZG01" target="_blank" rel="noopener" class="pay-btn">Pay Now — $750</a>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Send me a message</h3>
+        <form id="contactForm">
+          <input type="hidden" name="source" value="prospect_site">
+          <input type="hidden" name="slug" value="grand-haven-tribune">
+          <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(optional)">
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="What's on your mind?"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+        <div id="formSuccess">
+          <p>Message sent. I'll be in touch soon.</p>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <h3>Book a 30-minute call</h3>
+        <p>No pitch, just a conversation.</p>
+        <button
+          class="cal-btn"
+          data-cal-namespace=""
+          data-cal-link="nickdahlhoff/30min"
+          data-cal-config='{"layout":"month_view"}'
+        >Book a Call</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>Nick Dahlhoff | West Michigan</p>
+    <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
+  </script>
+
+  <!-- Contact form submission -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          var data = {
+            name: form.elements.name.value || undefined,
+            email: form.elements.email.value,
+            phone: form.elements.phone.value || undefined,
+            message: form.elements.message.value,
+            source: 'prospect_site',
+            slug: form.elements.slug.value,
+            website: form.elements.website.value || undefined,
+          };
+
+          fetch('https://calculating-platypus-531.convex.site/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+            .then(function(res) {
+              if (!res.ok) throw new Error('Submission failed');
+              form.style.display = 'none';
+              success.style.display = 'block';
+            })
+            .catch(function() {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+              }
+              alert('Something went wrong — please try again or email ndahlhoff10@gmail.com directly.');
+            });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

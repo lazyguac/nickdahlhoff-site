@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Elect Auto Detail | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="A personalized look at how AI-powered systems and automation can help Elect Auto Detail in Grand Haven run more efficiently.">
+  <meta property="og:title" content="Elect Auto Detail | Nick Dahlhoff, AI Consulting">
+  <meta property="og:description" content="A personalized look at how AI-powered systems and automation can help Elect Auto Detail in Grand Haven run more efficiently.">
+  <meta property="og:image" content="hero.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FDF6EC;
+      --color-surface: #FFFFFF;
+      --color-surface-alt: #F5EDE0;
+      --color-text: #2D2D2D;
+      --color-text-secondary: #8C8177;
+      --color-text-light: #A09890;
+      --color-accent: #D4853A;
+      --color-accent-hover: #B8652A;
+      --color-accent-light: #F5E6D4;
+      --color-border: #E5DDD3;
+      --color-success: #2D6A4F;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      background: var(--color-bg);
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .hero-inner {
+      max-width: 1280px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-text {
+      grid-column: 1;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--color-text);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subhead {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .hero-image {
+      grid-column: 2;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(45, 45, 45, 0.08);
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-cta {
+      grid-column: 1;
+      margin-top: 0.5rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      background-color: var(--color-accent);
+      border: none;
+      border-radius: 8px;
+      padding: 16px 36px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:focus {
+      outline: 3px solid var(--color-accent-light);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text {
+        grid-column: 1;
+        order: 1;
+        text-align: center;
+      }
+
+      .hero-image {
+        grid-column: 1;
+        order: 2;
+        max-height: 50vh;
+      }
+
+      .hero-image img {
+        max-height: 50vh;
+        object-fit: cover;
+      }
+
+      .hero-cta {
+        grid-column: 1;
+        order: 3;
+        text-align: center;
+      }
+    }
+
+    /* ========== BODY PART 1 ========== */
+    .body-part1 {
+      background: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part1-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part1-inner p:first-child {
+      font-size: 1.25rem;
+      border-left: 3px solid rgba(212, 133, 58, 0.3);
+      padding-left: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .body-part1-inner p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .body-part1-inner p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ========== DIVIDER ========== */
+    .section-divider {
+      max-width: 720px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid var(--color-accent);
+      opacity: 0.2;
+    }
+
+    /* ========== BODY PART 2 ========== */
+    .body-part2 {
+      background: var(--color-surface-alt);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part2-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part2-inner p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .body-part2-inner p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ========== WHY ME ========== */
+    .why-me {
+      background: var(--color-surface);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .why-me-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .why-me-photo {
+      display: flex;
+      justify-content: center;
+      padding-top: 0.5rem;
+    }
+
+    .why-me-photo img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-border);
+    }
+
+    .why-me-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text);
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .why-me-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .why-me-list li {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      text-align: left;
+      font-size: 1.125rem;
+    }
+
+    .why-me-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .why-me-number {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1.4;
+      flex-shrink: 0;
+      min-width: 28px;
+    }
+
+    .why-me-list li strong {
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .why-me-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .why-me-photo {
+        justify-content: center;
+      }
+
+      .why-me-content h2 {
+        text-align: left;
+      }
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      background: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    /* Pricing Card */
+    .pricing-card {
+      max-width: 500px;
+      margin: 0 auto 4rem auto;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 16px rgba(45, 45, 45, 0.05);
+      text-align: center;
+    }
+
+    .pricing-card h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-price {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .pricing-features li {
+      padding: 0.4rem 0;
+      font-size: 1rem;
+      color: var(--color-text);
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .pricing-features li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    .pricing-subtext {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Contact Options */
+    .contact-options {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .contact-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-form-card,
+    .book-call-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .contact-form-card h3,
+    .book-call-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: 12px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-bg);
+      color: var(--color-text);
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px var(--color-accent-light);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .btn-submit {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      background-color: var(--color-accent);
+      border: none;
+      border-radius: 8px;
+      padding: 14px 32px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:focus {
+      outline: 3px solid var(--color-accent-light);
+      outline-offset: 2px;
+    }
+
+    #formSuccess {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    #formSuccess p {
+      font-size: 1.125rem;
+      color: var(--color-success);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    #formSuccess span {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+    }
+
+    .book-call-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .book-call-card p {
+      color: var(--color-text-secondary);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .btn-cal {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      background-color: var(--color-accent-light);
+      border: 2px solid var(--color-accent);
+      border-radius: 8px;
+      padding: 14px 32px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      text-align: center;
+    }
+
+    .btn-cal:hover {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    .btn-cal:focus {
+      outline: 3px solid var(--color-accent-light);
+      outline-offset: 2px;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+      padding: 2.5rem 24px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.35rem;
+    }
+
+    .footer a {
+      color: var(--color-text-secondary);
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+
+    .footer a:hover {
+      color: var(--color-accent);
+    }
+
+    .footer a:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* ========== PRINT ========== */
+    @media print {
+      body {
+        font-size: 12pt;
+        background: #fff;
+      }
+      .hero {
+        min-height: auto;
+      }
+      .btn-primary, .btn-submit, .btn-cal, .pricing-card a {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1 class="hero-headline">A perfect 5.0 from every customer who's walked through your door, and a shop built on doing the work right.</h1>
+        <p class="hero-subhead">There's a lot happening behind the scenes at a detailing business that doesn't need to be this manual anymore.</p>
+      </div>
+      <div class="hero-image">
+        <!-- Hero image: Warm pencil-and-ink illustration of a small detailing shop exterior on a charming small-town street, early morning, with "Elect Auto Detail" signage. -->
+        <img src="hero.png" alt="Warm pencil-and-ink illustration of a small detailing shop on a charming street with a freshly detailed pickup truck out front">
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Let's Talk About Elect Auto Detail</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BODY PART 1 ========== -->
+  <section class="body-part1">
+    <div class="body-part1-inner">
+      <p>Elect Auto Detail runs on Green Street in Grand Haven with Saturday hours, a phone that's always on, and the kind of results that make every customer leave a perfect review.</p>
+      <p>Professional vehicle care positioned in a lakeshore community where trucks, SUVs, and boats cycle through salt, sand, and seasonal wear. The fact that you're hitting 5.0 across the board while running what appears to be a lean operation says everything about the standard you hold.</p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ========== BODY PART 2 ========== -->
+  <section class="body-part2">
+    <div class="body-part2-inner">
+      <p>You've probably thought about what it would look like if the quoting back-and-forth handled itself, or if customers who got a coating last year automatically heard from you when maintenance was due. Whether it's scheduling that accounts for vehicle size and service type, a follow-up system that keeps your best customers coming back, or just getting your tools to share information instead of you re-entering it everywhere, most of this is buildable in a day now.</p>
+      <p>I come in, learn how your shop actually runs, and build whatever saves the most time. You get documentation, training, and a business that runs tighter without adding complexity.</p>
+    </div>
+  </section>
+
+  <!-- ========== WHY ME ========== -->
+  <section class="why-me">
+    <div class="why-me-inner">
+      <div class="why-me-photo">
+        <img src="nick-headshot.png" alt="Nick Dahlhoff">
+      </div>
+      <div class="why-me-content">
+        <h2>Why me</h2>
+        <ol class="why-me-list">
+          <li>
+            <span class="why-me-number">1.</span>
+            <span><strong>AI expert.</strong> I work with AI tools every day — workflow automation, content strategy, data analysis, software development. I know what actually works and what's hype.</span>
+          </li>
+          <li>
+            <span class="why-me-number">2.</span>
+            <span><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</span>
+          </li>
+          <li>
+            <span class="why-me-number">3.</span>
+            <span><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</span>
+          </li>
+          <li>
+            <span class="why-me-number">4.</span>
+            <span><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</span>
+          </li>
+          <li>
+            <span class="why-me-number">5.</span>
+            <span><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="cta-section" id="contact">
+    <!-- Pricing Card -->
+    <div class="pricing-card">
+      <h2>On-Site Consulting</h2>
+      <div class="pricing-price">$750 / day</div>
+      <ul class="pricing-features">
+        <li>On-site at your location (West Michigan)</li>
+        <li>Research + planning + implementation</li>
+        <li>Documentation + training</li>
+        <li>Follow-up support included</li>
+      </ul>
+      <p class="pricing-subtext">Ongoing and larger projects available on request</p>
+      <a href="https://buy.stripe.com/3cIdR96546GW2xXf0z4ZG01" target="_blank" rel="noopener" class="btn-primary">Pay Now — $750</a>
+    </div>
+
+    <!-- Contact Options -->
+    <div class="contact-options">
+      <!-- Contact Form -->
+      <div class="contact-form-card">
+        <h3>Send me a message</h3>
+        <form id="contactForm">
+          <input type="hidden" name="source" value="prospect_site">
+          <input type="hidden" name="slug" value="elect-auto-detail">
+          <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span style="color:var(--color-accent);">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+          </div>
+          <div class="form-group">
+            <label for="message">Message <span style="color:var(--color-accent);">*</span></label>
+            <textarea id="message" name="message" required placeholder="What's on your mind?"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+        <div id="formSuccess">
+          <p>Message sent!</p>
+          <span>I'll get back to you within 24 hours.</span>
+        </div>
+      </div>
+
+      <!-- Book a Call -->
+      <div class="book-call-card">
+        <h3>Book a 30-minute call</h3>
+        <p>No pitch, just a conversation.</p>
+        <button class="btn-cal" data-cal-namespace="" data-cal-link="nickdahlhoff/30min" data-cal-config='{"layout":"month_view"}'>Book a Call</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <p>Nick Dahlhoff | West Michigan</p>
+    <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <!-- Cal.com Embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://app.cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
+  </script>
+
+  <!-- Contact Form Submission -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          var data = {
+            name: form.elements.name.value || undefined,
+            email: form.elements.email.value,
+            phone: form.elements.phone.value || undefined,
+            message: form.elements.message.value,
+            source: 'prospect_site',
+            slug: form.elements.slug.value,
+            website: form.elements.website.value || undefined,
+          };
+
+          fetch('https://calculating-platypus-531.convex.site/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+            .then(function(res) {
+              if (!res.ok) throw new Error('Submission failed');
+              form.style.display = 'none';
+              success.style.display = 'block';
+            })
+            .catch(function() {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+              }
+              alert('Something went wrong — please try again or email ndahlhoff10@gmail.com directly.');
+            });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

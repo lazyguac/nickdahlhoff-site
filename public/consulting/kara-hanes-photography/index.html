@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">  <title>Kara Hanes Photography | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="AI workflow tools for wedding photographers in Grand Rapids - cut editing time, automate client communications, focus on the creative work you love.">
+  <meta property="og:title" content="Kara Hanes Photography | Nick Dahlhoff, AI Consulting">
+  <meta property="og:description" content="AI workflow tools for wedding photographers in Grand Rapids - cut editing time, automate client communications, focus on the creative work you love.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Colors */
+      --color-bg: #FDF6EC;
+      --color-surface: #FFFFFF;
+      --color-surface-alt: #F5EDE0;
+      --color-text: #2D2D2D;
+      --color-text-secondary: #8C8177;
+      --color-text-light: #A09890;
+      --color-accent: #D4853A;
+      --color-accent-hover: #B8652A;
+      --color-accent-light: #F5E6D4;
+      --color-border: #E5DDD3;
+      --color-success: #2D6A4F;
+
+      /* Typography */
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+    }
+
+    /* Typography */
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Layout utilities */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    .section {
+      padding: clamp(60px, 8vw, 120px) 0;
+    }
+
+    .section-alt {
+      background-color: var(--color-surface-alt);
+    }
+
+    .section-white {
+      background-color: var(--color-surface);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-large {
+      font-size: 1.25rem;
+    }
+
+    .text-secondary {
+      color: var(--color-text-secondary);
+    }
+
+    .text-light {
+      color: var(--color-text-light);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 80vh;
+      background: linear-gradient(180deg, rgba(45,45,45,0.5) 0%, rgba(45,45,45,0.2) 50%, rgba(253,246,236,0.9) 100%), 
+                  linear-gradient(135deg, #D4853A 0%, #B8652A 50%, #F5E6D4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #FDF6EC;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 0 24px;
+    }
+
+    .hero h1 {
+      margin-bottom: 1.5rem;
+      color: #FDF6EC;
+    }
+
+    .hero-subhead {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 16px 32px;
+      background-color: var(--color-accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover, .btn:focus {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn:focus {
+      outline: 3px solid var(--color-accent-light);
+      outline-offset: 2px;
+    }
+
+    /* Accent elements */
+    .accent-bar {
+      width: 60px;
+      height: 3px;
+      background-color: var(--color-accent);
+      margin: 0 auto 2rem;
+    }
+
+    .section-divider {
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* Story section specific */
+    .story {
+      padding-top: clamp(40px, 6vw, 80px);
+    }
+
+    /* About section */
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .about-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent) 100%);
+      border: 3px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .about-text {
+      text-align: center;
+    }
+
+    .about-credential {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.5rem;
+    }
+
+    /* How it works */
+    .how-it-works-step {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      flex-shrink: 0;
+      width: 3rem;
+    }
+
+    .step-content h3 {
+      font-weight: 600;
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-content p {
+      margin-bottom: 0;
+    }
+
+    .pricing-block {
+      background-color: var(--color-accent-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--color-accent);
+    }
+
+    .pricing-block p {
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* CTA Section */
+    .cta-content {
+      display: grid;
+      gap: 3rem;
+      grid-template-columns: 1fr;
+    }
+
+    .form-container, .cal-container {
+      background: var(--color-surface);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--color-border);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: var(--font-body);
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .cal-container h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--color-text);
+    }
+
+    .cal-container p {
+      margin-bottom: 1.5rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .footer a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Success message */
+    .success-message {
+      display: none;
+      background-color: var(--color-success);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .hero {
+        min-height: 80vh;
+      }
+
+      .cta-content {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-content {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .about-text {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        min-height: 60vh;
+      }
+
+      .hero-subhead {
+        font-size: 1.125rem;
+      }
+
+      .how-it-works-step {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .step-number {
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <!-- Image: A confident wedding photographer in her element, surrounded by the evidence of her success—printed reviews and testimonials pinned to a studio wall, a camera in her hands, soft natural lighting creating warm amber highlights. Her posture radiates quiet confidence and artistic fulfillment. The scene shows someone who's mastered her craft and built strong client relationships, but the thoughtful composition suggests there might be easier ways to manage the business side. -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>No phone number listed, but 52 five-star reviews and clients calling you "the absolute best"</h1>
+      <p class="hero-subhead">Something's working really well for you, but I bet the behind-the-scenes stuff could be way easier.</p>
+      <a href="#cta" class="btn">Let's Talk About Kara Hanes Photography</a>
+    </div>
+  </section>
+
+  <!-- The Story Section -->
+  <section class="section story">
+    <div class="container">
+      <div class="accent-bar"></div>
+      <div class="text-large">
+        <p>AI editing tools have gotten incredibly good in the last year. Things that used to take a full day now take a couple hours. The problem is, photographers are busy shooting and don't have time to figure out which tools actually work and how to set them up properly. That's basically what I do—I come sit in your office, understand how everything currently flows, and find the places where better systems can save you real time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Noticed Section -->
+  <section class="section">
+    <div class="container">
+      <h2>What We Noticed</h2>
+      <p>Looking at your setup, it seems like you're doing a lot of things right but maybe working harder than you need to. The fact that there's no phone number suggests you're managing inquiry volume carefully, which makes sense given how you emphasize limiting bookings for personalized attention. Your clients consistently mention fast turnaround—one bride got her full album in about two weeks, which is impressive.</p>
+      
+      <p>But I bet the editing process is still pretty manual, right? With the kind of volume you're handling and the quality standards your reviews suggest, you're probably spending 15-20 hours per wedding just on post-processing. And managing all those client communications—timeline meetings, gallery deliveries, follow-ups—without a phone number means everything's happening through email and contact forms.</p>
+      
+      <p>The team approach is smart for coverage, but coordinating between photographers and maintaining consistent style across different team members takes a lot of backend work that clients never see.</p>
+    </div>
+  </section>
+
+  <!-- The Bigger Picture Section -->
+  <section class="section section-alt section-divider">
+    <div class="container">
+      <h2>The Bigger Picture</h2>
+      <p>I'm curious—are you still doing most of the editing manually? The AI tools for wedding photographers have gotten really solid. We're talking about cutting editing time by 60-70% while maintaining your artistic style. One photographer I know went from 20 hours per wedding to about 6 hours, same quality output.</p>
+      
+      <p>And all that client communication stuff—the timeline coordination, gallery notifications, check-ins during the planning process—a lot of that can basically run itself now. Have you looked into any of the newer workflow automation? It's gotten way more sophisticated than the basic email templates.</p>
+      
+      <p>What would it feel like to deliver galleries even faster than you already do, but without working nights and weekends to make it happen? Or to have your client communications feel just as personal but not require you to write individual emails for every check-in? I bet you could take on a few more bookings without the current time investment, or just get your evenings back.</p>
+      
+      <p>I'd love to come take a look at your actual workflow—how photos move from camera to client, how you handle all the coordination stuff. Usually takes me about half a day to spot the biggest opportunities, then we can figure out what's worth building.</p>
+    </div>
+  </section>
+
+  <!-- About Nick Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center">Who I am</h2>
+      <div class="about-content">
+        <div class="about-photo">
+          Photo placeholder
+        </div>
+        <div class="about-text">
+          <p>I'm Nick Dahlhoff, based in West Michigan. I help local businesses figure out where AI tools and better systems can actually save them time and money. Every business is different, so I start by understanding yours. Then I build exactly what you need.</p>
+          <p class="about-credential">AI systems builder for small businesses: custom software, automation, and process improvement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section section-white">
+    <div class="container">
+      <h2>Here's how it works</h2>
+      
+      <div class="how-it-works-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>We talk first.</h3>
+          <p>Quick call to understand your situation. No sales pitch. If it doesn't seem like a fit, I'll tell you.</p>
+        </div>
+      </div>
+
+      <div class="how-it-works-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>I come to you.</h3>
+          <p>I spend half a day at your business: walking around, watching how things work, asking questions, mapping out your systems and figuring out where the biggest opportunities are.</p>
+        </div>
+      </div>
+
+      <div class="how-it-works-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>I start building.</h3>
+          <p>The other half of the day, I work on your highest-priority issue. Could be quick wins you see results from immediately, or the start of something bigger.</p>
+        </div>
+      </div>
+
+      <div class="how-it-works-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>You decide what's next.</h3>
+          <p>Some people just want the one day. Others want ongoing help building bigger systems. Either way works.</p>
+        </div>
+      </div>
+
+      <div class="pricing-block">
+        <p><strong>One day of hands-on work, $750.</strong> Covers research, implementation, and a follow-up check-in.</p>
+        <p class="text-secondary">For businesses that want to go deeper, ongoing project work is available.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="cta" class="section">
+    <div class="container">
+      <h2 class="text-center">Interested? Let's talk.</h2>
+      <div class="cta-content">
+        <div class="form-container">
+          <div class="success-message" id="successMessage">
+            Thanks for your message! I'll get back to you within 24 hours.
+          </div>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your current workflow and what you'd like to improve..."></textarea>
+            </div>
+            <input type="hidden" name="business_slug" value="kara-hanes-photography">
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+        
+        <div class="cal-container">
+          <h3>Or book a 30-minute call</h3>
+          <p>No pitch, just a conversation.</p>
+          <a href="#" class="btn">Schedule a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Nick Dahlhoff | West Michigan<br>
+      <a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a><br>
+      2026</p>
+    </div>
+  </footer>
+
+  <script>
+    // Form handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // TODO: Connect to Convex mutation
+      
+      // Show success message
+      document.getElementById('successMessage').style.display = 'block';
+      
+      // Reset form
+      this.reset();
+      
+      // Scroll to success message
+      document.getElementById('successMessage').scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+      });
+    });
+
+    // Smooth scroll for CTA button
+    document.querySelector('.hero .btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('cta').scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+    });
+  </script>
+</body>
+</html>

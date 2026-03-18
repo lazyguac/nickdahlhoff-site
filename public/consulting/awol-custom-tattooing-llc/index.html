@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">  <title>AWOL Custom Tattooing LLC | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="A personalized look at how AI tools and better systems could help AWOL Custom Tattooing in Muskegon spend less time on admin and more time at the station.">
+  <meta property="og:title" content="AWOL Custom Tattooing LLC | Nick Dahlhoff, AI Consulting">
+  <meta property="og:description" content="A personalized look at how AI tools and better systems could help AWOL Custom Tattooing in Muskegon spend less time on admin and more time at the station.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FDF6EC;
+      --color-surface: #FFFFFF;
+      --color-surface-alt: #F5EDE0;
+      --color-text: #2D2D2D;
+      --color-text-secondary: #8C8177;
+      --color-text-light: #A09890;
+      --color-accent: #D4853A;
+      --color-accent-hover: #B8652A;
+      --color-accent-light: #F5E6D4;
+      --color-border: #E5DDD3;
+      --color-success: #2D6A4F;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.7;
+      font-size: 1.125rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Hero Section - Split Layout */
+    .hero {
+      background-color: var(--color-bg);
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .hero-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-text {
+      order: 1;
+    }
+
+    .hero-image {
+      order: 2;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-subhead {
+      font-family: var(--font-body);
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    .hero-image-card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(45, 45, 45, 0.08);
+    }
+
+    .hero-image-card img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* Hero image prompt reference:
+       Warm pencil-and-ink sketch illustration of a tattoo artist handing a warranty card
+       to a client at a clean, well-organized station. Fresh tattoo visible on client's forearm.
+       Aftercare products visible. Warm, professional lighting. -->
+    */
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .cta-button:focus {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+
+    /* Body Section - Part 1 */
+    .body-part1 {
+      background-color: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part1 .content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part1 p:first-child {
+      font-size: 1.25rem;
+      border-left: 3px solid rgba(212, 133, 58, 0.3);
+      padding-left: 1.25rem;
+    }
+
+    .body-part1 p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .body-part1 p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Amber divider */
+    .section-divider {
+      max-width: 720px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid rgba(212, 133, 58, 0.2);
+    }
+
+    /* Body Section - Part 2 */
+    .body-part2 {
+      background-color: var(--color-surface-alt);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part2 .content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part2 p {
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .body-part2 p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* About Section */
+    .about {
+      background-color: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+      text-align: center;
+    }
+
+    .about .content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .about h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text);
+      margin-bottom: 2rem;
+    }
+
+    .about-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: var(--color-accent-light);
+      border: 3px solid var(--color-border);
+      margin: 0 auto 2rem;
+    }
+
+    .about-bio {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .about-credential {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      font-weight: 400;
+      text-align: left;
+    }
+
+    /* How It Works Section */
+    .how-it-works {
+      background-color: var(--color-surface);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .how-it-works .content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .how-it-works h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text);
+      margin-bottom: 3rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      min-width: 2rem;
+      line-height: 1.2;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-title {
+      font-weight: 600;
+      font-size: 1.125rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .step-description {
+      color: var(--color-text);
+      line-height: 1.65;
+    }
+
+    .pricing-block {
+      margin-top: 3rem;
+      padding: 1.75rem 2rem;
+      background-color: var(--color-accent-light);
+      border-radius: 8px;
+    }
+
+    .pricing-main {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-detail {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-ongoing {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background-color: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .cta-section .content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text);
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      background-color: var(--color-surface);
+      color: var(--color-text);
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(212, 133, 58, 0.15);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      display: inline-block;
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      align-self: flex-start;
+    }
+
+    .form-submit:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .form-submit:focus {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+
+    .form-success {
+      display: none;
+      padding: 1.25rem;
+      background-color: rgba(45, 106, 79, 0.1);
+      border: 1px solid var(--color-success);
+      border-radius: 6px;
+      color: var(--color-success);
+      font-weight: 600;
+    }
+
+    .cal-card {
+      padding: 2rem;
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+
+    .cal-card p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    .cal-button {
+      display: inline-block;
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .cal-button:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .cal-button:focus {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--color-bg);
+      padding: 2.5rem 24px;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 0.875rem;
+      color: var(--color-text-light);
+      margin-bottom: 0.35rem;
+    }
+
+    .footer a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .hero-text {
+        order: 1;
+        text-align: center;
+      }
+
+      .hero-text .cta-button {
+        display: inline-block;
+      }
+
+      .hero-image {
+        order: 2;
+      }
+
+      .hero-image-card img {
+        max-height: 50vh;
+        object-fit: cover;
+      }
+
+      .cta-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .step {
+        gap: 1rem;
+      }
+
+      .pricing-block {
+        padding: 1.25rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        font-size: 1rem;
+      }
+
+      .body-part1 p:first-child {
+        font-size: 1.1rem;
+      }
+
+      .step {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .step-number {
+        min-width: auto;
+      }
+    }
+
+    /* Print */
+    @media print {
+      .hero {
+        background: #FFFFFF;
+        min-height: auto;
+        padding: 2rem;
+      }
+
+      .hero-image {
+        display: none;
+      }
+
+      .cta-button, .form-submit, .cal-button {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1: Hero - Split Layout -->
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1>A written warranty on every tattoo. Set walk-in hours no other shop offers. Clients who drive an hour just to sit in your chair.</h1>
+        <p class="hero-subhead">What you've built at AWOL is rare. The way the shop runs behind the scenes can match the standard your artists set at the station.</p>
+        <a href="#contact" class="cta-button">Let's Talk About AWOL Custom Tattooing</a>
+      </div>
+      <div class="hero-image">
+        <!-- Hero image: Warm pencil-and-ink sketch illustration of a tattoo artist
+             handing a warranty card to a client at a clean, well-organized station.
+             Fresh tattoo visible on client's forearm. Aftercare products visible.
+             Warm, professional lighting and open space. -->
+        <div class="hero-image-card">
+          <img src="hero.png" alt="Illustration of a tattoo artist handing a warranty card to a satisfied client at a clean, well-organized station">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Body - Part 1 (Their Business) -->
+  <section class="body-part1">
+    <div class="content">
+      <p>AWOL Custom Tattooing was ahead of Michigan's body modification legislation before it passed. You post your autoclave spore test results and health department inspection sheets because you want people to see them, not because someone made you. That tells a specific story about how this shop operates.</p>
+      <p>Your reviews confirm it. Across 324 ratings, clients keep landing on the same words: clean, professional, family. People describe walking in for the first time and being treated like they'd been coming for years. Multiple reviewers name their artist specifically, which says something about the relationships your team builds. Cover-ups come up again and again as a strength, and clients travel from well outside Muskegon to get work done here.</p>
+      <p>You run a crew of seven, including apprentices, across six days a week with 12-hour posted availability. You sell aftercare products, support local artists through consignment, and give local musicians a place to distribute their work. That's not just a tattoo shop. That's a community hub that happens to do tattoos.</p>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Section 2: Body - Part 2 (The Offer) -->
+  <section class="body-part2">
+    <div class="content">
+      <p>A shop your size, with multiple artists and apprentices sharing stations, usually has booking requests coming in through four or five different channels at once. Deposits sitting in Venmo and CashApp with no connection to the calendar. Consent forms in a filing cabinet. Aftercare follow-ups that depend on someone remembering to check in. Design consultations happening over text threads that disappear into someone's phone. None of that is broken exactly, but all of it takes time that could go somewhere else.</p>
+      <p>I spend a day at your business, learn how things actually work, and build whatever saves the most time. Could be connecting the pieces you already have. Could be replacing a few manual steps with something that handles itself. For some businesses the day is the whole project. For others it's the start of something bigger. Either way, it starts with a conversation.</p>
+    </div>
+  </section>
+
+  <!-- Section 3: About Nick -->
+  <section class="about">
+    <div class="content">
+      <h2>Who I am</h2>
+      <div class="about-photo" role="img" aria-label="Photo of Nick Dahlhoff"></div>
+      <p class="about-bio">I'm Nick Dahlhoff, based in West Michigan. I help local businesses figure out where AI tools and better systems can actually save them time and money. Every business is different, so I start by understanding yours. Then I build exactly what you need.</p>
+      <p class="about-credential">AI systems builder for small businesses: custom software, automation, and process improvement.</p>
+    </div>
+  </section>
+
+  <!-- Section 4: How It Works -->
+  <section class="how-it-works">
+    <div class="content">
+      <h2>Here's how it works</h2>
+
+      <div class="step">
+        <span class="step-number">1</span>
+        <div class="step-content">
+          <p class="step-title">We talk first.</p>
+          <p class="step-description">Quick call to understand your situation. No sales pitch. If it doesn't seem like a fit, I'll tell you.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-number">2</span>
+        <div class="step-content">
+          <p class="step-title">I come to you.</p>
+          <p class="step-description">I spend half a day at your business: walking around, watching how things work, asking questions, mapping out your systems and figuring out where the biggest opportunities are.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-number">3</span>
+        <div class="step-content">
+          <p class="step-title">I start building.</p>
+          <p class="step-description">The other half of the day, I work on your highest-priority issue. Could be quick wins you see results from immediately, or the start of something bigger.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step-number">4</span>
+        <div class="step-content">
+          <p class="step-title">You decide what's next.</p>
+          <p class="step-description">Some people just want the one day. Others want ongoing help building bigger systems. Either way works.</p>
+        </div>
+      </div>
+
+      <div class="pricing-block">
+        <p class="pricing-main">One day of hands-on work, $750.</p>
+        <p class="pricing-detail">Covers research, implementation, and a follow-up check-in.</p>
+        <p class="pricing-ongoing">For businesses that want to go deeper, ongoing project work is available. We figure that out together after the first day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: CTA -->
+  <section class="cta-section" id="contact">
+    <div class="content">
+      <h2>Interested? Let's talk.</h2>
+
+      <div class="cta-grid">
+        <form class="contact-form" id="contactForm" action="#" method="POST">
+          <!-- TODO: Connect to Convex mutation -->
+          <input type="hidden" name="business_slug" value="awol-custom-tattooing-llc">
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone <span style="font-weight: 400; color: var(--color-text-light);">(optional)</span></label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Send Message</button>
+
+          <div class="form-success" id="formSuccess">
+            Thanks for reaching out. I'll get back to you soon.
+          </div>
+        </form>
+
+        <div class="cal-card">
+          <p>Or book a 30-minute call. No pitch, just a conversation.</p>
+          <!-- TODO: Replace with Cal.com embed -->
+          <a href="#" class="cal-button">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Footer -->
+  <footer class="footer">
+    <p>Nick Dahlhoff | West Michigan</p>
+    <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script>
+    // Smooth scroll for CTA button
+    document.querySelector('.cta-button').addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    // Form submission handler
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // TODO: Connect to Convex mutation
+      this.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>

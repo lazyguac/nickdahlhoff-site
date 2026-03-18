@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Centertown Laundromat | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="Custom systems and automation for Centertown Laundromat in Grand Haven, MI. On-site consulting to help your 24-hour laundry operation run smoother.">
+  <meta property="og:title" content="Centertown Laundromat | Nick Dahlhoff, AI Consulting">
+  <meta property="og:description" content="Custom systems and automation for Centertown Laundromat in Grand Haven, MI. On-site consulting to help your 24-hour laundry operation run smoother.">
+  <meta property="og:image" content="hero.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FDF6EC;
+      --color-surface: #FFFFFF;
+      --color-surface-alt: #F5EDE0;
+      --color-text: #2D2D2D;
+      --color-text-secondary: #8C8177;
+      --color-text-light: #A09890;
+      --color-accent: #D4853A;
+      --color-accent-hover: #B8652A;
+      --color-accent-light: #F5E6D4;
+      --color-border: #E5DDD3;
+      --color-success: #2D6A4F;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      background: var(--color-bg);
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .hero-inner {
+      max-width: 1280px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-text {
+      grid-column: 1;
+    }
+
+    .hero-text h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-text .subhead {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .hero-image {
+      grid-column: 2;
+    }
+
+    .hero-image-card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(45, 45, 45, 0.08);
+    }
+
+    .hero-image-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-cta {
+      grid-column: 1;
+    }
+
+    .hero-cta .btn-cta {
+      margin-top: 2rem;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background: var(--color-accent);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-cta:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-cta:focus {
+      outline: 3px solid var(--color-accent-light);
+      outline-offset: 2px;
+    }
+
+    /* ========== BODY SECTIONS ========== */
+    .body-part1 {
+      background: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part2 {
+      background: var(--color-surface-alt);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part1 .body-content p:first-child {
+      font-size: 1.25rem;
+      border-left: 3px solid rgba(212, 133, 58, 0.3);
+      padding-left: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .body-part1 .body-content p + p {
+      font-size: 1.125rem;
+    }
+
+    .body-part2 .body-content p {
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+
+    .body-divider {
+      max-width: 720px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid rgba(212, 133, 58, 0.2);
+    }
+
+    /* ========== WHY ME ========== */
+    .why-me {
+      background: var(--color-surface);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .why-me-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .why-me-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .why-me-photo img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-border);
+    }
+
+    .why-me-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text);
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .why-me-list {
+      list-style: none;
+      counter-reset: why-counter;
+    }
+
+    .why-me-list li {
+      counter-increment: why-counter;
+      margin-bottom: 1.5rem;
+      padding-left: 2.5rem;
+      position: relative;
+      font-size: 1.125rem;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .why-me-list li::before {
+      content: counter(why-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1.4;
+    }
+
+    .why-me-list li strong {
+      font-weight: 600;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      background: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .pricing-card {
+      max-width: 500px;
+      margin: 0 auto 4rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(45, 45, 45, 0.04);
+    }
+
+    .pricing-card h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-card .price {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      text-align: left;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-card ul li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 1rem;
+      color: var(--color-text);
+    }
+
+    .pricing-card ul li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    .pricing-card .subtext {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-top: 1rem;
+    }
+
+    .pricing-card .btn-cta {
+      margin-top: 1.5rem;
+    }
+
+    .contact-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-form-wrapper h3,
+    .cal-wrapper h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 1rem;
+    }
+
+    .contact-form-wrapper p,
+    .cal-wrapper p {
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      margin-bottom: 1rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px var(--color-accent-light);
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-success {
+      display: none;
+      padding: 2rem;
+      text-align: center;
+      color: var(--color-success);
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    .cal-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .btn-cal {
+      display: inline-block;
+      background: var(--color-accent);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-cal:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-cal:focus {
+      outline: 3px solid var(--color-accent-light);
+      outline-offset: 2px;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+      padding: 2rem 24px;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+
+    .footer a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text {
+        grid-column: 1;
+        order: 1;
+      }
+
+      .hero-image {
+        grid-column: 1;
+        order: 2;
+        max-height: 50vh;
+        overflow: hidden;
+        border-radius: 16px;
+      }
+
+      .hero-cta {
+        grid-column: 1;
+        order: 3;
+        text-align: center;
+      }
+
+      .hero-cta .btn-cta {
+        margin-top: 1.5rem;
+      }
+
+      .why-me-inner {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .why-me-photo {
+        align-items: center;
+      }
+
+      .why-me-content h2 {
+        text-align: left;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>184 people took the time to tell Grand Haven you're the real deal. The operation behind that deserves to run just as well.</h1>
+        <p class="subhead">A lot of what keeps a 24-hour facility running smoothly can handle itself now, if someone sets it up right.</p>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-card">
+          <!-- Hero image: laundromat owner surveying clean, organized facility in early morning -->
+          <img src="hero.png" alt="Warm illustration of a laundromat interior, organized and inviting">
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-cta">Let's Talk About Centertown Laundromat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BODY PART 1 ========== -->
+  <section class="body-part1">
+    <div class="body-content">
+      <p>A laundromat that stays open every hour of every day and still handles pet beds, rugs, and the kind of loads most places would pass on. 184 reviews in Grand Haven is real traction for a business most people only think about when they need it. The fact that people bother to leave feedback for a laundromat tells you the experience stands out.</p>
+    </div>
+  </section>
+
+  <hr class="body-divider">
+
+  <!-- ========== BODY PART 2 ========== -->
+  <section class="body-part2">
+    <div class="body-content">
+      <p>Running a facility around the clock means there are always things happening when you're not there. Whether it's order tracking that falls apart between shifts, specialty pricing that changes depending on who's working, or machines that sit broken until someone notices, the stuff between the loads is where the time goes. Most of it doesn't need a person anymore. I come in, learn how the day actually runs, and build the systems that keep it moving whether you're on-site or not. Could be wash-and-fold tracking that follows the order from drop-off to pickup. Could be machine monitoring that flags problems before they cost you a day's revenue. Everything is yours, documented, and built to work without me. Your customers already show up at all hours. The business side can keep up.</p>
+    </div>
+  </section>
+
+  <!-- ========== WHY ME ========== -->
+  <section class="why-me">
+    <div class="why-me-inner">
+      <div class="why-me-photo">
+        <img src="nick-headshot.png" alt="Nick Dahlhoff">
+      </div>
+      <div class="why-me-content">
+        <h2>Why me</h2>
+        <ol class="why-me-list">
+          <li><strong>AI expert.</strong> I work with AI tools every day — workflow automation, content strategy, data analysis, software development. I know what actually works and what's hype.</li>
+          <li><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</li>
+          <li><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</li>
+          <li><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</li>
+          <li><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="cta-section" id="contact">
+    <div class="pricing-card">
+      <h3>On-Site Consulting</h3>
+      <div class="price">$750 / day</div>
+      <ul>
+        <li>On-site at your location (West Michigan)</li>
+        <li>Research + planning + implementation</li>
+        <li>Documentation + training</li>
+        <li>Follow-up support included</li>
+      </ul>
+      <a href="https://buy.stripe.com/3cIdR96546GW2xXf0z4ZG01" target="_blank" rel="noopener" class="btn-cta">Pay Now — $750</a>
+      <p class="subtext">Ongoing and larger projects available on request</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-form-wrapper">
+        <h3>Send me a message</h3>
+        <form id="contactForm" class="contact-form">
+          <input type="hidden" name="source" value="prospect_site">
+          <input type="hidden" name="slug" value="centertown-laundromat">
+          <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
+
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name">
+
+          <label for="email">Email <span style="color:var(--color-accent);">*</span></label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+
+          <label for="message">Message <span style="color:var(--color-accent);">*</span></label>
+          <textarea id="message" name="message" placeholder="What's on your mind?" required></textarea>
+
+          <button type="submit" class="btn-cta" style="width:100%;">Send Message</button>
+        </form>
+        <div id="formSuccess" class="form-success">
+          Thanks for reaching out. I'll get back to you soon.
+        </div>
+      </div>
+
+      <div class="cal-wrapper">
+        <h3>Book a 30-minute call</h3>
+        <p>No pitch, just a conversation.</p>
+        <button class="btn-cal"
+          data-cal-namespace=""
+          data-cal-link="nickdahlhoff/30min"
+          data-cal-config='{"layout":"month_view"}'>
+          Book a Call
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <p>Nick Dahlhoff | West Michigan</p>
+    <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
+  </script>
+
+  <!-- Form submission -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          var data = {
+            name: form.elements.name.value || undefined,
+            email: form.elements.email.value,
+            phone: form.elements.phone.value || undefined,
+            message: form.elements.message.value,
+            source: 'prospect_site',
+            slug: form.elements.slug.value,
+            website: form.elements.website.value || undefined,
+          };
+
+          fetch('https://calculating-platypus-531.convex.site/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+            .then(function(res) {
+              if (!res.ok) throw new Error('Submission failed');
+              form.style.display = 'none';
+              success.style.display = 'block';
+            })
+            .catch(function() {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+              }
+              alert('Something went wrong — please try again or email ndahlhoff10@gmail.com directly.');
+            });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

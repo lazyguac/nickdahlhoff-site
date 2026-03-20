@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">  <title>Moonlight Massage LLC | Nick Dahlhoff, AI Consulting</title>
-  <meta name="description" content="A personalized page for Moonlight Massage LLC in Grand Haven, MI. See what stands out about your practice and how custom-built systems could free up your time.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Moonlight Massage LLC | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="A personalized page for Moonlight Massage LLC in Grand Haven, MI. See what stands out about your practice and how custom tools could give you more time for the work that matters.">
   <meta property="og:title" content="Moonlight Massage LLC | Nick Dahlhoff, AI Consulting">
-  <meta property="og:description" content="A personalized page for Moonlight Massage LLC in Grand Haven, MI. See what stands out about your practice and how custom-built systems could free up your time.">
+  <meta property="og:description" content="A personalized page for Moonlight Massage LLC in Grand Haven, MI. See what stands out about your practice and how custom tools could give you more time for the work that matters.">
   <meta property="og:image" content="hero.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,53 +30,23 @@
     }
 
     *, *::before, *::after {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      box-sizing: border-box;
     }
 
     body {
       font-family: var(--font-body);
-      font-size: 1.125rem;
-      line-height: 1.7;
       color: var(--color-text);
       background-color: var(--color-bg);
+      line-height: 1.7;
+      font-size: 1.125rem;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    h1, h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      line-height: 1.1;
-    }
-
-    h2 {
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      line-height: 1.2;
-    }
-
-    a {
-      color: var(--color-accent);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: var(--color-accent-hover);
-    }
-
-    /* Hero Section - Split Layout */
+    /* Hero Section */
     .hero {
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       min-height: 80vh;
       display: flex;
       align-items: center;
@@ -86,28 +57,26 @@
     .hero-inner {
       max-width: 1280px;
       width: 100%;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: 55% 45%;
       gap: 3rem;
       align-items: center;
     }
 
-    .hero-text {
-      padding-right: 1rem;
-    }
-
-    .hero h1 {
+    .hero-text h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
       color: var(--color-text);
       margin-bottom: 1.25rem;
     }
 
-    .hero-subhead {
+    .hero-text .subhead {
+      font-size: 1.2rem;
       color: var(--color-text-secondary);
-      font-size: clamp(1.1rem, 2.2vw, 1.35rem);
       line-height: 1.6;
-      margin-bottom: 2.5rem;
-      font-weight: 400;
+      margin-bottom: 0;
     }
 
     .hero-image-card {
@@ -117,264 +86,262 @@
     }
 
     .hero-image-card img {
-      display: block;
       width: 100%;
+      display: block;
       object-fit: cover;
     }
 
-    /* Gradient placeholder if no hero image */
-    .hero-image-placeholder {
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(45, 45, 45, 0.08);
-      background: linear-gradient(135deg, #D4853A 0%, #B8652A 50%, #F5E6D4 100%);
-      min-height: 400px;
+    .hero-cta {
+      grid-column: 1;
     }
 
-    .btn {
+    .hero-cta .btn-primary {
+      margin-top: 2rem;
+    }
+
+    .btn-primary {
       display: inline-block;
-      background-color: var(--color-accent);
-      color: #FFFFFF;
+      background: var(--color-accent);
+      color: #fff;
       font-family: var(--font-body);
       font-size: 1rem;
       font-weight: 600;
-      padding: 16px 36px;
+      padding: 16px 32px;
       border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
       border: none;
       cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.2s ease;
-      text-decoration: none;
     }
 
-    .btn:hover {
-      background-color: var(--color-accent-hover);
-      color: #FFFFFF;
+    .btn-primary:hover {
+      background: var(--color-accent-hover);
       transform: translateY(-1px);
     }
 
-    .btn:focus {
-      outline: 3px solid var(--color-accent-light);
+    .btn-primary:focus {
+      outline: 3px solid var(--color-accent);
       outline-offset: 2px;
     }
 
-    /* Body Section - Part 1 (Their Business) */
+    /* Body Section */
     .body-part1 {
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       padding: clamp(60px, 8vw, 120px) 24px;
     }
 
-    .body-part1 .content {
+    .body-part1-inner {
       max-width: 720px;
       margin: 0 auto;
     }
 
-    .body-part1 p {
-      margin-bottom: 1.5rem;
-    }
-
-    .body-part1 p:first-child {
+    .body-part1-inner p:first-child {
       font-size: 1.25rem;
       border-left: 3px solid rgba(212, 133, 58, 0.3);
       padding-left: 1.25rem;
-    }
-
-    .body-part1 p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Divider */
-    .section-divider {
-      max-width: 720px;
-      margin: 0 auto;
-      border: none;
-      border-top: 1px solid rgba(212, 133, 58, 0.2);
-    }
-
-    /* Body Section - Part 2 (The Offer) */
-    .body-part2 {
-      background-color: var(--color-surface-alt);
-      padding: clamp(60px, 8vw, 120px) 24px;
-    }
-
-    .body-part2 .content {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .body-part2 p {
       margin-bottom: 1.5rem;
     }
 
-    .body-part2 p:last-child {
-      margin-bottom: 0;
+    .body-part1-inner p {
+      margin-bottom: 1.5rem;
     }
 
-    /* About Section */
-    .about {
-      background-color: var(--color-bg);
+    .body-divider {
+      max-width: 720px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid var(--color-accent);
+      opacity: 0.2;
+    }
+
+    .body-part2 {
+      background: var(--color-surface-alt);
       padding: clamp(60px, 8vw, 120px) 24px;
-      text-align: center;
     }
 
-    .about .content {
+    .body-part2-inner {
       max-width: 720px;
       margin: 0 auto;
     }
 
-    .about h2 {
-      margin-bottom: 2rem;
-      color: var(--color-text);
+    .body-part2-inner p {
+      margin-bottom: 1.5rem;
     }
 
-    .about-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background-color: var(--color-accent-light);
-      border: 3px solid var(--color-border);
-      margin: 0 auto 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-text-light);
-      font-size: 0.8rem;
-    }
-
-    .about-bio {
-      font-size: 1.125rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .about-credential {
-      color: var(--color-text-secondary);
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    /* How It Works Section */
-    .how-it-works {
-      background-color: var(--color-surface);
+    /* Why Me Section */
+    .why-me {
+      background: var(--color-surface);
       padding: clamp(60px, 8vw, 120px) 24px;
     }
 
-    .how-it-works .content {
-      max-width: 720px;
+    .why-me-inner {
+      max-width: 900px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      align-items: start;
     }
 
-    .how-it-works h2 {
-      margin-bottom: 3rem;
-      text-align: center;
-      color: var(--color-text);
-    }
-
-    .step {
-      display: flex;
-      gap: 1.25rem;
-      margin-bottom: 2.5rem;
-      align-items: flex-start;
-    }
-
-    .step-number {
+    .why-me h2 {
       font-family: var(--font-display);
-      font-size: 2rem;
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
       font-weight: 700;
-      color: var(--color-accent);
-      line-height: 1;
-      flex-shrink: 0;
-      width: 2.5rem;
-      padding-top: 0.15rem;
-    }
-
-    .step-content {
-      flex: 1;
-    }
-
-    .step-title {
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .step-desc {
+      line-height: 1.2;
       color: var(--color-text);
-      line-height: 1.65;
-    }
-
-    .pricing-block {
-      margin-top: 3rem;
-      padding: 1.75rem 2rem;
-      background-color: var(--color-accent-light);
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    .pricing-amount {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--color-text);
+      text-align: left;
+      grid-column: 1 / -1;
       margin-bottom: 0.5rem;
     }
 
-    .pricing-detail {
-      color: var(--color-text-secondary);
-      font-size: 0.95rem;
+    .why-me-photo {
+      display: flex;
+      justify-content: center;
     }
 
-    .ongoing-note {
-      text-align: center;
-      color: var(--color-text-secondary);
-      font-size: 0.95rem;
-      margin-top: 1.25rem;
+    .why-me-photo img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-border);
+    }
+
+    .why-me-points {
+      list-style: none;
+    }
+
+    .why-me-points li {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      text-align: left;
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+
+    .why-me-points .point-num {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--color-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+
+    .why-me-points strong {
+      font-weight: 600;
     }
 
     /* CTA Section */
     .cta-section {
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       padding: clamp(60px, 8vw, 120px) 24px;
     }
 
-    .cta-section .content {
-      max-width: 720px;
-      margin: 0 auto;
+    .pricing-card {
+      max-width: 500px;
+      margin: 0 auto 4rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(45, 45, 45, 0.06);
     }
 
-    .cta-section h2 {
-      text-align: center;
-      margin-bottom: 3rem;
+    .pricing-card h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-card .price {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      text-align: left;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-card ul li {
+      padding: 0.4rem 0;
+      font-size: 1rem;
       color: var(--color-text);
     }
 
-    .cta-grid {
+    .pricing-card ul li::before {
+      content: "\2713";
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-right: 0.75rem;
+    }
+
+    .pricing-card .subtext {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-top: 1rem;
+    }
+
+    .pricing-card .btn-primary {
+      margin-top: 1.5rem;
+    }
+
+    .contact-grid {
+      max-width: 900px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
     }
 
+    .contact-form-wrapper h3,
+    .book-call-wrapper h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .contact-form-wrapper p,
+    .book-call-wrapper p {
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
     .form-group {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .form-group label {
       display: block;
-      font-size: 0.9rem;
+      font-size: 0.875rem;
       font-weight: 600;
       color: var(--color-text);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
       padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
       font-family: var(--font-body);
       font-size: 1rem;
-      border: 1px solid var(--color-border);
-      border-radius: 6px;
-      background-color: var(--color-surface);
       color: var(--color-text);
+      background: var(--color-surface);
       transition: border-color 0.2s ease;
     }
 
@@ -382,99 +349,80 @@
     .form-group textarea:focus {
       outline: none;
       border-color: var(--color-accent);
-      box-shadow: 0 0 0 3px rgba(212, 133, 58, 0.1);
+      box-shadow: 0 0 0 3px rgba(212, 133, 58, 0.15);
     }
 
     .form-group textarea {
-      min-height: 120px;
       resize: vertical;
+      min-height: 120px;
     }
 
-    .form-group .optional {
-      font-weight: 400;
-      color: var(--color-text-light);
-      font-size: 0.8rem;
-      margin-left: 0.25rem;
-    }
-
-    .form-submit {
-      width: 100%;
-      margin-top: 0.5rem;
-    }
-
-    .form-success {
+    #formSuccess {
       display: none;
-      text-align: center;
       padding: 2rem;
+      text-align: center;
       color: var(--color-success);
       font-weight: 600;
+      font-size: 1.125rem;
     }
 
-    .cal-card {
-      background-color: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      padding: 2rem;
+    .book-call-wrapper {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
     }
 
-    .cal-card p {
-      margin-bottom: 1.5rem;
-      color: var(--color-text-secondary);
+    .book-call-wrapper .btn-outline {
+      display: inline-block;
+      padding: 16px 32px;
+      border: 2px solid var(--color-accent);
+      color: var(--color-accent);
+      font-family: var(--font-body);
       font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .cal-card .btn {
-      font-size: 0.95rem;
-      padding: 14px 28px;
-    }
-
-    .cta-email {
+      font-weight: 600;
+      border-radius: 8px;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
       text-align: center;
-      margin-top: 2rem;
-      color: var(--color-text-secondary);
-      font-size: 0.95rem;
+    }
+
+    .book-call-wrapper .btn-outline:hover {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    .book-call-wrapper .btn-outline:focus {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
     }
 
     /* Footer */
     .footer {
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       border-top: 1px solid var(--color-border);
-      padding: 2.5rem 24px;
+      padding: 2rem 24px;
       text-align: center;
-      color: var(--color-text-secondary);
       font-size: 0.875rem;
+      color: var(--color-text-secondary);
     }
 
     .footer a {
-      color: var(--color-text-secondary);
+      color: var(--color-accent);
+      text-decoration: none;
     }
 
     .footer a:hover {
-      color: var(--color-accent);
+      text-decoration: underline;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .hero {
-        min-height: auto;
-        padding-top: clamp(40px, 6vw, 80px);
-        padding-bottom: clamp(40px, 6vw, 80px);
-      }
-
       .hero-inner {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        text-align: center;
       }
 
       .hero-text {
-        padding-right: 0;
-        text-align: center;
         order: 1;
       }
 
@@ -487,187 +435,222 @@
         max-height: 50vh;
       }
 
-      .cta-grid {
+      .hero-cta {
+        order: 3;
+        grid-column: 1;
+        text-align: center;
+      }
+
+      .hero-cta .btn-primary {
+        margin-top: 1.5rem;
+      }
+
+      .why-me-inner {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        text-align: left;
       }
 
-      .step {
-        gap: 1rem;
+      .why-me-photo {
+        justify-content: center;
       }
 
-      .step-number {
-        font-size: 1.5rem;
-        width: 2rem;
+      .why-me h2 {
+        text-align: left;
       }
 
-      .body-part1 p:first-child {
-        font-size: 1.125rem;
-      }
-    }
-
-    @media print {
-      .hero {
-        min-height: auto;
-      }
-
-      .btn {
-        border: 1px solid var(--color-text);
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Section 1: Hero (Split Layout - text left, image right) -->
-  <!-- Hero image prompt reference: A wide view of a calm, well-appointed massage treatment room.
-       A therapist figure stands near the table, warm morning light through a window.
-       Multiple modality tools on a wooden shelf. Warm pencil-and-ink sketch illustration style. -->
-  <section class="hero" id="top">
+  <!-- Section 1: Hero -->
+  <section class="hero">
     <div class="hero-inner">
       <div class="hero-text">
-        <h1>Fourteen years of refining your craft. Twelve modalities under one roof. A perfect rating from every client who's spoken up.</h1>
-        <p class="hero-subhead">The way your practice runs behind the scenes should reflect the standard you've set on the table.</p>
-        <a href="#contact" class="btn">Let's Talk About Moonlight Massage</a>
+        <h1>Twelve modalities. A perfect rating from every client who's spoken up. A solo practice built on listening and craft.</h1>
+        <p class="subhead">I build custom systems for practices like yours, so the business side runs as smoothly as the sessions do.</p>
       </div>
       <div class="hero-image-card">
-        <img src="hero.png" alt="Warm illustration of a calm massage treatment room with morning light and organized tools">
+        <!-- Hero image: massage therapist's hands working on client, cupping set and oils in background -->
+        <img src="hero.png" alt="Warm illustration of a massage therapist working confidently in a small, personal treatment suite">
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Let's Talk About Moonlight Massage</a>
       </div>
     </div>
   </section>
 
-  <!-- Section 2, Part 1: Their Business (no visible header) -->
+  <!-- Section 2: Body Part 1 — Their Business -->
   <section class="body-part1">
-    <div class="content">
-      <p>A few things stand out about Moonlight Massage. Clients don't talk about "a massage" or "the business." They talk about you. They mention you by name, describe how you listen, how you find the real problem, how they've been coming back for years. One client left a previous practice just to follow you. That kind of trust isn't built with marketing. It's built session by session.</p>
-      <p>The range is worth noting too. Deep tissue, medical massage, myofascial release, cupping, muscle scraping, auricular acupuncture, pre and postnatal. That breadth of modalities in a solo practice, operating inside a med spa, signals someone who keeps investing in what she can offer. Three years running your own business after over a decade in the industry, the clinical work is clearly dialed in.</p>
+    <div class="body-part1-inner">
+      <p>Clients at Moonlight Massage don't just describe the experience. They describe the relief of finally finding someone who gets it. One tracked you down after you left a previous practice. Another has been coming for over two years and still tells everyone they know.</p>
+      <p>You operate by appointment only out of a suite inside Fountain Medical Aesthetics, with a range that runs deep: cupping, myofascial release, muscle scraping, auricular acupuncture, prenatal, sports, neuromuscular. The clinical work is clearly dialed in.</p>
     </div>
   </section>
 
-  <hr class="section-divider">
+  <hr class="body-divider">
 
-  <!-- Section 2, Part 2: The Offer (no visible header) -->
+  <!-- Section 2: Body Part 2 — The Offer -->
   <section class="body-part2">
-    <div class="content">
-      <p>Running a solo practice means the person doing the hands-on work is also the person handling everything around it. Whether it's scheduling that still lives in text messages, follow-up that depends on clients remembering to reach out, or intake that could be working for you before someone ever walks through the door, there are usually a handful of things eating time that should be spent on clients or on rest.</p>
-      <p>I build custom tools and systems for small businesses. I show up, learn how your practice actually runs day to day, and build whatever saves the most time. For some businesses that's a single day of work. For others it opens up something bigger. Either way, it starts with a conversation.</p>
+    <div class="body-part2-inner">
+      <p>Solo practitioners spend hours every week on things that have nothing to do with the table. Responding to booking texts between clients. Chasing down follow-ups. Managing intake forms by hand. Keeping hours straight across platforms that don't agree with each other. You've probably had the thought more than once that it would be nice if all of that just handled itself.</p>
+      <p>I build the specific tools that take the operational weight off a practice like yours. Could be a single focused day on-site. Could turn into something ongoing. Either way, you walk away with systems that work without you babysitting them, and more hours in the week that belong to the work you actually care about.</p>
     </div>
   </section>
 
-  <!-- Section 3: About Nick -->
-  <section class="about">
-    <div class="content">
-      <h2>Who I am</h2>
-      <div class="about-photo" aria-label="Photo of Nick Dahlhoff">
-        <!-- Photo placeholder -->
+  <!-- Section 3: Why Me -->
+  <section class="why-me">
+    <div class="why-me-inner">
+      <h2>Why me</h2>
+      <div class="why-me-photo">
+        <img src="nick-headshot.png" alt="Nick Dahlhoff">
       </div>
-      <p class="about-bio">I'm Nick Dahlhoff, based in West Michigan. I help local businesses figure out where AI tools and better systems can actually save them time and money. Every business is different, so I start by understanding yours. Then I build exactly what you need.</p>
-      <p class="about-credential">AI systems builder for small businesses: custom software, automation, and process improvement.</p>
+      <ol class="why-me-points">
+        <li>
+          <span class="point-num">1.</span>
+          <span><strong>AI expert.</strong> I work with AI tools every day, workflow automation, content strategy, data analysis, software development. I know what actually works and what's hype.</span>
+        </li>
+        <li>
+          <span class="point-num">2.</span>
+          <span><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</span>
+        </li>
+        <li>
+          <span class="point-num">3.</span>
+          <span><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</span>
+        </li>
+        <li>
+          <span class="point-num">4.</span>
+          <span><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</span>
+        </li>
+        <li>
+          <span class="point-num">5.</span>
+          <span><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</span>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- Section 4: How It Works -->
-  <section class="how-it-works">
-    <div class="content">
-      <h2>Here's how it works</h2>
-
-      <div class="step">
-        <span class="step-number">1</span>
-        <div class="step-content">
-          <p class="step-title">We talk first.</p>
-          <p class="step-desc">Quick call to understand your situation. No sales pitch. If it doesn't seem like a fit, I'll tell you.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <span class="step-number">2</span>
-        <div class="step-content">
-          <p class="step-title">I come to you.</p>
-          <p class="step-desc">I spend half a day at your business: walking around, watching how things work, asking questions, mapping out your systems and figuring out where the biggest opportunities are.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <span class="step-number">3</span>
-        <div class="step-content">
-          <p class="step-title">I start building.</p>
-          <p class="step-desc">The other half of the day, I work on your highest-priority issue. Could be quick wins you see results from immediately, or the start of something bigger.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <span class="step-number">4</span>
-        <div class="step-content">
-          <p class="step-title">You decide what's next.</p>
-          <p class="step-desc">Some people just want the one day. Others want ongoing help building bigger systems. Either way works.</p>
-        </div>
-      </div>
-
-      <div class="pricing-block">
-        <p class="pricing-amount">One day of hands-on work, $750.</p>
-        <p class="pricing-detail">Covers research, implementation, and a follow-up check-in.</p>
-      </div>
-      <p class="ongoing-note">For businesses that want to go deeper, ongoing project work is available. We figure that out together after the first day.</p>
-    </div>
-  </section>
-
-  <!-- Section 5: CTA -->
+  <!-- Section 4: CTA -->
   <section class="cta-section" id="contact">
-    <div class="content">
-      <h2>Interested? Let's talk.</h2>
+    <div class="pricing-card">
+      <h3>On-Site Consulting</h3>
+      <div class="price">$750 / day</div>
+      <ul>
+        <li>On-site at your location (West Michigan)</li>
+        <li>Research + planning + implementation</li>
+        <li>Documentation + training</li>
+        <li>Follow-up support included</li>
+      </ul>
+      <a href="https://buy.stripe.com/3cIdR96546GW2xXf0z4ZG01" target="_blank" rel="noopener" class="btn-primary">Pay Now — $750</a>
+      <p class="subtext">Ongoing and larger projects available on request</p>
+    </div>
 
-      <div class="cta-grid">
-        <div class="form-container">
-          <form id="contact-form" action="#" method="POST">
-            <!-- TODO: Connect to Convex mutation -->
-            <input type="hidden" name="business_slug" value="moonlight-massage-llc">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone <span class="optional">(optional)</span></label>
-              <input type="tel" id="phone" name="phone">
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="btn form-submit">Send Message</button>
-          </form>
-          <div class="form-success" id="form-success">
-            <p>Message sent. I'll be in touch soon.</p>
+    <div class="contact-grid">
+      <div class="contact-form-wrapper">
+        <h3>Send me a message</h3>
+        <form id="contactForm">
+          <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="source" value="prospect_site">
+          <input type="hidden" name="slug" value="moonlight-massage-llc">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
           </div>
-        </div>
-
-        <div class="cal-card">
-          <p>Or book a 30-minute call. No pitch, just a conversation.</p>
-          <!-- TODO: Embed Cal.com scheduling widget -->
-          <a href="#" class="btn">Book a Call</a>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone <span style="font-weight: 400; color: var(--color-text-light);">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="What's on your mind?" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+        </form>
+        <div id="formSuccess">
+          <p>Message sent. I'll get back to you soon.</p>
         </div>
       </div>
 
-      <p class="cta-email">Or email me directly: <a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
+      <div class="book-call-wrapper">
+        <h3>Book a 30-minute call</h3>
+        <p>No pitch, just a conversation.</p>
+        <button
+          class="btn-outline"
+          data-cal-namespace=""
+          data-cal-link="nickdahlhoff/30min"
+          data-cal-config='{"layout":"month_view"}'
+        >
+          Book a Call
+        </button>
+      </div>
     </div>
   </section>
 
-  <!-- Section 6: Footer -->
+  <!-- Section 5: Footer -->
   <footer class="footer">
     <p>Nick Dahlhoff | West Michigan</p>
     <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
     <p>&copy; 2026</p>
   </footer>
 
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
+  </script>
+
+  <!-- Form submission -->
   <script>
-    // TODO: Connect to Convex mutation
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      this.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          var data = {
+            name: form.elements.name.value || undefined,
+            email: form.elements.email.value,
+            phone: form.elements.phone.value || undefined,
+            message: form.elements.message.value,
+            source: 'prospect_site',
+            slug: form.elements.slug.value,
+            website: form.elements.website.value || undefined,
+          };
+
+          fetch('https://calculating-platypus-531.convex.site/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+            .then(function(res) {
+              if (!res.ok) throw new Error('Submission failed');
+              form.style.display = 'none';
+              success.style.display = 'block';
+            })
+            .catch(function() {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+              }
+              alert('Something went wrong. Please try again or email ndahlhoff10@gmail.com directly.');
+            });
+        });
+      }
     });
   </script>
 

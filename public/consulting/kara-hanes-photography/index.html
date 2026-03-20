@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">  <title>Kara Hanes Photography | Nick Dahlhoff, AI Consulting</title>
-  <meta name="description" content="AI workflow tools for wedding photographers in Grand Rapids - cut editing time, automate client communications, focus on the creative work you love.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Kara Hanes Photography | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="Custom systems and automation for wedding photography businesses in West Michigan. One day on-site, built around how your business actually runs.">
   <meta property="og:title" content="Kara Hanes Photography | Nick Dahlhoff, AI Consulting">
-  <meta property="og:description" content="AI workflow tools for wedding photographers in Grand Rapids - cut editing time, automate client communications, focus on the creative work you love.">
+  <meta property="og:description" content="Custom systems and automation for wedding photography businesses in West Michigan. One day on-site, built around how your business actually runs.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Colors */
       --color-bg: #FDF6EC;
       --color-surface: #FFFFFF;
       --color-surface-alt: #F5EDE0;
@@ -24,17 +24,11 @@
       --color-accent-light: #F5E6D4;
       --color-border: #E5DDD3;
       --color-success: #2D6A4F;
-
-      /* Typography */
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body: 'Inter', system-ui, sans-serif;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: var(--font-body);
@@ -44,12 +38,12 @@
       background-color: var(--color-bg);
     }
 
-    /* Typography */
     h1 {
       font-family: var(--font-display);
       font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 700;
       line-height: 1.1;
+      color: var(--color-text);
     }
 
     h2 {
@@ -60,83 +54,62 @@
       margin-bottom: 2rem;
     }
 
-    p {
-      margin-bottom: 1.5rem;
-    }
+    p { margin-bottom: 1.5rem; }
+    p:last-child { margin-bottom: 0; }
 
-    p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Layout utilities */
     .container {
       max-width: 720px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    .full-width {
-      width: 100%;
-    }
-
     .section {
       padding: clamp(60px, 8vw, 120px) 0;
     }
 
-    .section-alt {
-      background-color: var(--color-surface-alt);
-    }
-
-    .section-white {
-      background-color: var(--color-surface);
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .text-large {
-      font-size: 1.25rem;
-    }
-
-    .text-secondary {
-      color: var(--color-text-secondary);
-    }
-
-    .text-light {
-      color: var(--color-text-light);
-    }
-
-    /* Hero Section */
+    /* Hero */
     .hero {
       min-height: 80vh;
-      background: linear-gradient(180deg, rgba(45,45,45,0.5) 0%, rgba(45,45,45,0.2) 50%, rgba(253,246,236,0.9) 100%), 
-                  linear-gradient(135deg, #D4853A 0%, #B8652A 50%, #F5E6D4 100%);
+      background-color: var(--color-bg);
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      color: #FDF6EC;
-      position: relative;
     }
 
-    .hero-content {
-      max-width: 800px;
+    .hero-grid {
+      max-width: 1280px;
+      margin: 0 auto;
       padding: 0 24px;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      gap: 3rem;
+      align-items: center;
     }
 
-    .hero h1 {
-      margin-bottom: 1.5rem;
-      color: #FDF6EC;
-    }
+    .hero-text h1 { margin-bottom: 1.5rem; }
 
     .hero-subhead {
-      font-size: 1.25rem;
-      margin-bottom: 2.5rem;
-      opacity: 0.95;
+      font-size: 1.2rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0;
     }
 
-    /* Buttons */
+    .hero-image-card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(45,45,45,0.08);
+    }
+
+    .hero-image-card img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .hero-cta {
+      grid-column: 1;
+    }
+
     .btn {
       display: inline-block;
       padding: 16px 32px;
@@ -146,6 +119,7 @@
       border-radius: 8px;
       font-weight: 600;
       font-size: 1rem;
+      font-family: var(--font-body);
       border: none;
       cursor: pointer;
       transition: background-color 0.2s ease, transform 0.2s ease;
@@ -161,120 +135,183 @@
       outline-offset: 2px;
     }
 
-    /* Accent elements */
-    .accent-bar {
-      width: 60px;
-      height: 3px;
-      background-color: var(--color-accent);
-      margin: 0 auto 2rem;
+    /* Body Part 1 */
+    .body-part1 {
+      background-color: var(--color-bg);
     }
 
-    .section-divider {
-      border-top: 1px solid var(--color-border);
+    .body-part1 .first-para {
+      font-size: 1.25rem;
+      border-left: 3px solid rgba(212,133,58,0.3);
+      padding-left: 1.25rem;
     }
 
-    /* Story section specific */
-    .story {
-      padding-top: clamp(40px, 6vw, 80px);
+    .body-divider {
+      border: none;
+      border-top: 1px solid var(--color-accent);
+      opacity: 0.2;
+      max-width: 720px;
+      margin: 0 auto;
     }
 
-    /* About section */
-    .about-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
+    /* Body Part 2 */
+    .body-part2 {
+      background-color: var(--color-surface-alt);
     }
 
-    .about-photo {
-      width: 120px;
-      height: 120px;
+    /* Why Me */
+    .why-me {
+      background-color: var(--color-surface);
+    }
+
+    .why-me h2 {
+      text-align: left;
+    }
+
+    .why-me-grid {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .why-me-photo {
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent) 100%);
+      overflow: hidden;
       border: 3px solid var(--color-border);
+    }
+
+    .why-me-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .why-me-points {
+      list-style: none;
+    }
+
+    .why-me-points li {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-text-secondary);
-      font-size: 0.875rem;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      align-items: baseline;
+      text-align: left;
     }
 
-    .about-text {
-      text-align: center;
-    }
+    .why-me-points li:last-child { margin-bottom: 0; }
 
-    .about-credential {
-      font-size: 1rem;
-      color: var(--color-text-secondary);
-      margin-top: 0.5rem;
-    }
-
-    /* How it works */
-    .how-it-works-step {
-      display: flex;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-      align-items: flex-start;
-    }
-
-    .step-number {
+    .point-number {
       font-family: var(--font-display);
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--color-accent);
       flex-shrink: 0;
-      width: 3rem;
+      width: 2rem;
     }
 
-    .step-content h3 {
-      font-weight: 600;
+    .point-text {
       font-size: 1.125rem;
-      margin-bottom: 0.5rem;
     }
 
-    .step-content p {
-      margin-bottom: 0;
-    }
-
-    .pricing-block {
-      background-color: var(--color-accent-light);
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin: 2rem 0;
-      border-left: 4px solid var(--color-accent);
-    }
-
-    .pricing-block p {
-      margin-bottom: 0.5rem;
-    }
-
-    .pricing-block p:last-child {
-      margin-bottom: 0;
+    .point-text strong {
+      display: inline;
     }
 
     /* CTA Section */
-    .cta-content {
-      display: grid;
-      gap: 3rem;
-      grid-template-columns: 1fr;
+    .cta-section {
+      background-color: var(--color-bg);
     }
 
-    .form-container, .cal-container {
+    .pricing-card {
+      max-width: 500px;
+      margin: 0 auto 3rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 16px rgba(45,45,45,0.04);
+      text-align: center;
+    }
+
+    .pricing-card h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-price {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-bullets {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-bullets li {
+      padding: 0.4rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .pricing-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.85rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-accent);
+    }
+
+    .pricing-subtext {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .form-card, .cal-card {
       background: var(--color-surface);
       padding: 2rem;
       border-radius: 12px;
       border: 1px solid var(--color-border);
     }
 
+    .form-card h3, .cal-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
     .form-group {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .form-group label {
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       font-weight: 600;
-      color: var(--color-text);
+      font-size: 0.95rem;
     }
 
     .form-group input,
@@ -286,6 +323,7 @@
       font-size: 1rem;
       font-family: var(--font-body);
       transition: border-color 0.2s ease;
+      background: var(--color-surface);
     }
 
     .form-group input:focus,
@@ -299,15 +337,18 @@
       min-height: 120px;
     }
 
-    .cal-container h3 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      color: var(--color-text);
+    .cal-card p {
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
     }
 
-    .cal-container p {
-      margin-bottom: 1.5rem;
-      color: var(--color-text-secondary);
+    .success-message {
+      display: none;
+      background-color: var(--color-success);
+      color: white;
+      padding: 1.25rem;
+      border-radius: 8px;
+      text-align: center;
     }
 
     /* Footer */
@@ -325,181 +366,135 @@
       text-decoration: none;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Success message */
-    .success-message {
-      display: none;
-      background-color: var(--color-success);
-      color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
+    .footer a:hover { text-decoration: underline; }
 
     /* Responsive */
-    @media (min-width: 768px) {
-      .hero {
-        min-height: 80vh;
-      }
-
-      .cta-content {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .about-content {
-        flex-direction: row;
-        text-align: left;
-      }
-
-      .about-text {
-        text-align: left;
-      }
-    }
-
     @media (max-width: 767px) {
       .hero {
-        min-height: 60vh;
+        min-height: auto;
+        padding: clamp(60px, 8vw, 120px) 0;
       }
 
-      .hero-subhead {
-        font-size: 1.125rem;
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
 
-      .how-it-works-step {
-        flex-direction: column;
-        gap: 0.5rem;
+      .hero-text { order: 1; }
+      .hero-image-card { order: 2; max-height: 50vh; }
+      .hero-cta { order: 3; grid-column: 1; text-align: center; }
+
+      .why-me-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
       }
 
-      .step-number {
-        width: auto;
+      .why-me-points li {
+        text-align: left;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
   <!-- Hero Section -->
-  <!-- Image: A confident wedding photographer in her element, surrounded by the evidence of her success—printed reviews and testimonials pinned to a studio wall, a camera in her hands, soft natural lighting creating warm amber highlights. Her posture radiates quiet confidence and artistic fulfillment. The scene shows someone who's mastered her craft and built strong client relationships, but the thoughtful composition suggests there might be easier ways to manage the business side. -->
+  <!-- Image prompt: Photographer at proofing table with second photographer heading out, warm pencil-and-ink style -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>No phone number listed, but 52 five-star reviews and clients calling you "the absolute best"</h1>
-      <p class="hero-subhead">Something's working really well for you, but I bet the behind-the-scenes stuff could be way easier.</p>
-      <a href="#cta" class="btn">Let's Talk About Kara Hanes Photography</a>
-    </div>
-  </section>
-
-  <!-- The Story Section -->
-  <section class="section story">
-    <div class="container">
-      <div class="accent-bar"></div>
-      <div class="text-large">
-        <p>AI editing tools have gotten incredibly good in the last year. Things that used to take a full day now take a couple hours. The problem is, photographers are busy shooting and don't have time to figure out which tools actually work and how to set them up properly. That's basically what I do—I come sit in your office, understand how everything currently flows, and find the places where better systems can save you real time.</p>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1>52 five-star reviews, a team that scales with you, and a business built on repeat clients who send their friends.</h1>
+        <p class="hero-subhead">Most of the work that fills the gaps between sessions doesn't need to be this manual.</p>
+      </div>
+      <div class="hero-image-card">
+        <img src="hero.png" alt="Illustration of a photography business workspace with warm, hand-drawn style">
+      </div>
+      <div class="hero-cta">
+        <a href="#cta" class="btn">Let's Talk About Kara Hanes Photography</a>
       </div>
     </div>
   </section>
 
-  <!-- What We Noticed Section -->
-  <section class="section">
+  <!-- Body Part 1: Their Business -->
+  <section class="section body-part1">
     <div class="container">
-      <h2>What We Noticed</h2>
-      <p>Looking at your setup, it seems like you're doing a lot of things right but maybe working harder than you need to. The fact that there's no phone number suggests you're managing inquiry volume carefully, which makes sense given how you emphasize limiting bookings for personalized attention. Your clients consistently mention fast turnaround—one bride got her full album in about two weeks, which is impressive.</p>
-      
-      <p>But I bet the editing process is still pretty manual, right? With the kind of volume you're handling and the quality standards your reviews suggest, you're probably spending 15-20 hours per wedding just on post-processing. And managing all those client communications—timeline meetings, gallery deliveries, follow-ups—without a phone number means everything's happening through email and contact forms.</p>
-      
-      <p>The team approach is smart for coverage, but coordinating between photographers and maintaining consistent style across different team members takes a lot of backend work that clients never see.</p>
+      <p class="first-para">Your clients don't just leave reviews. They write paragraphs. They mention being nervous before the shoot and completely relaxed ten minutes in. They talk about how fast the photos came back and how the gallery made them cry. Vendor partners vouch for you publicly, which almost never happens.</p>
+      <p>You've built collections that include digital downloads across every package, flexible payment plans through a client portal, and associate photographers for overflow. That's a real business, not a side hustle with a camera.</p>
     </div>
   </section>
 
-  <!-- The Bigger Picture Section -->
-  <section class="section section-alt section-divider">
+  <hr class="body-divider">
+
+  <!-- Body Part 2: The Offer -->
+  <section class="section body-part2">
     <div class="container">
-      <h2>The Bigger Picture</h2>
-      <p>I'm curious—are you still doing most of the editing manually? The AI tools for wedding photographers have gotten really solid. We're talking about cutting editing time by 60-70% while maintaining your artistic style. One photographer I know went from 20 hours per wedding to about 6 hours, same quality output.</p>
-      
-      <p>And all that client communication stuff—the timeline coordination, gallery notifications, check-ins during the planning process—a lot of that can basically run itself now. Have you looked into any of the newer workflow automation? It's gotten way more sophisticated than the basic email templates.</p>
-      
-      <p>What would it feel like to deliver galleries even faster than you already do, but without working nights and weekends to make it happen? Or to have your client communications feel just as personal but not require you to write individual emails for every check-in? I bet you could take on a few more bookings without the current time investment, or just get your evenings back.</p>
-      
-      <p>I'd love to come take a look at your actual workflow—how photos move from camera to client, how you handle all the coordination stuff. Usually takes me about half a day to spot the biggest opportunities, then we can figure out what's worth building.</p>
+      <p>A photography business your size usually runs on six or seven tools that don't know each other exist. Client info goes into one system, timelines into another, contracts somewhere else, and gallery delivery into a fourth. Whether it's inquiry responses that could write themselves, timeline coordination that currently lives in email threads, or a booking-to-delivery workflow that runs without you touching it at every step, there's a lot here that could just work.</p>
+      <p>I come in for a day, learn how your operation actually runs from first inquiry to final gallery, and build what saves the most time. On the other side, you book more weddings without working more hours, your clients hear from you at exactly the right moments without you writing every message, and the business you've built starts running the way it should have from the start.</p>
     </div>
   </section>
 
-  <!-- About Nick Section -->
-  <section class="section">
+  <!-- Why Me Section -->
+  <section class="section why-me">
     <div class="container">
-      <h2 class="text-center">Who I am</h2>
-      <div class="about-content">
-        <div class="about-photo">
-          Photo placeholder
+      <h2>Why me</h2>
+      <div class="why-me-grid">
+        <div class="why-me-photo">
+          <img src="nick-headshot.png" alt="Nick Dahlhoff">
         </div>
-        <div class="about-text">
-          <p>I'm Nick Dahlhoff, based in West Michigan. I help local businesses figure out where AI tools and better systems can actually save them time and money. Every business is different, so I start by understanding yours. Then I build exactly what you need.</p>
-          <p class="about-credential">AI systems builder for small businesses: custom software, automation, and process improvement.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works Section -->
-  <section class="section section-white">
-    <div class="container">
-      <h2>Here's how it works</h2>
-      
-      <div class="how-it-works-step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3>We talk first.</h3>
-          <p>Quick call to understand your situation. No sales pitch. If it doesn't seem like a fit, I'll tell you.</p>
-        </div>
-      </div>
-
-      <div class="how-it-works-step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h3>I come to you.</h3>
-          <p>I spend half a day at your business: walking around, watching how things work, asking questions, mapping out your systems and figuring out where the biggest opportunities are.</p>
-        </div>
-      </div>
-
-      <div class="how-it-works-step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <h3>I start building.</h3>
-          <p>The other half of the day, I work on your highest-priority issue. Could be quick wins you see results from immediately, or the start of something bigger.</p>
-        </div>
-      </div>
-
-      <div class="how-it-works-step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <h3>You decide what's next.</h3>
-          <p>Some people just want the one day. Others want ongoing help building bigger systems. Either way works.</p>
-        </div>
-      </div>
-
-      <div class="pricing-block">
-        <p><strong>One day of hands-on work, $750.</strong> Covers research, implementation, and a follow-up check-in.</p>
-        <p class="text-secondary">For businesses that want to go deeper, ongoing project work is available.</p>
+        <ol class="why-me-points">
+          <li>
+            <span class="point-number">1</span>
+            <span class="point-text"><strong>AI expert.</strong> I work with AI tools every day: workflow automation, content strategy, data analysis, software development. I know what actually works and what's hype.</span>
+          </li>
+          <li>
+            <span class="point-number">2</span>
+            <span class="point-text"><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</span>
+          </li>
+          <li>
+            <span class="point-number">3</span>
+            <span class="point-text"><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</span>
+          </li>
+          <li>
+            <span class="point-number">4</span>
+            <span class="point-text"><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</span>
+          </li>
+          <li>
+            <span class="point-number">5</span>
+            <span class="point-text"><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</span>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section id="cta" class="section">
-    <div class="container">
-      <h2 class="text-center">Interested? Let's talk.</h2>
-      <div class="cta-content">
-        <div class="form-container">
-          <div class="success-message" id="successMessage">
-            Thanks for your message! I'll get back to you within 24 hours.
-          </div>
+  <section id="cta" class="section cta-section">
+    <div class="container" style="max-width: 900px;">
+      <!-- Pricing Card -->
+      <div class="pricing-card">
+        <h3>On-Site Consulting</h3>
+        <div class="pricing-price">$750 / day</div>
+        <ul class="pricing-bullets">
+          <li>On-site at your location (West Michigan)</li>
+          <li>Research + planning + implementation</li>
+          <li>Documentation + training</li>
+          <li>Follow-up support included</li>
+        </ul>
+        <p class="pricing-subtext">Ongoing and larger projects available on request</p>
+        <a href="https://buy.stripe.com/3cIdR96546GW2xXf0z4ZG01" target="_blank" rel="noopener" class="btn">Pay Now &mdash; $750</a>
+      </div>
+
+      <!-- Contact Grid -->
+      <div class="contact-grid">
+        <div class="form-card">
+          <h3>Send me a message</h3>
+          <div class="success-message" id="formSuccess">Thanks for reaching out. I'll get back to you within 24 hours.</div>
           <form id="contactForm">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
+              <input type="text" id="name" name="name">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
@@ -511,17 +506,19 @@
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell me about your current workflow and what you'd like to improve..."></textarea>
+              <textarea id="message" name="message" required placeholder="Tell me a bit about your business and what you're looking for..."></textarea>
             </div>
-            <input type="hidden" name="business_slug" value="kara-hanes-photography">
+            <input type="hidden" name="source" value="prospect_site">
+            <input type="hidden" name="slug" value="kara-hanes-photography">
+            <!-- Honeypot -->
+            <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
             <button type="submit" class="btn">Send Message</button>
           </form>
         </div>
-        
-        <div class="cal-container">
-          <h3>Or book a 30-minute call</h3>
+        <div class="cal-card">
+          <h3>Book a 30-minute call</h3>
           <p>No pitch, just a conversation.</p>
-          <a href="#" class="btn">Schedule a Call</a>
+          <button class="btn" data-cal-namespace="" data-cal-link="nickdahlhoff/30min" data-cal-config='{"layout":"month_view"}'>Book a Call</button>
         </div>
       </div>
     </div>
@@ -532,36 +529,70 @@
     <div class="container">
       <p>Nick Dahlhoff | West Michigan<br>
       <a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a><br>
-      2026</p>
+      &copy; 2026</p>
     </div>
   </footer>
 
-  <script>
-    // Form handling
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // TODO: Connect to Convex mutation
-      
-      // Show success message
-      document.getElementById('successMessage').style.display = 'block';
-      
-      // Reset form
-      this.reset();
-      
-      // Scroll to success message
-      document.getElementById('successMessage').scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'center' 
-      });
-    });
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
+  </script>
 
-    // Smooth scroll for CTA button
-    document.querySelector('.hero .btn').addEventListener('click', function(e) {
-      e.preventDefault();
-      document.getElementById('cta').scrollIntoView({ 
-        behavior: 'smooth' 
-      });
+  <!-- Form submission -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          var data = {
+            name: form.elements.name.value || undefined,
+            email: form.elements.email.value,
+            phone: form.elements.phone.value || undefined,
+            message: form.elements.message.value,
+            source: 'prospect_site',
+            slug: form.elements.slug.value,
+            website: form.elements.website.value || undefined,
+          };
+
+          fetch('https://calculating-platypus-531.convex.site/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+            .then(function(res) {
+              if (!res.ok) throw new Error('Submission failed');
+              form.style.display = 'none';
+              success.style.display = 'block';
+            })
+            .catch(function() {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+              }
+              alert('Something went wrong — please try again or email ndahlhoff10@gmail.com directly.');
+            });
+        });
+      }
+
+      // Smooth scroll for hero CTA
+      var heroCta = document.querySelector('.hero-cta .btn');
+      if (heroCta) {
+        heroCta.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.getElementById('cta').scrollIntoView({ behavior: 'smooth' });
+        });
+      }
     });
   </script>
 </body>

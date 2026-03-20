@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>Black Creek Dog Training Center | Nick Dahlhoff, AI Consulting</title>
-  <meta name="description" content="Custom systems and automation for Black Creek Dog Training Center in Nunica, MI — helping a specialized bird dog training facility and online course platform run smoother.">
+  <meta name="description" content="Custom systems and automation for Black Creek Dog Training Center in Nunica, MI, helping a specialized bird dog training facility and digital course platform run smoother.">
   <meta property="og:title" content="Black Creek Dog Training Center | Nick Dahlhoff, AI Consulting">
-  <meta property="og:description" content="Custom systems and automation for Black Creek Dog Training Center in Nunica, MI — helping a specialized bird dog training facility and online course platform run smoother.">
+  <meta property="og:description" content="Custom systems and automation for Black Creek Dog Training Center in Nunica, MI, helping a specialized bird dog training facility and digital course platform run smoother.">
   <meta property="og:image" content="hero.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,56 +35,18 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: var(--font-body);
-      font-size: 1.125rem;
+      color: var(--color-text);
+      background-color: var(--color-bg);
       line-height: 1.7;
-      color: var(--color-text);
-      background-color: var(--color-bg);
+      font-size: 1.125rem;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    h1, h2, h3 {
-      font-family: var(--font-display);
-      font-weight: 700;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      line-height: 1.1;
-      color: var(--color-text);
-    }
-
-    h2 {
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      line-height: 1.2;
-      color: var(--color-text);
-    }
-
-    a {
-      color: var(--color-accent);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: var(--color-accent-hover);
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* Hero Section */
+    /* Hero */
     .hero {
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       min-height: 80vh;
       display: flex;
       align-items: center;
@@ -97,28 +59,24 @@
       width: 100%;
       display: grid;
       grid-template-columns: 55% 45%;
-      align-items: center;
       gap: 3rem;
-    }
-
-    .hero-text {
-      grid-column: 1;
+      align-items: center;
     }
 
     .hero-text h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--color-text);
       margin-bottom: 1.25rem;
     }
 
-    .hero-subhead {
+    .hero-text .subhead {
       font-size: 1.2rem;
       color: var(--color-text-secondary);
       line-height: 1.6;
       margin-bottom: 0;
-    }
-
-    .hero-image {
-      grid-column: 2;
-      grid-row: 1;
     }
 
     .hero-image-card {
@@ -128,101 +86,89 @@
     }
 
     .hero-image-card img {
-      object-fit: cover;
       width: 100%;
       display: block;
+      object-fit: cover;
+    }
+
+    .hero-image-card .placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #D4853A 0%, #B8652A 50%, #F5E6D4 100%);
     }
 
     .hero-cta {
       grid-column: 1;
-      grid-row: 2;
-      padding-top: 0.5rem;
+      margin-top: -1rem;
     }
 
     .btn-primary {
       display: inline-block;
-      background-color: var(--color-accent);
+      background: var(--color-accent);
       color: #FFFFFF;
       font-family: var(--font-body);
       font-size: 1rem;
       font-weight: 600;
       padding: 16px 32px;
       border-radius: 8px;
+      text-decoration: none;
       border: none;
       cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.2s ease;
-      text-align: center;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
     .btn-primary:hover {
-      background-color: var(--color-accent-hover);
-      color: #FFFFFF;
+      background: var(--color-accent-hover);
       transform: translateY(-1px);
     }
 
     .btn-primary:focus {
-      outline: 3px solid var(--color-accent-light);
+      outline: 3px solid var(--color-accent);
       outline-offset: 2px;
     }
 
-    /* Body Section - Part 1 */
-    .body-part1 {
-      background-color: var(--color-bg);
+    /* Body */
+    .body-section {
       padding: clamp(60px, 8vw, 120px) 24px;
     }
 
-    .body-part1 .content-wrap {
+    .body-section .content {
       max-width: 720px;
       margin: 0 auto;
     }
 
-    .body-part1 .first-paragraph {
+    .body-part1 {
+      background: var(--color-bg);
+    }
+
+    .body-part1 .first-para {
       font-size: 1.25rem;
-      line-height: 1.7;
       border-left: 3px solid rgba(212, 133, 58, 0.3);
-      padding-left: 1.5rem;
+      padding-left: 1.25rem;
       margin-bottom: 1.5rem;
     }
 
-    .body-part1 p {
-      font-size: 1.125rem;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Amber divider */
-    .section-divider {
+    .body-divider {
       max-width: 720px;
       margin: 0 auto;
       border: none;
       border-top: 1px solid rgba(212, 133, 58, 0.2);
     }
 
-    /* Body Section - Part 2 */
     .body-part2 {
-      background-color: var(--color-surface-alt);
-      padding: clamp(60px, 8vw, 120px) 24px;
-    }
-
-    .body-part2 .content-wrap {
-      max-width: 720px;
-      margin: 0 auto;
+      background: var(--color-surface-alt);
     }
 
     .body-part2 p {
       font-size: 1.125rem;
       line-height: 1.7;
-      margin-bottom: 1.5rem;
     }
 
-    .body-part2 p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Why Me Section */
+    /* Why Me */
     .why-me {
-      background-color: var(--color-surface);
+      background: var(--color-surface);
       padding: clamp(60px, 8vw, 120px) 24px;
+      border-top: 1px solid var(--color-border);
     }
 
     .why-me-inner {
@@ -234,82 +180,82 @@
       align-items: start;
     }
 
-    .why-me-photo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 0.5rem;
+    .why-me h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text);
+      margin-bottom: 2rem;
+      grid-column: 1 / -1;
+      text-align: left;
     }
 
-    .why-me-photo img {
+    .why-me-photo {
       width: 140px;
       height: 140px;
       border-radius: 50%;
-      object-fit: cover;
+      overflow: hidden;
       border: 3px solid var(--color-border);
     }
 
-    .why-me-content h2 {
-      text-align: left;
-      margin-bottom: 2rem;
+    .why-me-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .why-me-list {
+    .why-me-points {
       list-style: none;
-      padding: 0;
     }
 
-    .why-me-list li {
-      display: flex;
-      gap: 1rem;
+    .why-me-points li {
       margin-bottom: 1.25rem;
-      text-align: left;
+      padding-left: 2.5rem;
+      position: relative;
       font-size: 1.125rem;
       line-height: 1.6;
+      text-align: left;
     }
 
-    .why-me-list li:last-child {
-      margin-bottom: 0;
-    }
-
-    .why-me-number {
+    .why-me-points li .num {
+      position: absolute;
+      left: 0;
+      top: 0;
       font-family: var(--font-display);
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--color-accent);
       line-height: 1.4;
-      flex-shrink: 0;
-      width: 2rem;
     }
 
-    .why-me-list strong {
+    .why-me-points li strong {
       font-weight: 600;
     }
 
-    /* CTA Section */
+    /* CTA */
     .cta-section {
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       padding: clamp(60px, 8vw, 120px) 24px;
-    }
-
-    /* Pricing Card */
-    .pricing-card-wrap {
-      max-width: 500px;
-      margin: 0 auto clamp(60px, 6vw, 80px);
+      border-top: 1px solid var(--color-border);
     }
 
     .pricing-card {
-      background-color: var(--color-surface);
+      max-width: 500px;
+      margin: 0 auto 4rem;
+      background: var(--color-surface);
       border: 1px solid var(--color-border);
-      border-radius: 12px;
-      padding: 2.5rem;
+      border-radius: 16px;
+      padding: 3rem;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(45, 45, 45, 0.05);
+      box-shadow: 0 4px 16px rgba(45, 45, 45, 0.04);
     }
 
     .pricing-card h3 {
       font-family: var(--font-display);
       font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 700;
       margin-bottom: 0.75rem;
     }
 
@@ -323,27 +269,27 @@
 
     .pricing-card ul {
       list-style: none;
-      padding: 0;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       text-align: left;
-      max-width: 340px;
+      max-width: 320px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .pricing-card ul li {
       padding: 0.4rem 0;
-      font-size: 1rem;
-      position: relative;
       padding-left: 1.5rem;
+      position: relative;
+      font-size: 1rem;
+      color: var(--color-text);
     }
 
     .pricing-card ul li::before {
       content: "\2713";
-      color: var(--color-accent);
-      font-weight: 600;
       position: absolute;
       left: 0;
+      color: var(--color-accent);
+      font-weight: 600;
     }
 
     .pricing-card .subtext {
@@ -352,34 +298,20 @@
       margin-bottom: 1.5rem;
     }
 
-    .pricing-card .btn-primary {
-      width: 100%;
-      max-width: 300px;
-    }
-
-    /* Contact Options */
-    .contact-options {
+    .contact-grid {
       max-width: 900px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      align-items: start;
+      gap: 3rem;
     }
 
     .contact-form-wrap h3,
     .book-call-wrap h3 {
       font-family: var(--font-display);
       font-size: 1.35rem;
+      font-weight: 700;
       margin-bottom: 1.25rem;
-    }
-
-    /* Contact Form */
-    .contact-form-wrap {
-      background-color: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 12px;
-      padding: 2rem;
     }
 
     .contact-form label {
@@ -390,17 +322,15 @@
       margin-bottom: 0.35rem;
     }
 
-    .contact-form input[type="text"],
-    .contact-form input[type="email"],
-    .contact-form input[type="tel"],
+    .contact-form input,
     .contact-form textarea {
       width: 100%;
       padding: 12px 14px;
-      font-family: var(--font-body);
-      font-size: 1rem;
       border: 1px solid var(--color-border);
       border-radius: 8px;
-      background-color: var(--color-bg);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      background: var(--color-surface);
       color: var(--color-text);
       margin-bottom: 1rem;
       transition: border-color 0.2s ease;
@@ -410,7 +340,7 @@
     .contact-form textarea:focus {
       outline: none;
       border-color: var(--color-accent);
-      box-shadow: 0 0 0 3px var(--color-accent-light);
+      box-shadow: 0 0 0 3px rgba(212, 133, 58, 0.15);
     }
 
     .contact-form textarea {
@@ -418,153 +348,108 @@
       resize: vertical;
     }
 
-    .contact-form .btn-primary {
-      width: 100%;
-    }
-
-    #formSuccess {
-      display: none;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    #formSuccess p {
-      font-size: 1.125rem;
-      color: var(--color-success);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    #formSuccess span {
-      font-size: 0.95rem;
-      color: var(--color-text-secondary);
-    }
-
-    /* Book a Call */
-    .book-call-wrap {
-      background-color: var(--color-surface);
+    .book-call-card {
+      background: var(--color-surface);
       border: 1px solid var(--color-border);
-      border-radius: 12px;
-      padding: 2rem;
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      height: fit-content;
     }
 
-    .book-call-wrap p {
+    .book-call-card p {
       color: var(--color-text-secondary);
       margin-bottom: 1.5rem;
       font-size: 1rem;
     }
 
-    .book-call-wrap .btn-primary {
-      width: 100%;
+    #formSuccess {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      color: var(--color-success);
+      font-size: 1.125rem;
+      font-weight: 600;
     }
 
     /* Footer */
     .footer {
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       border-top: 1px solid var(--color-border);
       padding: 2.5rem 24px;
       text-align: center;
-    }
-
-    .footer p {
       font-size: 0.875rem;
       color: var(--color-text-secondary);
-      margin-bottom: 0.35rem;
-    }
-
-    .footer p:last-child {
-      margin-bottom: 0;
     }
 
     .footer a {
-      color: var(--color-text-secondary);
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
     }
 
     .footer a:hover {
-      color: var(--color-accent);
+      color: var(--color-accent-hover);
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .hero {
-        min-height: auto;
-        padding: 60px 24px;
-      }
-
       .hero-inner {
         grid-template-columns: 1fr;
-      }
-
-      .hero-text {
-        grid-column: 1;
-        order: 1;
         text-align: center;
       }
 
-      .hero-image {
-        grid-column: 1;
-        grid-row: auto;
-        order: 2;
+      .hero-text {
+        order: 1;
       }
 
-      .hero-image-card img {
+      .hero-image-card {
+        order: 2;
         max-height: 50vh;
       }
 
       .hero-cta {
-        grid-column: 1;
-        grid-row: auto;
         order: 3;
+        grid-column: 1;
         text-align: center;
-        padding-top: 1.5rem;
+        margin-top: 0;
       }
 
       .why-me-inner {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        justify-items: start;
       }
 
       .why-me-photo {
         justify-self: center;
       }
 
-      .why-me-content h2 {
+      .why-me h2 {
         text-align: left;
       }
 
-      .contact-options {
+      .why-me-points li {
+        text-align: left;
+      }
+
+      .contact-grid {
         grid-template-columns: 1fr;
-      }
-
-      .pricing-card {
-        padding: 2rem 1.5rem;
-      }
-    }
-
-    @media print {
-      .hero {
-        min-height: auto;
-      }
-
-      .btn-primary {
-        display: none;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
+
+  <!-- Section 1: Hero -->
+  <!-- Hero image prompt: Rural dog training facility at dawn, gravel drive, figure with two bird dogs -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-text">
-        <h1>Michigan's bird dog owners already know your name. Your systems should work as hard as your training program.</h1>
-        <p class="hero-subhead">There's a lot happening behind the scenes at a facility like yours, and most of it doesn't need to be manual anymore.</p>
+        <h1>A 4.6 from bird dog people who don't hand out praise easily. You've earned something most trainers never get.</h1>
+        <p class="subhead">The training side is dialed. The operational side of running two businesses has room to get a lot lighter.</p>
       </div>
-      <div class="hero-image">
-        <!-- Hero image: Interior of a clean, organized training facility office with a trainer leaning back in a chair, dogs working in a field visible through a window behind them. -->
-        <div class="hero-image-card">
-          <img src="hero.png" alt="Black Creek Dog Training Center facility office with training field visible through the window">
-        </div>
+      <div class="hero-image-card">
+        <img src="hero.png" alt="Illustration of Black Creek Dog Training Center at dawn, a trainer walking toward the facility with two bird dogs">
       </div>
       <div class="hero-cta">
         <a href="#contact" class="btn-primary">Let's Talk About Black Creek Dog Training Center</a>
@@ -572,123 +457,104 @@
     </div>
   </section>
 
-  <!-- Body Part 1 — Their Business -->
-  <section class="body-part1">
-    <div class="content-wrap">
-      <p class="first-paragraph">Black Creek Dog Training Center sits on 129th Ave in Nunica for a reason. Bird dog training needs space, fields, and room to work. You've built a specialized operation in a niche most general trainers won't touch, and your clients know the difference. A 4.6 rating from people who take their dogs' working performance seriously says something.</p>
-      <p>You're also running The Upland Institute alongside the training facility. On-demand video courses, professional production, a separate audience. That's not a side project. That's a second revenue stream with its own operational needs.</p>
+  <!-- Section 2: Body -->
+  <section class="body-section body-part1">
+    <div class="content">
+      <p class="first-para">Bird dog training is a niche most trainers avoid because the clients know more than they do. You leaned into it, built a facility in Nunica with the land and space the work actually requires, and developed a methodology serious enough that hunters drive to find you. Twenty reviews from that audience, almost all positive, tells a specific story about consistency.</p>
     </div>
   </section>
 
-  <hr class="section-divider">
+  <hr class="body-divider">
 
-  <!-- Body Part 2 — The Offer -->
-  <section class="body-part2">
-    <div class="content-wrap">
-      <p>Running a training facility and a digital education platform means two sets of clients, two sets of scheduling demands, two sets of follow-ups. Whether it's booking and intake that still runs through phone calls, course delivery that could be tighter, or client updates that take longer than they should, there's real time buried in the day-to-day of keeping both sides running. I come in, learn how both sides of your operation actually work, and build what gets you out of the middle of it. The stuff that eats your evenings and weekends starts handling itself. That's worth a conversation.</p>
+  <section class="body-section body-part2">
+    <div class="content">
+      <p>You're running a training facility and a digital education platform at the same time. That means two booking flows, two sets of client communication, and a lot of coordination that probably still depends on you personally. Whether it's intake that lives in phone calls and voicemail, session scheduling that could update itself, or course enrollment that runs separately from everything else, there's real time buried in keeping both sides moving. I spend a day at your facility, figure out where the bottleneck actually is, and build what removes it. The parts of your week that feel like admin start handling themselves, and you get back to the field. Worth a conversation.</p>
     </div>
   </section>
 
-  <!-- Why Me Section -->
+  <!-- Section 3: Why Me -->
   <section class="why-me">
     <div class="why-me-inner">
+      <h2>Why me</h2>
       <div class="why-me-photo">
         <img src="nick-headshot.png" alt="Nick Dahlhoff">
       </div>
-      <div class="why-me-content">
-        <h2>Why me</h2>
-        <ol class="why-me-list">
-          <li>
-            <span class="why-me-number">1.</span>
-            <span><strong>AI expert.</strong> I work with AI tools every day — workflow automation, content strategy, data analysis, software development. I know what actually works and what's hype.</span>
-          </li>
-          <li>
-            <span class="why-me-number">2.</span>
-            <span><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</span>
-          </li>
-          <li>
-            <span class="why-me-number">3.</span>
-            <span><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</span>
-          </li>
-          <li>
-            <span class="why-me-number">4.</span>
-            <span><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</span>
-          </li>
-          <li>
-            <span class="why-me-number">5.</span>
-            <span><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</span>
-          </li>
-        </ol>
-      </div>
+      <ol class="why-me-points">
+        <li><span class="num">1</span><strong>AI expert.</strong> I work with AI tools every day: workflow automation, content strategy, data analysis, software development. I know what actually works and what's hype.</li>
+        <li><span class="num">2</span><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</li>
+        <li><span class="num">3</span><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</li>
+        <li><span class="num">4</span><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</li>
+        <li><span class="num">5</span><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</li>
+      </ol>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- Section 4: CTA -->
   <section class="cta-section" id="contact">
-    <!-- Pricing Card -->
-    <div class="pricing-card-wrap">
-      <div class="pricing-card">
-        <h3>On-Site Consulting</h3>
-        <div class="price">$750 / day</div>
-        <ul>
-          <li>On-site at your location (West Michigan)</li>
-          <li>Research + planning + implementation</li>
-          <li>Documentation + training</li>
-          <li>Follow-up support included</li>
-        </ul>
-        <p class="subtext">Ongoing and larger projects available on request</p>
-        <a href="https://buy.stripe.com/3cIdR96546GW2xXf0z4ZG01" target="_blank" rel="noopener" class="btn-primary">Pay Now — $750</a>
-      </div>
+    <div class="pricing-card">
+      <h3>On-Site Consulting</h3>
+      <div class="price">$750 / day</div>
+      <ul>
+        <li>On-site at your location (West Michigan)</li>
+        <li>Research + planning + implementation</li>
+        <li>Documentation + training</li>
+        <li>Follow-up support included</li>
+      </ul>
+      <p class="subtext">Ongoing and larger projects available on request</p>
+      <a href="https://buy.stripe.com/3cIdR96546GW2xXf0z4ZG01" target="_blank" rel="noopener" class="btn-primary">Pay Now &mdash; $750</a>
     </div>
 
-    <!-- Contact Options -->
-    <div class="contact-options">
-      <!-- Contact Form -->
+    <div class="contact-grid">
       <div class="contact-form-wrap">
         <h3>Send me a message</h3>
         <form id="contactForm" class="contact-form">
           <input type="hidden" name="source" value="prospect_site">
           <input type="hidden" name="slug" value="black-creek-dog-training-center">
-          <!-- Honeypot -->
           <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
-
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your name">
-
           <label for="email">Email <span style="color:var(--color-accent);">*</span></label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required>
-
-          <label for="phone">Phone</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required>
+          <label for="phone">Phone <span style="color:var(--color-text-light);">(optional)</span></label>
           <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
-
           <label for="message">Message <span style="color:var(--color-accent);">*</span></label>
-          <textarea id="message" name="message" placeholder="What can I help with?" required></textarea>
-
-          <button type="submit" class="btn-primary">Send Message</button>
+          <textarea id="message" name="message" placeholder="Tell me about your business and what you're looking for." required></textarea>
+          <button type="submit" class="btn-primary" style="width:100%;">Send Message</button>
         </form>
         <div id="formSuccess">
-          <p>Message sent!</p>
-          <span>I'll get back to you soon.</span>
+          <p>Message sent. I'll be in touch soon.</p>
         </div>
       </div>
 
-      <!-- Book a Call -->
       <div class="book-call-wrap">
-        <h3>Book a 30-minute call</h3>
-        <p>No pitch, just a conversation.</p>
-        <button data-cal-namespace="" data-cal-link="nickdahlhoff/30min" data-cal-config='{"layout":"month_view"}' class="btn-primary">Book a Call</button>
+        <div class="book-call-card">
+          <h3>Book a 30-minute call</h3>
+          <p>No pitch, just a conversation.</p>
+          <button class="btn-primary" data-cal-namespace="" data-cal-link="nickdahlhoff/30min" data-cal-config='{"layout":"month_view"}'>Book a Call</button>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Section 5: Footer -->
   <footer class="footer">
     <p>Nick Dahlhoff | West Michigan</p>
     <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
     <p>&copy; 2026</p>
   </footer>
 
-  <!-- Contact Form Submission -->
+  <!-- Smooth scroll -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+  <!-- Contact form submission -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var form = document.getElementById('contactForm');
@@ -735,11 +601,12 @@
     });
   </script>
 
-  <!-- Cal.com Embed -->
+  <!-- Cal.com embed -->
   <script type="text/javascript">
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "", {origin:"https://cal.com"});
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;}p(cal, ar);}; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://app.cal.com"});
     Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
   </script>
+
 </body>
 </html>

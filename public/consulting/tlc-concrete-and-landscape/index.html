@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">  <title>TLC Concrete and Landscape | Nick Dahlhoff</title>
-  <meta name="description" content="Custom software and automations for TLC Concrete and Landscape — built on-site, tailored to how your business actually runs.">
-  <meta property="og:title" content="TLC Concrete and Landscape | Nick Dahlhoff">
-  <meta property="og:description" content="Custom software and automations for TLC Concrete and Landscape — built on-site, tailored to how your business actually runs.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>TLC Concrete and Landscape | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="Custom tools and automations for TLC Concrete and Landscape, built on-site in West Michigan.">
+  <meta property="og:title" content="TLC Concrete and Landscape | Nick Dahlhoff, AI Consulting">
+  <meta property="og:description" content="Custom tools and automations for TLC Concrete and Landscape, built on-site in West Michigan.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -23,16 +24,11 @@
       --color-accent-light: #F5E6D4;
       --color-border: #E5DDD3;
       --color-success: #2D6A4F;
-
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body: 'Inter', system-ui, sans-serif;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: var(--font-body);
@@ -70,7 +66,7 @@
     }
 
     .hero-text p {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: var(--color-text-secondary);
       margin-bottom: 2rem;
       max-width: 540px;
@@ -85,19 +81,14 @@
       border-radius: 8px;
       font-weight: 600;
       font-size: 1.125rem;
+      font-family: var(--font-body);
       border: none;
       cursor: pointer;
       transition: background-color 0.2s ease;
     }
 
-    .btn:hover {
-      background-color: var(--color-accent-hover);
-    }
-
-    .btn:focus-visible {
-      outline: 3px solid var(--color-accent);
-      outline-offset: 3px;
-    }
+    .btn:hover { background-color: var(--color-accent-hover); }
+    .btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 
     .hero-image {
       border-radius: 16px;
@@ -109,6 +100,10 @@
       display: block;
       width: 100%;
       object-fit: cover;
+    }
+
+    .hero-cta {
+      display: none;
     }
 
     /* ── Body: Their Business ── */
@@ -134,7 +129,7 @@
       padding-left: 1.25rem;
     }
 
-    /* ── Amber rule separator ── */
+    /* ── Separator ── */
     .separator {
       max-width: 720px;
       margin: 0 auto;
@@ -164,179 +159,203 @@
       margin-bottom: 1.5rem;
     }
 
-    .body-offer p:last-child {
-      margin-bottom: 0;
-    }
+    .body-offer p:last-child { margin-bottom: 0; }
 
-    /* ── About Nick ── */
-    .about {
-      background-color: var(--color-bg);
+    /* ── Why Me ── */
+    .why-me {
+      background-color: var(--color-surface);
       padding: clamp(60px, 8vw, 120px) 24px;
-      text-align: center;
     }
 
-    .about .content {
-      max-width: 600px;
+    .why-me-inner {
+      max-width: 900px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      align-items: start;
     }
 
-    .about-photo {
-      width: 120px;
-      height: 120px;
+    .why-me h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text);
+      margin-bottom: 2rem;
+      text-align: left;
+      grid-column: 1 / -1;
+    }
+
+    .why-me-photo {
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      margin: 0 auto 2rem auto;
       border: 3px solid var(--color-border);
       overflow: hidden;
+      flex-shrink: 0;
     }
 
-    .about-photo img {
+    .why-me-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    .about h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--color-text);
-      margin-bottom: 1.5rem;
+    .why-me-points {
+      list-style: none;
     }
 
-    .about p {
-      font-size: 1.125rem;
-      color: var(--color-text-secondary);
-      margin-bottom: 1.5rem;
-    }
-
-    .credential {
-      font-size: 0.875rem;
-      color: var(--color-text-light);
-      font-style: italic;
-    }
-
-    /* ── How It Works ── */
-    .how-it-works {
-      background-color: var(--color-surface);
-      padding: clamp(60px, 8vw, 120px) 24px;
-    }
-
-    .how-it-works .content {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .how-it-works h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--color-text);
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-
-    .step {
+    .why-me-points li {
       display: flex;
       align-items: flex-start;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
     }
 
-    .step-number {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--color-accent);
-      line-height: 1;
-      flex-shrink: 0;
-      width: 2.5rem;
-      text-align: center;
-    }
+    .why-me-points li:last-child { margin-bottom: 0; }
 
-    .step-body h3 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: var(--color-text);
-      margin-bottom: 0.25rem;
-    }
-
-    .step-body p {
-      font-size: 1rem;
-      color: var(--color-text-secondary);
-    }
-
-    .pricing-block {
-      margin-top: 2.5rem;
-      padding: 1.5rem 2rem;
-      background-color: var(--color-accent-light);
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    .pricing-block .price {
+    .point-number {
       font-family: var(--font-display);
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--color-text);
-      margin-bottom: 0.5rem;
+      color: var(--color-accent);
+      line-height: 1.3;
+      flex-shrink: 0;
+      width: 1.75rem;
     }
 
-    .pricing-block .ongoing {
-      font-size: 0.875rem;
+    .point-text {
+      font-size: 1.125rem;
       color: var(--color-text-secondary);
+      line-height: 1.6;
     }
 
-    /* ── CTA ── */
+    .point-text strong {
+      color: var(--color-text);
+    }
+
+    /* ── CTA Section ── */
     .cta {
       background-color: var(--color-bg);
       padding: clamp(60px, 8vw, 120px) 24px;
     }
 
-    .cta .content {
+    .cta-inner {
       max-width: 900px;
       margin: 0 auto;
     }
 
-    .cta h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--color-text);
-      margin-bottom: 2.5rem;
+    /* Pricing Card */
+    .pricing-card {
+      max-width: 500px;
+      margin: 0 auto 3rem auto;
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 2.5rem;
       text-align: center;
+      box-shadow: 0 4px 16px rgba(45, 45, 45, 0.05);
     }
 
-    .cta-grid {
+    .pricing-card h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-card .price {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 1.25rem;
+      text-align: left;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-card ul li {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .pricing-card ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--color-accent);
+      opacity: 0.5;
+    }
+
+    .pricing-card .subtext {
+      font-size: 0.875rem;
+      color: var(--color-text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-pay {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: var(--color-accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-pay:hover { background-color: var(--color-accent-hover); }
+    .btn-pay:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+
+    /* Contact Grid */
+    .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 2.5rem;
       align-items: start;
     }
 
-    .form-card {
+    .form-card, .cal-card {
       background-color: var(--color-surface);
       padding: 2.5rem;
       border-radius: 12px;
       border: 1px solid var(--color-border);
     }
 
-    .form-group {
-      margin-bottom: 1.5rem;
+    .form-card h3, .cal-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
     }
 
-    .form-group:last-of-type {
-      margin-bottom: 0;
-    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group:last-of-type { margin-bottom: 0; }
 
     .form-group label {
       display: block;
       font-weight: 600;
       font-size: 0.875rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       color: var(--color-text);
     }
 
@@ -365,13 +384,11 @@
     }
 
     .form-submit {
-      margin-top: 1.5rem;
+      margin-top: 1.25rem;
       text-align: center;
     }
 
-    .form-submit .btn {
-      width: 100%;
-    }
+    .form-submit .btn { width: 100%; }
 
     .success-message {
       display: none;
@@ -385,10 +402,6 @@
     }
 
     .cal-card {
-      background-color: var(--color-surface);
-      padding: 2.5rem;
-      border-radius: 12px;
-      border: 1px solid var(--color-border);
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -422,15 +435,11 @@
       transition: color 0.2s ease;
     }
 
-    .footer a:hover {
-      color: var(--color-accent-hover);
-    }
+    .footer a:hover { color: var(--color-accent-hover); }
 
     /* ── Responsive ── */
     @media (max-width: 768px) {
-      .hero {
-        min-height: auto;
-      }
+      .hero { min-height: auto; }
 
       .hero-inner {
         grid-template-columns: 1fr;
@@ -442,18 +451,18 @@
         text-align: center;
       }
 
-      .hero-text p {
-        max-width: 100%;
-      }
-
-      .hero-text .btn {
-        display: block;
-        text-align: center;
-      }
+      .hero-text p { max-width: 100%; }
+      .hero-text .btn { display: none; }
 
       .hero-image {
         order: 2;
         max-height: 50vh;
+      }
+
+      .hero-cta {
+        display: block;
+        order: 3;
+        text-align: center;
       }
 
       .body-theirs p:first-child {
@@ -461,22 +470,30 @@
         padding-left: 0;
       }
 
-      .cta-grid {
+      .why-me-inner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: left;
+      }
+
+      .why-me-photo {
+        margin: 0 auto;
+      }
+
+      .contact-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
     }
 
     @media (max-width: 480px) {
-      .form-card,
-      .cal-card {
-        padding: 1.5rem;
-      }
+      .form-card, .cal-card { padding: 1.5rem; }
+      .pricing-card { padding: 1.5rem; }
     }
 
     @media print {
       .hero { min-height: auto; }
-      .btn { display: none; }
+      .btn, .btn-pay { display: none; }
     }
   </style>
 </head>
@@ -486,13 +503,16 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-text">
-        <h1>You started with decorative concrete. Now clients trust you with their entire property, and every single one of them says it was worth it.</h1>
-        <p>A business built on that kind of reputation deserves tools that actually keep up with it.</p>
-        <a href="#cta" class="btn">Let's Talk</a>
+        <h1>23 reviews, every single one five stars, and half of them mention you by name.</h1>
+        <p>That reputation gets built one patio, one retaining wall, one honest conversation at a time. There are tools now that can carry more of the weight between jobs.</p>
+        <a href="#cta" class="btn">Let's Talk About TLC Concrete and Landscape</a>
       </div>
       <div class="hero-image">
-        <!-- Hero image: warm pencil-sketch of contractor and homeowner reviewing patio design, TLC truck visible, finished stamped concrete and retaining wall in background -->
-        <img src="hero.png" alt="Illustration of a contractor and homeowner reviewing a patio design together">
+        <!-- Hero image: contractor showing finished stamped concrete details to homeowner couple, TLC truck in background -->
+        <img src="hero.png" alt="Illustration of a contractor showing finished stamped concrete work to a homeowner couple">
+      </div>
+      <div class="hero-cta">
+        <a href="#cta" class="btn">Let's Talk About TLC Concrete and Landscape</a>
       </div>
     </div>
   </section>
@@ -500,9 +520,7 @@
   <!-- Body: Their Business -->
   <section class="body-theirs">
     <div class="content">
-      <p>A few things stand out about TLC Concrete and Landscape. The communication gets mentioned in almost every review. Not just "responsive" in the way people say it to be polite, but specific. Clients describe getting thoughtful design advice before work starts, clear updates throughout, and someone who picks up the phone. That level of personal attention is why people send their family members and business partners your way.</p>
-      <p>The craftsmanship carries its own weight too. Patios are the signature, but the range goes well beyond that. Driveways, retaining walls, walkways, hardscaping, and projects that grow organically because clients keep saying yes. Fair pricing comes up often, but it's usually mentioned second, after the quality of the work itself.</p>
-      <p>Your crew gets praised independently, which is rare. Clients describe them as respectful, hardworking, and careful with the details. That says something about who you hire and how you run your jobs.</p>
+      <p>People show up with a rotted deck and no idea where to start, and they leave with a stamped patio that looks like natural stone. Clients bring their families back for more work and send their parents your way. The design consultations are a real differentiator. Suggesting steps and outcroppings to handle a slope, walking through material options and trade-offs, giving people something they didn't know they could have.</p>
     </div>
   </section>
 
@@ -512,76 +530,70 @@
   <!-- Body: The Offer -->
   <section class="body-offer">
     <div class="content">
-      <p>A concrete and landscape operation running multiple outdoor jobs through a Michigan season has a lot of moving pieces. Material coordination, weather-dependent scheduling, keeping clients updated while you're on-site somewhere else. Most of that coordination still lives in texts, phone calls, and memory.</p>
-      <p>The tools to pull it together into something that runs itself have gotten simple enough that it's worth doing now. I show up, spend time learning how your business actually works, and build whatever makes the biggest difference. Could be a day. Could be the start of something longer. Everything gets documented, you get trained, and I'm available after. If that sounds useful, I'd like to talk.</p>
+      <p>Running a concrete crew in West Michigan means seven good months to make a year's worth of revenue. Between weather reshuffles, material deliveries that need precise timing, and customers who need updates while you're mid-pour, a lot of the week gets eaten by coordination that isn't the actual work. Whether it's estimates that build themselves from a job site photo, customer updates that send without you stopping what you're doing, or a scheduling system that adjusts when the forecast changes, most of that operational weight can be lighter than it is now. I come out, spend time understanding how your jobs actually flow, and build whatever saves the most hours. Everything is documented and yours to keep.</p>
     </div>
   </section>
 
-  <!-- About Nick -->
-  <section class="about">
-    <div class="content">
-      <div class="about-photo"><img src="nick-headshot.png" alt="Nick Dahlhoff"></div>
-      <h2>Who I am</h2>
-      <p>I'm Nick Dahlhoff, based in West Michigan. I help local businesses connect their systems, automate their processes, and use AI to work smarter. Every business is different — I start by understanding yours, then build exactly what you need.</p>
-      <p class="credential">AI systems builder specializing in small business operations — custom software, automation, and process improvement.</p>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="how-it-works">
-    <div class="content">
-      <h2>How It Works</h2>
-
-      <div class="step">
-        <span class="step-number">1</span>
-        <div class="step-body">
-          <h3>We talk</h3>
-          <p>Quick call or form. No commitment, just a conversation about what's going on.</p>
-        </div>
+  <!-- Why Me -->
+  <section class="why-me">
+    <div class="why-me-inner">
+      <h2>Why me</h2>
+      <div class="why-me-photo">
+        <img src="nick-headshot.png" alt="Nick Dahlhoff">
       </div>
-
-      <div class="step">
-        <span class="step-number">2</span>
-        <div class="step-body">
-          <h3>I learn your operation</h3>
-          <p>I come on-site and spend time understanding how your business actually runs.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <span class="step-number">3</span>
-        <div class="step-body">
-          <h3>I build what helps most</h3>
-          <p>Custom tools, automations, systems — whatever saves the most time.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <span class="step-number">4</span>
-        <div class="step-body">
-          <h3>You're set up to run it</h3>
-          <p>Everything documented, you're trained, and I'm available after.</p>
-        </div>
-      </div>
-
-      <div class="pricing-block">
-        <p class="price">One day of hands-on work, $750.</p>
-        <p class="ongoing">If there's more to do after the first day, we figure that out together.</p>
-      </div>
+      <ol class="why-me-points">
+        <li>
+          <span class="point-number">1</span>
+          <span class="point-text"><strong>AI expert.</strong> I work with AI tools every day: workflow automation, content strategy, data analysis, software development. I know what actually works and what's hype.</span>
+        </li>
+        <li>
+          <span class="point-number">2</span>
+          <span class="point-text"><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</span>
+        </li>
+        <li>
+          <span class="point-number">3</span>
+          <span class="point-text"><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</span>
+        </li>
+        <li>
+          <span class="point-number">4</span>
+          <span class="point-text"><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</span>
+        </li>
+        <li>
+          <span class="point-number">5</span>
+          <span class="point-text"><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</span>
+        </li>
+      </ol>
     </div>
   </section>
 
   <!-- CTA -->
   <section id="cta" class="cta">
-    <div class="content">
-      <h2>Interested? Let's have a conversation.</h2>
-      <div class="cta-grid">
+    <div class="cta-inner">
+      <!-- Pricing Card -->
+      <div class="pricing-card">
+        <h2>On-Site Consulting</h2>
+        <div class="price">$750 / day</div>
+        <ul>
+          <li>On-site at your location (West Michigan)</li>
+          <li>Research + planning + implementation</li>
+          <li>Documentation + training</li>
+          <li>Follow-up support included</li>
+        </ul>
+        <p class="subtext">Ongoing and larger projects available on request</p>
+        <a href="https://buy.stripe.com/3cIdR96546GW2xXf0z4ZG01" target="_blank" rel="noopener" class="btn-pay">Pay Now &mdash; $750</a>
+      </div>
+
+      <!-- Contact Options -->
+      <div class="contact-grid">
         <div class="form-card">
-          <form id="contact-form">
-            <input type="hidden" name="business_slug" value="tlc-concrete-and-landscape">
+          <h3>Send me a message</h3>
+          <form id="contactForm">
+            <input type="hidden" name="slug" value="tlc-concrete-and-landscape">
+            <input type="hidden" name="source" value="prospect_site">
+            <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
             <div class="form-group">
-              <label for="name">Name *</label>
-              <input type="text" id="name" name="name" required>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name">
             </div>
             <div class="form-group">
               <label for="email">Email *</label>
@@ -598,13 +610,14 @@
             <div class="form-submit">
               <button type="submit" class="btn">Send Message</button>
             </div>
-            <div id="success" class="success-message">
+            <div id="formSuccess" class="success-message">
               Thanks for reaching out! I'll get back to you within 24 hours.
             </div>
           </form>
         </div>
         <div class="cal-card">
-          <p>Or book a 30-minute call — no pitch, just a conversation.</p>
+          <h3>Book a 30-minute call</h3>
+          <p>No pitch, just a conversation.</p>
           <button data-cal-namespace="" data-cal-link="nickdahlhoff/30min" data-cal-config='{"layout":"month_view"}' class="btn">Book a Call</button>
         </div>
       </div>
@@ -625,25 +638,63 @@
   Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}},"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
 
+  <!-- Smooth scrolling -->
   <script>
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        var target = document.querySelector(this.getAttribute('href'));
         if (target) {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
+  </script>
 
-    // Form handling
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // TODO: Connect to Convex mutation
-      document.getElementById('success').style.display = 'block';
-      this.reset();
-      document.getElementById('success').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  <!-- Form handling -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          var data = {
+            name: form.elements.name.value || undefined,
+            email: form.elements.email.value,
+            phone: form.elements.phone.value || undefined,
+            message: form.elements.message.value,
+            source: 'prospect_site',
+            slug: form.elements.slug.value,
+            website: form.elements.website.value || undefined,
+          };
+
+          fetch('https://calculating-platypus-531.convex.site/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+            .then(function(res) {
+              if (!res.ok) throw new Error('Submission failed');
+              form.style.display = 'none';
+              success.style.display = 'block';
+            })
+            .catch(function() {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+              }
+              alert('Something went wrong. Please try again or email ndahlhoff10@gmail.com directly.');
+            });
+        });
+      }
     });
   </script>
 </body>

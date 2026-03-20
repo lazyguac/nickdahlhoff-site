@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">  <title>Integrity Tax Group | Nick Dahlhoff, AI Consulting</title>
-  <meta name="description" content="Your tax firm handles 9,000 returns annually but is only reachable 32 hours per week. Better client communication systems can fix the availability gaps showing up in your reviews.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Integrity Tax Group | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="Custom tools and automation for Integrity Tax Group in Grand Haven, built to give your team time back during tax season and beyond.">
   <meta property="og:title" content="Integrity Tax Group | Nick Dahlhoff, AI Consulting">
-  <meta property="og:description" content="Your tax firm handles 9,000 returns annually but is only reachable 32 hours per week. Better client communication systems can fix the availability gaps showing up in your reviews.">
+  <meta property="og:description" content="Custom tools and automation for Integrity Tax Group in Grand Haven, built to give your team time back during tax season and beyond.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Colors */
       --color-bg: #FDF6EC;
       --color-surface: #FFFFFF;
       --color-surface-alt: #F5EDE0;
@@ -24,17 +24,11 @@
       --color-accent-light: #F5E6D4;
       --color-border: #E5DDD3;
       --color-success: #2D6A4F;
-
-      /* Typography */
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body: 'Inter', system-ui, sans-serif;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: var(--font-body);
@@ -44,50 +38,55 @@
       background-color: var(--color-bg);
     }
 
+    /* Hero */
     .hero-section {
-      min-height: 85vh;
-      background-image:
-        linear-gradient(
-          to right,
-          rgba(35, 32, 28, 0.93) 0%,
-          rgba(35, 32, 28, 0.82) 35%,
-          rgba(35, 32, 28, 0.45) 60%,
-          rgba(35, 32, 28, 0.10) 85%,
-          rgba(35, 32, 28, 0.03) 100%
-        ),
-        url('integrity-hero.jpg');
-      background-size: cover;
-      background-position: center right;
-      background-repeat: no-repeat;
-      display: flex;
+      min-height: 80vh;
+      background-color: var(--color-bg);
+      display: grid;
+      grid-template-columns: 55% 45%;
       align-items: center;
-      padding: clamp(80px, 10vw, 140px) clamp(24px, 5vw, 64px);
-      color: white;
-      position: relative;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: clamp(60px, 8vw, 120px) clamp(24px, 5vw, 64px);
+      gap: 3rem;
     }
 
-    .hero-content {
-      max-width: 560px;
-      margin: 0;
-      text-align: left;
-    }
+    .hero-text { text-align: left; }
 
     .hero-headline {
       font-family: var(--font-display);
-      font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+      font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 700;
-      line-height: 1.12;
+      line-height: 1.1;
+      color: var(--color-text);
       margin-bottom: 1.25rem;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.15);
     }
 
     .hero-subhead {
-      font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+      font-size: 1.2rem;
       line-height: 1.6;
-      margin-bottom: 2.5rem;
-      opacity: 0.88;
+      color: var(--color-text-secondary);
+      margin-bottom: 2rem;
       max-width: 480px;
     }
+
+    .hero-image-card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(45,45,45,0.08);
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, #D4853A 0%, #B8652A 50%, #F5E6D4 100%);
+    }
+    /* Hero image prompt ref: warm personal moment in a small-town tax office, tax preparer handing folder to smiling couple, Grand Haven streetscape through window -->
+
+    .hero-image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-cta { grid-column: 1; }
 
     .cta-button {
       display: inline-block;
@@ -98,158 +97,179 @@
       border-radius: 8px;
       font-weight: 600;
       font-size: 1rem;
+      font-family: var(--font-body);
       transition: background-color 0.2s ease;
       border: none;
       cursor: pointer;
     }
 
-    .cta-button:hover {
-      background-color: var(--color-accent-hover);
+    .cta-button:hover { background-color: var(--color-accent-hover); }
+    .cta-button:focus { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+    /* Sections */
+    .section { padding: clamp(60px, 8vw, 120px) 24px; }
+    .section-centered { max-width: 720px; margin: 0 auto; }
+    .section p { margin-bottom: 1.5rem; }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* Body Part 1 */
+    .body-part1 { background-color: var(--color-bg); }
+    .body-part1 .first-para {
+      font-size: 1.25rem;
+      border-left: 3px solid rgba(212, 133, 58, 0.3);
+      padding-left: 1.5rem;
     }
 
-    .section {
-      padding: clamp(60px, 8vw, 120px) 24px;
-    }
-
-    .section-centered {
+    /* Amber rule */
+    .amber-rule {
       max-width: 720px;
       margin: 0 auto;
+      border: none;
+      border-top: 1px solid rgba(212, 133, 58, 0.2);
     }
 
-    .section-alt {
-      background-color: var(--color-surface-alt);
+    /* Body Part 2 */
+    .body-part2 { background-color: var(--color-surface-alt); }
+
+    /* Why Me */
+    .why-me-section { background-color: var(--color-surface); }
+
+    .why-me-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      align-items: start;
     }
 
-    .section-surface {
-      background-color: var(--color-surface);
-    }
-
-    .section-heading {
+    .why-me-heading {
       font-family: var(--font-display);
       font-size: clamp(1.75rem, 3.5vw, 2.75rem);
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: 2rem;
+      text-align: left;
+      grid-column: 1 / -1;
     }
 
-    .story-section {
-      padding-top: clamp(40px, 6vw, 80px);
-      position: relative;
-    }
-
-    .story-section::before {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background-color: var(--color-accent);
-      margin: 0 auto 2rem;
-    }
-
-    .story-text {
-      font-size: 1.25rem;
-      text-align: center;
-    }
-
-    .section p {
-      margin-bottom: 1.5rem;
-    }
-
-    .section p:last-child {
-      margin-bottom: 0;
-    }
-
-    .accent-border {
-      border-top: 1px solid rgba(212, 133, 58, 0.2);
-      padding-top: clamp(60px, 8vw, 120px);
-    }
-
-    .about-section {
-      text-align: center;
-    }
-
-    .about-photo {
-      width: 120px;
-      height: 120px;
+    .why-me-photo {
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent) 100%);
+      overflow: hidden;
       border: 3px solid var(--color-border);
-      margin: 0 auto 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.875rem;
-      color: var(--color-text-secondary);
     }
 
-    .credential {
-      color: var(--color-text-secondary);
-      font-style: italic;
-      margin-top: 1rem;
+    .why-me-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .how-it-works {
-      counter-reset: step-counter;
+    .why-me-list {
+      list-style: none;
+      counter-reset: why-counter;
     }
 
-    .step {
-      margin-bottom: 2.5rem;
-      padding-left: 4rem;
+    .why-me-list li {
+      counter-increment: why-counter;
+      margin-bottom: 1.25rem;
+      padding-left: 2.5rem;
       position: relative;
+      font-size: 1.125rem;
+      line-height: 1.6;
+      text-align: left;
     }
 
-    .step::before {
-      counter-increment: step-counter;
-      content: counter(step-counter);
+    .why-me-list li::before {
+      content: counter(why-counter);
       position: absolute;
       left: 0;
       top: 0;
       font-family: var(--font-display);
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--color-accent);
       line-height: 1;
     }
 
-    .step-title {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      font-size: 1.125rem;
-    }
+    .why-me-list li strong { font-weight: 600; }
 
-    .pricing-block {
-      background-color: var(--color-accent-light);
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin: 2rem 0;
+    /* CTA Section */
+    .pricing-card {
+      max-width: 500px;
+      margin: 0 auto 3rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2.5rem;
       text-align: center;
-      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(45,45,45,0.05);
     }
 
-    .ongoing-note {
+    .pricing-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-price {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-features li {
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 1rem;
+    }
+
+    .pricing-features li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+
+    .pricing-subtext {
       color: var(--color-text-secondary);
       font-size: 0.875rem;
-      text-align: center;
+      margin-top: 1rem;
     }
 
-    .cta-section {
+    .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
       align-items: start;
     }
 
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+    .contact-form-heading, .cal-heading {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
     }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
 
     .form-label {
       font-weight: 600;
@@ -257,56 +277,53 @@
       color: var(--color-text);
     }
 
-    .form-input,
-    .form-textarea {
+    .form-input, .form-textarea {
       padding: 12px 16px;
       border: 2px solid var(--color-border);
       border-radius: 8px;
       font-family: var(--font-body);
       font-size: 1rem;
       transition: border-color 0.2s ease;
+      background: var(--color-surface);
     }
 
-    .form-input:focus,
-    .form-textarea:focus {
+    .form-input:focus, .form-textarea:focus {
       outline: none;
       border-color: var(--color-accent);
     }
 
-    .form-textarea {
-      min-height: 120px;
-      resize: vertical;
+    .form-textarea { min-height: 120px; resize: vertical; }
+
+    .form-success {
+      display: none;
+      padding: 2rem;
+      background: var(--color-accent-light);
+      border-radius: 12px;
+      text-align: center;
+      color: var(--color-success);
+      font-weight: 600;
     }
 
     .cal-card {
-      background-color: var(--color-surface);
+      background: var(--color-surface);
       padding: 2rem;
       border-radius: 12px;
       border: 1px solid var(--color-border);
       text-align: center;
     }
 
-    .cal-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      font-family: var(--font-display);
-    }
+    .cal-card p { margin-bottom: 1rem; color: var(--color-text-secondary); }
 
-    .contact-info {
+    .contact-email {
       margin-top: 1.5rem;
       font-size: 0.875rem;
       color: var(--color-text-secondary);
     }
 
-    .contact-info a {
-      color: var(--color-accent);
-      text-decoration: none;
-    }
+    .contact-email a { color: var(--color-accent); text-decoration: none; }
+    .contact-email a:hover { text-decoration: underline; }
 
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-
+    /* Footer */
     .footer {
       background-color: var(--color-bg);
       border-top: 1px solid var(--color-border);
@@ -316,183 +333,135 @@
       font-size: 0.875rem;
     }
 
-    .footer a {
-      color: var(--color-accent);
-      text-decoration: none;
-    }
+    .footer a { color: var(--color-accent); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
+    /* Responsive */
     @media (max-width: 768px) {
       .hero-section {
-        min-height: 70vh;
-        background-position: 70% center;
-        background-image:
-          linear-gradient(
-            to right,
-            rgba(35, 32, 28, 0.95) 0%,
-            rgba(35, 32, 28, 0.88) 45%,
-            rgba(35, 32, 28, 0.55) 75%,
-            rgba(35, 32, 28, 0.25) 100%
-          ),
-          url('integrity-hero.jpg');
-      }
-
-      .hero-content {
-        max-width: 100%;
-      }
-
-      .section {
-        padding: clamp(40px, 6vw, 80px) 24px;
-      }
-
-      .cta-section {
         grid-template-columns: 1fr;
+        min-height: auto;
+        padding: clamp(40px, 6vw, 80px) 24px;
         gap: 2rem;
       }
 
-      .step {
-        padding-left: 3rem;
+      .hero-text { order: 1; text-align: center; }
+      .hero-text .hero-subhead { max-width: 100%; }
+      .hero-image-card { order: 2; max-height: 50vh; }
+      .hero-cta { order: 3; text-align: center; }
+
+      .why-me-grid {
+        grid-template-columns: 1fr;
+        text-align: left;
       }
 
-      .step::before {
-        font-size: 1.5rem;
+      .why-me-photo { margin: 0 auto; }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
       }
     }
 
     @media (max-width: 480px) {
-      .hero-section {
-        min-height: 60vh;
-        background-image:
-          linear-gradient(
-            to bottom,
-            rgba(35, 32, 28, 0.92) 0%,
-            rgba(35, 32, 28, 0.78) 50%,
-            rgba(35, 32, 28, 0.40) 100%
-          ),
-          url('integrity-hero.jpg');
-        background-position: center;
-        align-items: flex-start;
-        padding-top: clamp(60px, 15vw, 100px);
-      }
-
-      .story-section::before {
-        margin: 0 0 2rem 0;
-      }
-
-      .story-text {
-        text-align: left;
-      }
+      .hero-headline { font-size: clamp(2rem, 7vw, 2.5rem); }
     }
   </style>
 </head>
 <body>
   <section class="hero-section">
-    <div class="hero-content">
-      <h1 class="hero-headline">You're only reachable 32 hours per week despite handling 9,000 returns annually</h1>
-      <p class="hero-subhead">The disconnect between your volume and availability is creating the communication problems showing up in reviews.</p>
+    <div class="hero-text">
+      <h1 class="hero-headline">25 years, multiple locations, and clients who say your team remembers their kids' names.</h1>
+      <p class="hero-subhead">There's a version of your firm where all those systems actually talk to each other, and it doesn't take a major overhaul to get there.</p>
+    </div>
+    <div class="hero-image-card">
+      <!-- Hero image: warm personal moment in a small-town tax office, preparer handing folder to smiling couple, Grand Haven streetscape through window, Integrity Tax Group logo on frosted glass door -->
+    </div>
+    <div class="hero-cta">
       <a href="#cta" class="cta-button">Let's Talk About Integrity Tax Group</a>
     </div>
   </section>
 
-  <section class="section story-section">
+  <section class="section body-part1">
     <div class="section-centered">
-      <p class="story-text">Tax firms are splitting into two groups right now. Those who figure out how to use AI and better systems to serve more clients better, and those who stay trapped in manual processes fighting for survival. The window to choose which group you're in is pretty narrow, but the tools to make the jump are finally ready.</p>
+      <p class="first-para">You've built something that runs on real relationships. Clients mention specific preparers by name in reviews, not just the firm. You offer individual returns, small business tax, payroll, bookkeeping, and consulting across West Michigan, and you've done it while staying independent through ownership transitions that would have broken most firms. You also run an internal preparer training program, which says a lot about how you think about the long game.</p>
     </div>
   </section>
 
-  <section class="section">
+  <hr class="amber-rule">
+
+  <section class="section body-part2">
     <div class="section-centered">
-      <h2 class="section-heading">What We Noticed</h2>
-      <p>Integrity Tax Group represents something special in West Michigan - a firm that survived losing its founder, weathered COVID, and chose to stay independent rather than sell to a corporate giant. That takes real grit and vision. But looking at your operations, there's a mismatch between your ambitions and your systems.</p>
-      <p>You've filed 44,000 returns in five years with 150+ years of combined experience on your team. That's impressive scale and expertise. But your availability window is Monday-Thursday, 10 AM to 5 PM. That's 32 hours per week when clients can reach you, while handling nearly 9,000 returns annually. The math creates pressure that shows up in your reviews - business clients paying weekly but struggling to get responses, individuals unable to reach anyone when their preparer leaves.</p>
-      <p>This isn't about working harder. It's about working differently. The firms thriving in 2026 have figured out how to be available 24/7 without working 24/7, how to handle routine questions automatically while keeping the personal touch that makes you special.</p>
+      <p>Whether it's client documents that still need chasing every February, data that gets entered into one system and re-entered into the next, or seasonal phone volume that buries the front desk, you've probably had a dozen ideas about how those things could just handle themselves. That's what I do. I come in, learn how your operation actually works, and build what saves the most time. Could be tightening up how client intake flows before tax season. Could be connecting your scheduling, billing, and client records so nothing falls through. Everything is documented, your team is trained, and I'm available after. The goal is simple: your firm runs the way you've always wanted it to, and your team spends their hours on the work that actually matters.</p>
     </div>
   </section>
 
-  <section class="section section-alt accent-border">
-    <div class="section-centered">
-      <h2 class="section-heading">The Bigger Picture</h2>
-      <p>The tax industry is changing faster than most people realize. AI can now handle 70% of client communications, document processing that used to take hours happens in minutes, and quality control systems catch errors before human review. The firms adopting these tools are handling more clients with less stress while the ones fighting with outdated processes are burning out.</p>
-      <p>You've already proven you can adapt - surviving Brian's passing and refusing to sell shows serious resilience. But are you positioned for what's coming next? When your competitors can provide instant responses and seamless client experiences while you're stuck with phone tag and manual processes?</p>
-      <p>The opportunity isn't just fixing current problems. It's getting ahead of competitors who are still operating like it's 2015. Imagine if every client question got answered immediately, document collection happened smoothly before appointments, and your team focused entirely on complex tax strategy instead of administrative tasks.</p>
-      <p>Your expertise and client relationships are your foundation. Better systems would let you build something remarkable on that foundation - a practice that serves more clients better while giving you back evenings and weekends. That's what I help people create.</p>
-    </div>
-  </section>
-
-  <section class="section about-section">
-    <div class="section-centered">
-      <h2 class="section-heading">Who I am</h2>
-      <div class="about-photo">Photo</div>
-      <p>I'm Nick Dahlhoff, based in West Michigan. I help local businesses figure out where AI tools and better systems can actually save them time and money. Every business is different, so I start by understanding yours. Then I build exactly what you need.</p>
-      <p class="credential">AI systems builder for small businesses: custom software, automation, and process improvement.</p>
-    </div>
-  </section>
-
-  <section class="section section-surface">
-    <div class="section-centered">
-      <h2 class="section-heading">Here's how it works</h2>
-      <div class="how-it-works">
-        <div class="step">
-          <div class="step-title">We talk first.</div>
-          <p>Quick call to understand your situation. No sales pitch. If it doesn't seem like a fit, I'll tell you.</p>
-        </div>
-        <div class="step">
-          <div class="step-title">I come to you.</div>
-          <p>I spend half a day at your business: walking around, watching how things work, asking questions, mapping out your systems and figuring out where the biggest opportunities are.</p>
-        </div>
-        <div class="step">
-          <div class="step-title">I start building.</div>
-          <p>The other half of the day, I work on your highest-priority issue. Could be quick wins you see results from immediately, or the start of something bigger.</p>
-        </div>
-        <div class="step">
-          <div class="step-title">You decide what's next.</div>
-          <p>Some people just want the one day. Others want ongoing help building bigger systems. Either way works.</p>
-        </div>
+  <section class="section why-me-section">
+    <div class="why-me-grid">
+      <h2 class="why-me-heading">Why me</h2>
+      <div class="why-me-photo">
+        <img src="nick-headshot.png" alt="Nick Dahlhoff">
       </div>
-      <div class="pricing-block">
-        One day of hands-on work, $750. Covers research, implementation, and a follow-up check-in.
-      </div>
-      <p class="ongoing-note">For businesses that want to go deeper, ongoing project work is available.</p>
+      <ol class="why-me-list">
+        <li><strong>AI expert.</strong> I work with AI tools every day, from workflow automation to content strategy, data analysis, and software development. I know what actually works and what's hype.</li>
+        <li><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</li>
+        <li><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</li>
+        <li><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</li>
+        <li><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</li>
+      </ol>
     </div>
   </section>
 
-  <section class="section" id="cta">
-    <div class="section-centered">
-      <h2 class="section-heading">Interested? Let's talk.</h2>
-      <div class="cta-section">
-        <form class="contact-form" method="post" action="#" onsubmit="event.preventDefault(); alert('Thanks! I\'ll be in touch soon.'); return false;">
-          <!-- TODO: Connect to Convex mutation -->
-          <input type="hidden" name="business_slug" value="integrity-tax-group">
+  <section class="section" id="cta" style="background-color: var(--color-bg);">
+    <div class="pricing-card">
+      <h2 class="pricing-heading">On-Site Consulting</h2>
+      <div class="pricing-price">$750 / day</div>
+      <ul class="pricing-features">
+        <li>On-site at your location (West Michigan)</li>
+        <li>Research + planning + implementation</li>
+        <li>Documentation + training</li>
+        <li>Follow-up support included</li>
+      </ul>
+      <a href="https://buy.stripe.com/3cIdR96546GW2xXf0z4ZG01" target="_blank" rel="noopener" class="cta-button" style="width: 100%; text-align: center;">Pay Now &mdash; $750</a>
+      <p class="pricing-subtext">Ongoing and larger projects available on request</p>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <h3 class="contact-form-heading">Send me a message</h3>
+        <form class="contact-form" id="contactForm">
+          <input type="hidden" name="slug" value="integrity-tax-group">
+          <input type="hidden" name="source" value="prospect_site">
+          <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
           <div class="form-group">
             <label class="form-label" for="name">Name</label>
-            <input class="form-input" type="text" id="name" name="name" required>
+            <input class="form-input" type="text" id="name" name="name">
           </div>
           <div class="form-group">
             <label class="form-label" for="email">Email</label>
             <input class="form-input" type="email" id="email" name="email" required>
           </div>
           <div class="form-group">
-            <label class="form-label" for="phone">Phone (optional)</label>
+            <label class="form-label" for="phone">Phone <span style="font-weight:400;color:var(--color-text-light);">(optional)</span></label>
             <input class="form-input" type="tel" id="phone" name="phone">
           </div>
           <div class="form-group">
             <label class="form-label" for="message">Message</label>
-            <textarea class="form-textarea" id="message" name="message" placeholder="Tell me about your situation..."></textarea>
+            <textarea class="form-textarea" id="message" name="message" required placeholder="Tell me about your situation..."></textarea>
           </div>
           <button type="submit" class="cta-button">Send Message</button>
         </form>
-        
-        <div class="cal-card">
-          <h3>Or book a 30-minute call.</h3>
-          <p>No pitch, just a conversation.</p>
-          <a href="#" class="cta-button" style="display: inline-block; margin-top: 1rem;">Book a Call</a>
-          <div class="contact-info">
-            <p>Phone: (616) [Nick's number]</p>
-            <p>Email: <a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
-          </div>
+        <div class="form-success" id="formSuccess">
+          Thanks! I'll be in touch soon.
+        </div>
+      </div>
+
+      <div class="cal-card">
+        <h3 class="cal-heading">Book a 30-minute call</h3>
+        <p>No pitch, just a conversation.</p>
+        <button class="cta-button" data-cal-namespace="" data-cal-link="nickdahlhoff/30min" data-cal-config='{"layout":"month_view"}' style="margin-top: 0.5rem;">Book a Call</button>
+        <div class="contact-email">
+          <p>Email: <a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
         </div>
       </div>
     </div>
@@ -501,7 +470,71 @@
   <footer class="footer">
     <p>Nick Dahlhoff | West Michigan<br>
     <a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a><br>
-    Copyright 2026</p>
+    &copy; 2026</p>
   </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          var data = {
+            name: form.elements.name.value || undefined,
+            email: form.elements.email.value,
+            phone: form.elements.phone.value || undefined,
+            message: form.elements.message.value,
+            source: 'prospect_site',
+            slug: form.elements.slug.value,
+            website: form.elements.website.value || undefined,
+          };
+
+          fetch('https://calculating-platypus-531.convex.site/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+            .then(function(res) {
+              if (!res.ok) throw new Error('Submission failed');
+              form.style.display = 'none';
+              success.style.display = 'block';
+            })
+            .catch(function() {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+              }
+              alert('Something went wrong — please try again or email ndahlhoff10@gmail.com directly.');
+            });
+        });
+      }
+    });
+  </script>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://app.cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
+  </script>
 </body>
 </html>

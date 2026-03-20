@@ -3,244 +3,333 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">  <title>Ottawa Animal Hospital East — What We Found | Nick Dahlhoff</title>
-  <meta name="description" content="AI integration could free your veterinary team from phone interruptions while amplifying your Fear Free approach and 4.8-star reputation.">
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ottawa Animal Hospital East — What We Found | Nick Dahlhoff">
-  <meta property="og:description" content="AI integration could free your veterinary team from phone interruptions while amplifying your Fear Free approach and 4.8-star reputation.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ottawa Animal Hospital East | Nick Dahlhoff, AI Consulting</title>
+  <meta name="description" content="Custom systems and automation for Ottawa Animal Hospital East in Holland, MI. Connecting your practice management, scheduling, and client communication so your team stays focused on patient care.">
+  <meta property="og:title" content="Ottawa Animal Hospital East | Nick Dahlhoff, AI Consulting">
+  <meta property="og:description" content="Custom systems and automation for Ottawa Animal Hospital East in Holland, MI. Connecting your practice management, scheduling, and client communication so your team stays focused on patient care.">
+  <meta property="og:image" content="hero.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-bg: #FEFCF8;
+      --color-bg: #FDF6EC;
       --color-surface: #FFFFFF;
-      --color-surface-alt: #F5F0E8;
-      --color-text: #1A1A1A;
-      --color-text-secondary: #5A5A5A;
-      --color-text-light: #8A8A8A;
-      --color-accent: #0074a2;
-      --color-accent-hover: #31708f;
-      --color-accent-light: #E8EDF5;
-      --color-cta: #00d084;
-      --color-cta-hover: #00b070;
-      --color-border: #E5E0D5;
+      --color-surface-alt: #F5EDE0;
+      --color-text: #2D2D2D;
+      --color-text-secondary: #8C8177;
+      --color-text-light: #A09890;
+      --color-accent: #D4853A;
+      --color-accent-hover: #B8652A;
+      --color-accent-light: #F5E6D4;
+      --color-border: #E5DDD3;
       --color-success: #2D6A4F;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
     }
 
-    * {
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.65;
+      font-family: var(--font-body);
       color: var(--color-text);
       background-color: var(--color-bg);
+      line-height: 1.7;
+      font-size: 1.125rem;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
+    /* Hero Section */
+    .hero {
+      background: var(--color-bg);
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(60px, 8vw, 120px) 24px;
     }
 
-    .section {
-      padding: 80px 0;
+    .hero-inner {
+      max-width: 1280px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      gap: 3rem;
+      align-items: center;
     }
 
-    .section-small {
-      padding: 60px 0;
-    }
-
-    h1 {
-      font-size: 3.5rem;
+    .hero-text h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 700;
       line-height: 1.1;
-      margin-bottom: 24px;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
     }
 
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 32px;
+    .hero-text .subhead {
+      font-size: 1.2rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 0;
     }
 
-    h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, var(--color-accent) 0%, #00d084 100%);
-      color: white;
-      position: relative;
+    .hero-image-card {
+      border-radius: 16px;
       overflow: hidden;
+      box-shadow: 0 8px 32px rgba(45, 45, 45, 0.08);
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
+    .hero-image-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
     }
 
-    .hero h1 {
-      color: white;
+    .hero-cta {
+      grid-column: 1;
     }
 
-    .hero-subhead {
-      font-size: 1.25rem;
-      margin-bottom: 40px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      opacity: 0.95;
+    .hero-cta .btn-primary {
+      margin-top: 2rem;
     }
 
-    .cta-button {
+    .btn-primary {
       display: inline-block;
-      background: var(--color-cta);
-      color: white;
-      padding: 16px 32px;
-      font-size: 1.125rem;
+      background: var(--color-accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 1rem;
       font-weight: 600;
-      text-decoration: none;
+      padding: 16px 32px;
       border-radius: 8px;
-      transition: all 0.3s ease;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
       border: none;
       cursor: pointer;
     }
 
-    .cta-button:hover {
-      background: var(--color-cta-hover);
-      transform: translateY(-2px);
+    .btn-primary:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-1px);
     }
 
-    .story {
-      background: var(--color-surface);
+    .btn-primary:focus {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
     }
 
-    .story-text {
+    /* Body Section */
+    .body-part1 {
+      background: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part1-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part1-inner p:first-child {
       font-size: 1.25rem;
+      border-left: 3px solid rgba(212, 133, 58, 0.3);
+      padding-left: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .body-part1-inner p {
+      margin-bottom: 1.5rem;
+    }
+
+    .body-divider {
+      max-width: 720px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid var(--color-accent);
+      opacity: 0.2;
+    }
+
+    .body-part2 {
+      background: var(--color-surface-alt);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .body-part2-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .body-part2-inner p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Why Me Section */
+    .why-me {
+      background: var(--color-surface);
+      padding: clamp(60px, 8vw, 120px) 24px;
+    }
+
+    .why-me-inner {
       max-width: 900px;
       margin: 0 auto;
-      text-align: center;
-      color: var(--color-text-secondary);
-    }
-
-    .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
-      margin-top: 48px;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
+      align-items: start;
     }
 
-    .card {
-      background: var(--color-surface);
-      padding: 32px;
-      border-radius: 12px;
-      border: 1px solid var(--color-border);
-      text-align: center;
-    }
-
-    .card-icon {
-      font-size: 3rem;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .card-title {
-      color: var(--color-accent);
-      margin-bottom: 16px;
-    }
-
-    .outcomes-list {
-      list-style: none;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .outcomes-list li {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 24px;
-      font-size: 1.125rem;
-    }
-
-    .outcomes-list li::before {
-      content: attr(data-icon);
-      font-size: 1.5rem;
-      margin-right: 16px;
-      flex-shrink: 0;
-    }
-
-    .about {
-      background: var(--color-surface-alt);
-    }
-
-    .about-content {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about-bio {
-      font-size: 1.125rem;
-      margin-bottom: 24px;
-    }
-
-    .about-credential {
-      font-weight: 600;
-      color: var(--color-accent);
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 32px;
-      margin-top: 48px;
-    }
-
-    .step {
-      text-align: center;
-    }
-
-    .step-number {
-      display: inline-block;
-      background: var(--color-accent);
-      color: white;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .why-me h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
       font-weight: 700;
-      font-size: 1.25rem;
-      margin: 0 auto 16px;
+      line-height: 1.2;
+      color: var(--color-text);
+      text-align: left;
+      grid-column: 1 / -1;
+      margin-bottom: 0.5rem;
     }
 
+    .why-me-photo {
+      display: flex;
+      justify-content: center;
+    }
+
+    .why-me-photo img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-border);
+    }
+
+    .why-me-points {
+      list-style: none;
+    }
+
+    .why-me-points li {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      text-align: left;
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+
+    .why-me-points .point-num {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--color-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+
+    .why-me-points strong {
+      font-weight: 600;
+    }
+
+    /* CTA Section */
     .cta-section {
-      background: var(--color-surface);
-      text-align: center;
+      background: var(--color-bg);
+      padding: clamp(60px, 8vw, 120px) 24px;
     }
 
-    .form-container {
+    .pricing-card {
       max-width: 500px;
-      margin: 0 auto 40px;
+      margin: 0 auto 4rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(45, 45, 45, 0.06);
+    }
+
+    .pricing-card h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .pricing-card .price {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+      text-align: left;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-card ul li {
+      padding: 0.4rem 0;
+      font-size: 1rem;
+      color: var(--color-text);
+    }
+
+    .pricing-card ul li::before {
+      content: "\2713";
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-right: 0.75rem;
+    }
+
+    .pricing-card .subtext {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-top: 1rem;
+    }
+
+    .pricing-card .btn-primary {
+      margin-top: 1.5rem;
+    }
+
+    .contact-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-form-wrapper h3,
+    .book-call-wrapper h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .contact-form-wrapper p,
+    .book-call-wrapper p {
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
     }
 
     .form-group {
-      margin-bottom: 24px;
-      text-align: left;
+      margin-bottom: 1rem;
     }
 
     .form-group label {
       display: block;
-      margin-bottom: 8px;
+      font-size: 0.875rem;
       font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 0.35rem;
     }
 
     .form-group input,
@@ -248,9 +337,19 @@
       width: 100%;
       padding: 12px 16px;
       border: 1px solid var(--color-border);
-      border-radius: 6px;
-      font-family: inherit;
+      border-radius: 8px;
+      font-family: var(--font-body);
       font-size: 1rem;
+      color: var(--color-text);
+      background: var(--color-surface);
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(212, 133, 58, 0.15);
     }
 
     .form-group textarea {
@@ -258,212 +357,302 @@
       min-height: 120px;
     }
 
-    .cal-text {
-      font-size: 1.125rem;
-      color: var(--color-text-secondary);
-      margin-top: 32px;
-    }
-
-    .footer {
-      background: var(--color-text);
-      color: white;
+    #formSuccess {
+      display: none;
+      padding: 2rem;
       text-align: center;
-      padding: 40px 0;
+      color: var(--color-success);
+      font-weight: 600;
+      font-size: 1.125rem;
     }
 
-    .footer-content {
-      opacity: 0.8;
+    .book-call-wrapper {
+      display: flex;
+      flex-direction: column;
     }
 
+    .book-call-wrapper .btn-outline {
+      display: inline-block;
+      padding: 16px 32px;
+      border: 2px solid var(--color-accent);
+      color: var(--color-accent);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+      text-align: center;
+    }
+
+    .book-call-wrapper .btn-outline:hover {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    .book-call-wrapper .btn-outline:focus {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+      padding: 2rem 24px;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+
+    .footer a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-
-      .section {
-        padding: 60px 0;
-      }
-
-      .hero-subhead {
-        font-size: 1.125rem;
-      }
-
-      .cards-grid {
+      .hero-inner {
         grid-template-columns: 1fr;
+        text-align: center;
       }
 
-      .steps {
+      .hero-text {
+        order: 1;
+      }
+
+      .hero-image-card {
+        order: 2;
+        max-height: 50vh;
+      }
+
+      .hero-image-card img {
+        max-height: 50vh;
+      }
+
+      .hero-cta {
+        order: 3;
+        grid-column: 1;
+        text-align: center;
+      }
+
+      .hero-cta .btn-primary {
+        margin-top: 1.5rem;
+      }
+
+      .why-me-inner {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .why-me-photo {
+        justify-content: center;
+      }
+
+      .why-me h2 {
+        text-align: left;
+      }
+
+      .contact-grid {
         grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero section">
-    <!-- TODO: Add hero background image: A confident veterinarian reviews patient information on a sleek tablet while a content dog sits calmly nearby in a modern, well-organized exam room. The space feels efficient and peaceful—technology seamlessly integrated, everything running smoothly. Subtle indicators of systematic organization: neat supply storage, modern equipment, calm atmosphere that suggests everything works together perfectly. -->
-    <div class="container">
-      <div class="hero-content">
-        <h1>AI is transforming how veterinary practices operate — and the window for competitive advantage is closing fast</h1>
-        <p class="hero-subhead">The most successful practices are connecting their systems, automating routine tasks, and freeing their veterinarians to focus on what they love: helping animals and building relationships.</p>
-        <a href="#contact" class="cta-button">Let's Talk About Ottawa Animal Hospital East</a>
+
+  <!-- Section 1: Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>486 reviews, 4.8 stars, and a team that made Fear Free more than a certification.</h1>
+        <p class="subhead">There's a lot running behind the scenes to make that work, and most of it doesn't need to be manual anymore.</p>
+      </div>
+      <div class="hero-image-card">
+        <!-- Hero image: veterinarian sitting on floor at eye level with a nervous small dog, offering a treat -->
+        <img src="hero.png" alt="Warm illustration of a veterinarian calmly greeting a pet in a welcoming clinic environment">
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Let's Talk About Ottawa Animal Hospital East</a>
       </div>
     </div>
   </section>
 
-  <!-- Story Section -->
-  <section class="story section">
-    <div class="container">
-      <p class="story-text">Across West Michigan, veterinary practices are implementing AI solutions that handle routine client questions, optimize scheduling, and integrate all their systems into seamless workflows. Based on what we found, Ottawa Animal Hospital East has built something special with your Fear Free approach and exceptional client loyalty. The question is: what could you accomplish if technology handled the administrative burden while you focused on providing that world-class care?</p>
+  <!-- Section 2: Body Part 1 — Their Business -->
+  <section class="body-part1">
+    <div class="body-part1-inner">
+      <p>Clients mention your doctors by name. Dr. Turner, Dr. Bergstrom, Dr. Swift. They talk about pets being treated like family, about same-day appointments when things got scary, about email responses to medication questions at odd hours. That kind of detail doesn't show up in reviews unless it's real.</p>
+      <p>You serve over ten communities across West Michigan from a practice that offers holistic care alongside traditional medicine. AAHA accreditation, a full veterinary pharmacy, and a Fear Free approach that clients actually confirm works in practice. The consistency across seven veterinarians is unusual.</p>
     </div>
   </section>
 
-  <!-- What We Noticed Section -->
-  <section class="section">
-    <div class="container">
-      <h2 style="text-align: center;">Here's what we noticed about Ottawa Animal Hospital East</h2>
-      <div class="cards-grid">
-        <div class="card">
-          <span class="card-icon">📞</span>
-          <h3 class="card-title">Phone interruptions persist</h3>
-          <p>It appears phone calls still interrupt appointments constantly — the classic veterinary practice challenge of balancing patient care with client communication needs.</p>
-        </div>
-        <div class="card">
-          <span class="card-icon">💎</span>
-          <h3 class="card-title">Hidden holistic differentiator</h3>
-          <p>Based on what we found, your holistic care page could better showcase this differentiator that clients specifically praise in reviews.</p>
-        </div>
-        <div class="card">
-          <span class="card-icon">⭐</span>
-          <h3 class="card-title">Untapped review opportunities</h3>
-          <p>It looks like you're not currently responding to Google reviews, potentially missing opportunities to amplify the incredible 4.8-star reputation you've built.</p>
-        </div>
+  <hr class="body-divider">
+
+  <!-- Section 2: Body Part 2 — The Offer -->
+  <section class="body-part2">
+    <div class="body-part2-inner">
+      <p>A practice your size is usually running five or six systems that don't share information. Client records in one place, inventory in another, scheduling managed separately from communication, billing reconciled manually at the end of the month. You've probably had the thought more than once about what it would look like if the appointment reminders, the prescription refill tracking, the inventory reordering, and the follow-up messages just handled themselves.</p>
+      <p>That's the kind of thing I build. I come in for a day, learn how the practice actually operates, and put together whatever saves the most time. Could be connecting what you already have so it works together. Could be replacing a few manual processes entirely. You get documentation, training, and a practice that runs a little lighter so your team can stay focused on the animals.</p>
+    </div>
+  </section>
+
+  <!-- Section 3: Why Me -->
+  <section class="why-me">
+    <div class="why-me-inner">
+      <h2>Why me</h2>
+      <div class="why-me-photo">
+        <img src="nick-headshot.png" alt="Nick Dahlhoff">
       </div>
+      <ol class="why-me-points">
+        <li>
+          <span class="point-num">1.</span>
+          <span><strong>AI expert.</strong> I work with AI tools every day, from workflow automation to content strategy to data analysis to software development. I know what actually works and what's hype.</span>
+        </li>
+        <li>
+          <span class="point-num">2.</span>
+          <span><strong>Built and sold a business.</strong> I built a language learning website from nothing and sold it for $960K. I understand what it takes to run a business because I've done it.</span>
+        </li>
+        <li>
+          <span class="point-num">3.</span>
+          <span><strong>I show up.</strong> I come to your location, learn how your business actually runs, and build what you need. Not a Zoom call. Not a slide deck.</span>
+        </li>
+        <li>
+          <span class="point-num">4.</span>
+          <span><strong>One person, not an agency.</strong> You work directly with me. No account managers, no juniors, no handoffs.</span>
+        </li>
+        <li>
+          <span class="point-num">5.</span>
+          <span><strong>Built to last without me.</strong> Everything I build is documented and yours to keep. You don't need me around for it to work.</span>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- The Bigger Picture Section -->
-  <section class="section" style="background: var(--color-surface-alt);">
-    <div class="container">
-      <h2 style="text-align: center;">What if...</h2>
-      <ul class="outcomes-list">
-        <li data-icon="🤖">AI assistants handle 60-80% of routine client questions instantly, eliminating phone tag while improving after-hours communication</li>
-        <li data-icon="🔗">Integrated systems connect your practice management software with diagnostics, inventory, and client communication — no more entering the same information multiple times</li>
-        <li data-icon="📊">Predictive analytics optimize your scheduling, reduce no-shows, and forecast inventory needs based on appointment patterns and seasonal trends</li>
-        <li data-icon="🌅">You get your evenings back — no more staying late to return calls or update records, because the systems handle routine tasks while you focus on the medicine you love</li>
+  <!-- Section 4: CTA -->
+  <section class="cta-section" id="contact">
+    <div class="pricing-card">
+      <h3>On-Site Consulting</h3>
+      <div class="price">$750 / day</div>
+      <ul>
+        <li>On-site at your location (West Michigan)</li>
+        <li>Research + planning + implementation</li>
+        <li>Documentation + training</li>
+        <li>Follow-up support included</li>
       </ul>
+      <a href="https://buy.stripe.com/3cIdR96546GW2xXf0z4ZG01" target="_blank" rel="noopener" class="btn-primary">Pay Now — $750</a>
+      <p class="subtext">Ongoing and larger projects available on request</p>
     </div>
-  </section>
 
-  <!-- About Nick Section -->
-  <section class="about section">
-    <div class="container">
-      <div class="about-content">
-        <h2>Who I am</h2>
-        <p class="about-bio">I'm Nick Dahlhoff, based in West Michigan. I help local businesses connect their systems, automate their processes, and use AI to work smarter. Every business is different — I start by understanding yours, then build exactly what you need.</p>
-        <p class="about-credential">AI systems builder specializing in small business operations — custom software, automation, and process improvement.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works Section -->
-  <section class="section">
-    <div class="container">
-      <h2 style="text-align: center;">How It Works</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>Tell me what's going on</h3>
-          <p>Fill out a quick form or book a call. No commitment.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>I put together a plan</h3>
-          <p>Specific recommendations for your business.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>We get to work</h3>
-          <p>Most projects start on-site. You see results fast.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section id="contact" class="cta-section section">
-    <div class="container">
-      <h2>Interested? Let's have a conversation.</h2>
-      <div class="form-container">
+    <div class="contact-grid">
+      <div class="contact-form-wrapper">
+        <h3>Send me a message</h3>
         <form id="contactForm">
-          <input type="hidden" name="business_slug" value="ottawa-animal-hospital-east">
+          <input type="text" name="website" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="source" value="prospect_site">
+          <input type="hidden" name="slug" value="ottawa-animal-hospital-east">
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="Your name">
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
           </div>
           <div class="form-group">
-            <label for="phone">Phone (optional)</label>
-            <input type="tel" id="phone" name="phone">
+            <label for="phone">Phone <span style="font-weight: 400; color: var(--color-text-light);">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number">
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell me about your current challenges..."></textarea>
+            <textarea id="message" name="message" placeholder="What's on your mind?" required></textarea>
           </div>
-          <button type="submit" class="cta-button">Send Message</button>
+          <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
         </form>
+        <div id="formSuccess">
+          <p>Message sent. I'll get back to you soon.</p>
+        </div>
       </div>
-      <p class="cal-text">Or book a 30-minute call — no pitch, just a conversation.</p>
+
+      <div class="book-call-wrapper">
+        <h3>Book a 30-minute call</h3>
+        <p>No pitch, just a conversation.</p>
+        <button
+          class="btn-outline"
+          data-cal-namespace=""
+          data-cal-link="nickdahlhoff/30min"
+          data-cal-config='{"layout":"month_view"}'
+        >
+          Book a Call
+        </button>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Section 5: Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <p>Nick Dahlhoff | West Michigan<br>
-        ndahlhoff10@gmail.com<br>
-        © 2026</p>
-      </div>
-    </div>
+    <p>Nick Dahlhoff | West Michigan</p>
+    <p><a href="mailto:ndahlhoff10@gmail.com">ndahlhoff10@gmail.com</a></p>
+    <p>&copy; 2026</p>
   </footer>
 
-  <script>
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#D4853A"}}});
+  </script>
 
-    // Form handling
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // TODO: Connect to Convex mutation
-      
-      // Show success message (placeholder)
-      const button = this.querySelector('button[type="submit"]');
-      const originalText = button.textContent;
-      button.textContent = 'Message Sent!';
-      button.style.background = 'var(--color-success)';
-      
-      setTimeout(() => {
-        button.textContent = originalText;
-        button.style.background = 'var(--color-cta)';
-        this.reset();
-      }, 3000);
+  <!-- Form submission -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+
+          var data = {
+            name: form.elements.name.value || undefined,
+            email: form.elements.email.value,
+            phone: form.elements.phone.value || undefined,
+            message: form.elements.message.value,
+            source: 'prospect_site',
+            slug: form.elements.slug.value,
+            website: form.elements.website.value || undefined,
+          };
+
+          fetch('https://calculating-platypus-531.convex.site/leads', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          })
+            .then(function(res) {
+              if (!res.ok) throw new Error('Submission failed');
+              form.style.display = 'none';
+              success.style.display = 'block';
+            })
+            .catch(function() {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+              }
+              alert('Something went wrong. Please try again or email ndahlhoff10@gmail.com directly.');
+            });
+        });
+      }
     });
   </script>
+
 </body>
 </html>

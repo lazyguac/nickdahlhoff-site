@@ -1,11 +1,126 @@
 # Nick's Personal Website
 
-This is the **current, active version** of Nick's personal website. Built with Astro.
+This is the **current, active version** of Nick's personal website. Built with Astro 5,
+static output, zero UI framework. Content lives in Astro Content Collections
+(`projects` and `writing`), backed by markdown files with Zod-validated frontmatter in
+`src/content.config.ts`.
 
-Older deprecated versions exist at `~/nick-site/` (Next.js) and `~/personal-knowledge-hub/personal-website/` (plain HTML). Do not use those.
+Older deprecated versions exist at `~/nick-site/` (Next.js) and
+`~/personal-knowledge-hub/personal-website/` (plain HTML). Do not use those.
 
-## Dev Server
+## Dev server
 
 ```sh
-npm run dev   # runs on localhost:4323
+npm run dev   # runs on localhost:4323 (explicit --port flag in package.json)
 ```
+
+The dev server intentionally passes `--port 4323` (Astro 5's real default is 4321) so the
+documented convention here stays true. `npm run preview` also serves on 4323 and is the
+more accurate check for anything involving `public/` passthrough files (see the consulting
+static pages note below) — Astro's dev server doesn't resolve directory-style URLs
+(`/consulting/some-slug/`) to `index.html` for plain static files the way a real static
+host or `astro preview`/Netlify does. A 404 on a `public/`-only route under `npm run dev`
+is not necessarily a real bug — re-check under `npm run preview` before treating it as one.
+
+## Build + verify
+
+```sh
+npm run build     # zero errors/warnings expected; watch the page count in the output
+npm run preview   # production-mode local server on the real dist/ output, port 4323
+```
+
+A silent drop in the built page count is the #1 sign something broke — Astro's content
+collections fail the build outright on a Zod schema mismatch (they don't silently exclude a
+malformed file), so a lower page count usually means a routing mistake in a
+`getStaticPaths()` filter instead.
+
+## How to add a new writing post
+
+1. Create `src/content/writing/{slug}.md` with frontmatter:
+   ```yaml
+   ---
+   title: "Post title"
+   date: "YYYY-MM-DD"
+   description: "One-sentence teaser — used as the /writing index blurb and the page's meta description."
+   draft: false
+   ---
+   ```
+   `draft: true` keeps a post out of both the `/writing` index and the homepage's latest-writing
+   list, and out of `/writing/[slug]`'s built routes entirely (not just hidden — the URL won't
+   resolve at all while `draft: true`).
+2. Write the body in markdown below the frontmatter. Inline images: drop them in
+   `public/images/{something}/` and reference with `![alt](/images/{something}/file.png)` —
+   the existing `.post-content :global(img)` CSS in `src/pages/writing/[slug].astro` handles
+   responsive sizing automatically, no extra work needed.
+3. `npm run build` — confirm the new post appears in the build output page list, then
+   `npm run preview` and check `/writing` and `/writing/{slug}` render as expected.
+4. **Standing trigger: publish a new post the same session it's finalized** — don't leave it
+   sitting as a draft across sessions.
+
+## How to update a project page
+
+Edit the relevant file in `src/content/projects/{slug}.md`. Frontmatter must satisfy the
+schema in `src/content.config.ts` — `title`, `tagline`, `status` (`current` / `featured` /
+`archive`), `order` (lower = higher on page, for pages that use a status-filtered list),
+`year`. Optional: `url`, `tech`, `skills`, `heroImage`, `latestUpdate`, `badge`,
+`badgeColor`, `revenue`, `noindex`.
+
+**Standing trigger:** a Fantasy Joes milestone (a real number moving, a launch, a feature
+shipping) should prompt a case-study line update in `fantasy-joes.md`'s body — this page is
+the site's strongest single piece of proof and should stay current, not stale.
+
+## How to update the homepage "looking for" line
+
+Edit `src/pages/index.astro` — the hero-right block's `<a class="looking-for-link">` text
+and its `mailto:` href. This is the single line most likely to need updating as Nick's
+situation changes (open to full-time vs. open to contract vs. not looking). There's no CMS
+field for this; it's inline in the `.astro` file by design, since it's a one-line,
+infrequent edit that doesn't need its own schema.
+
+The homepage's **winding-road timeline** is an explicit ordered array of project slugs
+(`timelineSlugs` near the top of `index.astro`'s frontmatter), not a status filter — if a
+new project needs to appear in the timeline narrative, add its slug to that array in the
+position that matches the story, don't rely on `status`. Fantasy Joes and All Language
+Resources are deliberately *also* referenced directly above the timeline (the "featured
+cards" row and the ALR band) — that's intentional duplication per the site's IA, not a bug.
+
+## Consulting — retired, not deleted
+
+The AI Consulting project page (`/projects/ai-consulting`) and the consulting hub
+(`/consulting`) are both noindexed via a `noindex` prop threaded through `BaseLayout.astro`
+(`<meta name="robots" content="noindex, nofollow">` when `noindex={true}`) and unlinked from
+site navigation. Per a hard "never delete" rule, both pages and all 49 static business
+landing pages in `public/consulting/{slug}/index.html` stay on disk untouched — do not
+delete any of them even though they're retired. If a page needs to come back, flip
+`noindex: false` in `ai-consulting.md`'s frontmatter (or drop the prop on the consulting hub
+page) and re-add a nav link; nothing else needs to change.
+
+## Deploy
+
+Deploys run via the **Netlify CLI** from this machine — the Netlify site (`siteId` in the
+gitignored `.netlify/state.json`) is linked to this local folder, not driven by a GitHub
+Actions workflow (none exists in this repo).
+
+```sh
+# Draft/preview deploy — safe, does not go live, use freely to sanity-check a build:
+netlify deploy
+
+# Production deploy — DO NOT RUN AUTOMATICALLY. Only after Nick explicitly approves:
+netlify deploy --prod
+```
+
+If the Netlify CLI isn't installed globally, `npx netlify-cli deploy --prod` works without
+one. Whether Netlify's dashboard *also* has GitHub-push auto-deploy configured on top of this
+could not be confirmed from repo contents alone as of the 2026-07-03 IA rebuild — if that
+turns out to be true, `git push origin main` may also trigger a production deploy, so treat
+an unreviewed `git push` to `main` with the same caution as `netlify deploy --prod` until
+that's confirmed one way or the other in the Netlify dashboard.
+
+## Standing triggers (recap)
+
+- **New writing post finalized** → publish it the same session (see above).
+- **Fantasy Joes milestone** (launch, real number, feature ship) → update the case-study
+  line in `fantasy-joes.md`.
+- **Monthly freshness pass** → skim the homepage hero/looking-for line, the Fantasy Joes
+  case study, and the writing index for anything stale; this is a content site about an
+  active builder, and stale copy undercuts the whole pitch.

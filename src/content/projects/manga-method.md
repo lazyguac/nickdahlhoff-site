@@ -1,30 +1,27 @@
 ---
 title: Manga Method
-tagline: Language learning through webtoon comics with tap-to-translate. First software product — content and development costs led me to shelve it.
+tagline: A language-learning app built on comics, with translations and voice recordings contributed by users — around 2019, before AI made that cheap.
 status: archive
 order: 8
 tech: [Web App, CMS]
 skills: [Product Management, Content Sourcing, Vendor Management]
-heroImage: /images/placeholder-manga-hero.svg
 year: "2019"
 ---
 
-My first real attempt at building a software product. I'd seen tap-to-translate work well for reading comics in a foreign language, but only for a single language. I thought there was an opportunity to do it across multiple languages — though in retrospect, the product was way too complex for the resources I had.
+## What it was
 
-## The product
+Manga Method was a language-learning app built on comics. Specifically webtoons, the long comics formatted to scroll on a phone. You read a story in the language you were learning. Tap a line of dialogue to hear a voice actor say it. Double-tap for the full-sentence translation. Tap a single word for that word on its own, translated and pronounced.
 
-Webtoon-style comics formatted for phone. You read through panels in your target language. Tap on text to hear voice acting. Double-tap for a full sentence translation. Tap individual words for word-by-word translations and audio. The same comic could be available in multiple languages.
+The part I cared about was where the translations and audio came from. Rather than produce all of it in-house, we let users contribute their own. That let the app support language pairs a commercial product would never bother with, like Korean straight to Spanish instead of routed through English.
 
-The ambitious part was user-generated content. Users could add their own translations and voice recordings, which enabled any language pair — Korean to Spanish, not just everything through English. We got thousands of lines translated into different languages. People did voice recordings too, just fewer.
+## What got built
 
-## The build
+A working v1: the reading interface, a CMS for me to load and manage comics, and the contribution system. Users came, and they contributed thousands of lines of translated dialogue across several languages. Voice recordings came in too, in smaller numbers.
 
-Hired an agency to build it. I acted as product manager — planning workflows, systems, screens, giving feedback. The cost: I don't want to think about it. A lot of money and a lot of time. Working with an agency, everything was slow and didn't turn out as good as you'd want.
+I didn't write the code. I hired an agency and ran the build — every screen and system was mine to spec and manage. This was my role before AI tools existed to do the building: product manager, not engineer.
 
-Despite all that, we ended up with a functioning app. It did everything I wanted. Not the prettiest UI, but the comic art looked good. Had a CMS where I could add content, a user area for contributing translations and recordings. I sourced comics by buying from webtoon creators, reformatted them for the platform, and produced initial translations and voice acting to seed the content.
+## Why I stopped
 
-## Why I shelved it
+I did the math. I added up what it would take to get from v1 to a version that could sustain itself — a full-time developer, ongoing content sourcing — against what subscriptions might realistically bring in. It didn't close. Then ALR sold, which took the traffic I'd have used to acquire users, so I shelved it.
 
-v1 was a viable product. It worked and got usage. I used ALR traffic to send users over, and people did read and stick around. But we had minimal content to start, and also a problem that impacts most language learning products — people don't actually use them. They buy aspirationally but don't follow through. We didn't have any upfront payment either, so weren't monetizing those types.
-
-I probably overestimated how much traffic I could funnel from ALR and how sticky the product would be. The cost of content production and app improvements didn't feel justified for the traction it was getting — especially self-funding with high dev costs. Selling ALR also meant losing the main traffic source.
+The idea was sound. What killed it was the price of building it the pre-AI way, with an outside agency doing every change.

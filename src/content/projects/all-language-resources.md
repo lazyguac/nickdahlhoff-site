@@ -1,56 +1,42 @@
 ---
 title: All Language Resources
-tagline: Language learning content business — reviews, courses, email funnels, and a YouTube channel across 20+ languages. Scaled to 100K+ monthly visitors, sold for ~$960K.
+tagline: A language-learning review site I built to 100,000 monthly readers, then sold for about $960,000.
 status: featured
 order: 3
 url: https://alllanguageresources.com
 tech: [WordPress, Ahrefs, SEMrush, ConvertKit, ClickUp, Google Analytics, YouTube]
 skills: [SEO & Content Strategy, Affiliate Marketing, Team Management, Content Operations, Copywriting, Email Marketing, Revenue Optimization, Sales & Partnerships]
-heroImage: /images/placeholder-alr-hero.svg
+heroImage: /images/alr/alr-home.png
 year: "2016–2021"
-revenue: "~$960K"
+revenue: "$960K sale"
 ---
 
-I'd been interested in online business for a while before ALR. Tried a poker content site called Breakthrough Poker that went nowhere. Tried other small things. They were all too technically hard to build and I didn't have the skills.
+## What it became
 
-Then I found a subreddit called "Just Start" — an affiliate marketing community with a pretty clear process: keyword research, SEO, publish content targeting monetizable search terms. I was in Beijing studying Chinese and using a lot of apps, so I could see the opportunity. Google searches for Chinese learning resources had very few results. Sometimes my content wasn't even better than competitors — there just weren't many competitors.
+All Language Resources was an affiliate review site for language apps and courses. I built it from nothing to more than 100,000 readers a month over five years, all from search, and sold it in late 2021 for about $960,000. Revenue at the sale was around $350,000 a year. That was revenue, not profit, and I would have had to grind for years to match the sale price in earnings, so I took the exit.
 
-The plan was always to monetize — it was a business from day one.
+I ran it solo at first and grew into a team of six regular contributors: writers, an SEO specialist, and a VA, all freelance. I built the systems that made it run and negotiated the deals behind the ads myself, with dozens of course and app companies.
 
-## Early growth
+![All Language Resources homepage](/images/alr/alr-home.png)
 
-I posted some early articles on Reddit with affiliate links (they eventually got removed) and made affiliate commissions sooner than expected. Started outsourcing to freelancers pretty quickly because teaching kept me busy. The bottleneck was clear: I needed a lot of content, but articles took a long time — sometimes 20+ hours on a single one.
+## Why I started it
 
-Found writers through language learning forums and built up a team. At peak, six regular contributors writing across 20+ languages.
+I was teaching in Beijing and studying Mandarin, and every review I found for the apps and courses I was using was a thin sales pitch dressed up as a recommendation. These sites made money on whatever they told you to buy, so they told you to buy the thing that paid the most. I already knew most of these products because I was a customer, and I figured I could review them honestly and still make it work as a business.
 
-## The systems
+I never fully solved that tension, since the site earned commissions on some of what it recommended, but I ran it straighter than the competition: writers were never told which products paid us, and we pointed people to free and non-affiliate options whenever those were the right answer.
 
-The part I was proudest of was the process design.
+## How I built it
 
-I built a cross-editing system where writers reviewed each other's work. Everyone had to know the broader competitive landscape, which naturally improved content quality.
+I grew it on SEO, starting with Mandarin reviews and expanding into Spanish, French, Japanese, and more. Writers edited each other's work instead of handing it to one editor, which forced everyone to know the products and the competition, not just their own piece. A good article often took 20-plus hours.
 
-I never told my writers which products had affiliate deals. They recommended whatever they thought was best, and I monetized after the fact. We did our best to keep reviews honest — recommending free tools and unaffiliated products when they were genuinely better. If we're being totally honest, some amount of bias probably slipped through, but minimizing it was a priority.
+The tooling was mine to build. Editorial calendars and workflows in ClickUp. Segmented email funnels in ConvertKit. And a custom WordPress plugin that matched affiliate ads to each page's language and topic and adjusted how often they showed based on how they paid and performed.
 
-The dynamic ad system matched affiliate offers to the specific language and topic on each page. Someone reading about Japanese apps saw Japanese-relevant offers. Most affiliate sites just blast the same ads everywhere.
+![A published review](/images/alr/alr-review-pimsleur.png)
 
-At peak, the operation was a content pipeline in ClickUp, email funnels in ConvertKit segmented by language, SEO monitoring through Ahrefs, and affiliate relationships with dozens of course creators. We also built curated free courses from existing online resources (structured into course format across multiple languages) and had a small YouTube channel.
+## Selling it
 
-The most promising thing came toward the end: a user review system. Companies would provide free access to their product, readers would test it and give honest feedback. Everyone won — companies got reviews and real user data, readers got free access to premium materials, and we got better content with less bias at lower cost. We tested it with one review and it worked really well. Probably the best content we produced. That was the direction going forward.
+The sale itself was brutal. The site went down for the better part of a day in the middle of the process, and the buyer kept trying to renegotiate terms after we had agreed. I went through Empire Flippers, a brokerage, and I am still glad I got out when I did. AI was about to reshape how people learn languages and how these sites make money, and I sold before that hit the numbers.
 
-## Selling
+## It's still running
 
-Once I realized what the business was worth as a lump sum, the math was hard to argue with. $350K was revenue, not profit. How many years of grinding to match the sale price? The business felt vulnerable: largely dependent on Google, the affiliate model felt like a questionable long-term bet, and I could see AI disrupting language learning and content businesses down the road. Kelly was pregnant with our daughter. It just really made sense.
-
-I listed through Empire Flippers. Rosetta Stone was interested but couldn't do a bidding war because of the buy-it-now structure. A technical issue took the site offline for about 12-24 hours during the process, which was terrifying because the entire business was SEO-dependent. It worked out fine, but the whole sale felt like it took forever.
-
-It closed for approximately $960,000.
-
-## What I took from it
-
-**I would definitely manage people differently.** I was too much trying to be a friend, not enough holding people accountable when underperformance happened. That was a weak area.
-
-**Process-building is what I'm actually good at.** The content pipeline, the cross-editing system, the dynamic ads — that's the work I find most natural and most interesting.
-
-**I wouldn't start ALR today.** The SEO-driven affiliate review model is probably awful to be in right now. AI-generated content has flooded everything, Google keeps changing the rules, and user trust in review sites has cratered.
-
-**The timing was close to perfect.** Online language learning got a massive boost from COVID, and the landscape has changed dramatically since then. Waiting another year or two would have meant selling for significantly less.
+The site is still live, mostly the way I left it. You can read it: [alllanguageresources.com](https://alllanguageresources.com).

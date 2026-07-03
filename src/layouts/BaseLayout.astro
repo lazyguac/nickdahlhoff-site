@@ -2,9 +2,14 @@
 interface Props {
   title: string;
   description?: string;
+  noindex?: boolean;
 }
 
-const { title, description = "Nick Dahlhoff — Builder, entrepreneur, and AI consultant." } = Astro.props;
+const {
+  title,
+  description = "Nick Dahlhoff builds and ships full products by himself with AI tools: code, design, payments, growth. Before that, sold a content business for $960,000.",
+  noindex = false,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -13,6 +18,11 @@ const { title, description = "Nick Dahlhoff — Builder, entrepreneur, and AI co
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />

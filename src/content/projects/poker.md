@@ -1,40 +1,21 @@
 ---
-title: Online Poker
-tagline: Played professionally through college and across Latin America. Funded travel, taught me resilience, then I moved on.
+title: Poker
+tagline: I played online poker professionally from 2012 to 2016, funding four years of travel across Latin America.
 status: archive
 order: 10
 tech: [Online Poker Platforms, Equity Calculators]
 skills: [Risk Management, Analytical Thinking, Emotional Discipline, Bankroll Management]
-heroImage: /images/placeholder-poker-hero.svg
-year: "2006–2016"
+year: "2012–2016"
 ---
 
-Poker was always kind of about the money. I liked it because it's a strategy game with a clear reward — if you understand how to play better, you earn money. In college it was clearly better than any job I could get, both in enjoyment and dollar per hour.
+## The short version
 
-I don't know if I've ever loved poker. I always wanted to get better at it, but I don't think it was ever really part of my identity. It was just my job.
+I started in high school during the Moneymaker-era boom, around 2006, and moved online at 17. Through Michigan State it covered most of my living costs. A roughly $25,000 tournament cash in my junior year lined up with losing interest in my finance major. So I took a year off, played while my friends went to class, then came back and finished the degree in 2011. From 2012 to 2016 I played professionally while traveling, living across Panama, Colombia, Ecuador, Peru, Bolivia, Argentina, and a few other places on about $20,000 to $35,000 a year: modest in the US, comfortable there at the time. When a teaching salary in Beijing started to beat thinning poker margins, I took the teaching job.
 
-## College
+## What it built
 
-It started in high school during the Chris Moneymaker boom. Everyone was playing. I had an edge because I actually studied — Two Plus Two forums, hand analysis threads, equity calculators. By Michigan State, poker was paying rent, food, and spending money.
+The money was never the interesting part. Poker forced study: I taught myself the game from books, forums, and equity calculators, with real stakes making the feedback honest. It taught bankroll and risk management, because you can't survive variance without them. It taught emotional control. You go through months where you're down and still have to show up and play well, and blaming bad luck doesn't win any of it back. And it taught me how betting markets and expected value work from the inside, not from a textbook.
 
-I played mostly Pot Limit Omaha cash games. Started with No Limit Hold'em like everyone, spent a while grinding sit-and-gos and tournaments at 12 to 16 tables, then switched to PLO 6-max. Most common stakes were $0.50/$1.00, multi-tabling 6-12 tables at a time.
+That last part is the through-line to [Fantasy Joes](https://fantasyjoes.gg), where I built the real-money tournament mechanics. Years of watching how odds, EV, and people hold up when money is on the line is the right background for building that.
 
-Junior year I cashed a tournament for about $25,000. I was studying finance and hated it. My motivation was already extremely low. I'd been considering switching to social work — felt like a better fit — but switching meant extra money, extra time, and I only had one year left. I took a year off, played online, then came back and graduated in 2011 with a finance degree.
-
-## Latin America
-
-After graduation, poker funded about four years of traveling. Panama first, then a motorboat to Colombia for six months. Ecuador, Peru, Bolivia, Argentina, Guatemala, Mexico.
-
-The income was modest: $20,000 to $35,000 a year. Enough for slow travel in affordable countries. I'd set up in a new city, find a place with decent internet, and grind sessions on a tiny travel monitor. Sometimes the internet was bad and that was a pain.
-
-I also tried other things during this stretch. Volunteered at a social business incubator in Colombia that I cold-emailed my way into. Volunteered at a social enterprise in Cusco. My interest in social enterprise led me to AmeriCorps in Cleveland for a few months, but I pretty quickly decided to move back to Latin America instead.
-
-## What I took from it
-
-The games got worse over time. The edge narrowed. Eventually it stopped making sense as a career, and I moved to China to teach English.
-
-Results and quality of decisions are different things — that's probably the biggest thing poker gave me. You can play perfectly and lose. What matters is the process over a large sample. That maps pretty directly to building businesses, where short-term outcomes are noisy.
-
-The other part is the grit. Losing streaks can go on for months — not just not earning, but actually losing money. You still have to show up every day. But you also need the self-awareness to know which days you really shouldn't show up. Both of those things transfer.
-
-Poker got big when I was in high school, I wanted to travel, and it gave me the opportunity. I can still enjoy playing, but it's not something I want to go back to.
+I don't romanticize the years. It was a grind, and I'd tell most people not to do it. But the self-reliance and the habit of thinking clearly about risk have stuck.

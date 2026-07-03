@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('writing'))
+  .filter(p => !p.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function formatPostDate(d: Date): string {
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+}
+---
+
+<BaseLayout
+  title="Writing — Nick Dahlhoff"
+  description="Nick Dahlhoff's writing — building in public, whatever else is on his mind."
+>
+  <div class="page">
+    <a href="/" class="back-link">&larr; Back</a>
+
+    <header class="writing-header">
+      <h1>Writing</h1>
+      <p class="writing-sub">Build-log essays on shipping real products with AI: what worked, what broke, and what I would do differently.</p>
+    </header>
+
+    <div class="archive-list">
+      {posts.map(post => (
+        <a href={`/writing/${post.id}`} class="archive-row">
+          <div class="archive-bar"></div>
+          <span class="archive-name">{post.data.title}</span>
+          <span class="archive-desc">{post.data.description}</span>
+          <span class="archive-year">{formatPostDate(post.data.date)}</span>
+        </a>
+      ))}
+      {posts.length === 0 && (
+        <p class="empty-state">Nothing published yet — check back soon.</p>
+      )}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 60px 100px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  .back-link:hover {
+    color: var(--color-text);
+  }
+
+  .writing-header {
+    margin-bottom: 40px;
+  }
+
+  .writing-header h1 {
+    font-family: var(--font-display);
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--color-text);
+    margin-bottom: 12px;
+  }
+
+  .writing-sub {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--color-accent-gold);
+    max-width: 560px;
+  }
+
+  .archive-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .archive-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    border-bottom: 1px solid var(--color-border);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s ease;
+  }
+
+  .archive-row:last-child {
+    border-bottom: none;
+  }
+
+  .archive-row:hover {
+    background: rgba(0,0,0,0.02);
+    text-decoration: none;
+  }
+
+  .archive-bar {
+    width: 3px;
+    height: 32px;
+    background: var(--color-text);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .archive-name {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--color-text);
+    width: 320px;
+    flex-shrink: 0;
+  }
+
+  .archive-desc {
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 16px;
+    color: var(--color-text-body);
+    flex: 1 1 0%;
+  }
+
+  .archive-year {
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  .empty-state {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--color-text-muted);
+    padding: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    .page {
+      padding: 60px 40px;
+    }
+
+    .writing-header h1 {
+      font-size: 44px;
+    }
+
+    .archive-name {
+      width: 220px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page {
+      padding: 40px 20px;
+    }
+
+    .writing-header h1 {
+      font-size: 36px;
+    }
+
+    .archive-row {
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      padding: 16px 12px;
+    }
+
+    .archive-name {
+      width: auto;
+      flex: 1;
+    }
+
+    .archive-year {
+      order: -1;
+      width: auto;
+    }
+
+    .archive-desc {
+      width: 100%;
+      flex-basis: 100%;
+      padding-left: 19px;
+    }
+  }
+</style>

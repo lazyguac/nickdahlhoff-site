@@ -10,6 +10,7 @@ url: /consulting
 year: "2026–present"
 badge: "Booking"
 badgeColor: orange
+noindex: true
 ---
 
 I'm unemployed and need income. That's the honest starting point.

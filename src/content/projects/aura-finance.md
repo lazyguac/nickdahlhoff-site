@@ -1,39 +1,28 @@
 ---
 title: Aura Finance
-tagline: Part-time content marketing for a DeFi protocol during the move from Beijing to Michigan.
+tagline: I ran the content and social for a DeFi protocol on my own for two years.
 status: archive
 order: 5
-tech: [Twitter/X, Canva, AI Image Generation, AI Video Generation]
+url: https://aura.finance
+tech: [X, Canva, AI Image Generation, AI Video Generation]
 skills: [Content Marketing, Social Media Management, Visual Content Creation, DeFi & Crypto Knowledge, AI Media Production]
-heroImage: /images/placeholder-aura-hero.svg
-year: "2024–2026"
+year: "2024–2025"
 ---
 
-Started in early 2024 as part-time content for Aura Finance, a DeFi protocol built on Balancer. The work was managing day-to-day content — social media posts, images, video, mostly on Twitter/X.
+## The role
 
-## Why the timing mattered
+From early 2024 to December 2025 I ran content and marketing for [Aura Finance](https://aura.finance), a DeFi protocol built on Balancer. It was part-time, about ten to fifteen hours a week, and fully remote. I did it from Beijing and then from Michigan while my family moved back to the States. For a stretch of that time I also did a short marketing stint for Balancer itself.
 
-The timing was perfect. My wife and I were in the middle of moving from Beijing back to Michigan. She's an immigrant adjusting to a new country, didn't know how to drive, we had a young daughter, everything was in flux. A part-time remote job that paid decently was exactly what that period needed.
+I applied for a broader marketing role and narrowed it to content, because someone else was a better fit for the cross-protocol coordination work. So the brand's day-to-day output was mine to run, without much oversight.
 
-I kept it for nearly two years largely because of the flexibility. It let me experiment with AI tools (image generation, video, etc.) applied to marketing, while giving me a reason to stay in the weeds of DeFi throughout a pretty brutal bear market.
+## The work
 
-## The day-to-day
+Every day I wrote and scheduled the X content and kept the calendar. When there was a governance proposal or a real product update, I wrote the blog post for it. I made the graphics and the video too — starting in Canva, then moving to AI image and video generation as those tools got good enough to use.
 
-Daily social content on Twitter/X, some blog posts. Aura was a mature protocol — it was doing its job well, but there wasn't a constant stream of new features or technical developments to cover. Most of the significant tech work was happening on the Balancer side, which impacted Aura but wasn't Aura's story to tell.
+That's where purple pepe came from: a recurring original character I created and ran across the social images and video, so the crypto-native audience had something consistent to recognize.
 
-It was a tough time for any DeFi protocol on social media. Interest in the niche had been in a multi-year decline. I'm honestly not sure how well I did — hard to separate my own performance from industry trends that made the job harder for everyone, and I tend to be critical of myself.
+## The scope, and what I got out of it
 
-## Where I actually grew: AI media
+This was a long bear market for DeFi, and there were stretches where there wasn't much to say. I had no KPIs and almost no feedback, so I can't point to numbers. What I can point to is a brand that kept putting out consistent content the whole two years I ran it alone.
 
-The unexpected upside. I'm not a graphic designer but was doing my best in Canva. When AI image generation got good, I started using it heavily. Same with video generation. This was the period that made me genuinely competent with AI-generated visual content.
-
-## The governance situation
-
-Aura is built on top of Balancer — the two protocols are deeply intertwined. Aura has significant voting power over Balancer governance, including who provides marketing services.
-
-I'd been working with Balancer's marketing team for about six weeks and got frustrated by what felt like poor execution on their end. Others in the community had been frustrated by their services and costs too, so there was support for a change. I put together a competing governance proposal and had the votes through Aura to pass it.
-
-The process took much longer than I expected — 6-8 weeks instead of 2-3. I communicated poorly because of the timeline mismatch, and didn't fully understand the internal dynamics. The vote was about to happen, then Balancer Foundation offered to just hire me directly. I agreed, got a contract. Next morning, it fell apart due to internal politics. Deal dead.
-
-I regret the way I handled it — not the intent, but the execution. Continued my Aura work normally afterward.
-
+The AI-media skill I use now came out of this role. Generating images and video in daily production, not a weekend of experiments, is why I'm good at it and stay current as the models change. When the Balancer hack hit in late 2025 and another person was already covering the marketing, Aura and I agreed it had run its course. We parted on good terms.

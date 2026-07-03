@@ -4,15 +4,22 @@ import { getCollection } from 'astro:content';
 
 const allProjects = await getCollection('projects');
 
-const currentProjects = allProjects
-  .filter(p => p.data.status === 'current')
-  .sort((a, b) => a.data.order - b.data.order);
+const fantasyJoes = allProjects.find(p => p.id === 'fantasy-joes');
+const alr = allProjects.find(p => p.id === 'all-language-resources');
 
-const featuredProject = allProjects.find(p => p.data.status === 'featured');
+// The winding-road timeline is an explicit ordered slug list, not a status filter — the timeline
+// mixes current/featured/archive projects by specific narrative slot (poker/Latin America →
+// teaching → ALR exit → Aura/DeFi → Fantasy Joes now), which a status-based filter can't produce
+// since it would miss Fantasy Joes (current) and ALR (featured). See spec §2.3 point 3 / risk #3.
+const timelineSlugs = ['aura-finance', 'hometown-coloring-book', 'recess', 'alpaca-college', 'manga-method', 'teaching', 'poker'];
+const timelineProjects = timelineSlugs
+  .map(slug => allProjects.find(p => p.id === slug))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
-const archiveProjects = allProjects
-  .filter(p => p.data.status === 'archive')
-  .sort((a, b) => a.data.order - b.data.order);
+const writingPosts = (await getCollection('writing'))
+  .filter(p => !p.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
 
 function shortenYear(yr: string): string {
   return yr
@@ -22,46 +29,58 @@ function shortenYear(yr: string): string {
       `${first}, ${y2}`)
     .replace(/–present/, '–');
 }
+
+function formatPostDate(d: Date): string {
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+}
 ---
 
-<BaseLayout title="Nick Dahlhoff">
+<BaseLayout
+  title="Nick Dahlhoff"
+  description="Nick Dahlhoff builds and ships full products by himself with AI tools: code, design, payments, growth. Before that, sold a content business for $960,000."
+>
   <div class="page">
     <!-- Hero -->
     <section class="hero">
       <div class="hero-left">
         <h1>Nick Dahlhoff</h1>
-        <p class="hero-sub">Background in content marketing and digital businesses. Now building AI products and helping small businesses improve their systems.</p>
+        <p class="hero-sub">I build and ship full products by myself, using AI tools as the whole team: code, design, payments, growth. Before that I built and sold a content business for $960,000.</p>
       </div>
       <div class="hero-right">
-        <a href="/consulting" class="consulting-link">Open for consulting &rarr;</a>
-        <span class="hero-location">Grand Rapids, MI</span>
+        <a href="mailto:ndahlhoff10@gmail.com" class="looking-for-link">Open to a full-time role as a company's first do-everything builder &rarr;</a>
+        <span class="hero-location">West Michigan &middot; open to relocating in the US or working remote</span>
       </div>
     </section>
 
-    <!-- Current Projects -->
+    <!-- Featured cards: Fantasy Joes + Writing -->
     <section class="current-grid">
-      {currentProjects.map(project => (
-        <a href={`/projects/${project.id}`} class="current-card">
+      {fantasyJoes && (
+        <a href={`/projects/${fantasyJoes.id}`} class="current-card">
           <div class="current-header">
-            <h2 class="current-title">{project.data.title}</h2>
-            {project.data.badge && (
-              <span class="current-badge">{project.data.badge}</span>
-            )}
+            <h2 class="current-title">Fantasy Joes</h2>
+            <span class="current-badge">Live</span>
           </div>
-          <p class="current-tagline">{project.data.tagline}</p>
+          <p class="current-tagline">A fantasy-football ranking game where you build your rankings by picking players head-to-head, one duel at a time. I designed and built the whole thing myself with Claude Code.</p>
         </a>
-      ))}
+      )}
+      <a href="/writing" class="current-card">
+        <div class="current-header">
+          <h2 class="current-title">Writing</h2>
+          <span class="current-badge">Essays</span>
+        </div>
+        <p class="current-tagline">Build-log essays on shipping real products with AI: what worked, what broke, and what I would do differently.</p>
+      </a>
     </section>
 
     <!-- ALR Featured -->
-    {featuredProject && (
-      <a href={`/projects/${featuredProject.id}`} class="alr-section">
+    {alr && (
+      <a href={`/projects/${alr.id}`} class="alr-section">
         <div class="alr-left">
           <span class="alr-title">All Language Resources</span>
           <span class="alr-dates">Built '16 &middot; Sold '21</span>
         </div>
         <div class="alr-right">
-          <p class="alr-description">Started reviewing Chinese learning apps while teaching in Beijing. Grew it into a 20+ language affiliate site — content strategy, team of six writers, email funnels, affiliate partnerships, YouTube, and custom ad systems. Sold in 2021 for $960,000.</p>
+          <p class="alr-description">I started All Language Resources in a Beijing apartment while teaching, reviewing language-learning apps and courses. It grew to 100,000 monthly visitors with six regular contributors and affiliate systems I built and ran. I sold it in 2021 for $960,000, and the site is still live today.</p>
         </div>
       </a>
     )}
@@ -70,7 +89,7 @@ function shortenYear(yr: string): string {
     <section class="archive-section">
       <span class="archive-label">The winding road</span>
       <div class="archive-list">
-        {archiveProjects.map(project => (
+        {timelineProjects.map(project => (
           <a href={`/projects/${project.id}`} class="archive-row">
             <div class="archive-bar"></div>
             <span class="archive-name">{project.data.title}</span>
@@ -78,6 +97,35 @@ function shortenYear(yr: string): string {
             <span class="archive-year">{shortenYear(project.data.year)}</span>
           </a>
         ))}
+      </div>
+    </section>
+
+    <!-- Latest writing -->
+    {writingPosts.length > 0 && (
+      <section class="archive-section writing-section">
+        <span class="archive-label">Latest writing</span>
+        <div class="archive-list">
+          {writingPosts.map(post => (
+            <a href={`/writing/${post.id}`} class="archive-row">
+              <div class="archive-bar"></div>
+              <span class="archive-name">{post.data.title}</span>
+              <span class="archive-desc">{post.data.description}</span>
+              <span class="archive-year">{formatPostDate(post.data.date)}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Contact -->
+    <section class="contact-section">
+      <p class="contact-lead">If you're building something and need someone who can take it from idea to shipped, email me.</p>
+      <div class="contact-links">
+        <a href="mailto:ndahlhoff10@gmail.com" class="contact-link">ndahlhoff10@gmail.com</a>
+        <span class="contact-sep">&middot;</span>
+        <a href="https://twitter.com/lazyguac" class="contact-link" target="_blank" rel="noopener">@lazyguac</a>
+        <span class="contact-sep">&middot;</span>
+        <a href="https://www.linkedin.com/in/nick-dahlhoff-684860a3/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </section>
   </div>
@@ -120,6 +168,7 @@ function shortenYear(yr: string): string {
     font-style: italic;
     line-height: 1.4;
     color: var(--color-accent-gold);
+    max-width: 640px;
   }
 
   .hero-right {
@@ -129,9 +178,11 @@ function shortenYear(yr: string): string {
     gap: 4px;
     flex-shrink: 0;
     padding-top: 8px;
+    max-width: 280px;
+    text-align: right;
   }
 
-  .consulting-link {
+  .looking-for-link {
     font-family: var(--font-body);
     font-size: 14px;
     font-weight: 500;
@@ -142,7 +193,7 @@ function shortenYear(yr: string): string {
     text-underline-offset: 3px;
   }
 
-  .consulting-link:hover {
+  .looking-for-link:hover {
     color: var(--color-accent-green-dark);
   }
 
@@ -153,7 +204,7 @@ function shortenYear(yr: string): string {
     color: var(--color-text-muted);
   }
 
-  /* Current Projects */
+  /* Featured Cards */
   .current-grid {
     display: flex;
     gap: 24px;
@@ -274,7 +325,7 @@ function shortenYear(yr: string): string {
     color: var(--color-text-overlay);
   }
 
-  /* Archive Section */
+  /* Archive / Timeline / Writing Section */
   .archive-section {
     display: flex;
     flex-direction: column;
@@ -350,6 +401,51 @@ function shortenYear(yr: string): string {
     flex-shrink: 0;
   }
 
+  /* Contact */
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .contact-lead {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--color-text);
+    max-width: 560px;
+  }
+
+  .contact-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-accent-green);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .contact-link:hover {
+    color: var(--color-accent-green-dark);
+  }
+
+  .contact-sep {
+    color: var(--color-border);
+  }
+
   /* Responsive */
   @media (max-width: 1024px) {
     .page {
@@ -383,6 +479,8 @@ function shortenYear(yr: string): string {
     .hero-right {
       align-items: flex-start;
       padding-top: 0;
+      text-align: left;
+      max-width: none;
     }
 
     .current-grid {
@@ -428,6 +526,10 @@ function shortenYear(yr: string): string {
       width: 100%;
       flex-basis: 100%;
       padding-left: 19px;
+    }
+
+    .contact-section {
+      margin-top: 48px;
     }
   }
 </style>

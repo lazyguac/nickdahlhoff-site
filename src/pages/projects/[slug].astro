@@ -23,7 +23,7 @@ const { latestUpdate, heroImage, tech, skills } = project.data;
 const hasTechOrSkills = (tech && tech.length > 0) || (skills && skills.length > 0);
 ---
 
-<BaseLayout title={`${project.data.title} — Nick Dahlhoff`} description={project.data.tagline}>
+<BaseLayout title={`${project.data.title} — Nick Dahlhoff`} description={project.data.tagline} noindex={project.data.noindex}>
   <article class="project-page">
     <div class="container">
       <a href="/" class="back-link">&larr; Back</a>

@@ -20,7 +20,18 @@ const projects = defineCollection({
     badge: z.string().optional(), // e.g. "Active", "Booking"
     badgeColor: z.enum(['green', 'orange']).optional(),
     revenue: z.string().optional(), // e.g. "~$960K" for featured highlight
+    noindex: z.boolean().default(false), // retired pages (e.g. ai-consulting) — kept per "never delete", hidden from search
   }),
 });
 
-export const collections = { projects };
+const writing = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/writing' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    description: z.string(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { projects, writing };

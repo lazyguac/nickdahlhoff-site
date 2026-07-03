@@ -14,7 +14,7 @@ I started in high school during the Moneymaker-era boom, around 2006, and moved 
 
 ## What it built
 
-The money was never the interesting part. Poker forced study: I taught myself the game from books, forums, and equity calculators, with real stakes making the feedback honest. It taught bankroll and risk management, because you can't survive variance without them. It taught emotional control. You go through months where you're down and still have to show up and play well, and blaming bad luck doesn't win any of it back. And it taught me how betting markets and expected value work from the inside, not from a textbook.
+Poker was about the money — that's why I played. But earning it forced study: I taught myself the game from books, forums, and equity calculators, with real stakes making the feedback honest. It taught bankroll and risk management, because you can't survive variance without them. It taught emotional control. You go through months where you're down and still have to show up and play well, and blaming bad luck doesn't win any of it back. And it taught me how betting markets and expected value work from the inside, not from a textbook.
 
 That last part is the through-line to [Fantasy Joes](https://fantasyjoes.gg), where I built the real-money tournament mechanics. Years of watching how odds, EV, and people hold up when money is on the line is the right background for building that.
 

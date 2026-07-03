@@ -1,6 +1,6 @@
 ---
 title: Fantasy Joes
-tagline: A fantasy-football ranking game I designed, built, and run by myself with Claude Code — web app, Discord game, real-money contests, and the growth machinery around them.
+tagline: A fantasy-football ranking game built on a simple mechanic — pick between two players, over and over, and the picks build your rankings. Web app, Discord game, and real-money contests, designed and built solo with Claude Code.
 status: current
 order: 1
 url: https://fantasyjoes.gg
@@ -10,56 +10,73 @@ heroImage: /images/fantasy-joes/fj-compare-og-card.jpg
 year: "2026"
 badge: "Active"
 badgeColor: green
+latestUpdate:
+  date: "2026-07-03"
+  summary: "Real-money contests built and audited, launching for the 2026 NFL season. 14,818 duels played as of June 30."
 ---
 
-## What it is
+## What it is, and why I built it
 
-Fantasy Joes is a fantasy-football ranking game, and I designed, built, and operate the whole thing myself using Claude Code as the engineering team. That is one product across the entire stack, run by one person: the game, the art pipeline, the Discord bot, the SEO engine, the growth dashboard, the video renderer, and the real-money payment rails underneath it. Of the 252 commits in the repository, 244 carry a Claude co-author trailer, across several model versions as Anthropic's tooling improved during the build.
+Fantasy Joes is a fantasy-football ranking game. Instead of typing out a spreadsheet of your player rankings, you see two NFL players and tap the one you'd rather have. Do that a few hundred times and you've ranked the whole player pool — without ever staring at a blank list.
 
-I direct it and I review every line before it ships. The models write code under that direction; I decide the architecture, catch what they get wrong, and own the result. The commit history is the honest record of how the two fit together.
+The reason I built it starts with a problem I had with how fantasy rankings work. A lot of people who play fantasy football want to rank players well, and want to be known as the best ranker. But that's a closed system, mostly owned by one company. Expert consensus rankings come from FantasyPros, which decides who counts as an "expert" — you basically need a media presence to submit rankings, which locks out people who might actually be really good at it.
+
+I'd also made rankings the normal way, in a spreadsheet, and it's boring. It appeals to a tiny audience. So I figured there were a few ways to innovate on it, and the main one was duels. That came out of a smaller thing I noticed doing it myself: I often didn't actually know my own preference between two players until I was forced to pick one. Rankings get followed too rigidly — people defer to a list instead of choosing who they'd actually take. Making you choose, one pair at a time, gets you to a ranking that's genuinely yours.
+
+I designed and built the whole thing myself with Claude Code — the game, the art pipeline, the Discord bot, the SEO pages, the growth dashboard, and the payment rails underneath.
 
 ![The core game loop: two players, tap the one you'd rather have](/images/fantasy-joes/fj-duel-desktop.png)
 
-The game itself is simple to play. Instead of typing out a spreadsheet of your player rankings, you see two NFL players and tap the one you'd rather draft. That is a duel. Do it a few hundred times and you have ranked the whole player pool without staring at a blank list. Plenty of drafters rank a full pool by hand; Fantasy Joes takes the chore out of it and leaves you with rankings that are yours rather than a copy of the consensus ADP everyone else drafts off.
+## The game, and the rating system under it
 
-## The mechanic under the tap
+The game is simple to play. Two players, tap one, repeat. Two modes run on the same engine: a pre-season draft board across every position, and in-season weekly duels scoped to a position for when you're setting a lineup. No signup to start — guests can play without signing up, on a device that remembers them.
 
-The interesting engineering is what happens under each pick. Every duel runs through an Elo rating system, the same math chess uses to rank players from head-to-head results. Both players start from a base score, and each pick moves the winner up and the loser down. An upset, where you take the lower-ranked player, moves the scores more than a chalk pick does, because the system treats a surprising result as more information. Your rankings re-sort live as you go. Two modes run on that one engine: a pre-season draft board across every position, and in-season weekly duels scoped to a position when you are setting a lineup.
+What's underneath each tap is where most of the design went. It started from Elo, the rating system chess uses to rank players from head-to-head results, and I changed a lot about it from there. Six things that aren't in textbook Elo:
 
-## Why I built it twice
+- **Scores are seeded from real data, not a flat starting number.** Every player's opening score is derived from projections or ADP, so a duel between two stars and a duel between two long-shots both start from where the market actually has them — not from everyone tied at a midpoint the way a chess player does.
+- **The K-factor scales with the rank gap** instead of being one fixed constant. The wider the gap between the two players going in, the more carefully the system moves their scores.
+- **Upsets are amplified.** Take the lower-ranked player and win, and the scores move harder than a chalk pick would — a surprise carries more information, so it counts for more.
+- **Matchups are chosen, not random.** Top players surface more often, and the second player in each duel is drawn from a range around the first so the pairing stays competitive instead of lopsided.
+- **A "mover" boost injects real-world signal.** When a player's ADP shifts hard, the system over-samples them for a stretch — showing them more, and steering their duels toward where the market now has them — so the board reacts to what just happened in the real world.
+- **New players get a smaller pool first.** A brand-new user's early duels are concentrated on the famous, high-consensus players, and the pool widens as they play — so the ranking has something solid to build on before it hands you the long tail.
 
-I first built this in late 2024 as product manager, paying a freelancer to put it together on no-code tooling. The mechanic worked, but three-to-five-second load times between duels were fatal for a game whose whole appeal is rapid-fire tapping. I shut it down before the 2025 season rather than ship something slow.
-
-I came back to it in February 2026 and rebuilt it from scratch by myself with Claude Code. Nothing carried over from the old version. It is a Next.js and Convex app, and what shipped is the fast version of the original idea: duels resolve instantly, guests can play with no signup, and the web app and the Discord game run on one shared code path so they behave identically.
+Your rankings re-sort live as you go. It's Elo-derived and heavily modified, not the same rating you'd get out of a chess app.
 
 ![Your rankings, tiered, with ADP and Elo side by side](/images/fantasy-joes/fj-rankings-desktop.png)
 
+## Built twice
+
+I first built this in late 2024 as the product manager, paying a freelancer to put it together on no-code tooling. The mechanic worked. But every duel took three to five seconds to load, which is fatal for a game whose whole appeal is tapping fast — and there were other bugs on top of that. As a potential user I could see it wasn't going to work without major improvements I wasn't ready to put the time and money into. I shut it down before the 2025 season rather than ship it slow.
+
+I came back to it in early 2026 and rebuilt it from scratch, by myself, with Claude Code. Nothing carried over. What shipped is the fast version of the original idea: duels resolve instantly, guests can play with no signup, and the web app and the Discord game run on one shared code path so they behave the same.
+
 ## The machinery around the game
 
-The game is the core. Most of the work is in everything that turns it into a product one person can operate.
+The game is the core. Most of the work is everything that turns it into a product one person can run.
 
-**Player art.** Every ranked player gets an AI-generated comic portrait, so duels, share cards, and Discord all look on-brand without me drawing anything. The pipeline researches each player and generates the art, then a second AI pass checks the result against a checklist, team colors, likeness, no extra limbs, and re-rolls if it fails. When a player gets traded, a daily job notices the team change and regenerates the stale art on its own.
+**Player art.** Every ranked player gets an AI-generated comic portrait, so duels, share cards, and Discord all look on-brand without me drawing anything. The pipeline researches each player, generates the art, then runs a second AI pass that checks the result against a checklist — team colors, likeness, no extra limbs — and re-rolls if it fails. When a player gets traded, a daily job notices the team change and regenerates the stale art on its own.
 
-**A Discord game.** The whole duel loop runs inside Discord as slash commands, so you play, build a board, and see standings without leaving the server, no signup required. I also built partner attribution around it: every bot link carries a referral code, and credit for a signup survives even when nobody clicks the link, backfilled from the server the player came from. A partner earns a flat bounty per first-time depositor plus a share of the rake that player generates, with a closed-form check that guarantees payouts can never exceed the rake the house took in.
+**A Discord game.** The whole duel loop runs inside Discord as slash commands — play, build a board, see standings without leaving the server, no signup. Around it I built partner attribution: every bot link carries a referral code, and credit for a signup survives even when nobody clicks the link, backfilled from the server the player came from. A partner earns a flat bounty per first-time depositor plus a share of the rake that player generates, with a closed-form check that guarantees payouts can never exceed the rake actually taken in.
 
-**Programmatic SEO.** A daily job reads every resolved draft duel, buckets them by player pair, and publishes a "Player X vs Y" page for each matchup that clears a vote threshold. 145 of them are live right now, each showing the crowd split from actual duels: for example, [Jahmyr Gibbs vs. Bijan Robinson](https://fantasyjoes.gg/draft/2026/compare/jahmyr-gibbs-vs-bijan-robinson) and [Jonathan Taylor vs. Christian McCaffrey](https://fantasyjoes.gg/draft/2026/compare/jonathan-taylor-vs-christian-mccaffrey). A relevance filter sits underneath: before rendering an expert quote, it verifies the quote actually names the right player, so a college linebacker who shares a surname with a star receiver does not get misattributed on the page. When a page gets shared, it renders a preview card from live data, both players' comic art, their draft ranks, and the vote split. It looks like a paid ad and it is generated per matchup on demand.
+**Programmatic SEO.** A daily job reads every resolved draft duel, buckets them by player pair, and publishes a "Player X vs Y" page for each matchup that clears a vote threshold. 145 are live, each showing the crowd split from real duels — for example, [Jonathan Taylor vs. Christian McCaffrey](https://fantasyjoes.gg/draft/2026/compare/jonathan-taylor-vs-christian-mccaffrey) and [Puka Nacua vs. Justin Jefferson](https://fantasyjoes.gg/draft/2026/compare/puka-nacua-vs-justin-jefferson). A relevance filter sits underneath: before an expert quote renders, it checks that the quote actually names the right player, so a college linebacker who shares a surname with a star receiver doesn't get misattributed. When one of these pages is shared, it renders a preview card from live data — both players' comic art, their draft ranks, the vote split — that looks like a paid ad and is generated per matchup on demand.
 
 ![A live compare page — the crowd's lean, drawn from real duels](/images/fantasy-joes/fj-compare-pair-desktop.png)
 
-Three more pieces round it out. A growth dashboard at `/admin/growth` tracks signup and duel deltas, a funnel from first visit through first duel to retention, per-channel activation with a spend-log join for cost-per-signup, and a canary metric that flags when attribution silently breaks; its footer states which numbers are not captured yet, so I do not fool myself reading it. A short-form video renderer turns the same duel-split data into a vertical "you vs. the crowd" clip, driven entirely by the data so no on-screen number is ever a guess. And the ads instrumentation fires a qualified-user event to Reddit and TikTok the moment a visitor crosses the engagement threshold.
+Three more pieces round it out. A growth dashboard at `/admin/growth` tracks signup and duel deltas, a funnel from first visit through first duel to retention, per-channel activation with a spend-log join for cost-per-signup, and a canary metric that flags when attribution silently breaks — with a footer that spells out which numbers aren't captured yet, so it doesn't flatter itself. A short-form video renderer turns the same duel-split data into a vertical "you vs. the crowd" clip, driven entirely by the data so no on-screen number is ever a guess. And the ads instrumentation fires a qualified-user event to Reddit and TikTok the moment a visitor crosses the engagement threshold.
 
 ## Real money, built and audited
 
-The endgame is skill-based cash contests, head-to-head, 50/50s, and tournaments, funded by user-signed USDC transfers on Base. The rails are done: wallets, the payment flow, six contest formats, and the compliance scaffolding for geo-gating, age checks, tax withholding, and self-exclusion.
+The endgame is skill-based cash contests — head-to-head, 50/50s, and tournaments — funded by user-signed USDC transfers on Base. The rails are done: wallets, the payment flow, six contest formats, and the compliance scaffolding for geo-gating, age checks, tax withholding, and self-exclusion.
 
-Before any of it could go live, I put the codebase through a multi-agent adversarial security audit I designed and ran: dozens of independent agents finding issues across the money rails, then re-verifying each other's findings, then a pass checking for what the first agents missed. I read the results, decided what to fix, and shipped the remediations against the live code, all while the money system stayed switched off behind a flag. The judgment stayed mine. The agents were how one person red-teamed a money system at a depth I could not reach by hand in the time I had.
+Before any of it goes live, I put the codebase through a multi-agent adversarial security audit I designed and ran: dozens of independent agents finding issues across the money rails, then re-verifying each other's findings, then a pass checking for what the first ones missed. Findings were remediated against the live code — all while the money system stayed switched off behind a flag. The scale of it is the point: a solo founder can't red-team a money system by hand at the depth this needed, so I built the review that could.
 
-Real money is not live to the public. It is built and audited, and it launches for the 2026 NFL season.
+Real money isn't live to the public. It's built and audited, and it launches for the 2026 NFL season.
+
+![The homepage — make your own rankings, then see how they stack up](/images/fantasy-joes/fj-home-desktop.png)
 
 ## Where it stands
 
-As of late June 2026, real people have played 14,000+ duels across 1,000+ users, with no paid marketing behind it yet. I watch the duel count rather than signups, because dueling is the product; registration comes later, once their rankings are genuinely their own rather than the consensus order everyone starts with.
+As of June 30, 2026, real people have played 14,818 duels across 1,038 users, and 145 comparison pages are live (as of July 2). Paid marketing has run — image-tested Reddit ads and a Spark-promoted TikTok poll since May 2026, with conversion tracking wired to both platforms — while a Google Ads push is built and staged but not yet launched.
 
-![The homepage — make your own rankings, then prove they beat the experts](/images/fantasy-joes/fj-home-desktop.png)
+One change I'm glad to point at came straight from that data. A "sign up now" screen was auto-firing early in a new player's session, and the data showed that gate was leaking users rather than converting them — the board that early is still mostly the consensus order, so the ask was landing before the rankings were actually the player's own. Moving it to a later, more personalized point was a one-line change the data told me to make. The 2026 NFL season kicks off in September, which is when all of this gets its first live test.
 
-Some of the work I am most glad to point at came from reading that data honestly. A "sign up now" screen was auto-firing early in a new player's session, and the analytics showed that milestone gate was leaking users instead of converting them. I moved the ask to a later point where the board is fully personalized, a one-line change the data told me to make. Watching behavior and fixing what it reveals is the loop I would want a team to see. The 2026 NFL season kicks off in September, which is when all of this gets its first live test.

@@ -13,7 +13,7 @@ A side effect of that mechanic is that the game knows how a lot of people would 
 
 Then it occurred to me that "player X or player Y" is one of the most common things people type into Google before a draft. They're on the clock, or building a cheat sheet, and they want a second opinion on a close call. My game produces exactly that opinion as a byproduct. So I built a page for every close call the game had enough data to answer.
 
-There are 145 of them live right now. Two you can look at:
+There are 145 of them live as I write this, in early July 2026. Two you can look at:
 
 - [Jonathan Taylor vs. Christian McCaffrey](https://fantasyjoes.gg/draft/2026/compare/jonathan-taylor-vs-christian-mccaffrey)
 - [Jahmyr Gibbs vs. Bijan Robinson](https://fantasyjoes.gg/draft/2026/compare/jahmyr-gibbs-vs-bijan-robinson)

@@ -21,7 +21,7 @@ Over about three months, on my own with AI tools throughout, I produced the full
 
 - Financial models covering every program, every staff role, and every cost center, with an interactive calculator for changing the assumptions.
 - Competitive and regulatory research across the Grand Rapids children's-activity and daycare market: pricing, licensing, staffing ratios, capacity.
-- A community-ownership structure, iterated through more than seven versions, plus an investor-facing website and the pitch materials.
+- A community-ownership structure, iterated into its seventh version, plus an investor-facing website and the pitch materials.
 - Facility concepts and a go-to-market plan: raise around $100,000, run a local media push, and pre-sell memberships that were actual ownership stakes.
 
 It's close to what a small consulting team would hand you. The financials hold up, the model works, and I still wish the place existed.

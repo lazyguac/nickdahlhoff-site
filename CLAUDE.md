@@ -116,11 +116,39 @@ turns out to be true, `git push origin main` may also trigger a production deplo
 an unreviewed `git push` to `main` with the same caution as `netlify deploy --prod` until
 that's confirmed one way or the other in the Netlify dashboard.
 
+## Living pages — how content stays true over time (added 2026-07-03, Nick's requirement)
+
+This site is a living record, not a snapshot. The failure mode to prevent: a centerpiece
+page (the Fantasy Joes case study) quietly rotting while the product moves. The contract:
+
+1. **Volatile numbers are quarantined and dated.** Any count that rots (duels played,
+   users, compare-page count) appears ONLY in a page's "Where it stands"-style section,
+   always with "as of <Month YYYY>". The rest of the body is written evergreen — mechanics,
+   systems, decisions — so only one section ever needs a refresh.
+2. **`latestUpdate` frontmatter is the page's pulse.** On every real milestone (launch,
+   feature ship, meaningful number), update it with a dated one-liner. A page whose
+   `latestUpdate` is months old is visibly stale — that's intentional pressure.
+3. **Refresh recipes live here, not in anyone's memory:**
+   - FJ duels/users: query the Convex prod dashboard (see the recipe in the PKH scratchpad
+     fact sheets, or ask a session to "refresh the FJ case-study numbers" — it should query
+     Convex prod, update the as-of block, and bump `latestUpdate`).
+   - Compare-page count: `curl -s https://fantasyjoes.gg/sitemap.xml | grep -c "compare"`.
+   - "Still live/still sells" claims (ALR site, TpT materials): re-check the URL before
+     repeating the claim in any edit.
+4. **Build-log posts are the history; the case study is the present.** A milestone gets a
+   dated post in `/writing` (the story of the change) AND a one-line case-study/`latestUpdate`
+   touch (the new current state). Don't retrofit the case-study body into a changelog.
+5. **Voice-truth on edits:** any new first-person stance added to a page must come from
+   something Nick actually said (see `~/.claude/skills/write/contexts/personal.md` Standing
+   Rules — site copy routes through /write, always).
+6. **Possible upgrade, not built:** fetch live FJ stats at build time so every deploy
+   refreshes the numbers automatically. Worth doing if manual refreshes prove annoying.
+
 ## Standing triggers (recap)
 
 - **New writing post finalized** → publish it the same session (see above).
-- **Fantasy Joes milestone** (launch, real number, feature ship) → update the case-study
-  line in `fantasy-joes.md`.
-- **Monthly freshness pass** → skim the homepage hero/looking-for line, the Fantasy Joes
-  case study, and the writing index for anything stale; this is a content site about an
-  active builder, and stale copy undercuts the whole pitch.
+- **Fantasy Joes milestone** (launch, real number, feature ship) → dated post in /writing
+  + update `latestUpdate` and the as-of stats block in `fantasy-joes.md`.
+- **Monthly freshness pass** → run the refresh recipes above; bump as-of dates; skim the
+  homepage hero/looking-for line and writing index for anything stale; this is a content
+  site about an active builder, and stale copy undercuts the whole pitch.

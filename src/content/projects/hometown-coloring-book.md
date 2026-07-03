@@ -13,7 +13,7 @@ year: "2026"
 
 Free coloring books for local families, paid for by the businesses in them. There's no split between ads and content, because every ad page *is* a coloring page: a dance studio sponsors a page and gets a scene of kids dancing with a QR code to their site; a heating company gets its own scene. Families pay nothing. The sponsor pages fund the whole book.
 
-I built it as 21 separate West Michigan editions — Grand Rapids neighborhoods, surrounding cities, and townships — each its own branded book. A sponsor buys by district, and the price scales with the district's reach: on the live site, an interior page runs $0.14 a copy, the exclusive front cover $0.84, the back cover $0.42, with the smallest district starting around $28.
+I built it as 21 separate West Michigan editions — Grand Rapids neighborhoods, surrounding cities, and townships — each its own branded book. A sponsor buys a page by district, priced per copy from the district's actual Census reach, so a bigger audience costs more.
 
 ## The system I built
 
@@ -21,9 +21,9 @@ The core of it is the page-design pipeline. A sponsor sends a brief — text, a 
 
 The first round generates four different directions at once, each prompted to be visually distinct, so the sponsor is choosing a direction rather than approving or rejecting a single guess. After they pick one and comment, every following round generates a single new image, feeding the chosen image back to the model as a live reference alongside the feedback. It edits the picked image toward what they asked for instead of starting over — real image-to-image refinement, not a fresh roll of the dice each time.
 
-The whole thing is prompted for a print-safe, sponsor-safe artifact, not just a nice picture: black outlines only, no shading, white background, a 2:3 portrait page, complexity a 4-to-10-year-old can actually color, a blank bottom-right corner reserved for the QR code, no text baked in, and no sponsor logo drawn into the line art (that gets layered separately). There's a generation cap per design, and if the model fails it retries with backoff and then routes the job to me by hand — a sponsor's page never just breaks.
+The whole thing is prompted for a print-safe, sponsor-safe artifact, not just a nice picture: line art a 4-to-10-year-old can actually color, a corner reserved for the QR code, and no sponsor logo drawn into the art itself — that gets layered on separately. If the model keeps failing on a design, the job routes to me, so a sponsor's page never just breaks.
 
-Around that sit the parts a real business needs: a Stripe checkout where the price is computed on the server from each district's Census data so it can't be tampered with, multi-user sponsor accounts so a manager can buy and hand the brief to a designer, and the 21-district system with an admin queue for anything that needs a human. Next.js, Convex, Stripe, Gemini, Resend — built and operated by one person.
+Around that sit the parts a real business needs — checkout, sponsor accounts a team can share, an admin queue for anything that needs a human — built and operated by one person.
 
 ## What happened
 

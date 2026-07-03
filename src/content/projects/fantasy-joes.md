@@ -33,12 +33,12 @@ The game is simple to play. Two players, tap one, repeat. Two modes run on the s
 
 What's underneath each tap is where most of the design went. It started from Elo, the rating system chess uses to rank players from head-to-head results, and I changed a lot about it from there. Six things that aren't in textbook Elo:
 
-- **Scores are seeded from real data, not a flat starting number.** Every player's opening score is derived from projections or ADP, so a duel between two stars and a duel between two long-shots both start from where the market actually has them — not from everyone tied at a midpoint the way a chess player does.
+- **Scores are seeded from real data, not a flat starting number.** Every player's opening score comes from projections and ADP, so rankings start from where the market actually has them instead of everyone tied at a midpoint.
 - **The K-factor scales with the rank gap** instead of being one fixed constant. The wider the gap between the two players going in, the more carefully the system moves their scores.
 - **Upsets are amplified.** Take the lower-ranked player and win, and the scores move harder than a chalk pick would — a surprise carries more information, so it counts for more.
 - **Matchups are chosen, not random.** Top players surface more often, and the second player in each duel is drawn from a range around the first so the pairing stays competitive instead of lopsided.
-- **A "mover" boost injects real-world signal.** When a player's ADP shifts hard, the system over-samples them for a stretch — showing them more, and steering their duels toward where the market now has them — so the board reacts to what just happened in the real world.
-- **New players get a smaller pool first.** A brand-new user's early duels are concentrated on the famous, high-consensus players, and the pool widens as they play — so the ranking has something solid to build on before it hands you the long tail.
+- **A "mover" boost injects real-world signal.** When a player's ADP shifts hard, the system shows them more for a stretch, so the rankings react to what just happened in the real world.
+- **New players get a smaller pool first.** Early duels concentrate on the famous, high-consensus players and widen from there, so the ranking has something solid to build on before it hands you the long tail.
 
 Your rankings re-sort live as you go. It's Elo-derived and heavily modified, not the same rating you'd get out of a chess app.
 
@@ -56,13 +56,13 @@ The game is the core. Most of the work is everything that turns it into a produc
 
 **Player art.** Every ranked player gets an AI-generated comic portrait, so duels, share cards, and Discord all look on-brand without me drawing anything. The pipeline researches each player, generates the art, then runs a second AI pass that checks the result against a checklist — team colors, likeness, no extra limbs — and re-rolls if it fails. When a player gets traded, a daily job notices the team change and regenerates the stale art on its own.
 
-**A Discord game.** The whole duel loop runs inside Discord as slash commands — play, build a board, see standings without leaving the server, no signup. Around it I built partner attribution: every bot link carries a referral code, and credit for a signup survives even when nobody clicks the link, backfilled from the server the player came from. A partner earns a flat bounty per first-time depositor plus a share of the rake that player generates, with a closed-form check that guarantees payouts can never exceed the rake actually taken in.
+**A Discord game.** The whole duel loop runs inside Discord as slash commands — play, build a board, see standings without leaving the server, no signup. Around it I built partner attribution: credit for a signup survives even when nobody clicks a link, backfilled from the server the player came from, and partners earn from the players they bring in with the math capped so payouts can never exceed what the game actually took in.
 
 **Programmatic SEO.** A daily job reads every resolved draft duel, buckets them by player pair, and publishes a "Player X vs Y" page for each matchup that clears a vote threshold. 145 are live, each showing the crowd split from real duels — for example, [Jonathan Taylor vs. Christian McCaffrey](https://fantasyjoes.gg/draft/2026/compare/jonathan-taylor-vs-christian-mccaffrey) and [Puka Nacua vs. Justin Jefferson](https://fantasyjoes.gg/draft/2026/compare/puka-nacua-vs-justin-jefferson). A relevance filter sits underneath: before an expert quote renders, it checks that the quote actually names the right player, so a college linebacker who shares a surname with a star receiver doesn't get misattributed. When one of these pages is shared, it renders a preview card from live data — both players' comic art, their draft ranks, the vote split — that looks like a paid ad and is generated per matchup on demand.
 
 ![A live compare page — the crowd's lean, drawn from real duels](/images/fantasy-joes/fj-compare-pair-desktop.png)
 
-Three more pieces round it out. A growth dashboard at `/admin/growth` tracks signup and duel deltas, a funnel from first visit through first duel to retention, per-channel activation with a spend-log join for cost-per-signup, and a canary metric that flags when attribution silently breaks — with a footer that spells out which numbers aren't captured yet, so it doesn't flatter itself. A short-form video renderer turns the same duel-split data into a vertical "you vs. the crowd" clip, driven entirely by the data so no on-screen number is ever a guess. And the ads instrumentation fires a qualified-user event to Reddit and TikTok the moment a visitor crosses the engagement threshold.
+Three more pieces round it out. A growth dashboard tracks the funnel by channel — first visit to first duel to retention, with cost-per-signup — and flags when attribution silently breaks. A short-form video renderer turns the same duel-split data into vertical "you vs. the crowd" clips, so no on-screen number is ever a guess. And the ad platforms get told when a visitor becomes a real player, so paid campaigns optimize on engaged users instead of clicks.
 
 ## Real money, built and audited
 

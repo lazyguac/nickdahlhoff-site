@@ -5,6 +5,7 @@ status: archive
 order: 8
 tech: [Web App, CMS]
 skills: [Product Management, Content Sourcing, Vendor Management]
+heroImage: /images/manga/manga-method-collage.jpg
 year: "2019"
 ---
 

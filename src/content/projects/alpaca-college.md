@@ -5,6 +5,7 @@ status: archive
 order: 7
 tech: [Bubble, LLM API, Discord Bots, Twitter API, RSS]
 skills: [Product Management, No-Code Development, Bot Development, Content Curation]
+heroImage: /images/alpaca/alpaca-college-ui.jpg
 year: "2022, 2024"
 ---
 

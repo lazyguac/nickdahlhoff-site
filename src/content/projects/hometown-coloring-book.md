@@ -6,12 +6,15 @@ order: 6
 url: https://hometowncoloringbook.com
 tech: [Claude Code, Convex, Stripe, Gemini, Resend]
 skills: [Product Management, Full-Stack Development, AI Pipeline Design, Sales & Outreach, Brand Design]
+heroImage: /images/hometown/hometown-sample-page.jpg
 year: "2026"
 ---
 
 ## What it is
 
 Free coloring books for local families, paid for by the businesses in them. There's no split between ads and content, because every ad page *is* a coloring page: a dance studio sponsors a page and gets a scene of kids dancing with a QR code to their site; a heating company gets its own scene. Families pay nothing. The sponsor pages fund the whole book.
+
+![A finished page where it ends up — on the fridge](/images/hometown/hometown-fridge-photo.jpg)
 
 I built it as 21 separate West Michigan editions — Grand Rapids neighborhoods, surrounding cities, and townships — each its own branded book. A sponsor buys a page by district, priced per copy from the district's actual Census reach, so a bigger audience costs more.
 

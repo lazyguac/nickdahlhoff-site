@@ -18,6 +18,8 @@ There are 145 of them live as I write this, in early July 2026. Two you can look
 - [Jonathan Taylor vs. Christian McCaffrey](https://fantasyjoes.gg/draft/2026/compare/jonathan-taylor-vs-christian-mccaffrey)
 - [Jahmyr Gibbs vs. Bijan Robinson](https://fantasyjoes.gg/draft/2026/compare/jahmyr-gibbs-vs-bijan-robinson)
 
+![A live compare page — the crowd's split on one matchup, from real duels](/images/fantasy-joes/fj-compare-pair-desktop.png)
+
 ## How a page gets built
 
 I didn't write any of these pages by hand, and there's no list of matchups I picked. A job runs once a day, reads every draft-mode duel that's been resolved, and groups the picks by pair of players. For each pair it works out the all-time split, the split over the last seven days, and which way the trend has moved over thirty. That's the page: the crowd's actual verdict on this exact matchup, plus how fresh it is.
@@ -31,6 +33,8 @@ The URL says what it is: `fantasyjoes.gg/draft/2026/compare/jonathan-taylor-vs-c
 When one of these pages gets shared — in a group chat, on Reddit, wherever people argue about drafts — the preview image matters more than the page title, because the image is what shows up in the feed. So I made it worth seeing.
 
 Every player in the game has a comic-style caricature I generate for them. The share card puts both players' caricatures side by side, adds their position, team, and draft rank, drops a "VS" in the middle, and draws the live crowd-split bar right on the image. It's built per matchup, from the same live data as the page, so the card for a real matchup shows the real split and the real art. It looks like a fight card, which is the point.
+
+![The share card: both players' comic art, ranks, and the live crowd split](/images/fantasy-joes/fj-compare-og-card.jpg)
 
 That card also broke on every single page for a while, which brings me to the parts that were harder than the idea.
 

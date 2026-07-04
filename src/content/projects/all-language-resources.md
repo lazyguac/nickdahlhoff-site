@@ -17,8 +17,6 @@ All Language Resources was an affiliate review site for language apps and course
 
 I ran it solo at first and grew into a team of six regular contributors: writers, an SEO specialist, and a VA, all freelance. I built the systems that made it run and negotiated the deals behind the ads myself, with dozens of course and app companies.
 
-![All Language Resources homepage](/images/alr/alr-home.png)
-
 ## Why I started it
 
 I was teaching in Beijing and studying Mandarin, and every review I found for the apps and courses I was using was a thin sales pitch dressed up as a recommendation. These sites made money on whatever they told you to buy, so they told you to buy the thing that paid the most. I already knew most of these products because I was a customer, and I figured I could review them honestly and still make it work as a business.

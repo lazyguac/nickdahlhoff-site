@@ -152,10 +152,12 @@ page (the Fantasy Joes case study) quietly rotting while the product moves. The 
 
 ## Standing cadence (two scheduled tasks own this — set up 2026-07-03)
 
-- **`weekly-build-log` (Fridays 3pm):** mines the week's real work from the whitelisted
+- **`weekly-build-log` (Saturdays 5am):** mines the week's real work from the whitelisted
   repos (fantasy-joes, this site, eth-regime-dashboard, hometown-coloring-book,
-  family-games, fsot-quiz) + PKH journals (business content ONLY — hard privacy firewall:
-  never substances/family/health/legal/personal), drafts one post per project with
+  family-games, fsot-quiz) + PKH journals. Privacy calibration (Nick, 2026-07-03): benign
+  human texture is fine where it earns its place (he's a father, West Michigan, worked
+  late on a launch); HARD no-go = marriage issues, substance use/recovery, specifics
+  about his daughter, health, legal, personal finances. Drafts one post per project with
   substantial work through the /write personal pipeline, tags it `project: <slug>` so it
   auto-appears in that project's Updates, asks Nick ≤3 questions, deploys on his yes.
   A quiet week = no post, ever — never pad.

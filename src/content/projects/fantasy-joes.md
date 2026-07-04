@@ -80,3 +80,10 @@ As of June 30, 2026, real people have played 14,818 duels across 1,038 users, an
 
 One change I'm glad to point at came straight from that data. A "sign up now" screen was auto-firing early in a new player's session, and the data showed that gate was leaking users rather than converting them — the board that early is still mostly the consensus order, so the ask was landing before the rankings were actually the player's own. Moving it to a later, more personalized point was a one-line change the data told me to make. The 2026 NFL season kicks off in September, which is when all of this gets its first live test.
 
+
+## Updates
+
+- **2026-07-03** — Real-money contests built and audited, launching for the 2026 NFL season. 14,818 duels played as of June 30.
+- **June 2026** — Player-comparison pages went live from the game's own duel data — 145 of them as of early July.
+- **May 2026** — First paid-ads experiments: Reddit campaigns and a promoted TikTok poll, with conversion tracking on both.
+- **February 2026** — Rebuilt from scratch, solo, with Claude Code, after shutting down the 2024 freelancer version.

@@ -31,6 +31,7 @@ const writing = defineCollection({
     date: z.coerce.date(),
     description: z.string(),
     draft: z.boolean().default(false),
+    project: z.string().optional(), // project slug — post appears as an Update on that project's page
   }),
 });
 

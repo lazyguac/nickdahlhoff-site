@@ -128,10 +128,12 @@ page (the Fantasy Joes case study) quietly rotting while the product moves. The 
 2. **`latestUpdate` frontmatter is the page's pulse.** On every real milestone (launch,
    feature ship, meaningful number), update it with a dated one-liner. A page whose
    `latestUpdate` is months old is visibly stale — that's intentional pressure.
-   **For ongoing projects (Fantasy Joes), the page also ends with an `## Updates` H2** —
-   a dated bullet list that accumulates (newest first). The latest-update box's "See all
-   updates ↓" link targets `#updates`, so that section must exist on any page using
-   `latestUpdate`. A milestone touches BOTH: the frontmatter one-liner and a new bullet.
+   **Updates render THEMSELVES from build-log posts** (Nick's rule, 2026-07-03: no
+   hand-maintained changelogs). A writing post with `project: <slug>` frontmatter
+   automatically appears in that project's "Updates" section (`[slug].astro` queries the
+   writing collection; the latest-update box's "See all updates ↓" only renders when
+   tagged posts exist). So the whole milestone flow is: write the post → tag it with the
+   project → bump `latestUpdate` → done. Publishing the post IS the changelog entry.
 3. **Refresh recipes live here, not in anyone's memory:**
    - FJ duels/users: query the Convex prod dashboard (see the recipe in the PKH scratchpad
      fact sheets, or ask a session to "refresh the FJ case-study numbers" — it should query

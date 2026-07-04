@@ -3,6 +3,7 @@ title: I ran a 94-agent security audit on my own app before turning on real mone
 date: "2026-07-03"
 description: A solo founder with no security team red-teaming a money feature by orchestrating dozens of AI agents against the codebase — why the real-money bar is different, how the audit was structured, and what it cost.
 draft: false
+project: fantasy-joes
 ---
 
 I build [Fantasy Joes](https://fantasyjoes.gg) by myself. One person, using AI tooling as the rest of the team. That works fine for most of what a fantasy football app does — if a duel renders wrong or a page is slow, someone tells me and I fix it. The cost of a bug is an annoyed user.

@@ -1,12 +1,12 @@
 ---
 title: "Turning Discord servers into a distribution channel for Fantasy Joes"
-date: "2026-07-11"
+date: "2026-07-04"
 description: "The week I built partner attribution for Discord, made the channel measurable in the growth dashboard, and rebuilt the comics pipeline to reject its own bad art."
 draft: true
 project: fantasy-joes
 # REFRESH-ON-PUBLISH: recompute the Discord duel share before flipping draft:false —
 # trailing-7d duels with source discord_set/discord_free in playerDuels+draftDuels vs all duels
-# (convex prod). Update the percentage, its date window, and this post's date.
+# (convex prod). Update the percentage and its date window if they shifted.
 ---
 
 Fantasy Joes has a Discord version of the game. You can play the duels — two players, pick who you'd rather have — right inside a server, no account, no website. A partner who runs a fantasy football server installs the bot, and their members start dueling. That part already worked.

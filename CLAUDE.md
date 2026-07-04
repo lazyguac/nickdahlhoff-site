@@ -150,11 +150,23 @@ page (the Fantasy Joes case study) quietly rotting while the product moves. The 
 6. **Possible upgrade, not built:** fetch live FJ stats at build time so every deploy
    refreshes the numbers automatically. Worth doing if manual refreshes prove annoying.
 
+## Standing cadence (two scheduled tasks own this — set up 2026-07-03)
+
+- **`weekly-build-log` (Fridays 3pm):** mines the week's real work from the whitelisted
+  repos (fantasy-joes, this site, eth-regime-dashboard, hometown-coloring-book,
+  family-games, fsot-quiz) + PKH journals (business content ONLY — hard privacy firewall:
+  never substances/family/health/legal/personal), drafts one post per project with
+  substantial work through the /write personal pipeline, tags it `project: <slug>` so it
+  auto-appears in that project's Updates, asks Nick ≤3 questions, deploys on his yes.
+  A quiet week = no post, ever — never pad.
+- **`site-freshness-pass` (1st of month, 10am):** refreshes the FJ case study's dated
+  numbers via the recipes above, bumps `latestUpdate` from the month's posts, fixes any
+  body sentence the month made stale, sweeps links/statuses, deploys on Nick's yes.
+- **Ad-hoc:** any session can still do either on a one-line instruction ("update the site:
+  X") — the tasks are the floor, not the ceiling.
+
 ## Standing triggers (recap)
 
 - **New writing post finalized** → publish it the same session (see above).
-- **Fantasy Joes milestone** (launch, real number, feature ship) → dated post in /writing
-  + update `latestUpdate` and the as-of stats block in `fantasy-joes.md`.
-- **Monthly freshness pass** → run the refresh recipes above; bump as-of dates; skim the
-  homepage hero/looking-for line and writing index for anything stale; this is a content
-  site about an active builder, and stale copy undercuts the whole pitch.
+- **Fantasy Joes milestone** (launch, real number, feature ship) → the weekly task will
+  catch it; for something big, don't wait — post + `latestUpdate` same session.

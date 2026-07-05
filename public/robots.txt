@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /consulting/
+
+Sitemap: https://nickdahlhoff.com/sitemap-index.xml

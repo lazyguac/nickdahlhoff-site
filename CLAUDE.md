@@ -152,20 +152,29 @@ page (the Fantasy Joes case study) quietly rotting while the product moves. The 
 
 ## Standing cadence (two scheduled tasks own this — set up 2026-07-03)
 
-- **`weekly-build-log` (Saturdays 5am):** mines the week's real work from the whitelisted
-  repos (fantasy-joes, this site, eth-regime-dashboard, hometown-coloring-book,
-  family-games, fsot-quiz) + PKH journals. Privacy calibration (Nick, 2026-07-03): benign
-  human texture is fine where it earns its place (he's a father, West Michigan, worked
-  late on a launch); HARD no-go = marriage issues, substance use/recovery, specifics
-  about his daughter, health, legal, personal finances. Drafts one post per project with
-  substantial work through the /write personal pipeline, tags it `project: <slug>` so it
-  auto-appears in that project's Updates, asks Nick ≤3 questions, deploys on his yes.
-  A quiet week = no post, ever — never pad.
-- **`site-freshness-pass` (1st of month, 10am):** refreshes the FJ case study's dated
-  numbers via the recipes above, bumps `latestUpdate` from the month's posts, fixes any
-  body sentence the month made stale, sweeps links/statuses, deploys on Nick's yes.
+**Design rule (2026-07-04): scheduled tasks run UNATTENDED, so they never publish/deploy
+by themselves — they PREPARE and hand off.** A task that needs Nick's yes mid-run just
+stalls at 5am (learned the hard way: the first weekly run fired and did nothing because it
+was waiting for an approval no one was there to give). So each task does the work it can do
+safely alone and leaves a one-word action for Nick.
+
+- **`weekly-build-log` (Saturdays 5am) — PROPOSER.** Mines the week from the whitelisted
+  repos (fantasy-joes, this site, hometown-coloring-book, family-games, fsot-quiz — NOT
+  eth-regime-dashboard, a throwaway utility, nor any private repo) + PKH journals. Privacy
+  calibration (Nick, 2026-07-03): benign human texture OK where it earns its place (father,
+  West Michigan, worked late on a launch); HARD no-go = marriage issues, substance
+  use/recovery, daughter specifics, health, legal, personal finances. It picks ONE post
+  (one project, one week) and writes a **proposal** — title + outline + ≤3 questions — to
+  `personal-knowledge-hub/2026/MM/DD/site-post-proposal-*.md` and notifies Nick. It does NOT
+  write the full post or deploy. Nick replies "write it" whenever; THAT session runs the
+  full /write pipeline, tags the post `project: <slug>` (auto-appears in Updates), and ships
+  on his yes. Quiet week = no proposal, never padded.
+- **`site-freshness-pass` (1st of month, 10am) — PREPARER.** Refreshes the FJ case study's
+  dated numbers via the recipes above, bumps `latestUpdate`, fixes any body sentence the
+  month made false, sweeps links, **commits locally**, and notifies Nick ("reply 'ship it'").
+  Does not push or deploy unattended.
 - **Ad-hoc:** any session can still do either on a one-line instruction ("update the site:
-  X") — the tasks are the floor, not the ceiling.
+  X" / "write and ship this week's proposed post") — the tasks are the floor, not the ceiling.
 
 ## Standing triggers (recap)
 

@@ -17,9 +17,9 @@ tags:
 
 # nickdahlhoff.com redesign — handoff (2026-09-02)
 
-Design work done in a cloud session; implementation continues **locally** on Nick's Mac,
-because the two remaining image files live in `~/Downloads` / `~/Desktop`, which the cloud
-container cannot see. Everything the local session needs is in this folder.
+Design work done in a cloud session (2026-09-02). Every asset, including the real Recess and
+Aura art, is now in the repo; implementation can continue from any session, local or cloud.
+Everything needed is in this folder.
 
 Live canvas (view, edit, export PNG/PDF): https://claude.ai/code/artifact/911f7233-37ad-4ee7-aa50-bfe888411e25
 Offline copy of the same canvas: `nickdahlhoff-redesign.html` (open in a browser).
@@ -44,8 +44,7 @@ copy to port into Astro. Ignore the `<x-dc>`/`<helmet>` wrappers and the `suppor
 - Text `#F4F6F8` (display) / `#ECEFF3` (body) / `#B7BEC9` / `#A5ADB8` / `#6F7885` (muted).
 - Accent mint `#5DD39E` (links, kicker labels, the one button style: mint fill, dark text).
 - Fonts: **Syne** 700/800 for display and wordmark, **Space Grotesk** body, **Fira Mono** for
-  dates and meta labels. Keep the `Kaushan Script` + `Nunito` load only while the Recess
-  wordmark is the HTML stand-in (see below).
+  dates and meta labels. Nothing else loads.
 - Deliberately NOT Fantasy Joes' look: no Oswald, no red-and-cream, no warm brown black.
 - Margins 80px at 1440. Email is the primary action everywhere; Fantasy Joes is a section,
   never a button.
@@ -90,7 +89,7 @@ dark tile with the italic line; a large ♠ on a light tile). Keep those.
 
 ## Build plan (local)
 
-1. `git checkout claude/redesign-handoff` in `~/nickdahlhoff-site`; copy the two images in.
+1. `git checkout claude/redesign-handoff` in `~/nickdahlhoff-site`.
 2. Port the design system into `src/styles/global.css` and `src/layouts/BaseLayout.astro`
    (fonts link, tokens, nav with the mint Email button).
 3. Rebuild `src/pages/index.astro` from `Main.dc.html`; `src/pages/projects/[slug].astro` from

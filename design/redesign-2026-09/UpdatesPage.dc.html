@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; background: #0F1115; color: #ECEFF3; font-family: 'Space Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #5DD39E; text-decoration: none; } a:hover { color: #8CE7BC; text-decoration: underline; }
+    .syne { font-family: 'Syne', 'Avenir Next', sans-serif; letter-spacing: -0.01em; }
+    .mono { font-family: 'Fira Mono', ui-monospace, monospace; }
+    .btn { display: inline-flex; align-items: center; height: 40px; padding: 0 18px; background: #5DD39E; color: #0F1115; border-radius: 8px; font-family: 'Syne', 'Avenir Next', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; }
+    .chip { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.12); font-size: 13px; font-weight: 500; color: #B7BEC9; background: #171A20; }
+    .chip.on { background: #F4F6F8; color: #0F1115; border-color: #F4F6F8; }
+    .row { display: grid; grid-template-columns: 100px 150px minmax(0, 1fr) 260px; column-gap: 24px; align-items: start; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.08); text-decoration: none; color: inherit; }
+    .row-title { font-size: 22px; font-weight: 600; color: #ECEFF3; line-height: 1.3; }
+    .row-desc { font-size: 14px; line-height: 1.5; color: #A5ADB8; margin-top: 6px; }
+    .thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; border-radius: 8px; display: block; border: 1px solid rgba(255,255,255,0.08); }
+  </style>
+</helmet>
+
+<div style="width: 1440px; min-height: 1560px; background: #0F1115; display: flex; flex-direction: column;">
+
+  <div style="display: flex; justify-content: space-between; align-items: center; height: 64px; padding: 0 80px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+    <a href="#" class="syne" style="font-size: 20px; font-weight: 800; color: #F4F6F8;">Nick Dahlhoff</a>
+    <div style="display: flex; gap: 32px; align-items: center;">
+      <a href="#" style="font-size: 14px; font-weight: 500; color: #A5ADB8;">Things I've made</a>
+      <a href="#" style="font-size: 14px; font-weight: 500; color: #F4F6F8;">Updates</a>
+      <a href="mailto:ndahlhoff10@gmail.com" class="btn">Email me</a>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 60px; align-items: end; padding: 56px 80px 28px;">
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <h1 class="syne" style="margin: 0; font-size: 72px; font-weight: 800; line-height: 0.95; color: #F4F6F8;">Updates</h1>
+      <p style="margin: 0; font-size: 19px; line-height: 1.5; color: #B7BEC9; max-width: 760px;">A build log. Every real milestone gets a dated entry: what shipped, what broke, and what I'd do differently. Each entry also appears on its project's page.</p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end;">
+      <span class="chip on">All</span><span class="chip">Fantasy Joes</span><span class="chip">This site</span><span class="chip">Hometown Coloring Book</span>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; padding: 0 80px;">
+    <span class="mono" style="font-size: 12px; letter-spacing: 0.14em; color: #6F7885; padding-bottom: 8px; border-bottom: 2px solid #F4F6F8;">JULY 2026</span>
+
+    <a href="#" class="row">
+      <span class="mono" style="font-size: 12px; color: #6F7885; padding-top: 6px;">Jul 4</span>
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #5DD39E; padding-top: 7px;">FANTASY JOES</span>
+      <div style="display: flex; flex-direction: column;"><span class="row-title">Turning Discord servers into a distribution channel for Fantasy Joes</span><span class="row-desc">The week I built partner attribution for Discord, made the channel measurable in the growth dashboard, and rebuilt the comics pipeline to reject its own bad art.</span></div>
+      <img src="fj-six3-current.jpg" alt="" class="thumb">
+    </a>
+    <a href="#" class="row">
+      <span class="mono" style="font-size: 12px; color: #6F7885; padding-top: 6px;">Jul 3</span>
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #5DD39E; padding-top: 7px;">FANTASY JOES</span>
+      <div style="display: flex; flex-direction: column;"><span class="row-title">How I turned the game's own duel data into 145 SEO pages</span><span class="row-desc">The game already knows how the crowd would answer "player X or player Y", the exact question people search before a draft. Turning that byproduct into comparison pages.</span></div>
+      <img src="fj-og.jpg" alt="" class="thumb">
+    </a>
+    <a href="#" class="row">
+      <span class="mono" style="font-size: 12px; color: #6F7885; padding-top: 6px;">Jul 3</span>
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #5DD39E; padding-top: 7px;">FANTASY JOES</span>
+      <div style="display: flex; flex-direction: column;"><span class="row-title">How I security-audited my own money feature before turning it on</span><span class="row-desc">A solo builder with no security team, stress-testing a real-money feature with AI before shipping it.</span></div>
+      <img src="fj-season.jpg" alt="" class="thumb">
+    </a>
+    <a href="#" class="row" style="border-bottom: none;">
+      <span class="mono" style="font-size: 12px; color: #6F7885; padding-top: 6px;">Jul 3</span>
+      <span class="mono" style="font-size: 11px; letter-spacing: 0.1em; color: #6F7885; padding-top: 7px;">THIS SITE</span>
+      <div style="display: flex; flex-direction: column;"><span class="row-title">I rebuilt this site with AI agents, and the hard part was making them write the truth</span><span class="row-desc">Rebuilding nickdahlhoff.com in a day with a fleet of AI agents, and why the real work was writing rules that kept them from making things up in my voice.</span></div>
+      <img src="headshot.jpg" alt="" class="thumb" style="object-position: center;">
+    </a>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; align-items: center; margin: 48px 80px 0; padding: 32px 0 72px; border-top: 1px solid rgba(255,255,255,0.08);">
+    <span class="syne" style="font-size: 26px; font-weight: 700; color: #F4F6F8; max-width: 700px; line-height: 1.2;">Building something and need someone who can take it from idea to shipped?</span>
+    <div style="display: flex; gap: 18px; align-items: center;">
+      <a href="mailto:ndahlhoff10@gmail.com" class="btn" style="height: 46px; padding: 0 22px; font-size: 15px;">ndahlhoff10@gmail.com</a>
+      <a href="#" style="font-size: 15px; text-decoration: underline; text-underline-offset: 4px;">@lazyguac</a>
+      <a href="#" style="font-size: 15px; text-decoration: underline; text-underline-offset: 4px;">LinkedIn</a>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

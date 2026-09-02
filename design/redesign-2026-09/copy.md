@@ -75,15 +75,15 @@ Primary button: **Email me**
 
 ### Now band
 
-Label: NOW · LIVE AT FANTASYJOES.GG
+Label: LATEST · FANTASYJOES.GG
 
 Title: **Fantasy Joes**
 
 > A fantasy football ranking game. Six players at a time, you pick the three you'd draft
 > first, in order, and your rankings build themselves in the background. Then you can play
-> those rankings for money, against other people, not the house. I built all of it and I run
-> the growth: a Discord version of the game, programmatic SEO pages, ad tests, short-form
-> video.
+> those rankings for money, against other people, not the house. I built all of it,
+> including the growth side: a Discord version of the game, programmatic SEO pages, ad
+> tests, short-form video.
 
 Link: Read the case study →
 
@@ -160,14 +160,14 @@ Button: **ndahlhoff10@gmail.com** · @lazyguac · LinkedIn
 
 Title: Nick Dahlhoff
 
-> Nick Dahlhoff builds products and gets them users, as the whole team. Fantasy Joes now,
-> a $960K exit before. Grand Rapids, Michigan; remote or relocate.
+> Nick Dahlhoff builds products and gets them users, as the whole team. Fantasy Joes most
+> recently, a $960K exit before. Grand Rapids, Michigan; remote or relocate.
 
 ---
 
 ## Fantasy Joes case study (header only; the body is the existing page, refreshed)
 
-Meta line: 2026 · LIVE · FANTASYJOES.GG
+Meta line: 2026 · FANTASYJOES.GG
 
 H1: **Fantasy Joes**
 
@@ -277,9 +277,10 @@ Month headers (JULY 2026), filter chips, post titles and descriptions as publish
 - Changed Hometown from "set down" to "paused": your July email says paused; the page body
   still says "set it down," and both are yours, so either is defensible. Pick one and I'll
   use it everywhere.
-- Check: Aura dates. The live page says "early 2024 to early 2026"; the knowledge hub says
-  the work ended December 2025. The card says 2024–2026 to match the live page. Say which
-  is right.
+- Aura dates: Nick confirmed 2024–2026 (2026-09-02).
+- Fantasy Joes status: Nick says it is between paused and picked back up, so no page says
+  "live" or "paused." Labels use the year and the URL only; the hero (option A) and the
+  band avoid present-tense claims about running it.
 - Check: "$960,000" vs "$960K" vs "about $960,000." Your emails say "around $960k"; the site
   says "$960,000" in prose and "$960K" in labels. The draft keeps that split.
 - Nothing in this draft states an opinion, habit, or motivation that isn't in the ledger.

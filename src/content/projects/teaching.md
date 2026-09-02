@@ -6,6 +6,7 @@ order: 9
 tech: [Teachers Pay Teachers]
 skills: [Curriculum Design, Team Leadership, Classroom Management, Educational Material Creation, Cross-Cultural Communication]
 year: "2016–2019"
+cardBlurb: "Three schools in three and a half years. Wrote every lesson at a public school that had no curriculum for the foreign teacher, led a first-grade team at an IB school, and built a phonics curriculum that still sells on Teachers Pay Teachers."
 ---
 
 ## Three schools in three and a half years

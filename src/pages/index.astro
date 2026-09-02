@@ -3,521 +3,444 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const allProjects = await getCollection('projects');
-
 const fantasyJoes = allProjects.find(p => p.id === 'fantasy-joes');
-const alr = allProjects.find(p => p.id === 'all-language-resources');
 
-// The winding-road timeline is an explicit ordered slug list, not a status filter — the timeline
-// mixes current/featured/archive projects by specific narrative slot (poker/Latin America →
-// teaching → ALR exit → Aura/DeFi → Fantasy Joes now), which a status-based filter can't produce
-// since it would miss Fantasy Joes (current) and ALR (featured). See spec §2.3 point 3 / risk #3.
-const timelineSlugs = ['aura-finance', 'hometown-coloring-book', 'recess', 'alpaca-college', 'manga-method', 'teaching', 'poker'];
-const timelineProjects = timelineSlugs
+// "Things I've made" is an explicit ordered list, not a status filter. Fantasy Joes has its own
+// band above; ai-consulting is retired and noindexed. Copy for each card lives in the project's
+// frontmatter (cardBlurb / stage / cardImage), approved in design/redesign-2026-09/copy.md.
+const madeSlugs = [
+  'all-language-resources',
+  'hometown-coloring-book',
+  'recess',
+  'aura-finance',
+  'alpaca-college',
+  'manga-method',
+  'teaching',
+  'poker',
+];
+const made = madeSlugs
   .map(slug => allProjects.find(p => p.id === slug))
   .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
-const writingPosts = (await getCollection('writing'))
+const posts = (await getCollection('writing'))
   .filter(p => !p.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
+  .slice(0, 4);
 
-function shortenYear(yr: string): string {
-  return yr
-    .replace(/(\d{2})(\d{2})–(\d{2})(\d{2})/g, (_, c1, y1, c2, y2) =>
-      c1 === c2 ? `${c1}${y1}–${y2}` : `${c1}${y1}–${c2}${y2}`)
-    .replace(/(\d{4}),\s*(\d{2})(\d{2})/g, (_, first, c2, y2) =>
-      `${first}, ${y2}`)
-    .replace(/–present/, '–');
+const projectTitle = (slug?: string) =>
+  slug === undefined ? 'This site' : (allProjects.find(p => p.id === slug)?.data.title ?? slug);
+
+function postDate(d: Date): string {
+  const mm = String(d.getUTCMonth() + 1).padStart(2, '0');
+  const dd = String(d.getUTCDate()).padStart(2, '0');
+  const yy = String(d.getUTCFullYear()).slice(-2);
+  return `${mm}.${dd}.${yy}`;
 }
 
-function formatPostDate(d: Date): string {
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+function meta(p: (typeof made)[number]): string {
+  return p.data.stage ? `${p.data.year} · ${p.data.stage}` : p.data.year;
 }
 ---
 
-<BaseLayout
-  title="Nick Dahlhoff"
-  description="With AI, Nick Dahlhoff plays product manager, engineer, and growth marketer at once — building whole products and getting them users. Last company sold for $960,000."
->
-  <div class="page">
+<BaseLayout title="Nick Dahlhoff">
+  <div class="container">
+
     <!-- Hero -->
     <section class="hero">
-      <div class="hero-left">
+      <div class="hero-text">
+        <span class="mono kicker">The whole team on my own products</span>
         <h1>Nick Dahlhoff</h1>
-        <p class="hero-sub">With AI, I play the role of product manager, engineer, and growth marketer at the same time — I decide what's worth building, then build it and get it users. My last company sold for $960,000.</p>
+        <p class="hero-lead">For the last few years I've been the whole team on my own products. With AI I work across the product, the engineering, and the growth at the same time. Before AI, I built a language-learning review site to 100,000 monthly readers and a six-person team, and sold it for about $960,000.</p>
+        <div class="hero-actions">
+          <a href="mailto:ndahlhoff10@gmail.com" class="btn">Email me</a>
+          <span class="hero-note">Looking for a team that needs a do-everything builder · West Michigan · open to relocating in the US or working remote</span>
+        </div>
       </div>
-      <div class="hero-right">
-        <a href="mailto:ndahlhoff10@gmail.com" class="looking-for-link">Looking for a team that needs a do-everything builder &rarr;</a>
-        <span class="hero-location">West Michigan &middot; open to relocating in the US or working remote</span>
+      <div class="portrait">
+        <img src="/images/nick-headshot-640.jpg" alt="Illustrated portrait of Nick Dahlhoff" width="320" height="320" />
       </div>
     </section>
 
-    <!-- Featured cards: Fantasy Joes + Writing -->
-    <section class="current-grid">
-      {fantasyJoes && (
-        <a href={`/projects/${fantasyJoes.id}`} class="current-card">
-          <div class="current-header">
-            <h2 class="current-title">Fantasy Joes</h2>
-            <span class="current-badge">Live</span>
+    <!-- Fantasy Joes -->
+    {fantasyJoes && (
+      <section class="latest">
+        <div class="latest-head">
+          <div class="latest-text">
+            <span class="mono kicker">Latest · fantasyjoes.gg</span>
+            <h2>Fantasy Joes</h2>
+            <p>A fantasy football ranking game. Six players at a time, you pick the three you'd draft first, in order, and your rankings build themselves in the background. Then you can play those rankings for money, against other people, not the house. I built all of it, including the growth side: a Discord version of the game, programmatic SEO pages, ad tests, short-form video.</p>
           </div>
-          <p class="current-tagline">A fantasy-football ranking game where you build your rankings by picking players head-to-head, one duel at a time. I designed and built the whole thing myself with Claude Code.</p>
+          <a href={`/projects/${fantasyJoes.id}`} class="text-link">Read the case study &rarr;</a>
+        </div>
+        <a href={`/projects/${fantasyJoes.id}`} class="frame latest-shot">
+          <img src="/images/fantasy-joes/fj-six3-desktop.jpg" alt="Fantasy Joes: six player cards, pick your top three in order" width="1440" height="900" />
         </a>
-      )}
-      <a href="/writing" class="current-card">
-        <div class="current-header">
-          <h2 class="current-title">Writing</h2>
-          <span class="current-badge">Essays</span>
-        </div>
-        <p class="current-tagline">Build-log essays on shipping real products with AI: what worked, what broke, and what I would do differently.</p>
-      </a>
-    </section>
-
-    <!-- ALR Featured -->
-    {alr && (
-      <a href={`/projects/${alr.id}`} class="alr-section">
-        <div class="alr-left">
-          <span class="alr-title">All Language Resources</span>
-          <span class="alr-dates">Built '16 &middot; Sold '21</span>
-        </div>
-        <div class="alr-right">
-          <p class="alr-description">I started All Language Resources in a Beijing apartment while teaching, reviewing language-learning apps and courses. It grew to 100,000 monthly visitors with six regular contributors and affiliate systems I built and ran. I sold it in 2021 for $960,000, and the site is still live today.</p>
-        </div>
-      </a>
+      </section>
     )}
 
-    <!-- The Winding Road -->
-    <section class="archive-section">
-      <span class="archive-label">The winding road</span>
-      <div class="archive-list">
-        {timelineProjects.map(project => (
-          <a href={`/projects/${project.id}`} class="archive-row">
-            <div class="archive-bar"></div>
-            <span class="archive-name">{project.data.title}</span>
-            <span class="archive-desc">{project.data.tagline}</span>
-            <span class="archive-year">{shortenYear(project.data.year)}</span>
+    <!-- Things I've made -->
+    <section class="made" id="made">
+      <div class="section-head">
+        <h2>Things I've made</h2>
+        <span class="mono section-note">One exit and a lot of building · 2012 &rarr; 2026</span>
+      </div>
+      <div class="made-grid">
+        {made.map(p => (
+          <a href={`/projects/${p.id}`} class="poster">
+            {p.data.cardImage ? (
+              <img src={p.data.cardImage} alt="" class="poster-img" loading="lazy" />
+            ) : p.id === 'teaching' ? (
+              <div class="poster-tile tile-beijing">
+                <span class="tile-big">北京</span>
+                <span class="tile-note">Grades 1–3, classes of 40, no curriculum for the foreign teacher.</span>
+              </div>
+            ) : p.id === 'poker' ? (
+              <div class="poster-tile tile-poker">
+                <span class="tile-spade">&#9824;</span>
+              </div>
+            ) : (
+              <div class="poster-tile"></div>
+            )}
+            <div class="poster-body">
+              <span class="poster-title">{p.data.title}</span>
+              <span class="mono poster-meta">{meta(p)}</span>
+              <span class="poster-desc">{p.data.cardBlurb ?? p.data.tagline}</span>
+            </div>
           </a>
         ))}
       </div>
     </section>
 
-    <!-- Latest writing -->
-    {writingPosts.length > 0 && (
-      <section class="archive-section writing-section">
-        <span class="archive-label">Latest writing</span>
-        <div class="archive-list">
-          {writingPosts.map(post => (
-            <a href={`/writing/${post.id}`} class="archive-row">
-              <div class="archive-bar"></div>
-              <span class="archive-name">{post.data.title}</span>
-              <span class="archive-desc">{post.data.description}</span>
-              <span class="archive-year">{formatPostDate(post.data.date)}</span>
+    <!-- Updates -->
+    {posts.length > 0 && (
+      <section class="updates">
+        <div class="section-head updates-head">
+          <div>
+            <h2>Updates</h2>
+            <p class="updates-sub">A build log. When something real ships, it gets a dated entry here and on its project's page.</p>
+          </div>
+          <a href="/writing" class="mono updates-all">Browse all &rarr;</a>
+        </div>
+        <div class="updates-list">
+          {posts.map(post => (
+            <a href={`/writing/${post.id}`} class="update-row">
+              <span class="mono update-date">{postDate(post.data.date)}</span>
+              <span class:list={['mono', 'update-project', { site: !post.data.project }]}>{projectTitle(post.data.project)}</span>
+              <span class="update-title">{post.data.title}</span>
             </a>
           ))}
         </div>
       </section>
     )}
 
-    <!-- Contact -->
-    <section class="contact-section">
-      <p class="contact-lead">If you're building something and need someone who can take it from idea to shipped, email me.</p>
-      <div class="contact-links">
-        <a href="mailto:ndahlhoff10@gmail.com" class="contact-link">ndahlhoff10@gmail.com</a>
-        <span class="contact-sep">&middot;</span>
-        <a href="https://twitter.com/lazyguac" class="contact-link" target="_blank" rel="noopener">@lazyguac</a>
-        <span class="contact-sep">&middot;</span>
-        <a href="https://www.linkedin.com/in/nick-dahlhoff-684860a3/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </section>
   </div>
 </BaseLayout>
 
 <style>
-  .page {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 60px 100px;
-    display: flex;
-    flex-direction: column;
+  .kicker {
+    color: var(--color-accent);
   }
 
   /* Hero */
   .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 80px;
+    align-items: center;
+    padding: 88px 0 72px;
   }
-
-  .hero-left {
+  .hero-text {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 22px;
+  }
+  .hero-lead {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--color-text-body);
+    max-width: 720px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-top: 4px;
+  }
+  .hero-note {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+  .portrait {
+    width: 320px;
+    height: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--color-line-strong);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    transform: rotate(-2deg);
+    background: #EFE7D9;
+  }
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
-  .hero h1 {
-    font-family: var(--font-display);
-    font-size: 72px;
-    font-weight: 900;
-    letter-spacing: -0.02em;
+  /* Latest: Fantasy Joes */
+  .latest {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 0 56px;
+    border-top: 1px solid var(--color-line);
+  }
+  .latest-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 40px;
+  }
+  .latest-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .latest-text h2 {
+    font-size: 48px;
     line-height: 1;
-    color: var(--color-text);
+  }
+  .latest-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text-soft);
+    max-width: 760px;
+  }
+  .latest-shot {
+    display: block;
+  }
+  .latest-shot:hover {
+    text-decoration: none;
   }
 
-  .hero-sub {
-    font-family: var(--font-serif);
+  /* Things I've made */
+  .made {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding-top: 40px;
+  }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+  }
+  .section-note {
+    color: var(--color-text-muted);
+    letter-spacing: 0.12em;
+  }
+  .made-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .poster {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    color: inherit;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .poster:hover {
+    text-decoration: none;
+    color: inherit;
+    transform: translateY(-2px);
+    border-color: var(--color-line-strong);
+  }
+  .poster-img,
+  .poster-tile {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background: var(--color-surface-2);
+  }
+  .poster-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+  }
+  .tile-beijing {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .tile-big {
+    font-family: var(--font-display);
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-text-display);
+  }
+  .tile-note {
     font-size: 18px;
     font-style: italic;
-    line-height: 1.4;
-    color: var(--color-accent-gold);
-    max-width: 640px;
+    line-height: 1.3;
+    color: var(--color-text-soft);
   }
-
-  .hero-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 4px;
-    flex-shrink: 0;
-    padding-top: 8px;
-    max-width: 280px;
-    text-align: right;
+  .tile-poker {
+    background: var(--color-paper);
   }
-
-  .looking-for-link {
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    color: var(--color-accent-green);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-  }
-
-  .looking-for-link:hover {
-    color: var(--color-accent-green-dark);
-  }
-
-  .hero-location {
-    font-family: var(--font-body);
-    font-size: 12px;
-    line-height: 16px;
-    color: var(--color-text-muted);
-  }
-
-  /* Featured Cards */
-  .current-grid {
-    display: flex;
-    gap: 24px;
-    width: 100%;
-    margin-top: 40px;
-  }
-
-  .current-card {
-    flex: 1 1 0%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 28px 32px;
-    border: 1px solid var(--color-border);
-    border-left: 5px solid var(--color-accent-green);
-    border-radius: 8px;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-
-  .current-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    text-decoration: none;
-  }
-
-  .current-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .current-title {
+  .tile-spade {
     font-family: var(--font-display);
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 34px;
-    color: var(--color-text);
-    margin: 0;
+    font-size: 150px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-bg);
   }
-
-  .current-badge {
-    font-family: var(--font-body);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    line-height: 14px;
-    color: var(--color-accent-green-dark);
+  .poster-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 20px;
+    align-items: start;
+    padding: 18px 22px 22px;
   }
-
-  .current-tagline {
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--color-text-body);
-  }
-
-  /* ALR Section */
-  .alr-section {
-    display: flex;
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    margin-top: 40px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-
-  .alr-section:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    text-decoration: none;
-  }
-
-  .alr-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 280px;
-    padding: 32px 36px;
-    gap: 8px;
-    background: var(--color-accent-olive);
-  }
-
-  .alr-title {
+  .poster-title {
     font-family: var(--font-display);
     font-size: 26px;
-    font-weight: 700;
-    line-height: 1.15;
-    color: var(--color-card-dark-text);
+    font-weight: 600;
+    line-height: 1.05;
+    color: var(--color-text-display);
+    letter-spacing: -0.01em;
+  }
+  .poster-meta {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--color-accent);
+    white-space: nowrap;
+    padding-top: 6px;
+  }
+  .poster-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-text-soft);
+    margin-top: 8px;
+    grid-column: 1 / -1;
   }
 
-  .alr-dates {
-    font-family: var(--font-body);
-    font-size: 12px;
-    line-height: 16px;
-    color: var(--color-card-dark-subtle);
-  }
-
-  .alr-right {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    padding: 28px 40px;
-    background: var(--color-olive-bg);
-  }
-
-  .alr-description {
-    font-family: var(--font-serif);
-    font-size: 17px;
-    font-style: italic;
-    line-height: 1.65;
-    color: var(--color-text-overlay);
-  }
-
-  /* Archive / Timeline / Writing Section */
-  .archive-section {
+  /* Updates */
+  .updates {
     display: flex;
     flex-direction: column;
-    margin-top: 48px;
-    width: 100%;
+    padding-top: 72px;
   }
-
-  .archive-label {
-    font-family: var(--font-serif);
+  .updates-head {
+    align-items: flex-end;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-text-display);
+  }
+  .updates-sub {
     font-size: 15px;
-    font-style: italic;
-    line-height: 18px;
-    color: var(--color-text-muted);
-    margin-bottom: 16px;
+    color: var(--color-text-soft);
+    max-width: 640px;
+    margin-top: 6px;
   }
-
-  .archive-list {
-    display: flex;
-    flex-direction: column;
+  .updates-all {
+    letter-spacing: 0.12em;
+    padding-bottom: 4px;
   }
-
-  .archive-row {
+  .update-row {
     display: grid;
-    grid-template-columns: 84px 3px minmax(0, 1fr);
-    grid-template-rows: auto auto;
-    column-gap: 16px;
-    row-gap: 6px;
-    padding: 18px 20px;
-    border-bottom: 1px solid var(--color-border);
-    text-decoration: none;
+    grid-template-columns: 90px 150px minmax(0, 1fr);
+    column-gap: 24px;
+    align-items: baseline;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--color-line);
     color: inherit;
-    transition: background 0.15s ease;
   }
-
-  .archive-row:last-child {
+  .update-row:last-child {
     border-bottom: none;
   }
-
-  .archive-row:hover {
-    background: rgba(0,0,0,0.02);
+  .update-row:hover {
     text-decoration: none;
+    color: inherit;
   }
-
-  .archive-bar {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    width: 3px;
-    height: 100%;
-    min-height: 32px;
-    background: var(--color-text);
-    border-radius: 2px;
+  .update-row:hover .update-title {
+    color: var(--color-accent);
   }
-
-  .archive-name {
-    grid-column: 3;
-    grid-row: 1;
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 22px;
-    color: var(--color-text);
-    align-self: center;
+  .update-date {
+    color: var(--color-text-muted);
+    letter-spacing: 0.04em;
+    text-transform: none;
   }
-
-  .archive-desc {
-    grid-column: 3;
-    grid-row: 2;
-    font-family: var(--font-body);
-    font-size: 13px;
-    line-height: 1.45;
-    color: var(--color-text-body);
+  .update-project {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
   }
-
-  .archive-year {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: center;
-    font-family: var(--font-body);
-    font-size: 12px;
-    line-height: 16px;
+  .update-project.site {
     color: var(--color-text-muted);
   }
-
-  /* Contact */
-  .contact-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    margin-top: 64px;
-    padding-top: 40px;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .contact-lead {
-    font-family: var(--font-serif);
-    font-size: 20px;
-    font-style: italic;
-    line-height: 1.4;
-    color: var(--color-text);
-    max-width: 560px;
-  }
-
-  .contact-links {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .contact-link {
-    font-family: var(--font-body);
-    font-size: 14px;
+  .update-title {
+    font-size: 18px;
     font-weight: 500;
-    color: var(--color-accent-green);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
+    color: var(--color-text);
   }
 
-  .contact-link:hover {
-    color: var(--color-accent-green-dark);
-  }
-
-  .contact-sep {
-    color: var(--color-border);
-  }
-
-  /* Responsive */
-  @media (max-width: 1024px) {
-    .page {
-      padding: 60px 40px;
-    }
-
-    .hero h1 {
-      font-size: 52px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .page {
-      padding: 40px 20px;
-    }
-
+  @media (max-width: 900px) {
     .hero {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+      padding: 40px 0 40px;
+    }
+    .portrait {
+      width: 160px;
+      height: 160px;
+      order: -1;
+    }
+    .hero-actions {
       flex-direction: column;
       align-items: flex-start;
-      gap: 20px;
+      gap: 12px;
     }
-
-    .hero h1 {
-      font-size: 40px;
+    .latest-head {
+      grid-template-columns: minmax(0, 1fr);
     }
-
-    .hero-right {
+    .latest-text h2 {
+      font-size: 36px;
+    }
+    .section-head {
+      flex-direction: column;
       align-items: flex-start;
-      padding-top: 0;
-      text-align: left;
-      max-width: none;
+      gap: 8px;
     }
-
-    .current-grid {
-      flex-direction: column;
-      margin-top: 32px;
+    .made-grid {
+      grid-template-columns: minmax(0, 1fr);
     }
-
-    .alr-section {
-      flex-direction: column;
-      margin-top: 32px;
+    .poster-body {
+      grid-template-columns: minmax(0, 1fr);
     }
-
-    .alr-left {
-      width: 100%;
-      padding: 24px 28px;
+    .poster-meta {
+      white-space: normal;
+      padding-top: 4px;
     }
-
-    .alr-right {
-      padding: 24px 28px;
+    .tile-big {
+      font-size: 48px;
     }
-
-    .archive-section {
-      margin-top: 36px;
+    .tile-spade {
+      font-size: 110px;
     }
-
-    .archive-row {
-      grid-template-columns: 60px 3px minmax(0, 1fr);
-      column-gap: 12px;
-      padding: 14px 8px;
-    }
-
-    .contact-section {
-      margin-top: 48px;
+    .update-row {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 4px;
     }
   }
 </style>

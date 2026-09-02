@@ -7,6 +7,11 @@ tech: [Claude Code]
 skills: [Business Planning, Financial Modeling, Market Research, Competitive Analysis, Go-to-Market Strategy]
 url: https://recessintheneighborhood.com
 year: "2025–2026"
+stage: Paused
+cardImage: /images/recess/logo-card.jpg
+cardBlurb: "A family club for West Michigan: daycare, after-school classes, and a place for parents to work and gather. I built the whole plan in about three months, financial model to investor site. The plan is finished."
+heroImage: /images/recess/logo-card.jpg
+heroAlt: "Recess in the Neighborhood"
 ---
 
 ## The idea

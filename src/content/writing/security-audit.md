@@ -4,6 +4,7 @@ date: "2026-07-03"
 description: A solo builder with no security team, stress-testing a real-money feature with AI before shipping it — why the bar is different for money, how the audit was structured, and what it cost.
 draft: false
 project: fantasy-joes
+image: /images/fantasy-joes/fj-season-rankings-open.jpg
 ---
 
 I build [Fantasy Joes](https://fantasyjoes.gg) by myself. One person, using AI tooling as the rest of the team. That works fine for most of what a fantasy football app does — if a duel renders wrong or a page is slow, someone tells me and I fix it. The cost of a bug is an annoyed user.

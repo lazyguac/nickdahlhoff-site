@@ -1,0 +1,48 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Home",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 4370
+    },
+    {
+      "file": "FantasyJoesPage.dc.html",
+      "title": "Case study · Fantasy Joes",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 3560
+    },
+    {
+      "file": "ProjectPage.dc.html",
+      "title": "Project page · Hometown Coloring Book (template for the rest)",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 3300
+    },
+    {
+      "file": "UpdatesPage.dc.html",
+      "title": "Updates index",
+      "x": 4680,
+      "y": 0,
+      "w": 1440,
+      "h": 1560
+    }
+  ],
+  "annotations": [
+    {
+      "id": "brief",
+      "x": 0,
+      "y": -300,
+      "w": 640,
+      "text": "Round 5 — the dark direction, as a site, with the real Recess wordmark and Aura hourglass art in place.\n\nHome, the Fantasy Joes case study, a project page for an archived project (Hometown, the template every other project page follows), and the Updates index. The game capture is shot from the current code with the preview-only pill hidden in CSS."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

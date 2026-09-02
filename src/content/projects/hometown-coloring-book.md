@@ -6,8 +6,19 @@ order: 6
 url: https://hometowncoloringbook.com
 tech: [Claude Code, Convex, Stripe, Gemini, Resend]
 skills: [Product Management, Full-Stack Development, AI Pipeline Design, Sales & Outreach, Brand Design]
-heroImage: /images/hometown/hometown-sample-page.jpg
 year: "2026"
+stage: Paused
+cardImage: /images/hometown/hometown-covers.jpg
+cardBlurb: "Free coloring books for families, paid for by the local businesses in them. Every sponsor's ad is a coloring page, drawn by a pipeline I built. 21 West Michigan editions, one sponsor sold, and then I stopped rather than build a door-to-door sales company."
+heroImage: /images/hometown/hometown-covers.jpg
+heroAlt: "Three of the 21 edition covers"
+sideImages:
+  - src: /images/hometown/hometown-fridge.jpg
+    alt: "A finished page on a fridge"
+  - src: /images/hometown/hometown-sample-zoo.jpg
+    alt: "A sponsor coloring page for John Ball Zoo"
+heroCaption: "Three of the 21 edition covers; a finished page where it ends up, on the fridge; and a sponsor page as it came out of the pipeline."
+whereItStands: "Sold one page from cold outreach. Never took it to print. Stopped rather than become a field-sales company."
 ---
 
 ## What it is

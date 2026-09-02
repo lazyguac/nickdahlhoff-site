@@ -1,54 +1,63 @@
 ---
 title: Fantasy Joes
-tagline: A fantasy-football ranking game built on a simple mechanic — pick between two players, over and over, and the picks build your rankings. Web app, Discord game, and real-money contests, designed and built solo with Claude Code.
 status: current
 order: 1
 url: https://fantasyjoes.gg
 tech: [Claude Code, Convex, Netlify, Gemini, Claude API, Sleeper API, ESPN API]
 skills: [Full-Stack Development, Real-Time Systems, Game Design, Algorithm Design, API Integration, Product Management, AI-Assisted Development, Data Pipeline Design, UI/UX Design]
-heroImage: /images/fantasy-joes/fj-compare-og-card.jpg
 year: "2026"
-badge: "Active"
-badgeColor: green
 latestUpdate:
   date: "2026-07-03"
   summary: "Real-money contests built and audited, launching for the 2026 NFL season. 14,818 duels played as of June 30."
+tagline: "A fantasy football ranking game with real-money contests. Six players at a time, you pick the three you'd draft first, in order, and your rankings build themselves. A web app, a Discord version of the game, six cash contests, and an art pipeline for hundreds of player portraits. Designed and built solo with Claude Code and Codex."
+heroImage: /images/fantasy-joes/fj-six3-desktop.jpg
+heroAlt: "Fantasy Joes: six player cards, pick your top three in order"
+heroCaption: "The core screen. Six cards ordered by ADP; tap your first, second, and third. Every completed screen writes twelve player relationships into your rankings."
+gallery:
+  - src: /images/fantasy-joes/fj-six3-phone.jpg
+    kind: phone
+    caption: "Mobile first. Most Joes play on a phone."
+  - src: /images/fantasy-joes/fj-compare-og.jpg
+    caption: "One of about 167 public compare pages generated from the game's own data."
+  - src: /images/fantasy-joes/fj-season-rankings-open.jpg
+    caption: "Season Rankings Open, one of six peer-to-peer cash contests scored on ranking accuracy."
+cardImage: /images/fantasy-joes/fj-six3-desktop.jpg
 ---
 
 ## What it is, and why I built it
 
-Fantasy Joes is a fantasy-football ranking game. Instead of typing out a spreadsheet of your player rankings, you see two NFL players and tap the one you'd rather have. Do that a few hundred times and you've ranked the whole player pool — without ever staring at a blank list.
+Fantasy Joes is a fantasy-football ranking game. Instead of typing out a spreadsheet of your player rankings, you see six NFL players and pick the three you'd draft first, in order. Do that for a few dozen screens and you've ranked the whole player pool, without ever staring at a blank list.
 
 The reason I built it starts with a problem I had with how fantasy rankings work. A lot of people who play fantasy football want to rank players well, and want to be known as the best ranker. But that's a closed system, mostly owned by one company. Expert consensus rankings come from FantasyPros, which decides who counts as an "expert" — you basically need a media presence to submit rankings, which locks out people who might actually be really good at it.
 
-I'd also made rankings the normal way, in a spreadsheet, and it's boring. It appeals to a tiny audience. So I figured there were a few ways to innovate on it, and the main one was duels. That came out of a smaller thing I noticed doing it myself: I often didn't actually know my own preference between two players until I was forced to pick one. Rankings get followed too rigidly — people defer to a list instead of choosing who they'd actually take. Making you choose, one pair at a time, gets you to a ranking that's genuinely yours.
+I'd also made rankings the normal way, in a spreadsheet, and it's boring. It appeals to a tiny audience. So I figured there were a few ways to innovate on it, and the main one was duels. That came out of a smaller thing I noticed doing it myself: I often didn't actually know my own preference between two players until I was forced to pick one. Rankings get followed too rigidly — people defer to a list instead of choosing who they'd actually take. Making you choose gets you to a ranking that's yours. The first version asked one pair at a time; the current preseason game shows six and asks for your top three, which builds a board much faster than one pair at a time.
 
 I designed and built the whole thing myself with Claude Code — the game, the art pipeline, the Discord bot, the SEO pages, the growth dashboard, and the payment rails underneath.
 
-![The core game loop: two players, tap the one you'd rather have](/images/fantasy-joes/fj-duel-desktop.png)
-
 ## The game, and the rating system under it
 
-The game is simple to play. Two players, tap one, repeat. Two modes run on the same engine: a pre-season draft board across every position, and in-season weekly duels scoped to a position for when you're setting a lineup. No signup to start — guests can play without signing up, on a device that remembers them.
+The game is simple to play. In the preseason: six players, pick your first, second, and third, repeat. In season, weekly matchups scoped to a position ask one question, who scores more this week, two players at a time, for when you're setting a lineup. Both run on the same engine. No signup to start: guests can play on a device that remembers them.
+
+A completed six-card screen records twelve ordered relationships (your first pick over the other five, your second over the other four, your third over the bottom three), scaled down so one screen doesn't count like twelve separate sessions.
 
 What's underneath each tap is where most of the design went. It started from Elo, the rating system chess uses to rank players from head-to-head results, and I changed a lot about it from there. Six things that aren't in textbook Elo:
 
 - **Scores are seeded from real data, not a flat starting number.** Every player's opening score comes from projections and ADP, so rankings start from where the market actually has them instead of everyone tied at a midpoint.
 - **The K-factor scales with the rank gap** instead of being one fixed constant. The wider the gap between the two players going in, the more carefully the system moves their scores.
 - **Upsets are amplified.** Take the lower-ranked player and win, and the scores move harder than a chalk pick would — a surprise carries more information, so it counts for more.
-- **Matchups are chosen, not random.** Top players surface more often, and the second player in each duel is drawn from a range around the first so the pairing stays competitive instead of lopsided.
+- **Matchups are chosen, not random.** The six on a screen come from a band of the rankings near each other, players you haven't seen come up before repeats, and in weekly play the second player is drawn from a range around the first, so pairings stay competitive instead of lopsided.
 - **A "mover" boost injects real-world signal.** When a player's ADP shifts hard, the system shows them more for a stretch, so the rankings react to what just happened in the real world.
 - **New players get a smaller pool first.** Early duels concentrate on the famous, high-consensus players and widen from there, so the ranking has something solid to build on before it hands you the long tail.
 
 Your rankings re-sort live as you go. It's Elo-derived and heavily modified, not the same rating you'd get out of a chess app.
 
-![Your rankings, tiered, with ADP and Elo side by side](/images/fantasy-joes/fj-rankings-desktop.png)
+![Your draft rankings, updated after every screen, with the move against consensus and ADP](/images/fantasy-joes/fj-rankings-2026.jpg)
 
 ## Built twice
 
 I first built this in late 2024 as the product manager, paying a freelancer to put it together on no-code tooling. The mechanic worked. But every duel took three to five seconds to load, which is fatal for a game whose whole appeal is tapping fast — and there were other bugs on top of that. As a potential user I could see it wasn't going to work without major improvements I wasn't ready to put the time and money into. I shut it down before the 2025 season rather than ship it slow.
 
-I came back to it in early 2026 and rebuilt it from scratch, by myself, with Claude Code. Nothing carried over. What shipped is the fast version of the original idea: duels resolve instantly, guests can play with no signup, and the web app and the Discord game run on one shared code path so they behave the same.
+I came back to it in early 2026 and rebuilt it from scratch, by myself, with Claude Code. Nothing carried over. What shipped is the fast version of the original idea: picks resolve instantly, guests can play with no signup, and the web app and the Discord game run on one shared code path so they behave the same.
 
 ## The machinery around the game
 

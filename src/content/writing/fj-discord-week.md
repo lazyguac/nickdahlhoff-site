@@ -4,6 +4,7 @@ date: "2026-07-04"
 description: "The week I built partner attribution for Discord, made the channel measurable in the growth dashboard, and rebuilt the comics pipeline to reject its own bad art."
 draft: false
 project: fantasy-joes
+image: /images/fantasy-joes/fj-six3-desktop.jpg
 ---
 
 Fantasy Joes has a Discord version of the game. You can play the duels — two players, pick who you'd rather have — right inside a server, no account, no website. A partner who runs a fantasy football server installs the bot, and their members start dueling. That part already worked.

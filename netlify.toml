@@ -1,0 +1,8 @@
+# Netlify build settings for nickdahlhoff.com (Astro, static output).
+# With the site linked to this GitHub repo in Netlify, every push to main deploys.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

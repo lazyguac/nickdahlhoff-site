@@ -11,11 +11,11 @@ tags:
   - case-study
   - updates
   - writing-system
-  - needs-review
+  - approved
   - active
 ---
 
-# Site copy for the redesign — draft for Nick's approval
+# Site copy for the redesign — approved 2026-09-02 (hero A)
 
 Every first-person line below traces to something Nick said or shipped. The ledger at the
 bottom lists the source for each one. Nothing ships until Nick says so.
@@ -105,10 +105,10 @@ Eight cards. Title, meta line, two or three sentences.
 > sponsor's ad is a coloring page, drawn by a pipeline I built. 21 West Michigan editions,
 > one sponsor sold, and then I stopped rather than build a door-to-door sales company.
 
-**Recess in the Neighborhood** · 2025–2026 · PAUSED, NEEDS A CO-FOUNDER
+**Recess in the Neighborhood** · 2025–2026 · PAUSED
 > A family club for West Michigan: daycare, after-school classes, and a place for parents to
 > work and gather. I built the whole plan in about three months, financial model to investor
-> site. It's finished. It's waiting on a co-founder to run the people side.
+> site. The plan is finished.
 
 **Aura Finance** · 2024–2026 · CONTENT & SOCIAL
 > Ran content and social for a DeFi protocol for two years, mostly on my own, from Beijing
@@ -131,8 +131,7 @@ Eight cards. Title, meta line, two or three sentences.
 
 **Poker** · 2012–2016 · PROFESSIONAL
 > Played online for a living while living across Latin America. It was a job, not a
-> passion, and it paid for four years of travel. It's also where the bankroll math behind
-> Fantasy Joes' contests comes from.
+> passion, and it paid for four years of travel.
 
 ### Updates
 
@@ -284,3 +283,9 @@ Month headers (JULY 2026), filter chips, post titles and descriptions as publish
 - Check: "$960,000" vs "$960K" vs "about $960,000." Your emails say "around $960k"; the site
   says "$960,000" in prose and "$960K" in labels. The draft keeps that split.
 - Nothing in this draft states an opinion, habit, or motivation that isn't in the ledger.
+
+
+## Approval (Nick, 2026-09-02)
+
+Hero A. Recess: no co-founder line. Hometown: never "by one person." Poker: no Fantasy Joes
+mention. Otherwise approved as written; build it and replace the live site.

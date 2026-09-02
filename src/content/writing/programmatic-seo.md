@@ -4,6 +4,7 @@ date: "2026-07-03"
 description: Fantasy Joes is a game where people pick between two NFL players. That means it already knows how the crowd would answer "player X or player Y" — the exact question people search before a draft. Here's how I turned that byproduct into 145 comparison pages, and the parts that were harder than they look.
 draft: false
 project: fantasy-joes
+image: /images/fantasy-joes/fj-compare-og.jpg
 ---
 
 ## The search that already had my answer

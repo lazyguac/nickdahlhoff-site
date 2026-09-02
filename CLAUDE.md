@@ -69,20 +69,27 @@ schema in `src/content.config.ts` — `title`, `tagline`, `status` (`current` / 
 shipping) should prompt a case-study line update in `fantasy-joes.md`'s body — this page is
 the site's strongest single piece of proof and should stay current, not stale.
 
-## How to update the homepage "looking for" line
+## Homepage and copy (2026-09 redesign)
 
-Edit `src/pages/index.astro` — the hero-right block's `<a class="looking-for-link">` text
-and its `mailto:` href. This is the single line most likely to need updating as Nick's
-situation changes (open to full-time vs. open to contract vs. not looking). There's no CMS
-field for this; it's inline in the `.astro` file by design, since it's a one-line,
-infrequent edit that doesn't need its own schema.
+The site was redesigned 2026-09-02 (dark direction; design record and approved copy with a
+voice-truth ledger live in `design/redesign-2026-09/`). Where copy lives now:
 
-The homepage's **winding-road timeline** is an explicit ordered array of project slugs
-(`timelineSlugs` near the top of `index.astro`'s frontmatter), not a status filter — if a
-new project needs to appear in the timeline narrative, add its slug to that array in the
-position that matches the story, don't rely on `status`. Fantasy Joes and All Language
-Resources are deliberately *also* referenced directly above the timeline (the "featured
-cards" row and the ALR band) — that's intentional duplication per the site's IA, not a bug.
+- **Hero kicker, lead paragraph, "looking for" line, location:** inline in
+  `src/pages/index.astro`. The lead paragraph is Nick's own July 2026 pitch, approved as
+  "hero A" in `design/redesign-2026-09/copy.md`. The Fantasy Joes band copy is inline there too.
+- **Project cards ("Things I've made"):** an explicit ordered slug list in `index.astro`
+  (`madeSlugs`); each card's copy is the project's frontmatter — `cardBlurb`, `stage` (the meta
+  after the year), `cardImage`. Teaching and Poker deliberately have no image and render
+  typographic tiles keyed on their slugs.
+- **Project pages:** `src/pages/projects/[slug].astro` reads `heroImage`, `heroAlt`,
+  `heroCaption`, `sideImages`, `gallery`, `latestUpdate` (or `whereItStands` when there is no
+  dated update), `stage`, `skills`, `tech`. Status labels like "live" or "paused" are copy
+  decisions, not badges; `badge`/`badgeColor` are unused.
+- **"Writing" is called "Updates"** everywhere a reader sees it; URLs stay at `/writing` and
+  `/writing/<slug>` (with `/updates` redirecting) so existing links keep working. The index
+  groups by month with per-project filter chips; a post's optional `image` is its thumbnail.
+- **Fantasy Joes status:** the page uses the year and URL only (no "live"/"paused"), per Nick
+  2026-09-02. The `latestUpdate` line is still the 2026-07-03 one and needs the monthly refresh.
 
 ## Consulting — retired, not deleted
 

@@ -5,8 +5,12 @@ status: archive
 order: 8
 tech: [Web App, CMS]
 skills: [Product Management, Content Sourcing, Vendor Management]
-heroImage: /images/manga/manga-method-collage.jpg
 year: "2019"
+stage: Shelved
+cardImage: /images/manga/manga-panel.jpg
+cardBlurb: "A language-learning app built on webtoons. Tap a line to hear it, double-tap to translate it. Users added thousands of translated lines. Built through an agency before AI, and the math didn't close."
+heroImage: /images/manga/manga-method-collage.jpg
+heroAlt: "Panels from the comics in Manga Method"
 ---
 
 ## What it was

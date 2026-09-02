@@ -7,6 +7,9 @@ tech: [Bubble, LLM API, Discord Bots, Twitter API, RSS]
 skills: [Product Management, No-Code Development, Bot Development, Content Curation]
 heroImage: /images/alpaca/alpaca-college-ui.jpg
 year: "2022, 2024"
+stage: "Shut down"
+cardImage: /images/alpaca/alpaca-college-ui.jpg
+cardBlurb: "Two tries at organizing scattered DeFi content, two years apart. The second used an LLM to sort the feed. Both died on low adoption."
 ---
 
 ## The problem

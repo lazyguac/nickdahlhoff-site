@@ -7,6 +7,11 @@ url: https://aura.finance
 tech: [X, Canva, AI Image Generation, AI Video Generation]
 skills: [Content Marketing, Social Media Management, Visual Content Creation, DeFi & Crypto Knowledge, AI Media Production]
 year: "2024–2026"
+stage: "Content & social"
+cardImage: /images/aura/hourglass.jpg
+cardBlurb: "Ran content and social for a DeFi protocol for two years, mostly on my own, from Beijing and then Michigan. Daily posts, the blog, the graphics, and AI-generated video with a recurring purple character."
+heroImage: /images/aura/hourglass.jpg
+heroAlt: "Aura Finance art: the purple Pepe character leaning on an hourglass"
 ---
 
 ## The role

@@ -6,6 +6,8 @@ order: 10
 tech: [Online Poker Platforms, Equity Calculators]
 skills: [Risk Management, Analytical Thinking, Emotional Discipline, Bankroll Management]
 year: "2012–2016"
+stage: Professional
+cardBlurb: "Played online for a living while living across Latin America. It was a job, not a passion, and it paid for four years of travel."
 ---
 
 ## The short version

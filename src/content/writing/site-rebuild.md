@@ -3,6 +3,7 @@ title: "I rebuilt this site with AI agents, and the hard part was making them wr
 date: "2026-07-03"
 description: "Rebuilding nickdahlhoff.com in a day with a fleet of AI agents — and why the real work was writing rules that kept them from making things up in my voice."
 draft: false
+image: /images/nick-headshot-640.jpg
 ---
 
 I rebuilt this site in a day.

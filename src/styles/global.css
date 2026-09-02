@@ -6,25 +6,25 @@
 }
 
 :root {
-  --color-bg: #F5F0E8;
-  --color-text: #2C2418;
-  --color-text-body: #5C5347;
-  --color-text-muted: #8B7355;
-  --color-text-light: #8B735580;
-  --color-accent-gold: #8B6914;
-  --color-accent-green: #6B8F6B;
-  --color-accent-green-dark: #4A7C4A;
-  --color-accent-olive: #8B7D4A;
-  --color-border: #D4C9B8;
-  --color-border-hover: #B8A998;
-  --color-olive-bg: #8B7D4A14;
-  --color-text-overlay: #4A4238;
-  --color-card-dark-text: #FFFFFF;
-  --color-card-dark-subtle: #FFFFFFB3;
+  /* Dark direction, 2026-09 redesign. See design/redesign-2026-09/README.md */
+  --color-bg: #0F1115;
+  --color-surface: #171A20;
+  --color-surface-2: #1E222A;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.12);
+  --color-text-display: #F4F6F8;
+  --color-text: #ECEFF3;
+  --color-text-body: #B7BEC9;
+  --color-text-soft: #A5ADB8;
+  --color-text-muted: #6F7885;
+  --color-accent: #5DD39E;
+  --color-accent-hover: #8CE7BC;
+  --color-on-accent: #0F1115;
+  --color-paper: #F4F6F8;
 
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-display: 'Syne', 'Avenir Next', 'Helvetica Neue', sans-serif;
   --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'Fira Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -34,13 +34,16 @@
   --space-2xl: 48px;
   --space-3xl: 80px;
 
-  --max-width: 1240px;
+  --page-pad: 80px;
+  --max-width: 1440px;
+  --radius: 12px;
 }
 
 html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
 }
 
 body {
@@ -51,11 +54,12 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--color-accent);
   text-decoration: none;
 }
 
 a:hover {
+  color: var(--color-accent-hover);
   text-decoration: underline;
 }
 
@@ -67,30 +71,114 @@ img {
 /* Typography */
 h1, h2, h3 {
   font-family: var(--font-display);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--color-text-display);
 }
 
 h1 {
-  font-size: 72px;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  font-size: 96px;
+  font-weight: 800;
+  line-height: 0.95;
 }
 
 h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 600;
 }
 
 h3 {
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* Layout */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 var(--page-pad);
+}
+
+/* Shared pieces */
+.mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  height: 46px;
+  padding: 0 22px;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-on-accent);
+  text-decoration: none;
+}
+
+.btn-sm {
+  height: 40px;
+  padding: 0 18px;
+  font-size: 14px;
+}
+
+.frame {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--color-line-strong);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  background: var(--color-surface);
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-line-strong);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-body);
+  background: var(--color-surface);
+}
+
+.box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+}
+
+.text-link {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --page-pad: 24px;
+  }
+  h1 {
+    font-size: 56px;
+  }
+  h2 {
+    font-size: 30px;
+  }
 }

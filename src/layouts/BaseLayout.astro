@@ -3,12 +3,15 @@ interface Props {
   title: string;
   description?: string;
   noindex?: boolean;
+  /** Which nav item is current: 'made' | 'updates' | undefined */
+  section?: 'made' | 'updates';
 }
 
 const {
   title,
-  description = "With AI, Nick Dahlhoff plays product manager, engineer, and growth marketer at once — building whole products and getting them users. Last company sold for $960,000.",
+  description = "Nick Dahlhoff builds products and gets them users, as the whole team. Fantasy Joes most recently, a $960K exit before. Grand Rapids, Michigan; remote or relocate.",
   noindex = false,
+  section,
 } = Astro.props;
 ---
 
@@ -20,22 +23,141 @@ const {
     <meta name="description" content={description} />
     <meta name="google-site-verification" content="fw-0zQHb-gatVGU5o_YpYn7x-F9HKx9-tW3u4A6mh1g" />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="theme-color" content="#0F1115" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
   <body>
+    <header class="site-nav">
+      <div class="container site-nav-inner">
+        <a href="/" class="wordmark">Nick Dahlhoff</a>
+        <nav class="site-links" aria-label="Site">
+          <a href="/#made" class:list={['site-link', { current: section === 'made' }]}>Things I've made</a>
+          <a href="/writing" class:list={['site-link', { current: section === 'updates' }]}>Updates</a>
+          <a href="mailto:ndahlhoff10@gmail.com" class="btn btn-sm">Email me</a>
+        </nav>
+      </div>
+    </header>
     <main>
       <slot />
     </main>
+    <footer class="site-footer">
+      <div class="container site-footer-inner">
+        <p class="footer-lead">If you're building something and need someone who can take it from idea to shipped, email me.</p>
+        <div class="footer-links">
+          <a href="mailto:ndahlhoff10@gmail.com" class="btn">ndahlhoff10@gmail.com</a>
+          <a href="https://twitter.com/lazyguac" class="footer-link" target="_blank" rel="noopener">@lazyguac</a>
+          <a href="https://www.linkedin.com/in/nick-dahlhoff-684860a3/" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
 
 <style is:global>
   @import '../styles/global.css';
+</style>
+
+<style>
+  .site-nav {
+    border-bottom: 1px solid var(--color-line);
+  }
+  .site-nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    gap: 16px;
+  }
+  .wordmark {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-text-display);
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .wordmark:hover {
+    color: var(--color-text-display);
+    text-decoration: none;
+  }
+  .site-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .site-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-soft);
+  }
+  .site-link.current {
+    color: var(--color-text-display);
+  }
+  .site-link:hover {
+    color: var(--color-text-display);
+    text-decoration: none;
+  }
+  .site-footer {
+    margin-top: var(--space-3xl);
+    border-top: 1px solid var(--color-line);
+  }
+  .site-footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 72px;
+  }
+  .footer-lead {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-text-display);
+    max-width: 760px;
+  }
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+  }
+  .footer-link {
+    font-size: 15px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  @media (max-width: 900px) {
+    .site-links {
+      gap: 16px;
+    }
+    .site-link {
+      font-size: 13px;
+    }
+    .site-footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      padding-bottom: 48px;
+    }
+    .footer-lead {
+      font-size: 24px;
+    }
+    .footer-links {
+      flex-wrap: wrap;
+    }
+  }
+  @media (max-width: 480px) {
+    .site-link {
+      display: none;
+    }
+  }
 </style>

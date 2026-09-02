@@ -6,191 +6,252 @@ const posts = (await getCollection('writing'))
   .filter(p => !p.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-function formatPostDate(d: Date): string {
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const allProjects = await getCollection('projects');
+const projectTitle = (slug?: string) =>
+  slug === undefined ? 'This site' : (allProjects.find(p => p.id === slug)?.data.title ?? slug);
+
+// Filter chips: every project that has at least one post, plus "This site" for untagged posts.
+const taggedSlugs = Array.from(new Set(posts.map(p => p.data.project).filter((s): s is string => Boolean(s))));
+const hasSitePosts = posts.some(p => !p.data.project);
+const chips = [
+  { key: 'all', label: 'All' },
+  ...taggedSlugs.map(slug => ({ key: slug, label: projectTitle(slug) })),
+  ...(hasSitePosts ? [{ key: 'site', label: 'This site' }] : []),
+];
+
+// Group by month, newest first.
+const monthKey = (d: Date) => `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}`;
+const monthLabel = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const groups: { key: string; label: string; posts: typeof posts }[] = [];
+for (const post of posts) {
+  const key = monthKey(post.data.date);
+  let g = groups.find(x => x.key === key);
+  if (!g) {
+    g = { key, label: monthLabel(post.data.date), posts: [] };
+    groups.push(g);
+  }
+  g.posts.push(post);
 }
+
+const dayLabel = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
 ---
 
 <BaseLayout
-  title="Writing — Nick Dahlhoff"
-  description="Nick Dahlhoff's writing — building in public, whatever else is on his mind."
+  title="Updates — Nick Dahlhoff"
+  description="Nick Dahlhoff's build log: dated updates from Fantasy Joes and the other things he's made."
+  section="updates"
 >
-  <div class="page">
-    <a href="/" class="back-link">&larr; Back</a>
-
-    <header class="writing-header">
-      <h1>Writing</h1>
-      <p class="writing-sub">Build-log essays on shipping real products with AI: what worked, what broke, and what I would do differently.</p>
+  <div class="container updates-page">
+    <header class="updates-header">
+      <div class="updates-intro">
+        <h1>Updates</h1>
+        <p>A build log. Every real milestone gets a dated entry: what shipped, what broke, and what I'd do differently. Each entry also appears on its project's page.</p>
+      </div>
+      <div class="chips" role="group" aria-label="Filter by project">
+        {chips.map(c => (
+          <button type="button" class:list={['chip', { on: c.key === 'all' }]} data-filter={c.key}>{c.label}</button>
+        ))}
+      </div>
     </header>
 
-    <div class="archive-list">
-      {posts.map(post => (
-        <a href={`/writing/${post.id}`} class="archive-row">
-          <div class="archive-bar"></div>
-          <span class="archive-name">{post.data.title}</span>
-          <span class="archive-desc">{post.data.description}</span>
-          <span class="archive-year">{formatPostDate(post.data.date)}</span>
-        </a>
-      ))}
-      {posts.length === 0 && (
-        <p class="empty-state">Nothing published yet — check back soon.</p>
-      )}
-    </div>
+    {groups.map(group => (
+      <section class="month" data-month={group.key}>
+        <span class="mono month-label">{group.label}</span>
+        {group.posts.map(post => (
+          <a href={`/writing/${post.id}`} class="row" data-project={post.data.project ?? 'site'}>
+            <span class="mono row-date">{dayLabel(post.data.date)}</span>
+            <span class:list={['mono', 'row-project', { site: !post.data.project }]}>{projectTitle(post.data.project)}</span>
+            <span class="row-text">
+              <span class="row-title">{post.data.title}</span>
+              <span class="row-desc">{post.data.description}</span>
+            </span>
+            {post.data.image
+              ? <img src={post.data.image} alt="" class="row-thumb" loading="lazy" />
+              : <span class="row-thumb row-thumb-empty" aria-hidden="true"></span>}
+          </a>
+        ))}
+      </section>
+    ))}
+
+    {posts.length === 0 && <p class="empty">Nothing published yet.</p>}
+    <p class="empty" id="no-match" hidden>Nothing tagged with that project yet.</p>
   </div>
+
+  <script>
+    const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('.chip'));
+    const rows = Array.from(document.querySelectorAll<HTMLElement>('.row'));
+    const months = Array.from(document.querySelectorAll<HTMLElement>('.month'));
+    const noMatch = document.getElementById('no-match');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const key = chip.dataset.filter ?? 'all';
+        chips.forEach(c => c.classList.toggle('on', c === chip));
+        let shown = 0;
+        rows.forEach(row => {
+          const on = key === 'all' || row.dataset.project === key;
+          row.hidden = !on;
+          if (on) shown += 1;
+        });
+        months.forEach(m => {
+          m.hidden = !Array.from(m.querySelectorAll<HTMLElement>('.row')).some(r => !r.hidden);
+        });
+        if (noMatch) noMatch.hidden = shown > 0;
+      });
+    });
+  </script>
 </BaseLayout>
 
 <style>
-  .page {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 60px 100px;
+  .updates-page {
+    padding-top: 56px;
+  }
+  .updates-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+    gap: 60px;
+    align-items: end;
+    padding-bottom: 28px;
+  }
+  .updates-intro {
     display: flex;
     flex-direction: column;
+    gap: 14px;
   }
-
-  .back-link {
-    display: inline-block;
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-xl);
+  .updates-intro h1 {
+    font-size: 72px;
   }
-
-  .back-link:hover {
-    color: var(--color-text);
+  .updates-intro p {
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--color-text-body);
+    max-width: 760px;
   }
-
-  .writing-header {
-    margin-bottom: 40px;
-  }
-
-  .writing-header h1 {
-    font-family: var(--font-display);
-    font-size: 56px;
-    font-weight: 900;
-    letter-spacing: -0.02em;
-    line-height: 1;
-    color: var(--color-text);
-    margin-bottom: 12px;
-  }
-
-  .writing-sub {
-    font-family: var(--font-serif);
-    font-size: 18px;
-    font-style: italic;
-    line-height: 1.4;
-    color: var(--color-accent-gold);
-    max-width: 560px;
-  }
-
-  .archive-list {
+  .chips {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
   }
-
-  .archive-row {
-    display: flex;
+  .chip {
+    display: inline-flex;
     align-items: center;
-    gap: 16px;
-    padding: 20px;
-    border-bottom: 1px solid var(--color-border);
-    text-decoration: none;
-    color: inherit;
-    transition: background 0.15s ease;
-  }
-
-  .archive-row:last-child {
-    border-bottom: none;
-  }
-
-  .archive-row:hover {
-    background: rgba(0,0,0,0.02);
-    text-decoration: none;
-  }
-
-  .archive-bar {
-    width: 3px;
     height: 32px;
-    background: var(--color-text);
-    border-radius: 2px;
-    flex-shrink: 0;
-  }
-
-  .archive-name {
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 22px;
-    color: var(--color-text);
-    width: 320px;
-    flex-shrink: 0;
-  }
-
-  .archive-desc {
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid var(--color-line-strong);
     font-family: var(--font-body);
     font-size: 13px;
-    line-height: 16px;
+    font-weight: 500;
     color: var(--color-text-body);
-    flex: 1 1 0%;
+    background: var(--color-surface);
+    cursor: pointer;
   }
-
-  .archive-year {
-    font-family: var(--font-body);
-    font-size: 12px;
-    line-height: 16px;
+  .chip.on {
+    background: var(--color-text-display);
+    color: var(--color-bg);
+    border-color: var(--color-text-display);
+  }
+  .month {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+  }
+  .month-label {
     color: var(--color-text-muted);
-    flex-shrink: 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-text-display);
   }
-
-  .empty-state {
-    font-family: var(--font-body);
+  .row {
+    display: grid;
+    grid-template-columns: 100px 150px minmax(0, 1fr) 260px;
+    column-gap: 24px;
+    align-items: start;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--color-line);
+    color: inherit;
+  }
+  .row:last-child {
+    border-bottom: none;
+  }
+  .row:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+  .row:hover .row-title {
+    color: var(--color-accent);
+  }
+  .row-date {
+    color: var(--color-text-muted);
+    text-transform: none;
+    letter-spacing: 0.04em;
+    padding-top: 6px;
+  }
+  .row-project {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    padding-top: 7px;
+  }
+  .row-project.site {
+    color: var(--color-text-muted);
+  }
+  .row-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .row-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+  .row-desc {
     font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-text-soft);
+    margin-top: 6px;
+  }
+  .row-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px;
+    display: block;
+    border: 1px solid var(--color-line);
+    background: var(--color-surface);
+  }
+  .row-thumb-empty {
+    background: var(--color-surface);
+  }
+  .empty {
     color: var(--color-text-muted);
-    padding: 20px;
+    padding-top: 24px;
   }
 
-  @media (max-width: 1024px) {
-    .page {
-      padding: 60px 40px;
+  @media (max-width: 900px) {
+    .updates-page {
+      padding-top: 28px;
     }
-
-    .writing-header h1 {
-      font-size: 44px;
+    .updates-header {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 20px;
     }
-
-    .archive-name {
-      width: 220px;
+    .updates-intro h1 {
+      font-size: 48px;
     }
-  }
-
-  @media (max-width: 768px) {
-    .page {
-      padding: 40px 20px;
+    .chips {
+      justify-content: flex-start;
     }
-
-    .writing-header h1 {
-      font-size: 36px;
+    .row {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 6px;
     }
-
-    .archive-row {
-      flex-wrap: wrap;
-      gap: 8px 16px;
-      padding: 16px 12px;
+    .row-thumb {
+      max-width: 320px;
     }
-
-    .archive-name {
-      width: auto;
-      flex: 1;
-    }
-
-    .archive-year {
-      order: -1;
-      width: auto;
-    }
-
-    .archive-desc {
-      width: 100%;
-      flex-basis: 100%;
-      padding-left: 19px;
+    .row-thumb-empty {
+      display: none;
     }
   }
 </style>

@@ -64,17 +64,12 @@ Ready in `img/` (all ≤ 70 KB, web-ready; originals noted):
 - `manga-panel.jpg` — the top-left panel of `public/images/manga/manga-method-collage.jpg`.
 - `alpaca.jpg`, `headshot.jpg`, `fj-rankings-desktop.jpg`, `fj-og.jpg`, `fj-season.jpg`,
   `comic-*.jpg` — existing assets, resized.
-- `aura-business.jpg` — STAND-IN (suit Pepe from the Aura-Marketing repo on the purple background).
-
-**Two files to add locally, then swap in** (both are in Nick's Downloads/Desktop):
-
-1. Recess in the Neighborhood wordmark (red script "Recess", teal "in the Neighborhood",
-   white background) → save as `public/images/recess/logo.png`. Replace the inline
-   `<svg ... aria-label="Recess in the Neighborhood wordmark (stand-in)">` in `Main.dc.html`
-   with an `<img>` of it on a white tile, and drop the Kaushan Script / Nunito font load.
-   (The `lazyguac/Inquisikids` repo may also contain the source logo; unverified.)
-2. Aura hourglass art (purple Pepe in a suit leaning on an hourglass, bull, candles) → save as
-   `public/images/aura/hourglass.jpg` and use it wherever `aura-business.jpg` appears.
+- `recess-logo.jpg`, `aura-hourglass.jpg` — canvas-size copies of the real art. The site copies
+  are already in place: `public/images/recess/logo.png` (1600px, from Nick's 3104px original)
+  and `public/images/aura/hourglass.jpg` (680×453, as supplied). Both came from the
+  `lazyguac/nick-site` repo's `content/` folder, where Nick uploaded them on 2026-09-02.
+  The Recess tile shows the wordmark on a white background with 36px padding; the Aura tile
+  uses the hourglass art with `object-fit: cover`.
 
 Teaching in Beijing and Poker intentionally have **no image**: typographic tiles (`北京` on a
 dark tile with the italic line; a large ♠ on a light tile). Keep those.

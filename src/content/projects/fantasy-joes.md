@@ -17,13 +17,15 @@ gallery:
     caption: "An earlier pair comparison card. Current comparison pages embed the six-player game."
   - src: /images/fantasy-joes/fj-rankings-2026.jpg
     caption: "A July draft ranking after one round. Picks move players on your board."
+  - src: /images/fantasy-joes/fj-season-rankings-open.jpg
+    caption: "Season Rankings Open, one of the peer-to-peer cash contests I built."
 year: "2026"
 stage: Maintained
 cardImage: /images/fantasy-joes/fj-six3-desktop.jpg
 cardBlurb: "Pick three from six NFL players to build your own rankings. I built the game, Discord version, search pages, and cash system. The free game is live; I stopped pursuing paid contests."
 latestUpdate:
-  date: "2026-09-22"
-  summary: "The free weekly game is live. I stepped back from further development before the NFL season and stopped pursuing paid contests."
+  date: "2026-09-23"
+  summary: "The free game remains live. I stopped developing Fantasy Joes as a business after the paid contests failed to attract customers."
 ---
 
 ## Why I built it
@@ -42,6 +44,8 @@ I had tried the pair-pick idea before the 2025 season with a freelance developer
 
 I also built player comparison pages drawn from the game's picks. A matchup page shows how the crowd chose between two players. It also embeds the six-player game, where visitors can make their own picks. By September 2026, the site had more than a thousand of these pages. Search brought people to them; turning those visits into regular play was harder.
 
+Around the game I built a player-art pipeline that could refresh portraits after team changes, a Discord game, partner attribution, and a growth dashboard tracking where visitors became players. A daily job published comparison pages from the draft picks, and the share cards used the same live data. These systems let me run more of the product alone, even when they didn't solve retention.
+
 I built a real-money contest system too, with wallets, seven contest formats, and eligibility controls. I ran an adversarial security review, fixed its findings, and tested a paid entry end to end in July. The contest work never turned into a paying business.
 
 ![An earlier draft comparison page showing the crowd's preference and player stats](/images/fantasy-joes/fj-compare-pair-desktop.png)
@@ -52,6 +56,6 @@ I planned to make money through paid contests based on ranking accuracy. The pro
 
 The harder question was whether enough people would spend the time to make their rankings feel personal. The business also needed them to pay for contests repeatedly. I doubted one set of rankings gave people much reason to do that. I also wasn't sure I had built for a specific player I understood well enough. I stopped pushing it as a business before the 2026 season.
 
-The free weekly game is still live. I maintain what is already there while putting my time into Hometown Coloring Book.
+The free weekly game is still live. I maintain what is already there while putting my time into Hometown Coloring Book. I explain the results and the decision in [the Fantasy Joes wrap-up](/writing/fantasy-joes-wrap-up).
 
 <!-- Voice-truth ledger: spreadsheet boredom, opening ordinary players' rankings, media-presence concern, forced player preference, slow first build, and solo Claude Code rebuild come from the 2026-03-10 Fantasy Joes interview transcript. The paid-contest doubts, uncertainty about the audience, decision to step back, continued maintenance, and Hometown focus come from Nick's 2026-09-22 journal. The contest-system and security-review details come from the original case study and September 22 career draft. Both current modes use Six3 per /Users/nick/personal-knowledge-hub/2026/09/10/fantasy-joes-weekly-six3-release.md; comparison pages embed it per /Users/nick/personal-knowledge-hub/2026/09/12/fantasy-joes-weekly-mode-release-2026-09-12.md. Metrics and cash status: /Users/nick/personal-knowledge-hub/2026/09/22/fantasy-joes-postmortem.md, sourced to dated production reads. Refresh the dated scale claim from the live sitemap before changing it. -->

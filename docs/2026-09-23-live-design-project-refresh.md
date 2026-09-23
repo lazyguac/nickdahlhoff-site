@@ -31,4 +31,10 @@ The static Astro build generated 17 pages. The homepage and both updated project
 
 Desktop and 390-pixel phone review confirmed the card order, video poster, images, and lack of horizontal overflow. The first card navigated to the Fantasy Joes case study. Clicking Play on the MP4 crashed the Codex in-app browser both on this preview and on the live Hometown site; playback therefore needs confirmation in a regular browser. No production release was made.
 
-The final ALR editorial card was inspected again at desktop and 390-pixel phone width. Its headlines stay readable, its visual uses no additional image download, and the 390-pixel page has no horizontal overflow.
+The abstract ALR editorial card passed desktop and 390-pixel technical checks, but Nick rejected its visual direction.
+
+## ALR visual correction after Nick's review
+
+Nick rejected the abstract three-panel graphic as unrecognizable and poor-looking. It was replaced with the official All Language Resources logo and three actual "Best Apps" article images from the live ALR Spanish, Mandarin Chinese, and Japanese resource pages. The 2023 logo and article thumbnails are frozen locally under `public/images/alr/`; the homepage composes them as a white brand header above a full-width photo triptych. The homepage hero and the isolated Pimsleur review thumbnail are not used in this card. The Pimsleur case-study screenshot remains on the project page. Sources: `alllanguageresources.com/spanish/`, `/chinese/`, and `/japanese/`.
+
+The 17-page Astro build passed. Desktop and 390-pixel phone previews show the official logo and all three images loading, with no horizontal overflow at phone width. Production was not changed.

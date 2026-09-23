@@ -91,28 +91,24 @@ function meta(p: (typeof made)[number]): string {
         {made.map(p => (
           <a href={`/projects/${p.id}`} class="poster">
             {p.id === 'all-language-resources' ? (
-              <div class="poster-tile alr-board" aria-hidden="true">
-                <div class="alr-masthead">
-                  <span class="alr-monogram">ALR<span class="alr-mark-dot">.</span></span>
-                  <span>ALL LANGUAGE RESOURCES</span>
-                  <span class="alr-masthead-end">REVIEWS &amp; GUIDES</span>
+              <div class="poster-tile alr-showcase" aria-hidden="true">
+                <div class="alr-brand">
+                  <img src="/images/alr/alr-logo.webp" alt="" width="300" height="82" loading="lazy" />
+                  <span class="alr-brand-rule"></span>
                 </div>
-                <div class="alr-publications">
-                  <div class="alr-publication alr-comparisons">
-                    <span class="alr-publication-type">01 / COMPARISONS</span>
-                    <strong>Best apps to learn Spanish</strong>
-                    <span class="alr-publication-foot">40+ TESTED <span aria-hidden="true">↗</span></span>
-                  </div>
-                  <div class="alr-publication alr-guides">
-                    <span class="alr-publication-type">02 / GUIDES</span>
-                    <strong>Online Spanish courses</strong>
-                    <span class="alr-publication-foot">A CLOSER LOOK <span aria-hidden="true">↗</span></span>
-                  </div>
-                  <div class="alr-publication alr-reviews">
-                    <span class="alr-publication-type">03 / REVIEWS</span>
-                    <strong>Pimsleur, honestly</strong>
-                    <span class="alr-publication-foot">IN DEPTH <span aria-hidden="true">↗</span></span>
-                  </div>
+                <div class="alr-gallery">
+                  <figure>
+                    <img src="/images/alr/alr-best-apps-spanish.webp" alt="" width="300" height="169" loading="lazy" />
+                    <figcaption>Spanish</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="/images/alr/alr-best-apps-mandarin.webp" alt="" width="300" height="169" loading="lazy" />
+                    <figcaption>Mandarin</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="/images/alr/alr-best-apps-japanese.webp" alt="" width="300" height="169" loading="lazy" />
+                    <figcaption>Japanese</figcaption>
+                  </figure>
                 </div>
               </div>
             ) : p.data.cardImage ? (
@@ -316,79 +312,74 @@ function meta(p: (typeof made)[number]): string {
     justify-content: center;
     padding: 28px;
   }
-  .alr-board {
-    display: block;
-    padding: clamp(15px, 2.3vw, 28px);
+  .alr-showcase {
+    display: grid;
+    grid-template-rows: 31% 69%;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
     overflow: hidden;
-    color: #F5F3E9;
-    background: #12374A;
-    background-image: radial-gradient(circle at 15% 120%, rgba(78, 163, 167, 0.23), transparent 50%), linear-gradient(135deg, #12374A, #082334);
+    background: #F1F5F6;
   }
-  .alr-masthead {
+  .alr-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
-    height: 24px;
-    font-size: clamp(7px, 0.74vw, 10px);
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    gap: 22px;
+    min-height: 0;
+    padding: 10px clamp(15px, 2vw, 24px);
+    background: #fff;
+    border-bottom: 1px solid #D7E3E7;
   }
-  .alr-monogram {
-    font-family: var(--font-display);
-    font-size: clamp(21px, 2vw, 27px);
-    letter-spacing: -0.07em;
-    line-height: 1;
+  .alr-brand img {
+    display: block;
+    width: clamp(155px, 18vw, 225px);
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
   }
-  .alr-mark-dot { color: #7DCCD0; }
-  .alr-masthead-end {
-    margin-left: auto;
-    color: #A8D3D7;
-    font-weight: 500;
+  .alr-brand-rule {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, #2D8D99, #DBE9EB);
   }
-  .alr-publications {
+  .alr-gallery {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(7px, 1.1vw, 14px);
-    height: calc(100% - 43px);
-    margin-top: 19px;
+    gap: 3px;
+    min-height: 0;
+    padding: 0;
   }
-  .alr-publication {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  .alr-gallery figure {
+    position: relative;
     min-width: 0;
-    padding: clamp(10px, 1.4vw, 17px);
-    border-radius: 3px;
-    box-shadow: 0 12px 28px rgba(1, 15, 27, 0.28);
+    min-height: 0;
+    margin: 0;
+    overflow: hidden;
+    background: #DCE7E9;
   }
-  .alr-publication-type,
-  .alr-publication-foot {
-    font-family: var(--font-mono);
-    font-size: clamp(7px, 0.66vw, 9px);
-    line-height: 1.3;
-    letter-spacing: 0.09em;
-  }
-  .alr-publication strong {
+  .alr-gallery img {
     display: block;
-    max-width: 10ch;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-family: var(--font-display);
-    font-size: clamp(17px, 1.82vw, 26px);
-    font-weight: 650;
-    line-height: 1.04;
-    letter-spacing: -0.035em;
-  }
-  .alr-publication-foot {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
     width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    object-position: left center;
   }
-  .alr-publication-foot span { font-size: 16px; line-height: 0.8; }
-  .alr-comparisons { color: #173A49; background: #F3EFE2; }
-  .alr-guides { color: #F8F6EE; background: #368C94; }
-  .alr-reviews { color: #253B43; background: #D7B56F; }
+  .alr-gallery figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 26px 12px 12px;
+    background: linear-gradient(transparent, rgba(7, 33, 43, 0.8));
+    font-family: var(--font-mono);
+    font-size: clamp(9px, 0.9vw, 12px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+  }
   .tile-beijing {
     flex-direction: column;
     align-items: flex-start;
@@ -559,12 +550,8 @@ function meta(p: (typeof made)[number]): string {
     .hero h1 {
       font-size: 48px;
     }
-    .alr-board { padding: 15px; }
-    .alr-masthead { font-size: 7px; }
-    .alr-masthead-end { display: none; }
-    .alr-publications { margin-top: 11px; height: calc(100% - 35px); }
-    .alr-publication { padding: 9px; }
-    .alr-publication strong { font-size: 16px; }
-    .alr-publication-type, .alr-publication-foot { font-size: 6px; }
+    .alr-brand { gap: 10px; padding: 5px 14px; }
+    .alr-brand img { width: 170px; }
+    .alr-gallery figcaption { padding: 18px 7px 7px; font-size: 8px; }
   }
 </style>

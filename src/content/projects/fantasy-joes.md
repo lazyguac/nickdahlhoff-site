@@ -1,92 +1,57 @@
 ---
 title: Fantasy Joes
-status: current
-order: 1
+tagline: Pick your top three from six NFL players. Each choice helps build your own fantasy football rankings.
+status: archive
+order: 3
 url: https://fantasyjoes.gg
-tech: [Claude Code, Convex, Netlify, Gemini, Claude API, Sleeper API, ESPN API]
-skills: [Full-Stack Development, Real-Time Systems, Game Design, Algorithm Design, API Integration, Product Management, AI-Assisted Development, Data Pipeline Design, UI/UX Design]
-year: "2026"
-latestUpdate:
-  date: "2026-07-03"
-  summary: "Real-money contests built and audited, launching for the 2026 NFL season. 14,818 duels played as of June 30."
-tagline: "A fantasy football ranking game with real-money contests. Six players at a time, you pick the three you'd draft first, in order, and your rankings build themselves. A web app, a Discord version of the game, six cash contests, and an art pipeline for hundreds of player portraits. Designed and built solo with Claude Code and Codex."
+tech: [Claude Code, Convex, Netlify, Gemini, Sleeper API]
+skills: [Product Management, Game Design, Full-Stack Development, Growth]
 heroImage: /images/fantasy-joes/fj-six3-desktop.jpg
-heroAlt: "Fantasy Joes: six player cards, pick your top three in order"
-heroCaption: "The core screen. Six cards ordered by ADP; tap your first, second, and third. Every completed screen writes twelve player relationships into your rankings."
+heroAlt: The six-player Fantasy Joes draft game
+heroCaption: "Pick three players from six, in order. The weekly game now uses the same Six3 format."
 gallery:
   - src: /images/fantasy-joes/fj-six3-phone.jpg
     kind: phone
-    caption: "Mobile first. Most Joes play on a phone."
+    caption: "Six3 on a phone. The free game can start without an account."
   - src: /images/fantasy-joes/fj-compare-og.jpg
-    caption: "One of about 167 public compare pages generated from the game's own data."
-  - src: /images/fantasy-joes/fj-season-rankings-open.jpg
-    caption: "Season Rankings Open, one of six peer-to-peer cash contests scored on ranking accuracy."
+    caption: "An earlier pair comparison card. Current comparison pages embed the six-player game."
+  - src: /images/fantasy-joes/fj-rankings-2026.jpg
+    caption: "A July draft ranking after one round. Picks move players on your board."
+year: "2026"
+stage: Maintained
 cardImage: /images/fantasy-joes/fj-six3-desktop.jpg
+cardBlurb: "Pick three from six NFL players to build your own rankings. I built the game, Discord version, search pages, and cash system. The free game is live; I stopped pursuing paid contests."
+latestUpdate:
+  date: "2026-09-22"
+  summary: "The free weekly game is live. I stepped back from further development before the NFL season and stopped pursuing paid contests."
 ---
 
-## What it is, and why I built it
+## Why I built it
 
-Fantasy Joes is a fantasy-football ranking game. Instead of typing out a spreadsheet of your player rankings, you see six NFL players and pick the three you'd draft first, in order. Do that for a few dozen screens and you've ranked the whole player pool, without ever staring at a blank list.
+I was interested in fantasy football rankings, but making my own in a spreadsheet was boring. I also wanted ordinary players to have a way to show how good their rankings were. The established expert lists put a lot of weight on having a media presence before anyone sees your calls.
 
-The reason I built it starts with a problem I had with how fantasy rankings work. A lot of people who play fantasy football want to rank players well, and want to be known as the best ranker. But that's a closed system, mostly owned by one company. Expert consensus rankings come from FantasyPros, which decides who counts as an "expert" — you basically need a media presence to submit rankings, which locks out people who might actually be really good at it.
+The first idea was simple. Show me two players and make me pick one. I found that I didn't always know which player I preferred until I had to make that choice. Do it enough times, and I have a ranking built from my own decisions. The game can then score those rankings against NFL results.
 
-I'd also made rankings the normal way, in a spreadsheet, and it's boring. It appeals to a tiny audience. So I figured there were a few ways to innovate on it, and the main one was duels. That came out of a smaller thing I noticed doing it myself: I often didn't actually know my own preference between two players until I was forced to pick one. Rankings get followed too rigidly — people defer to a list instead of choosing who they'd actually take. Making you choose gets you to a ranking that's yours. The first version asked one pair at a time; the current preseason game shows six and asks for your top three, which builds a board much faster than one pair at a time.
+## What I built
 
-I designed and built the whole thing myself with Claude Code — the game, the art pipeline, the Discord bot, the SEO pages, the growth dashboard, and the payment rails underneath.
+Fantasy Joes started with those two-player picks. Both the draft and weekly games later changed to show six players at a time. You choose the three you'd take first, in order. One round captures several preferences, so your rankings change faster than they did with individual pairs. The ranking algorithm starts from where players tend to be drafted or their projected weekly points, then gives more weight to surprising choices as you play.
 
-## The game, and the rating system under it
+The live weekly game asks which players you expect to score most that week. You can try it for free without signing up. Saving your rankings and seeing how they scored against NFL results requires an account. The draft game and its rankings remain on the site too.
 
-The game is simple to play. In the preseason: six players, pick your first, second, and third, repeat. In season, weekly matchups scoped to a position ask one question, who scores more this week, two players at a time, for when you're setting a lineup. Both run on the same engine. No signup to start: guests can play on a device that remembers them.
+I had tried the pair-pick idea before the 2025 season with a freelance developer. It took three to five seconds to load the next choice, which made a quick game feel slow, so I stopped. In 2026 I rebuilt it myself with Claude Code, including the illustrated player cards and a Discord version.
 
-A completed six-card screen records twelve ordered relationships (your first pick over the other five, your second over the other four, your third over the bottom three), scaled down so one screen doesn't count like twelve separate sessions.
+I also built player comparison pages drawn from the game's picks. A matchup page shows how the crowd chose between two players. It also embeds the six-player game, where visitors can make their own picks. By September 2026, the site had more than a thousand of these pages. Search brought people to them; turning those visits into regular play was harder.
 
-What's underneath each tap is where most of the design went. It started from Elo, the rating system chess uses to rank players from head-to-head results, and I changed a lot about it from there. Six things that aren't in textbook Elo:
+I built a real-money contest system too, with wallets, seven contest formats, and eligibility controls. I ran an adversarial security review, fixed its findings, and tested a paid entry end to end in July. The contest work never turned into a paying business.
 
-- **Scores are seeded from real data, not a flat starting number.** Every player's opening score comes from projections and ADP, so rankings start from where the market actually has them instead of everyone tied at a midpoint.
-- **The K-factor scales with the rank gap** instead of being one fixed constant. The wider the gap between the two players going in, the more carefully the system moves their scores.
-- **Upsets are amplified.** Take the lower-ranked player and win, and the scores move harder than a chalk pick would — a surprise carries more information, so it counts for more.
-- **Matchups are chosen, not random.** The six on a screen come from a band of the rankings near each other, players you haven't seen come up before repeats, and in weekly play the second player is drawn from a range around the first, so pairings stay competitive instead of lopsided.
-- **A "mover" boost injects real-world signal.** When a player's ADP shifts hard, the system shows them more for a stretch, so the rankings react to what just happened in the real world.
-- **New players get a smaller pool first.** Early duels concentrate on the famous, high-consensus players and widen from there, so the ranking has something solid to build on before it hands you the long tail.
+![An earlier draft comparison page showing the crowd's preference and player stats](/images/fantasy-joes/fj-compare-pair-desktop.png)
 
-Your rankings re-sort live as you go. It's Elo-derived and heavily modified, not the same rating you'd get out of a chess app.
+## Why I stepped back
 
-![Your draft rankings, updated after every screen, with the move against consensus and ADP](/images/fantasy-joes/fj-rankings-2026.jpg)
+I planned to make money through paid contests based on ranking accuracy. The product got search traffic and some people played a lot, but an August 23 production check found no organic paid entries. The underfilled contests were cancelled in September, and cash entry is off.
 
-## Built twice
+The harder question was whether enough people would spend the time to make their rankings feel personal. The business also needed them to pay for contests repeatedly. I doubted one set of rankings gave people much reason to do that. I also wasn't sure I had built for a specific player I understood well enough. I stopped pushing it as a business before the 2026 season.
 
-I first built this in late 2024 as the product manager, paying a freelancer to put it together on no-code tooling. The mechanic worked. But every duel took three to five seconds to load, which is fatal for a game whose whole appeal is tapping fast — and there were other bugs on top of that. As a potential user I could see it wasn't going to work without major improvements I wasn't ready to put the time and money into. I shut it down before the 2025 season rather than ship it slow.
+The free weekly game is still live. I maintain what is already there while putting my time into Hometown Coloring Book.
 
-I came back to it in early 2026 and rebuilt it from scratch, by myself, with Claude Code. Nothing carried over. What shipped is the fast version of the original idea: picks resolve instantly, guests can play with no signup, and the web app and the Discord game run on one shared code path so they behave the same.
-
-## The machinery around the game
-
-The game is the core. Most of the work is everything that turns it into a product one person can run.
-
-**Player art.** Every ranked player gets an AI-generated comic portrait, so duels, share cards, and Discord all look on-brand without me drawing anything. The pipeline researches each player, generates the art, then runs a second AI pass that checks the result against a checklist — team colors, likeness, no extra limbs — and re-rolls if it fails. When a player gets traded, a daily job notices the team change and regenerates the stale art on its own.
-
-**A Discord game.** The whole duel loop runs inside Discord as slash commands — play, build a board, see standings without leaving the server, no signup. Around it I built partner attribution: credit for a signup survives even when nobody clicks a link, backfilled from the server the player came from, and partners earn from the players they bring in with the math capped so payouts can never exceed what the game actually took in.
-
-**Programmatic SEO.** A daily job reads every resolved draft duel, buckets them by player pair, and publishes a "Player X vs Y" page for each matchup that clears a vote threshold. 145 are live, each showing the crowd split from real duels — for example, [Jonathan Taylor vs. Christian McCaffrey](https://fantasyjoes.gg/draft/2026/compare/jonathan-taylor-vs-christian-mccaffrey) and [Puka Nacua vs. Justin Jefferson](https://fantasyjoes.gg/draft/2026/compare/puka-nacua-vs-justin-jefferson). A relevance filter sits underneath: before an expert quote renders, it checks that the quote actually names the right player, so a college linebacker who shares a surname with a star receiver doesn't get misattributed. When one of these pages is shared, it renders a preview card from live data — both players' comic art, their draft ranks, the vote split — that looks like a paid ad and is generated per matchup on demand.
-
-![A live compare page — the crowd's lean, drawn from real duels](/images/fantasy-joes/fj-compare-pair-desktop.png)
-
-Three more pieces round it out. A growth dashboard tracks the funnel by channel — first visit to first duel to retention, with cost-per-signup — and flags when attribution silently breaks. A short-form video renderer turns the same duel-split data into vertical "you vs. the crowd" clips, so no on-screen number is ever a guess. And the ad platforms get told when a visitor becomes a real player, so paid campaigns optimize on engaged users instead of clicks.
-
-## Real money, built and audited
-
-The endgame is skill-based cash contests — head-to-head, 50/50s, and tournaments — funded by user-signed USDC transfers on Base. The rails are done: wallets, the payment flow, six contest formats, and the compliance scaffolding for geo-gating, age checks, tax withholding, and self-exclusion.
-
-Before any of it goes live, I put the codebase through a multi-agent adversarial security audit I designed and ran: dozens of independent agents finding issues across the money rails, then re-verifying each other's findings, then a pass checking for what the first ones missed. Findings were remediated against the live code — all while the money system stayed switched off behind a flag. The scale of it is the point: a solo founder can't red-team a money system by hand at the depth this needed, so I built the review that could.
-
-Real money isn't live to the public. It's built and audited, and it launches for the 2026 NFL season.
-
-![The homepage — make your own rankings, then see how they stack up](/images/fantasy-joes/fj-home-desktop.png)
-
-## Where it stands
-
-As of June 30, 2026, real people have played 14,818 duels across 1,038 users, and 145 comparison pages are live (as of July 2). Paid marketing has run — image-tested Reddit ads and a Spark-promoted TikTok poll since May 2026, with conversion tracking wired to both platforms — while a Google Ads push is built and staged but not yet launched.
-
-One change I'm glad to point at came straight from that data. A "sign up now" screen was auto-firing early in a new player's session, and the data showed that gate was leaking users rather than converting them — the board that early is still mostly the consensus order, so the ask was landing before the rankings were actually the player's own. Moving it to a later, more personalized point was a one-line change the data told me to make. The 2026 NFL season kicks off in September, which is when all of this gets its first live test.
-
-
+<!-- Voice-truth ledger: spreadsheet boredom, opening ordinary players' rankings, media-presence concern, forced player preference, slow first build, and solo Claude Code rebuild come from the 2026-03-10 Fantasy Joes interview transcript. The paid-contest doubts, uncertainty about the audience, decision to step back, continued maintenance, and Hometown focus come from Nick's 2026-09-22 journal. The contest-system and security-review details come from the original case study and September 22 career draft. Both current modes use Six3 per /Users/nick/personal-knowledge-hub/2026/09/10/fantasy-joes-weekly-six3-release.md; comparison pages embed it per /Users/nick/personal-knowledge-hub/2026/09/12/fantasy-joes-weekly-mode-release-2026-09-12.md. Metrics and cash status: /Users/nick/personal-knowledge-hub/2026/09/22/fantasy-joes-postmortem.md, sourced to dated production reads. Refresh the dated scale claim from the live sitemap before changing it. -->

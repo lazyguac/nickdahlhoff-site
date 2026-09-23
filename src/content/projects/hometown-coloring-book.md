@@ -1,49 +1,41 @@
 ---
 title: Hometown Coloring Book
-tagline: A sponsor-funded coloring book for West Michigan families, built end to end — including the AI pipeline that turns a sponsor's business into a custom coloring page.
-status: archive
-order: 6
+tagline: Free coloring pages of West Michigan places, with sponsor-funded printed books in preparation for families.
+status: current
+order: 1
 url: https://hometowncoloringbook.com
-tech: [Claude Code, Convex, Stripe, Gemini, Resend]
-skills: [Product Management, Full-Stack Development, AI Pipeline Design, Sales & Outreach, Brand Design]
+tech: [Claude Code, Convex, Stripe, Gemini]
+skills: [Product Management, Full-Stack Development, Art Direction, Sales & Outreach]
+heroImage: /images/hometown/holland-maple-leaf-regatta.png
+heroAlt: Two squirrels sail a maple leaf beneath a bridge near Holland's De Zwaan windmill
+heroCaption: "The maple-leaf regatta, a published page in the free Holland collection."
 year: "2026"
-stage: Paused
-cardImage: /images/hometown/hometown-covers.jpg
-cardBlurb: "Free coloring books for families, paid for by the local businesses in them. Every sponsor's ad is a coloring page, drawn by a pipeline I built. 21 West Michigan editions, one sponsor sold, and then I stopped rather than build a door-to-door sales company."
-heroImage: /images/hometown/hometown-covers.jpg
-heroAlt: "Three of the 21 edition covers"
-sideImages:
-  - src: /images/hometown/hometown-fridge.jpg
-    alt: "A finished page on a fridge"
-  - src: /images/hometown/hometown-sample-zoo.jpg
-    alt: "A sponsor coloring page for John Ball Zoo"
-heroCaption: "Three of the 21 edition covers; a finished page where it ends up, on the fridge; and a sponsor page as it came out of the pipeline."
-whereItStands: "Sold one page from cold outreach. Never took it to print. Stopped rather than become a field-sales company."
+stage: Current
+cardImage: /images/hometown/holland-maple-leaf-regatta.png
+cardBlurb: "Free coloring pages of West Michigan places are live. I'm preparing sponsor-funded printed books; none has gone to print yet."
+latestUpdate:
+  date: "2026-09-22"
+  summary: "Free local downloads are live. I'm preparing sponsor-funded printed editions for Holland, Zeeland, and West Ottawa; none has gone to print yet."
 ---
 
 ## What it is
 
-Free coloring books for local families, paid for by the businesses in them. There's no split between ads and content, because every ad page *is* a coloring page: a dance studio sponsors a page and gets a scene of kids dancing with a QR code to their site; a heating company gets its own scene. Families pay nothing. The sponsor pages fund the whole book.
+Hometown Coloring Book makes coloring pages about places kids can recognize near home. In the Holland online collection, two squirrels sail a maple leaf past the De Zwaan windmill. Another page shows children chasing bubbles beside Centennial Park's gazebo. Families can choose local pages and download a PDF for free. Zeeland and West Ottawa have smaller collections that are growing.
 
-![A finished page where it ends up — on the fridge](/images/hometown/hometown-fridge-photo.jpg)
+The planned printed books will use separate artwork and be paid for by local business sponsorships. An interior sponsor can get a custom coloring page featuring its business, review the artwork, and request revisions. Businesses can also help distribute free copies at their locations without buying a placement. Sponsor payments would cover the copies given out by those stockists too.
 
-I built it as 21 separate West Michigan editions — Grand Rapids neighborhoods, surrounding cities, and townships — each its own branded book. A sponsor buys a page by district, priced per copy from the district's actual Census reach, so a bigger audience costs more.
+The artwork workflow starts with research on a real place or business and keeps revisions tied to the exact image I review. For print, I built district pricing and a cost model around actual printer quotes.
 
-## The system I built
+## How it changed
 
-The core of it is the page-design pipeline. A sponsor sends a brief — text, a few reference images, their logo, a brand color, the URL the QR code should point to — and the system turns that into a print-ready coloring page.
+I sold one sponsor page through cold outreach in spring 2026, then stopped before printing. At the time, I thought making it work meant selling door to door in every district, and I couldn't see myself running that kind of field-sales operation.
 
-The first round generates four different directions at once, each prompted to be visually distinct, so the sponsor is choosing a direction rather than approving or rejecting a single guess. After they pick one and comment, every following round generates a single new image, feeding the chosen image back to the model as a live reference alongside the feedback. It edits the picked image toward what they asked for instead of starting over — real image-to-image refinement, not a fresh roll of the dice each time.
+I came back to it because I no longer think an in-person sales force is the only path. I'm preparing email and mail outreach for local businesses, and the live pages let people see the artwork before they decide whether to participate. The coloring pages and books are the part I want to build; sponsorship pays for getting them into local families' hands.
 
-The whole thing is prompted for a print-safe, sponsor-safe artifact, not just a nice picture: line art a 4-to-10-year-old can actually color, a corner reserved for the QR code, and no sponsor logo drawn into the art itself — that gets layered on separately. If the model keeps failing on a design, the job routes to me, so a sponsor's page never just breaks.
+For the printed books, a business can bring a logo, an idea, or just its name. AI helps make the custom artwork, and the business approves its page before printing. The free online collection is curated separately. I've also made a Holland song and animated coloring-page film, now on the site.
 
-Around that sit the parts a real business needs — checkout, sponsor accounts a team can share, an admin queue for anything that needs a human — built and operated by one person.
+## Where it stands
 
-## What happened
+As of September 2026, the free downloads and business offer are live. I'm comparing printer samples, preparing sponsor outreach, and looking for places that could stock the first books. No printed edition has been distributed yet.
 
-I ran cold outreach to local family-facing businesses starting in late April 2026, filling out contact forms one at a time so the pitch landed in an owner's inbox like a customer inquiry instead of a spam folder. I did sell one — a business that committed to a page from that cold outreach. But it was only one.
-
-## Why I stopped
-
-I didn't take it to print. To scale it, the real job was door-to-door sponsor sales, city by city, across all 21 editions. That's a field-sales operation, and building that company is a different thing from building the product. The product side worked; the AI pipeline, the checkout, the district system all did what they were supposed to. Scaling it meant feet-on-the-street local sales, which isn't the work I want to spend my time on versus building software. So I proved the mechanism out and set it down.
-
+<!-- Voice-truth ledger: the original field-sales concern, return to remote outreach, product-first focus, music video, and current preparation come from Nick's 2026-09-22 journal. One spring sponsor sale is Nick's 2026-07-03 site-copy correction. Product and district state checked against the live hometowncoloringbook.com homepage and 2026-09-18 website release source. The art-revision workflow and printer-backed cost model are also recorded in the September 22 career audit and professional profile. Refresh the September status against the live site and current print receipt when updating this page. -->

@@ -84,7 +84,7 @@ function postDate(d: Date): string {
       </header>
 
       {heroImage && (
-        <figure class:list={['hero-figure', { 'has-side': sideImages && sideImages.length > 0 }]}>
+        <figure class:list={['hero-figure', { 'has-side': sideImages && sideImages.length > 0, 'color-page': project.id === 'hometown-coloring-book' }]}>
           <div class="hero-main frame">
             <img src={heroImage} alt={heroAlt ?? ''} />
           </div>
@@ -144,6 +144,9 @@ function postDate(d: Date): string {
             <h2>Updates on {project.data.title}</h2>
             <a href="/writing" class="mono updates-all">All updates &rarr;</a>
           </div>
+          {project.id === 'fantasy-joes' && (
+            <p class="updates-context">These July posts show earlier versions of the game. The current free game uses six-player rounds, and cash entry is off.</p>
+          )}
           {projectPosts.map(post => (
             <a href={`/writing/${post.id}`} class="update-row">
               <span class="mono update-date">{postDate(post.data.date)}</span>
@@ -256,6 +259,20 @@ function postDate(d: Date): string {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .color-page .hero-main {
+    height: 620px;
+    padding: 28px;
+    display: grid;
+    place-items: center;
+    background: #E9E3D6;
+  }
+  .color-page .hero-main img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    box-shadow: 0 18px 48px rgba(30, 35, 26, 0.2);
   }
   .hero-side {
     display: grid;
@@ -398,6 +415,13 @@ function postDate(d: Date): string {
   .updates-all {
     letter-spacing: 0.12em;
   }
+  .updates-context {
+    max-width: 740px;
+    padding: 16px 0 4px;
+    color: var(--color-text-soft);
+    font-size: 14px;
+    line-height: 1.5;
+  }
   .update-row {
     display: grid;
     grid-template-columns: 120px minmax(0, 1fr);
@@ -517,6 +541,10 @@ function postDate(d: Date): string {
     .hero-figure.has-side {
       grid-template-columns: minmax(0, 1fr);
     }
+    .color-page .hero-main {
+      height: 440px;
+      padding: 16px;
+    }
     .hero-side {
       grid-template-rows: none;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -535,6 +563,11 @@ function postDate(d: Date): string {
     }
     .more-grid {
       grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  @media (max-width: 480px) {
+    .project-header h1 {
+      font-size: 36px;
     }
   }
 </style>

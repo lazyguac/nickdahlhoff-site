@@ -3,14 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const allProjects = await getCollection('projects');
-const fantasyJoes = allProjects.find(p => p.id === 'fantasy-joes');
+const hometown = allProjects.find(p => p.id === 'hometown-coloring-book');
 
-// "Things I've made" is an explicit ordered list, not a status filter. Fantasy Joes has its own
+// "Things I've made" is an explicit ordered list, not a status filter. Hometown has its own
 // band above; ai-consulting is retired and noindexed. Copy for each card lives in the project's
-// frontmatter (cardBlurb / stage / cardImage), approved in design/redesign-2026-09/copy.md.
+// frontmatter (cardBlurb / stage / cardImage).
 const madeSlugs = [
   'all-language-resources',
-  'hometown-coloring-book',
+  'fantasy-joes',
   'recess',
   'aura-finance',
   'alpaca-college',
@@ -50,7 +50,7 @@ function meta(p: (typeof made)[number]): string {
       <div class="hero-text">
         <span class="mono kicker">The whole team on my own products</span>
         <h1>Nick Dahlhoff</h1>
-        <p class="hero-lead">For the last few years I've been the whole team on my own products. With AI I work across the product, the engineering, and the growth at the same time. Before AI, I built a language-learning review site to 100,000 monthly readers and a six-person team, and sold it for about $960,000.</p>
+        <p class="hero-lead">For the last few years I've been the whole team on my own products. With AI I work across the product, the engineering, and the growth at the same time. Before AI, I grew a language-learning review site to 100,000 monthly visitors with six regular contributors and sold it for about $960,000.</p>
         <div class="hero-actions">
           <a href="mailto:ndahlhoff10@gmail.com" class="btn">Email me</a>
           <span class="hero-note">Looking for a team that needs a do-everything builder · West Michigan · open to relocating in the US or working remote</span>
@@ -61,19 +61,20 @@ function meta(p: (typeof made)[number]): string {
       </div>
     </section>
 
-    <!-- Fantasy Joes -->
-    {fantasyJoes && (
+    <!-- Hometown Coloring Book -->
+    {hometown && (
       <section class="latest">
         <div class="latest-head">
           <div class="latest-text">
-            <span class="mono kicker">Latest · fantasyjoes.gg</span>
-            <h2>Fantasy Joes</h2>
-            <p>A fantasy football ranking game. Six players at a time, you pick the three you'd draft first, in order, and your rankings build themselves in the background. Then you can play those rankings for money, against other people, not the house. I built all of it, including the growth side: a Discord version of the game, programmatic SEO pages, ad tests, short-form video.</p>
+            <span class="mono kicker">Current · hometowncoloringbook.com</span>
+            <h2>Hometown Coloring Book</h2>
+            <p>Coloring pages about places kids recognize near home. Families can download the Holland collection for free now; I'm preparing sponsor-funded printed books for Holland, Zeeland, and West Ottawa.</p>
           </div>
-          <a href={`/projects/${fantasyJoes.id}`} class="text-link">Read the case study &rarr;</a>
+          <a href={`/projects/${hometown.id}`} class="text-link">Read the case study &rarr;</a>
         </div>
-        <a href={`/projects/${fantasyJoes.id}`} class="frame latest-shot">
-          <img src="/images/fantasy-joes/fj-six3-desktop.jpg" alt="Fantasy Joes: six player cards, pick your top three in order" width="1440" height="900" />
+        <a href={`/projects/${hometown.id}`} class="frame latest-shot hcb-shot">
+          <span class="mono hcb-shot-label">Holland, Michigan · Free printable</span>
+          <img src="/images/hometown/holland-maple-leaf-regatta.png" alt="Two squirrels sail a maple leaf near Holland's De Zwaan windmill" width="1102" height="1427" />
         </a>
       </section>
     )}
@@ -117,7 +118,7 @@ function meta(p: (typeof made)[number]): string {
         <div class="section-head updates-head">
           <div>
             <h2>Updates</h2>
-            <p class="updates-sub">A build log. When something real ships, it gets a dated entry here and on its project's page.</p>
+            <p class="updates-sub">A dated build log. The July Fantasy Joes posts show earlier gameplay and cash contests; the free game now uses six-player rounds.</p>
           </div>
           <a href="/writing" class="mono updates-all">Browse all &rarr;</a>
         </div>
@@ -188,7 +189,7 @@ function meta(p: (typeof made)[number]): string {
     display: block;
   }
 
-  /* Latest: Fantasy Joes */
+  /* Current project */
   .latest {
     display: flex;
     flex-direction: column;
@@ -222,6 +223,30 @@ function meta(p: (typeof made)[number]): string {
   }
   .latest-shot:hover {
     text-decoration: none;
+  }
+  .hcb-shot {
+    min-height: 520px;
+    padding: 28px 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+    gap: 32px;
+    align-items: center;
+    background: #E9E3D6;
+  }
+  .hcb-shot-label {
+    color: #42574C;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding-left: 7%;
+  }
+  .hcb-shot img {
+    width: auto;
+    height: 460px;
+    max-width: 100%;
+    justify-self: center;
+    object-fit: contain;
+    box-shadow: 0 18px 48px rgba(30, 35, 26, 0.2);
   }
 
   /* Things I've made */
@@ -417,6 +442,19 @@ function meta(p: (typeof made)[number]): string {
     .latest-text h2 {
       font-size: 36px;
     }
+    .hcb-shot {
+      min-height: 0;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 20px;
+      padding: 24px;
+    }
+    .hcb-shot-label {
+      padding-left: 0;
+      font-size: 12px;
+    }
+    .hcb-shot img {
+      height: 360px;
+    }
     .section-head {
       flex-direction: column;
       align-items: flex-start;
@@ -441,6 +479,11 @@ function meta(p: (typeof made)[number]): string {
     .update-row {
       grid-template-columns: minmax(0, 1fr);
       row-gap: 4px;
+    }
+  }
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 48px;
     }
   }
 </style>

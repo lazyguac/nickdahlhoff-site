@@ -25,8 +25,10 @@ The static Astro build generated 17 pages. The homepage and both updated project
 
 - Replaced the Hometown feature image with the published Holland music video and its opening-frame poster, served from `hometowncoloringbook.com`. The `<video>` uses native controls and does not preload the 71 MB MP4. The source and poster match the live Hometown site.
 - Moved Fantasy Joes to the first project card. The current Hometown feature remains above the project grid.
-- Framed the Pimsleur "An Honest Review" artwork at a smaller scale on the All Language Resources card. Its case-study page retains the full published review screenshot.
+- Replaced the single Pimsleur thumbnail on the All Language Resources homepage card after Nick rejected its zoomed-in treatment. A three-panel editorial illustration now represents the site's published comparisons, course guides, and reviews; the case-study page retains the full published Pimsleur review screenshot. A full-page screenshot was also tried and rejected because its article thumbnails were unreadable at card size. The ALR homepage hero was not used.
 - Found the original 1600-pixel Manga Method collage in `~/Downloads`, used it for the card and case-study hero, and preserved the existing files.
 - Removed the generalized class-size and missing-curriculum claims from the Beijing teaching card and case study.
 
 Desktop and 390-pixel phone review confirmed the card order, video poster, images, and lack of horizontal overflow. The first card navigated to the Fantasy Joes case study. Clicking Play on the MP4 crashed the Codex in-app browser both on this preview and on the live Hometown site; playback therefore needs confirmation in a regular browser. No production release was made.
+
+The final ALR editorial card was inspected again at desktop and 390-pixel phone width. Its headlines stay readable, its visual uses no additional image download, and the 390-pixel page has no horizontal overflow.

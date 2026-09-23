@@ -9,7 +9,6 @@ skills: [SEO & Content Strategy, Affiliate Marketing, Team Management, Content O
 year: "2016–2021"
 revenue: "$960K sale"
 stage: "Sold for $960K"
-cardImage: /images/alr/alr-review-card.jpg
 cardBlurb: "A review site for language-learning apps, started in a Beijing apartment while I was teaching. It grew to 100,000 readers a month on search, with six regular contributors, and I sold it in 2021. It's still live."
 heroImage: /images/alr/alr-review-pimsleur.png
 heroAlt: "A published review on All Language Resources"

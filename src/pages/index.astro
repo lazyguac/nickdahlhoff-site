@@ -9,8 +9,8 @@ const hometown = allProjects.find(p => p.id === 'hometown-coloring-book');
 // band above; ai-consulting is retired and noindexed. Copy for each card lives in the project's
 // frontmatter (cardBlurb / stage / cardImage).
 const madeSlugs = [
-  'all-language-resources',
   'fantasy-joes',
+  'all-language-resources',
   'recess',
   'aura-finance',
   'alpaca-college',
@@ -72,10 +72,12 @@ function meta(p: (typeof made)[number]): string {
           </div>
           <a href={`/projects/${hometown.id}`} class="text-link">Read the case study &rarr;</a>
         </div>
-        <a href={`/projects/${hometown.id}`} class="frame latest-shot hcb-shot">
-          <span class="mono hcb-shot-label">Holland, Michigan · Free printable</span>
-          <img src="/images/hometown/holland-maple-leaf-regatta.png" alt="Two squirrels sail a maple leaf near Holland's De Zwaan windmill" width="1102" height="1427" />
-        </a>
+        <div class="frame latest-shot hcb-film">
+          <video controls playsinline preload="none" poster="https://hometowncoloringbook.com/images/holland-video-opening.jpg" aria-label="Holland coloring book music video">
+            <source src="https://hometowncoloringbook.com/videos/holland-coloring-book.mp4" type="video/mp4" />
+            <a href="https://hometowncoloringbook.com/">Watch the Holland film on Hometown Coloring Book</a>
+          </video>
+        </div>
       </section>
     )}
 
@@ -89,11 +91,11 @@ function meta(p: (typeof made)[number]): string {
         {made.map(p => (
           <a href={`/projects/${p.id}`} class="poster">
             {p.data.cardImage ? (
-              <img src={p.data.cardImage} alt="" class="poster-img" loading="lazy" />
+              <img src={p.data.cardImage} alt="" class:list={['poster-img', { 'poster-img-contain': p.id === 'all-language-resources' || p.id === 'manga-method' }]} loading="lazy" />
             ) : p.id === 'teaching' ? (
               <div class="poster-tile tile-beijing">
                 <span class="tile-big">北京</span>
-                <span class="tile-note">Grades 1–3, classes of 40, no curriculum for the foreign teacher.</span>
+                <span class="tile-note">Three schools. Teaching, team leadership, and curriculum design.</span>
               </div>
             ) : p.id === 'poker' ? (
               <div class="poster-tile tile-poker">
@@ -221,32 +223,14 @@ function meta(p: (typeof made)[number]): string {
   .latest-shot {
     display: block;
   }
-  .latest-shot:hover {
-    text-decoration: none;
+  .hcb-film {
+    background: #171717;
   }
-  .hcb-shot {
-    min-height: 520px;
-    padding: 28px 40px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
-    gap: 32px;
-    align-items: center;
-    background: #E9E3D6;
-  }
-  .hcb-shot-label {
-    color: #42574C;
-    font-size: 18px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding-left: 7%;
-  }
-  .hcb-shot img {
-    width: auto;
-    height: 460px;
-    max-width: 100%;
-    justify-self: center;
-    object-fit: contain;
-    box-shadow: 0 18px 48px rgba(30, 35, 26, 0.2);
+  .hcb-film video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    background: #171717;
   }
 
   /* Things I've made */
@@ -295,6 +279,15 @@ function meta(p: (typeof made)[number]): string {
     object-position: top;
     display: block;
     background: var(--color-surface-2);
+  }
+  .poster-img-contain {
+    object-fit: contain;
+    padding: 18px;
+    background: #24272B;
+  }
+  .poster[href$="all-language-resources"] .poster-img-contain {
+    background: #DCE8EC;
+    padding: clamp(24px, 4vw, 46px);
   }
   .poster-tile {
     display: flex;
@@ -441,19 +434,6 @@ function meta(p: (typeof made)[number]): string {
     }
     .latest-text h2 {
       font-size: 36px;
-    }
-    .hcb-shot {
-      min-height: 0;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 20px;
-      padding: 24px;
-    }
-    .hcb-shot-label {
-      padding-left: 0;
-      font-size: 12px;
-    }
-    .hcb-shot img {
-      height: 360px;
     }
     .section-head {
       flex-direction: column;

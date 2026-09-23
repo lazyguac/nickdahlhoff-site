@@ -1,19 +1,19 @@
 ---
 title: Teaching in Beijing
-tagline: Moved to China alone and taught for three and a half years, building the curriculum where none existed and getting promoted into leading a small team.
+tagline: Moved to China alone and taught for three and a half years across three schools, including curriculum design and first-grade team leadership.
 status: archive
 order: 9
 tech: [Teachers Pay Teachers]
 skills: [Curriculum Design, Team Leadership, Classroom Management, Educational Material Creation, Cross-Cultural Communication]
 year: "2016–2019"
-cardBlurb: "Three schools in three and a half years. Wrote every lesson at a public school that had no curriculum for the foreign teacher, led a first-grade team at an IB school, and built a phonics curriculum that still sells on Teachers Pay Teachers."
+cardBlurb: "Three schools in three and a half years. I wrote lessons at a public school, led a first-grade team at an IB school, and built a phonics curriculum that still sells on Teachers Pay Teachers."
 ---
 
 ## Three schools in three and a half years
 
 In January 2016 I moved to Beijing alone and taught elementary school there for about three and a half years. The three schools I worked at ran on completely different levels of structure.
 
-The first was a large public school. I taught grades 1 through 3 in classes of about 40, and there was no curriculum for the foreign teacher — I wrote every lesson and activity myself and worked out the bilingual delivery with the Chinese co-teachers.
+The first was a large public school. I taught lower elementary grades, wrote my own lessons and activities, and worked out the bilingual delivery with the Chinese co-teachers.
 
 The second was an international school running the IB Primary Years Programme. I had my own first-grade homeroom, which suited me better — my own room, my own students, my own systems. About a year in, the school made me first-grade team leader. I ran the weekly planning meetings, kept our curriculum aligned, and managed three other foreign teachers, on top of parent conferences and the day-to-day communication with families.
 

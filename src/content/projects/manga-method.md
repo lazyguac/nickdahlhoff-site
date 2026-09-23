@@ -7,9 +7,9 @@ tech: [Web App, CMS]
 skills: [Product Management, Content Sourcing, Vendor Management]
 year: "2019"
 stage: Shelved
-cardImage: /images/manga/manga-panel.jpg
+cardImage: /images/manga/manga-method-collage-full.png
 cardBlurb: "A language-learning app built on webtoons. Tap a line to hear it, double-tap to translate it. Users added thousands of translated lines. Built through an agency before AI, and the math didn't close."
-heroImage: /images/manga/manga-method-collage.jpg
+heroImage: /images/manga/manga-method-collage-full.png
 heroAlt: "Panels from the comics in Manga Method"
 ---
 

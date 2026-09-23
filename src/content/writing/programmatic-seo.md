@@ -20,7 +20,9 @@ There are 145 of them live as I write this, in early July 2026. Two you can look
 - [Jonathan Taylor vs. Christian McCaffrey](https://fantasyjoes.gg/draft/2026/compare/jonathan-taylor-vs-christian-mccaffrey)
 - [Jahmyr Gibbs vs. Bijan Robinson](https://fantasyjoes.gg/draft/2026/compare/jahmyr-gibbs-vs-bijan-robinson)
 
-![A live compare page — the crowd's split on one matchup, from real duels](/images/fantasy-joes/fj-compare-pair-desktop.png)
+![A September 2026 comparison page with updated player art and the crowd's weekly split](/images/fantasy-joes/fj-compare-page-week3-2026.png)
+
+*The comparison page in September, after the game switched to weekly matchups.*
 
 ## How a page gets built
 

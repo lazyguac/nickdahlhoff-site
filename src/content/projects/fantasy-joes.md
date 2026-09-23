@@ -48,7 +48,7 @@ Around the game I built a player-art pipeline that could refresh portraits after
 
 I built a real-money contest system too, with wallets, seven contest formats, and eligibility controls. I ran an adversarial security review, fixed its findings, and tested a paid entry end to end in July. The contest work never turned into a paying business.
 
-![An earlier draft comparison page showing the crowd's preference and player stats](/images/fantasy-joes/fj-compare-pair-desktop.png)
+![A September 2026 comparison page showing current player art, the crowd's preference, and weekly matchup details](/images/fantasy-joes/fj-compare-page-week3-2026.png)
 
 ## Why I stepped back
 

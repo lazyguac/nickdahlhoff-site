@@ -36,7 +36,7 @@ When one of these pages gets shared — in a group chat, on Reddit, wherever peo
 
 Every player in the game has a comic-style caricature I generate for them. The share card puts both players' caricatures side by side, adds their position, team, and draft rank, drops a "VS" in the middle, and draws the live crowd-split bar right on the image. It's built per matchup, from the same live data as the page, so the card for a real matchup shows the real split and the real art. It looks like a fight card, which is the point.
 
-![The share card: both players' comic art, ranks, and the live crowd split](/images/fantasy-joes/fj-compare-og-card.jpg)
+![The share card with updated player art, ranks, and the Week 3 crowd split](/images/fantasy-joes/fj-compare-gibbs-robinson-week3-2026.png)
 
 That card also broke on every single page for a while, which brings me to the parts that were harder than the idea.
 

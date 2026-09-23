@@ -46,8 +46,8 @@ I built a mock draft that could use your rankings, hoping to make them useful so
 The part of the growth plan that worked best was search. I built player comparison pages from matchups people were choosing in the game. Each page showed how the crowd had voted, player information, expert analysis pulled from around the web, and an AI-written comparison set to update weekly or when something important changed. I also made the matchup playable on the page. Someone looking up a draft decision could make that choice and continue into Fantasy Joes.
 
 <figure class="post-figure">
-  <img src="/images/fantasy-joes/fj-compare-og-card.jpg" alt="Fantasy Joes share card for Jahmyr Gibbs versus Bijan Robinson showing that 56.3 percent of 231 votes favored Robinson" loading="lazy" />
-  <figcaption>The share card for a player comparison page.</figcaption>
+  <img src="/images/fantasy-joes/fj-compare-gibbs-robinson-week3-2026.png" alt="Fantasy Joes comparison card with illustrated Jahmyr Gibbs and Bijan Robinson facing off above a crowd-vote bar" loading="lazy" />
+  <figcaption>A player comparison card from September 2026.</figcaption>
 </figure>
 
 The comparison catalog grew from about 175 pages in early July to 1,166 published comparison URLs in the September 12 sitemap. Google Search Console recorded about 7,150 clicks to the site from June 11 through September 21, with 547 on September 7. That same day, the site's analytics counted 1,180 visits across all sources.

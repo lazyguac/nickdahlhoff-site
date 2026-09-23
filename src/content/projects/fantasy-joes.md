@@ -1,15 +1,15 @@
 ---
 title: Fantasy Joes
-status: current
+status: archive
 order: 1
 url: https://fantasyjoes.gg
 tech: [Claude Code, Convex, Netlify, Gemini, Claude API, Sleeper API, ESPN API]
 skills: [Full-Stack Development, Real-Time Systems, Game Design, Algorithm Design, API Integration, Product Management, AI-Assisted Development, Data Pipeline Design, UI/UX Design]
 year: "2026"
 latestUpdate:
-  date: "2026-07-03"
-  summary: "Real-money contests built and audited, launching for the 2026 NFL season. 14,818 duels played as of June 30."
-tagline: "A fantasy football ranking game with real-money contests. Six players at a time, you pick the three you'd draft first, in order, and your rankings build themselves. A web app, a Discord version of the game, six cash contests, and an art pipeline for hundreds of player portraits. Designed and built solo with Claude Code and Codex."
+  date: "2026-09-23"
+  summary: "The free game remains live. I stopped developing Fantasy Joes as a business after the paid contests failed to attract customers."
+tagline: "A fantasy football ranking game where quick player choices build your rankings. I built the web and Discord games, comparison pages, and cash contests. The free game remains live."
 heroImage: /images/fantasy-joes/fj-six3-desktop.jpg
 heroAlt: "Fantasy Joes: six player cards, pick your top three in order"
 heroCaption: "The core screen. Six cards ordered by ADP; tap your first, second, and third. Every completed screen writes twelve player relationships into your rankings."
@@ -18,7 +18,7 @@ gallery:
     kind: phone
     caption: "Mobile first. Most Joes play on a phone."
   - src: /images/fantasy-joes/fj-compare-og.jpg
-    caption: "One of about 167 public compare pages generated from the game's own data."
+    caption: "One of 1,166 comparison URLs listed in the September 12, 2026 sitemap."
   - src: /images/fantasy-joes/fj-season-rankings-open.jpg
     caption: "Season Rankings Open, one of six peer-to-peer cash contests scored on ranking accuracy."
 cardImage: /images/fantasy-joes/fj-six3-desktop.jpg
@@ -67,7 +67,7 @@ The game is the core. Most of the work is everything that turns it into a produc
 
 **A Discord game.** The whole duel loop runs inside Discord as slash commands — play, build a board, see standings without leaving the server, no signup. Around it I built partner attribution: credit for a signup survives even when nobody clicks a link, backfilled from the server the player came from, and partners earn from the players they bring in with the math capped so payouts can never exceed what the game actually took in.
 
-**Programmatic SEO.** A daily job reads every resolved draft duel, buckets them by player pair, and publishes a "Player X vs Y" page for each matchup that clears a vote threshold. 145 are live, each showing the crowd split from real duels — for example, [Jonathan Taylor vs. Christian McCaffrey](https://fantasyjoes.gg/draft/2026/compare/jonathan-taylor-vs-christian-mccaffrey) and [Puka Nacua vs. Justin Jefferson](https://fantasyjoes.gg/draft/2026/compare/puka-nacua-vs-justin-jefferson). A relevance filter sits underneath: before an expert quote renders, it checks that the quote actually names the right player, so a college linebacker who shares a surname with a star receiver doesn't get misattributed. When one of these pages is shared, it renders a preview card from live data — both players' comic art, their draft ranks, the vote split — that looks like a paid ad and is generated per matchup on demand.
+**Programmatic SEO.** A daily job reads every resolved draft duel, buckets them by player pair, and publishes a "Player X vs Y" page for each matchup that clears a vote threshold. By September 12, 2026, the sitemap listed 1,166 comparison URLs, each showing the crowd split from real duels — for example, [Jonathan Taylor vs. Christian McCaffrey](https://fantasyjoes.gg/draft/2026/compare/jonathan-taylor-vs-christian-mccaffrey) and [Puka Nacua vs. Justin Jefferson](https://fantasyjoes.gg/draft/2026/compare/puka-nacua-vs-justin-jefferson). A relevance filter sits underneath: before an expert quote renders, it checks that the quote actually names the right player, so a college linebacker who shares a surname with a star receiver doesn't get misattributed. When one of these pages is shared, it renders a preview card from live data — both players' comic art, their draft ranks, the vote split — that looks like a paid ad and is generated per matchup on demand.
 
 ![A live compare page — the crowd's lean, drawn from real duels](/images/fantasy-joes/fj-compare-pair-desktop.png)
 
@@ -75,18 +75,16 @@ Three more pieces round it out. A growth dashboard tracks the funnel by channel 
 
 ## Real money, built and audited
 
-The endgame is skill-based cash contests — head-to-head, 50/50s, and tournaments — funded by user-signed USDC transfers on Base. The rails are done: wallets, the payment flow, six contest formats, and the compliance scaffolding for geo-gating, age checks, tax withholding, and self-exclusion.
+I built skill-based cash contests — head-to-head, 50/50s, and tournaments — funded by user-signed USDC transfers on Base. The system includes wallets, the payment flow, contest formats, and controls for geographic eligibility, age checks, tax withholding, and self-exclusion.
 
-Before any of it goes live, I put the codebase through a multi-agent adversarial security audit I designed and ran: dozens of independent agents finding issues across the money rails, then re-verifying each other's findings, then a pass checking for what the first ones missed. Findings were remediated against the live code — all while the money system stayed switched off behind a flag. The scale of it is the point: a solo founder can't red-team a money system by hand at the depth this needed, so I built the review that could.
+Before cash entry went live, I put the codebase through a multi-agent adversarial security audit I designed and ran: dozens of independent agents finding issues across the money rails, then re-verifying each other's findings, then a pass checking for what the first ones missed. Findings were remediated against the live code while the money system stayed switched off behind a flag. The scale of it is the point: a solo founder can't red-team a money system by hand at the depth this needed, so I built the review that could.
 
-Real money isn't live to the public. It's built and audited, and it launches for the 2026 NFL season.
+I tested a real-money entry in July 2026, and the payment system worked. Cash entry later went off. The paid contests attracted no paying customers.
 
 ![The homepage — make your own rankings, then see how they stack up](/images/fantasy-joes/fj-home-desktop.png)
 
+One change I'm glad to point at came straight from that data. A "sign up now" screen was auto-firing early in a new player's session, and the data showed that gate was leaking users rather than converting them — the board that early was still mostly the consensus order, so the ask was landing before the rankings were actually the player's own. Moving it to a later, more personalized point was a one-line change the data told me to make.
+
 ## Where it stands
 
-As of June 30, 2026, real people have played 14,818 duels across 1,038 users, and 145 comparison pages are live (as of July 2). Paid marketing has run — image-tested Reddit ads and a Spark-promoted TikTok poll since May 2026, with conversion tracking wired to both platforms — while a Google Ads push is built and staged but not yet launched.
-
-One change I'm glad to point at came straight from that data. A "sign up now" screen was auto-firing early in a new player's session, and the data showed that gate was leaking users rather than converting them — the board that early is still mostly the consensus order, so the ask was landing before the rankings were actually the player's own. Moving it to a later, more personalized point was a one-line change the data told me to make. The 2026 NFL season kicks off in September, which is when all of this gets its first live test.
-
-
+As of September 2026, the free game remains online. Search brought people to the comparison pages, but too few players kept building rankings or returned to play. I decided to stop treating Fantasy Joes as an active business bet. I explain the results and that decision in [the wrap-up](/writing/fantasy-joes-wrap-up).

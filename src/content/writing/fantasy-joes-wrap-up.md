@@ -19,11 +19,21 @@ The problem was how long it took before the rankings felt like yours. Fantasy Jo
 
 I changed the main game from one choice between two players to a screen with six players where you pick your top three. That gave the ranking system more information per screen. I also changed which players the game showed and how it used each answer, with more attention on getting the top of the rankings right. The ranking math became quite a bit more involved than the Elo-inspired system I started with.
 
+<figure class="post-figure">
+  <img src="/images/fantasy-joes/fj-six3-desktop.jpg" alt="Fantasy Joes game screen with six illustrated NFL players and a prompt to pick the top three in order" loading="lazy" />
+  <figcaption>The six-player game.</figcaption>
+</figure>
+
 The changes made the rankings more accurate in my tests. But I wasn't seeing many players keep going long enough to build a list that reflected their own opinions. I think that slow payoff was part of why many didn't return. It also made the paid contests harder to sell: people needed to trust the rankings they were entering.
 
 ## The paid game
 
 The plan was for anyone to make their own rankings and enter them in contests against other players. Fantasy Joes would compare each entrant's rankings with actual NFL fantasy points, and the most accurate rankings would win. I built season-long and weekly formats, along with the scoring system, and set up payments in USDC on Base. I tested a real-money entry myself, and it worked.
+
+<figure class="post-figure">
+  <img src="/images/fantasy-joes/fj-season-rankings-open.jpg" alt="Fantasy Joes Season Rankings Open contest graphic showing rankings scored over an 18-week season" loading="lazy" />
+  <figcaption>The season-long rankings contest.</figcaption>
+</figure>
 
 The paid contests didn't get any paying customers. The payment steps were mostly handled for the player, so I don't think the crypto side explains the lack of interest.
 
@@ -34,6 +44,11 @@ I built a mock draft that could use your rankings, hoping to make them useful so
 ## Getting people to the site
 
 The part of the growth plan that worked best was search. I built player comparison pages from matchups people were choosing in the game. Each page showed how the crowd had voted, player information, expert analysis pulled from around the web, and an AI-written comparison set to update weekly or when something important changed. I also made the matchup playable on the page. Someone looking up a draft decision could make that choice and continue into Fantasy Joes.
+
+<figure class="post-figure">
+  <img src="/images/fantasy-joes/fj-compare-pair-desktop.png" alt="A Fantasy Joes comparison page for Jahmyr Gibbs and Bijan Robinson showing the crowd's vote and player statistics" loading="lazy" />
+  <figcaption>A player comparison page built from the game's matchups.</figcaption>
+</figure>
 
 The comparison catalog grew from about 175 pages in early July to 1,166 published comparison URLs in the September 12 sitemap. Google Search Console recorded about 7,150 clicks to the site from June 11 through September 21, with 547 on September 7. That same day, the site's analytics counted 1,180 visits across all sources.
 
@@ -48,6 +63,10 @@ Discord seemed like a good way to meet fantasy players where they already spent 
 One server used it, and the early return rate was promising. People came back day to day more often than they did in the regular web game. I think the ranking algorithm was especially weak at that point, though. It took too long to give people rankings that felt accurate, usage dropped, and those players never really came back. I had a possible paid placement with another community, but didn't pursue it once I saw that drop-off.
 
 I also posted short player-comparison videos on TikTok, Instagram and YouTube. It was interesting how differently a video could perform on each platform, though views were generally low. I built a system that did most of the production itself. I would check in once or twice and keep trying to improve the system for the next video.
+
+<div class="short-embed">
+  <iframe src="https://www.youtube.com/embed/5vjsaM3w5qA" title="Fantasy Joes: Bhayshul Tuten vs David Montgomery" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 After I added paid betting to the Fantasy Joes site, TikTok essentially stopped showing my posts. I moved the paid games to another domain, but the account's reach didn't recover.
 

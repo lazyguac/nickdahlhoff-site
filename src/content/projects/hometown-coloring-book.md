@@ -4,7 +4,7 @@ tagline: Free coloring pages of West Michigan places, with sponsor-funded printe
 status: current
 order: 1
 url: https://hometowncoloringbook.com
-tech: [Claude Code, Convex, Stripe, Gemini]
+tech: [Codex, Convex, Stripe, Gemini]
 skills: [Product Management, Full-Stack Development, Art Direction, Sales & Outreach]
 heroImage: /images/hometown/holland-maple-leaf-regatta.png
 heroAlt: Two squirrels sail a maple leaf beneath a bridge near Holland's De Zwaan windmill
@@ -14,15 +14,15 @@ stage: Current
 cardImage: /images/hometown/holland-maple-leaf-regatta.png
 cardBlurb: "Free coloring pages of West Michigan places are live. I'm preparing sponsor-funded printed books; none has gone to print yet."
 latestUpdate:
-  date: "2026-09-22"
-  summary: "Free local downloads are live. I'm preparing sponsor-funded printed editions for Holland, Zeeland, and West Ottawa; none has gone to print yet."
+  date: "2026-10-17"
+  summary: "The first paying sponsors have approved their artwork. Email and contact-form outreach is running, and a separate custom coloring-book service for organizations is live."
 ---
 
 ## What it is
 
-Hometown Coloring Book makes coloring pages about places kids can recognize near home. In the Holland online collection, two squirrels sail a maple leaf past the De Zwaan windmill. Another page shows children chasing bubbles beside Centennial Park's gazebo. Families can choose local pages and download a PDF for free. Zeeland and West Ottawa have smaller collections that are growing.
+Hometown Coloring Book makes coloring pages about places kids can recognize near home. In the Holland online collection, two squirrels sail a maple leaf past the De Zwaan windmill. Another page shows children chasing bubbles beside Centennial Park's gazebo. Families can choose local pages and download a PDF for free. Free collections are also available for Zeeland and West Ottawa.
 
-The planned printed books will use separate artwork and be paid for by local business sponsorships. An interior sponsor can get a custom coloring page featuring its business, review the artwork, and request revisions. Businesses can also help distribute free copies at their locations without buying a placement. Sponsor payments would cover the copies given out by those stockists too.
+The planned printed books will use separate artwork and be paid for by local business sponsorships. An interior sponsor can get a custom coloring page featuring its business, review the artwork, and request revisions. Businesses can also help distribute free copies at their locations without buying a placement. Sponsorships fund the copies given out by those stockists too.
 
 The artwork workflow starts with research on a real place or business and keeps revisions tied to the exact image I review. For print, I built district pricing and a cost model around actual printer quotes.
 
@@ -30,12 +30,14 @@ The artwork workflow starts with research on a real place or business and keeps 
 
 I sold one sponsor page through cold outreach in spring 2026, then stopped before printing. At the time, I thought making it work meant selling door to door in every district, and I couldn't see myself running that kind of field-sales operation.
 
-I came back to it because I no longer think an in-person sales force is the only path. I'm preparing email and mail outreach for local businesses, and the live pages let people see the artwork before they decide whether to participate. The coloring pages and books are the part I want to build; sponsorship pays for getting them into local families' hands.
+I came back to it because I no longer think an in-person sales force is the only path. I'm running email and contact-form outreach for local businesses and preparing personalized postcards, and the live pages let people see the artwork before they decide whether to participate. The coloring pages and books are the part I want to build; sponsorship pays for getting them into local families' hands.
 
 For the printed books, a business can bring a logo, an idea, or just its name. AI helps make the custom artwork, and the business approves its page before printing. The free online collection is curated separately. I've also made a Holland song and animated coloring-page film, now on the site.
 
 ## Where it stands
 
-As of September 2026, the free downloads and business offer are live. I'm comparing printer samples, preparing sponsor outreach, and looking for places that could stock the first books. No printed edition has been distributed yet.
+As of October 17, 2026, the first paying sponsors have used the artwork workflow to choose and approve their pages. The workflow supports customer references, requested revisions, and approval of the exact artwork version. Email and contact-form outreach is running for the first printed district editions, which are still in preparation. No printed edition has been distributed yet.
 
-<!-- Voice-truth ledger: the original field-sales concern, return to remote outreach, product-first focus, music video, and current preparation come from Nick's 2026-09-22 journal. One spring sponsor sale is Nick's 2026-07-03 site-copy correction. Product and district state checked against the live hometowncoloringbook.com homepage and 2026-09-18 website release source. The art-revision workflow and printer-backed cost model are also recorded in the September 22 career audit and professional profile. Refresh the September status against the live site and current print receipt when updating this page. -->
+A separate [custom coloring-book service for organizations](https://hometowncoloringbook.com/custom-coloring-books) is also live, with configurable quotes and online ordering.
+
+<!-- Voice-truth ledger: the original field-sales concern, return to remote outreach, product-first focus, music video, and current preparation come from Nick's 2026-09-22 journal. One spring sponsor sale is Nick's 2026-07-03 site-copy correction. Product and district state checked against the live hometowncoloringbook.com homepage and 2026-09-18 website release source. The art-revision workflow and printer-backed cost model are also recorded in the September 22 career audit and professional profile. October 17 status refresh: October 15 customer-artwork audit records both current sponsors approving their exact artwork; October 15 launch-strategy comparison records operating email/form outreach and first-edition pre-sell status; October 16 custom-book implementation receipt records the separate live service, without claiming fulfilled custom orders. The historical first-person reasons remain unchanged. -->

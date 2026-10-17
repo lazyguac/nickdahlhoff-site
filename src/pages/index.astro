@@ -72,12 +72,19 @@ function meta(p: (typeof made)[number]): string {
           </div>
           <a href="https://hometowncoloringbook.com/" class="text-link">Visit Hometown Coloring Book &rarr;</a>
         </div>
-        <div class="frame latest-shot hcb-film">
-          <video controls playsinline preload="none" poster="https://hometowncoloringbook.com/images/holland-video-opening.jpg" aria-label="Holland coloring book music video">
-            <source src="https://hometowncoloringbook.com/videos/holland-coloring-book.mp4" type="video/mp4" />
-            <a href="https://hometowncoloringbook.com/">Watch the Holland film on Hometown Coloring Book</a>
-          </video>
-        </div>
+        <figure class="hcb-book-preview" style="margin:0">
+          <div class="frame latest-shot">
+            <img src="https://hometowncoloringbook.com/images/covers/ink-ivory-20261001/counter-stacks.webp" alt="Mockup of Holland, West Ottawa, and Zeeland coloring books stacked on a shop counter" width="1672" height="941" loading="lazy" style="display:block;width:100%;height:auto" />
+          </div>
+          <figcaption style="margin-top:12px;color:var(--color-text-soft);font-size:13px">Preview of the three district editions.</figcaption>
+        </figure>
+        <details class="hcb-music-video" style="margin-top:4px">
+          <summary style="cursor:pointer;color:var(--color-accent,#70baa2);font-size:16px;padding:8px 0">Watch the Holland music video (2:20)</summary>
+          <div class="frame" style="margin-top:12px">
+            <iframe src="https://www.youtube-nocookie.com/embed/NnvUeFDmEas" title="Holland, Michigan | Hometown Coloring Book Music Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="display:block;width:100%;aspect-ratio:16/9;border:0"></iframe>
+          </div>
+          <a href="https://youtu.be/NnvUeFDmEas" class="text-link" style="display:inline-block;margin-top:12px">Watch on YouTube &rarr;</a>
+        </details>
       </section>
     )}
 
